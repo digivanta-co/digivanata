@@ -1,0 +1,685 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import * as THREE from "three";
+
+/**
+ * Digivanta — About Us (motion build)
+ *
+ * Fonts expected (load via next/font in layout.tsx):
+ *   --font-space  -> Space Grotesk
+ *   --font-serif  -> Fraunces
+ *   --font-body   -> Inter
+ *
+ * Deps used: gsap, gsap/ScrollTrigger, framer-motion, three, vanta (DOTS)
+ * Install vanta if not already present:  npm install vanta
+ */
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+const services = [
+  "Web Development",
+  "Responsive Website Design",
+  "SEO & Search Optimization",
+  "Digital Marketing",
+  "Social Media Marketing",
+  "Branding & Creative Strategy",
+  "UI/UX Design",
+  "eCommerce Development",
+  "Performance Marketing",
+  "Content Marketing",
+];
+
+const process = [
+  {
+    n: "01",
+    title: "Research & Discovery",
+    text: "We study your business, industry, competitors, and audience to find where the real growth opportunities are hiding.",
+  },
+  {
+    n: "02",
+    title: "Strategy & Planning",
+    text: "A roadmap built around your brand — covering web development, SEO, and marketing, in the order that moves the needle first.",
+  },
+  {
+    n: "03",
+    title: "Design & Development",
+    text: "Modern, responsive, SEO-ready builds that look and feel like your brand, not a template wearing your logo.",
+  },
+  {
+    n: "04",
+    title: "Marketing & Optimization",
+    text: "From search visibility to paid campaigns, we tune every channel toward traffic that actually converts.",
+  },
+  {
+    n: "05",
+    title: "Growth & Support",
+    text: "We keep watching the numbers after launch — refining, reporting, and staying close for the long run.",
+  },
+];
+
+const whyUs = [
+  "Creative & Innovative Solutions",
+  "SEO-Optimized Strategies",
+  "Modern Web Development",
+  "Result-Driven Marketing",
+  "Client-Focused Approach",
+  "Transparent Communication",
+  "Scalable Business Solutions",
+  "Long-Term Growth Partnership",
+];
+
+/* ---------------------------------------------------------------- */
+/*  Vanta DOTS background — quiet ambient field, navy + gold dots    */
+/* ---------------------------------------------------------------- */
+function VantaBackground() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const effectRef = useRef<any>(null);
+
+  useEffect(() => {
+    let mounted = true;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    import("vanta/dist/vanta.dots.min")
+      .then((mod) => {
+        if (!mounted || !ref.current) return;
+        const VANTA = mod.default || (window as any).VANTA?.DOTS;
+        if (!VANTA) return;
+        effectRef.current = VANTA({
+          el: ref.current,
+          THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0xc9a961, // gold dots
+          color2: 0x2a3550, // muted navy-slate secondary dots
+          backgroundColor: 0x0a0e1a, // matches section bg exactly
+          size: 3.2,
+          spacing: 38.0,
+          showLines: false,
+        });
+      })
+      .catch(() => {
+        /* vanta not installed / failed to load — hero still works without it */
+      });
+
+    return () => {
+      mounted = false;
+      effectRef.current?.destroy?.();
+    };
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      aria-hidden
+      className="pointer-events-none absolute inset-0"
+    />
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/*  Hero quote — word-by-word stagger reveal on load (GSAP)          */
+/* ---------------------------------------------------------------- */
+function HeroQuote() {
+  const wrapRef = useRef<HTMLQuoteElement | null>(null);
+  const words =
+    "Why build someone else's dream forever when you can create something of your own and empower others along the way?".split(
+      " "
+    );
+
+  useEffect(() => {
+    if (!wrapRef.current) return;
+    const spans = wrapRef.current.querySelectorAll("span.word");
+    gsap.fromTo(
+      spans,
+      { opacity: 0, y: 18, filter: "blur(6px)" },
+      {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 0.7,
+        stagger: 0.045,
+        ease: "power3.out",
+        delay: 0.3,
+      }
+    );
+  }, []);
+
+  return (
+    <blockquote
+      ref={wrapRef}
+      className="mx-auto -mt-6 max-w-3xl font-[var(--font-serif)] text-[1.6rem] italic leading-snug text-white sm:text-3xl sm:leading-snug"
+    >
+      {words.map((w, i) => (
+        <span key={i} className="word mr-[0.32em] inline-block">
+          {w}
+        </span>
+      ))}
+    </blockquote>
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/*  Generic scroll-batch reveal (GSAP ScrollTrigger, one shot)       */
+/* ---------------------------------------------------------------- */
+function useBatchReveal(
+  containerRef: React.RefObject<HTMLElement | null>,
+  selector: string,
+  opts: { stagger?: number; y?: number } = {}
+) {
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const targets = container.querySelectorAll(selector);
+    if (!targets.length) return;
+
+    const tween = gsap.fromTo(
+      targets,
+      { opacity: 0, y: opts.y ?? 24 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: opts.stagger ?? 0.08,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: container,
+          start: "top 80%",
+          once: true,
+        },
+      }
+    );
+
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+}
+
+/* ---------------------------------------------------------------- */
+/*  Magnetic CTA button (Framer Motion spring)                      */
+/* ---------------------------------------------------------------- */
+function MagneticButton({
+  children,
+  href,
+  className = "",
+}: {
+  children: React.ReactNode;
+  href: string;
+  className?: string;
+}) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, { stiffness: 150, damping: 12, mass: 0.4 });
+  const springY = useSpring(y, { stiffness: 150, damping: 12, mass: 0.4 });
+
+  function handleMove(e: React.MouseEvent<HTMLAnchorElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const relX = e.clientX - rect.left - rect.width / 2;
+    const relY = e.clientY - rect.top - rect.height / 2;
+    x.set(relX * 0.3);
+    y.set(relY * 0.4);
+  }
+
+  function handleLeave() {
+    x.set(0);
+    y.set(0);
+  }
+
+  return (
+    <motion.a
+      href={href}
+      onMouseMove={handleMove}
+      onMouseLeave={handleLeave}
+      style={{ x: springX, y: springY }}
+      whileTap={{ scale: 0.96 }}
+      className={className}
+    >
+      {children}
+    </motion.a>
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/*  Origin section — GSAP pinned founder column + scroll progress    */
+/* ---------------------------------------------------------------- */
+function OriginSection() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const lineRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const line = lineRef.current;
+    if (!section || !line) return;
+
+    const tween = gsap.fromTo(
+      line,
+      { scaleY: 0 },
+      {
+        scaleY: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 75%",
+          end: "bottom 60%",
+          scrub: true,
+        },
+      }
+    );
+
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="border-t border-white/10 px-6 py-24 sm:py-28"
+    >
+      <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <p className="font-[var(--font-space)] text-xs uppercase tracking-[0.3em] text-[#C9A961]">
+            Founded 2023
+          </p>
+          <h2 className="mt-4 font-[var(--font-space)] text-3xl font-semibold leading-tight sm:text-4xl">
+            Built by cousins.
+            <br />
+            Driven by one ambition.
+          </h2>
+          <div className="mt-8 flex gap-8">
+            <div className="relative pl-5">
+              <div
+                ref={lineRef}
+                className="absolute left-0 top-1 h-[calc(100%+1.5rem)] w-px origin-top bg-[#C9A961]"
+              />
+              <p className="font-[var(--font-serif)] text-xl text-white">
+                Yash Gupta
+              </p>
+              <p className="mt-1 text-sm text-white/50">Co-Founder</p>
+              <p className="mt-6 font-[var(--font-serif)] text-xl text-white">
+                Sachin Gupta
+              </p>
+              <p className="mt-1 text-sm text-white/50">Co-Founder</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6 font-[var(--font-body)] text-base leading-relaxed text-white/70 sm:text-lg">
+          <p>
+            Digivanta was founded in 2023 by cousins{" "}
+            <span className="text-white">Yash Gupta</span> and{" "}
+            <span className="text-white">Sachin Gupta</span>, built on a
+            shared ambition to create a modern digital agency driven by
+            creativity, innovation, and real business growth.
+          </p>
+          <p>
+            Before starting Digivanta, Yash worked as a Digital Marketing
+            Specialist, gaining hands-on experience in branding, strategy,
+            lead generation, and business growth. Along the way, he noticed
+            something most agencies missed: they were focused on delivering
+            services, not on building the kind of relationships that help a
+            business grow for years, not months.
+          </p>
+          <p>
+            With Sachin&rsquo;s partnership, the two decided to build
+            something of their own — a company where creativity, technology,
+            strategy, and people could grow together, instead of being
+            treated as separate departments.
+          </p>
+          <p className="text-white">
+            Today, Digivanta helps businesses build a strong digital presence
+            through custom websites, SEO, branding, social media marketing,
+            UI/UX design, and performance marketing — all designed around one
+            outcome: measurable growth.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/*  Process section — staggered scale-in numbers + drawing line      */
+/* ---------------------------------------------------------------- */
+function ProcessSection() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const lineRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const line = lineRef.current;
+    if (!section) return;
+
+    const steps = section.querySelectorAll(".step-row");
+    const numbers = section.querySelectorAll(".step-number");
+
+    gsap.fromTo(
+      steps,
+      { opacity: 0, y: 28 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.12,
+        ease: "power2.out",
+        scrollTrigger: { trigger: section, start: "top 75%", once: true },
+      }
+    );
+
+    gsap.fromTo(
+      numbers,
+      { scale: 0.7, color: "rgba(201,169,97,0.25)" },
+      {
+        scale: 1,
+        color: "rgba(201,169,97,0.9)",
+        duration: 0.5,
+        stagger: 0.12,
+        ease: "back.out(1.6)",
+        scrollTrigger: { trigger: section, start: "top 75%", once: true },
+      }
+    );
+
+    let lineTween: gsap.core.Tween | undefined;
+    if (line) {
+      lineTween = gsap.fromTo(
+        line,
+        { scaleY: 0 },
+        {
+          scaleY: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 70%",
+            end: "bottom 80%",
+            scrub: true,
+          },
+        }
+      );
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((st) => {
+        if (st.trigger === section) st.kill();
+      });
+      lineTween?.kill();
+    };
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="border-t border-white/10 px-6 py-24 sm:py-28"
+    >
+      <div className="mx-auto max-w-4xl">
+        <div className="text-center">
+          <p className="font-[var(--font-space)] text-xs uppercase tracking-[0.3em] text-[#C9A961]">
+            How We Work
+          </p>
+          <h2 className="mt-4 font-[var(--font-space)] text-3xl font-semibold leading-tight sm:text-4xl">
+            A strategy-driven path, every time.
+          </h2>
+        </div>
+
+        <div className="relative mt-16">
+          <div
+            ref={lineRef}
+            aria-hidden
+            className="absolute left-[22px] top-2 h-[calc(100%-1rem)] w-px origin-top bg-gradient-to-b from-[#C9A961] to-[#C9A961]/10 sm:left-[26px]"
+          />
+          {process.map((step) => (
+            <div
+              key={step.n}
+              className="step-row relative flex gap-6 border-t border-white/10 py-8 first:border-t-0 sm:gap-10"
+            >
+              <span className="step-number relative z-10 shrink-0 bg-[#0A0E1A] font-[var(--font-serif)] text-4xl sm:text-5xl">
+                {step.n}
+              </span>
+              <div>
+                <h3 className="font-[var(--font-space)] text-lg font-medium text-white sm:text-xl">
+                  {step.title}
+                </h3>
+                <p className="mt-2 max-w-xl leading-relaxed text-white/60">
+                  {step.text}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/*  Why Choose grid — single staggered batch reveal                  */
+/* ---------------------------------------------------------------- */
+function WhyChooseSection() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  useBatchReveal(sectionRef, ".why-item", { stagger: 0.06, y: 18 });
+
+  return (
+    <section
+      ref={sectionRef as React.RefObject<HTMLDivElement>}
+      className="border-t border-white/10 bg-[#0F1629] px-6 py-24 sm:py-28"
+    >
+      <div className="mx-auto max-w-6xl">
+        <div className="max-w-xl">
+          <p className="font-[var(--font-space)] text-xs uppercase tracking-[0.3em] text-[#C9A961]">
+            Why Choose Digivanta
+          </p>
+          <h2 className="mt-4 font-[var(--font-space)] text-3xl font-semibold leading-tight sm:text-4xl">
+            We don&rsquo;t just deliver services.
+          </h2>
+          <p className="mt-4 leading-relaxed text-white/60">
+            We help businesses build a stronger digital future through
+            strategy, creativity, and technology — and this journey is only
+            getting started.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          {whyUs.map((item) => (
+            <div
+              key={item}
+              className="why-item flex items-start gap-3 bg-[#0F1629] p-6 transition-colors hover:bg-white/[0.03]"
+            >
+              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#C9A961]" />
+              <span className="font-[var(--font-space)] text-sm leading-snug text-white/85">
+                {item}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/*  What We Do — pill tags, single batch reveal                      */
+/* ---------------------------------------------------------------- */
+function ServicesSection() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  useBatchReveal(sectionRef, ".service-pill", { stagger: 0.04, y: 12 });
+
+  return (
+    <section
+      ref={sectionRef as React.RefObject<HTMLDivElement>}
+      className="border-t border-white/10 px-6 py-24 sm:py-28"
+    >
+      <div className="mx-auto max-w-6xl">
+        <div className="max-w-xl">
+          <p className="font-[var(--font-space)] text-xs uppercase tracking-[0.3em] text-[#C9A961]">
+            What We Do
+          </p>
+          <h2 className="mt-4 font-[var(--font-space)] text-3xl font-semibold leading-tight sm:text-4xl">
+            Complete digital solutions, tailored to your goals.
+          </h2>
+        </div>
+
+        <div className="mt-12 flex flex-wrap gap-3">
+          {services.map((s) => (
+            <span
+              key={s}
+              className="service-pill rounded-full border border-white/15 px-5 py-2.5 font-[var(--font-space)] text-sm text-white/80 transition-colors hover:border-[#C9A961]/50 hover:text-[#C9A961]"
+            >
+              {s}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/*  Page                                                              */
+/* ---------------------------------------------------------------- */
+export default function AboutUs() {
+  return (
+    <main className="bg-[#0A0E1A] font-[var(--font-body)] text-white">
+      {/* ============ HERO ============ */}
+      <section className="relative overflow-hidden px-6 pb-24 pt-28 sm:pt-36 sm:pb-32">
+        <VantaBackground />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-0 h-[560px] w-[560px] -translate-x-1/2 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(201,169,97,0.18) 0%, rgba(201,169,97,0) 70%)",
+          }}
+        />
+
+        <div className="relative mx-auto max-w-4xl text-center">
+          <p className="font-[var(--font-space)] text-xs uppercase tracking-[0.3em] text-[#C9A961]">
+            The Story Behind Digivanta
+          </p>
+
+          <div className="mt-10">
+            <span
+              aria-hidden
+              className="block font-[var(--font-serif)] text-7xl leading-none text-[#C9A961]/70 sm:text-8xl"
+            >
+              &ldquo;
+            </span>
+            <HeroQuote />
+          </div>
+
+          <p className="mt-10 font-[var(--font-body)] text-base leading-relaxed text-white/60 sm:text-lg">
+            A modern digital solutions agency helping startups, brands, and
+            businesses grow through web development, digital marketing,
+            branding, and SEO — built around that one question.
+          </p>
+
+          <div className="mt-10 flex justify-center">
+            <MagneticButton
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full border border-[#C9A961]/40 bg-[#C9A961]/10 px-7 py-3 font-[var(--font-space)] text-sm font-medium text-[#C9A961] transition-colors hover:bg-[#C9A961]/20"
+            >
+              Schedule a Strategy Call
+              <span aria-hidden>→</span>
+            </MagneticButton>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ ORIGIN ============ */}
+      <OriginSection />
+
+      {/* ============ MISSION / VISION ============ */}
+      <section className="bg-[#F8F9FB] px-6 py-24 text-[#0A0E1A] sm:py-28">
+        <div className="mx-auto grid max-w-6xl gap-px overflow-hidden rounded-2xl border border-[#0A0E1A]/10 sm:grid-cols-2">
+          <div className="bg-[#F8F9FB] p-10 sm:p-12">
+            <span className="font-[var(--font-space)] text-xs uppercase tracking-[0.3em] text-[#9A7B33]">
+              Our Mission
+            </span>
+            <h3 className="mt-4 font-[var(--font-space)] text-2xl font-semibold sm:text-3xl">
+              Growth that compounds, not campaigns that expire.
+            </h3>
+            <p className="mt-5 leading-relaxed text-[#0A0E1A]/70">
+              We help businesses grow with creative digital marketing, modern
+              web development, and branding that delivers long-term success
+              — building partnerships through digital experiences that
+              improve visibility, engagement, and real business growth.
+            </p>
+          </div>
+
+          <div className="border-t border-[#0A0E1A]/10 bg-[#F8F9FB] p-10 sm:border-t-0 sm:border-l sm:p-12">
+            <span className="font-[var(--font-space)] text-xs uppercase tracking-[0.3em] text-[#9A7B33]">
+              Our Vision
+            </span>
+            <h3 className="mt-4 font-[var(--font-space)] text-2xl font-semibold sm:text-3xl">
+              A trusted growth partner, worldwide.
+            </h3>
+            <p className="mt-5 leading-relaxed text-[#0A0E1A]/70">
+              To become a trusted digital growth partner for startups,
+              businesses, and brands everywhere — combining creativity,
+              technology, and innovation to build future-ready digital
+              experiences, while empowering the talented people who build
+              them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ WHAT WE DO ============ */}
+      <ServicesSection />
+
+      {/* ============ HOW WE WORK ============ */}
+      <ProcessSection />
+
+      {/* ============ WHY CHOOSE DIGIVANTA ============ */}
+      <WhyChooseSection />
+
+      {/* ============ CTA CLOSE ============ */}
+      <section
+        id="contact"
+        className="relative overflow-hidden border-t border-white/10 px-6 py-28 text-center sm:py-32"
+      >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(201,169,97,0.14) 0%, rgba(201,169,97,0) 70%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-2xl">
+          <h2 className="font-[var(--font-serif)] text-3xl italic leading-tight text-white sm:text-4xl">
+            Your growth starts here.
+          </h2>
+          <p className="mt-5 leading-relaxed text-white/60">
+            Whether you&rsquo;re a startup or an established business,
+            Digivanta can help you achieve measurable digital growth.
+          </p>
+          <div className="mt-10 flex justify-center">
+            <MagneticButton
+              href="#"
+              className="inline-flex items-center gap-2 rounded-full bg-[#C9A961] px-8 py-3.5 font-[var(--font-space)] text-sm font-semibold text-[#0A0E1A]"
+            >
+              Schedule a Strategy Call
+            </MagneticButton>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

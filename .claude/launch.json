@@ -1,0 +1,61 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "digivanta",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start"],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "digivanta-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "ziva-prod",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d C:\\Users\\user\\Desktop\\ziva && npx next start -p 3058"],
+      "port": 3058
+    },
+    {
+      "name": "ziva-dev",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d C:\\Users\\user\\Desktop\\ziva && npx next dev -p 3058"],
+      "port": 3058
+    },
+    {
+      "name": "bettracker-sdk",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d C:\\Users\\user\\Desktop\\betindia_sdk\\bettracker-sdk && npx vite --port 5199"],
+      "port": 5199
+    },
+    {
+      "name": "bettracker-dashboard",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d C:\\Users\\user\\Desktop\\betindia_sdk\\dashboard && npx next dev -p 3060"],
+      "port": 3060
+    },
+    {
+      "name": "1xplay-dev",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d C:\\Users\\user\\Desktop\\1xplay && npx next dev -p 3061"],
+      "port": 3061
+    },
+    {
+      "name": "betindia-app-dev",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d C:\\Users\\user\\Desktop\\betindia_app && npx vite --port 5188"],
+      "port": 5188
+    },
+    {
+      "name": "betindia-dev",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d C:\\Users\\user\\Downloads\\betindia\\betindia && npx next dev -p 3062"],
+      "port": 3062
+    }
+  ]
+}

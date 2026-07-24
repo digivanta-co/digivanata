@@ -1,0 +1,57 @@
+import {
+  Code,
+  Layers,
+  Rocket,
+  MessagesSquare,
+  Gauge,
+  RefreshCw,
+  Smartphone,
+  Server,
+  Database,
+  Sparkles,
+  Apple,
+  Atom,
+  ShoppingCart,
+  UtensilsCrossed,
+  Car,
+  HeartPulse,
+  Building2,
+  GraduationCap,
+  Bot,
+  TrendingUp,
+  Search,
+  Headset,
+  WandSparkles,
+  type LucideIcon,
+} from "lucide-react";
+
+const MAP: Record<string, LucideIcon> = {
+  code: Code,
+  layers: Layers,
+  rocket: Rocket,
+  messages: MessagesSquare,
+  gauge: Gauge,
+  refresh: RefreshCw,
+  smartphone: Smartphone,
+  server: Server,
+  database: Database,
+  sparkles: Sparkles,
+  apple: Apple,
+  atom: Atom,
+  cart: ShoppingCart,
+  utensils: UtensilsCrossed,
+  car: Car,
+  heart: HeartPulse,
+  building: Building2,
+  book: GraduationCap,
+  bot: Bot,
+  trending: TrendingUp,
+  search: Search,
+  headset: Headset,
+  wand: WandSparkles,
+};
+
+export function AppIcon({ name, size = 22, strokeWidth = 1.9 }: { name: string; size?: number; strokeWidth?: number }) {
+  const Icon = MAP[name] ?? Code;
+  return <Icon size={size} strokeWidth={strokeWidth} />;
+}

@@ -1,0 +1,27 @@
+declare module "vanta/dist/vanta.dots.min" {
+  import type * as THREE from "three";
+
+  interface VantaDotsOptions {
+    el: HTMLElement | string;
+    THREE: typeof THREE;
+    mouseControls?: boolean;
+    touchControls?: boolean;
+    gyroControls?: boolean;
+    minHeight?: number;
+    minWidth?: number;
+    scale?: number;
+    scaleMobile?: number;
+    color?: number;
+    color2?: number;
+    backgroundColor?: number;
+    size?: number;
+    spacing?: number;
+    showLines?: boolean;
+  }
+
+  interface VantaEffect {
+    destroy?: () => void;
+  }
+
+  export default function DOTS(options: VantaDotsOptions): VantaEffect;
+}

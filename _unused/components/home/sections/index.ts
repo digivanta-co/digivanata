@@ -1,0 +1,15 @@
+export { default as LogoStrip } from "./LogoStrip";
+export { default as IntroSection } from "./IntroSection";
+export { default as MarqueeBand } from "./MarqueeBand";
+export { default as ChallengesSection } from "./ChallengesSection";
+export { default as ServicesSection } from "./ServicesSection";
+export { default as ServicesDetailSection } from "./ServicesDetailSection";
+export { default as PartnerSection } from "./PartnerSection";
+export { default as ProcessSection } from "./ProcessSection";
+export { default as WhyChooseSection } from "./WhyChooseSection";
+export { default as IndustriesSection } from "./IndustriesSection";
+export { default as ToolsSection } from "./ToolsSection";
+export { default as TrackRecordSection } from "./TrackRecordSection";
+export { default as ReviewsSection } from "./ReviewsSection";
+export { default as FAQSection } from "./FAQSection";
+export { default as ContactSection } from "./ContactSection";

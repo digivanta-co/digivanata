@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx next *)",
+      "WebFetch(domain:digipanda.co.in)",
+      "WebFetch(domain:www.vengenceui.com)",
+      "Bash(curl -s -o /dev/null -w \"unsplash:%{http_code} time:%{time_total}s size:%{size_download}\\\\n\" \"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=70\" --max-time 20)",
+      "Bash(node -e \"console.log\\(require\\('crypto'\\).randomBytes\\(32\\).toString\\('hex'\\)\\)\")",
+      "Bash(curl -s -b /tmp/ziva_cookies.txt http://localhost:3001/api/admin/orders)",
+      "Bash(curl -s -b /tmp/ziva_cookies.txt http://localhost:3001/api/admin/products)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 15 \"https://oquqlomwcwkweqkvvqxb.supabase.co/rest/v1/\")",
+      "Bash(curl -s --max-time 15 \"https://oquqlomwcwkweqkvvqxb.supabase.co/rest/v1/product?select=id&limit=1\" -H \"apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xdXFsb213Y3drd2Vxa3Z2cXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwMjY0MTIsImV4cCI6MjA5NDYwMjQxMn0.b8xvvxeibcFw7V5sc9hS9j8jEX8lfCI_y5slBuvyO1I\")",
+      "Bash(npm run *)",
+      "Bash(curl -s --max-time 60 \"http://localhost:3000/graphic-designing-company-in-delhi\")",
+      "Bash(npx tsc *)",
+      "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\).on\\('end',\\(\\)=>console.log\\(d.split\\('\\\\n'\\).slice\\(0,15\\).join\\('\\\\n'\\)||'TSC CLEAN'\\)\\)\")",
+      "Bash(\"C:\\\\Program Files\\\\nodejs\\\\npx.cmd\" tsc --noEmit)"
+    ]
+  }
+}
