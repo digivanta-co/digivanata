@@ -87,7 +87,7 @@ export default function RdIndustries() {
                   }}
                 >
                   <div className="rd-ring__item -translate-x-1/2 -translate-y-1/2">
-                    <div className="rd-ind__card group flex w-28 flex-col items-center gap-2 rounded-2xl border border-[var(--rd-border)] bg-white/80 px-3 py-4 text-center shadow-sm backdrop-blur transition-transform duration-300 hover:scale-110 hover:border-[var(--rd-gold)]">
+                    <div className="rd-ind__card group flex w-28 flex-col items-center gap-2 rounded-2xl border border-[var(--rd-border)] bg-white/95 px-3 py-4 text-center shadow-sm transition-transform duration-300 hover:scale-110 hover:border-[var(--rd-gold)]">
                       <span className="grid size-9 place-items-center rounded-full bg-[var(--rd-blue-soft)] text-[var(--rd-blue)] [&_svg]:size-4.5">
                         <IndustryIcon name={ind} />
                       </span>
@@ -101,7 +101,7 @@ export default function RdIndustries() {
         </div>
 
         {/* small-screen grid */}
-        <div className="rd-ind__grid grid grid-cols-2 gap-3 sm:grid-cols-3 lg:hidden">
+        <div className="rd-ind__grid grid grid-cols-2 gap-3 sm:grid-cols-3 lg:!hidden">
           {INDUSTRIES.map((ind) => (
             <div
               key={ind}

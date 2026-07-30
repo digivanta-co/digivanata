@@ -70,17 +70,17 @@ export default function RdProcess() {
           {RD_PROCESS.detailHeading}
         </h3>
 
-        <ol className="rd-timeline relative mt-10 space-y-10 pl-16">
+        <ol className="rd-timeline relative mt-10 space-y-8 sm:space-y-10 pl-14 sm:pl-16">
           {/* base + fill line */}
-          <span className="rd-time-line" style={{ left: "1.5rem" }} />
-          <span className="rd-time-fill" style={{ left: "1.5rem" }} />
+          <span className="rd-time-line" style={{ left: "1.25rem" }} />
+          <span className="rd-time-fill" style={{ left: "1.25rem" }} />
           {PROCESS_STEPS.map((s) => (
             <li key={s.step} className="rd-step relative">
-              <span className="rd-step__num absolute -left-16 top-0 grid size-12 place-items-center rounded-full border border-[var(--rd-border)] bg-white text-[var(--rd-blue)] shadow-sm">
-                <span className="rd-display text-lg">{s.step}</span>
+              <span className="rd-step__num absolute -left-14 sm:-left-16 top-0 grid size-10 sm:size-12 place-items-center rounded-full border border-[var(--rd-border)] bg-white text-[var(--rd-blue)] shadow-sm">
+                <span className="rd-display text-base sm:text-lg">{s.step}</span>
               </span>
-              <h4 className="text-xl font-semibold text-[var(--rd-ink)]">{s.title}</h4>
-              <p className="mt-1.5 text-[var(--rd-muted)]">{s.desc}</p>
+              <h4 className="text-lg sm:text-xl font-semibold text-[var(--rd-ink)]">{s.title}</h4>
+              <p className="mt-1 text-sm sm:text-base text-[var(--rd-muted)]">{s.desc}</p>
             </li>
           ))}
         </ol>

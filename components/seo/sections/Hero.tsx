@@ -200,7 +200,7 @@ export default function HeroSection() {
                 <span className="text-[0.74rem] text-[var(--gd-muted)]">Clients served</span>
               </div>
               <div>
-                <strong className="gd-display block text-2xl text-[var(--gd-navy)]">16+</strong>
+                <strong className="gd-display block text-2xl text-[var(--gd-navy)]">1+</strong>
                 <span className="text-[0.74rem] text-[var(--gd-muted)]">Years experience</span>
               </div>
             </div>

@@ -42,21 +42,21 @@ export default function RdIntro() {
     <section ref={root} id="about" className="relative py-16 sm:py-20">
       <div className="container max-w-5xl">
         {/* AT&T stat callout */}
-        <div className="rd-reveal rd-glass mb-10 flex flex-col gap-2 p-8 sm:p-10">
-          <p className="rd-display text-2xl leading-snug text-[var(--rd-ink)] sm:text-3xl" style={{ textTransform: "none" }}>
+        <div className="rd-reveal rd-glass mb-8 flex flex-col gap-2 p-6 sm:p-10">
+          <p className="rd-display text-xl leading-snug text-[var(--rd-ink)] sm:text-3xl" style={{ textTransform: "none" }}>
             {RD_INTRO.statQuote}
           </p>
-          <p className="text-[var(--rd-muted)]">{RD_INTRO.statNote}</p>
+          <p className="text-sm sm:text-base text-[var(--rd-muted)]">{RD_INTRO.statNote}</p>
         </div>
 
-        <div className="space-y-6 text-lg leading-relaxed text-[var(--rd-muted)]">
+        <div className="space-y-5 text-base sm:text-lg leading-relaxed text-[var(--rd-muted)]">
           {RD_INTRO.paras.map((p, i) => (
             <p
               key={i}
               className={
                 "rd-reveal " +
                 (p === "That’s where Digivanta comes in."
-                  ? "rd-display text-2xl text-[var(--rd-ink)] sm:text-3xl"
+                  ? "rd-display text-xl text-[var(--rd-ink)] sm:text-3xl"
                   : "")
               }
               style={p.startsWith("That") ? { textTransform: "none" } : undefined}
@@ -67,41 +67,43 @@ export default function RdIntro() {
         </div>
 
         {/* focus areas */}
-        <div className="rd-focus mt-12">
-          <p className="rd-reveal mb-6 text-lg font-semibold text-[var(--rd-ink)]">
+        <div className="rd-focus mt-10 sm:mt-12">
+          <p className="rd-reveal mb-5 text-base sm:text-lg font-semibold text-[var(--rd-ink)]">
             {RD_INTRO.focusLead}
           </p>
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <ul className="grid gap-2.5 sm:grid-cols-2">
             {FOCUS_AREAS.map((f) => (
               <li
                 key={f}
-                className="rd-focus__item flex items-center gap-3 rounded-xl border border-[var(--rd-border)] bg-[var(--rd-gray)] px-4 py-3"
+                className="rd-focus__item flex items-center gap-3 rounded-xl border border-[var(--rd-border)] bg-[var(--rd-gray)] px-3.5 py-2.5 sm:px-4 sm:py-3"
               >
-                <span className="grid size-6 shrink-0 place-items-center rounded-full bg-[var(--rd-blue)] text-white [&_svg]:size-3.5">
+                <span className="grid size-5.5 shrink-0 place-items-center rounded-full bg-[var(--rd-blue)] text-white [&_svg]:size-3">
                   <Check />
                 </span>
-                <span className="text-[var(--rd-ink)]">{f}</span>
+                <span className="text-sm sm:text-base text-[var(--rd-ink)]">{f}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <p className="rd-reveal mt-12 text-lg leading-relaxed text-[var(--rd-muted)]">
+        <p className="rd-reveal mt-10 sm:mt-12 text-base sm:text-lg leading-relaxed text-[var(--rd-muted)]">
           {RD_INTRO.closing}
         </p>
 
         {/* CTA band 1 */}
-        <div className="rd-reveal mt-12 overflow-hidden rounded-[28px] bg-[var(--rd-ink)] p-9 text-white sm:p-12">
+        <div className="rd-reveal mt-10 sm:mt-12 overflow-hidden rounded-2xl sm:rounded-[28px] bg-[var(--rd-ink)] p-6 sm:p-12 text-white">
           <div className="grid items-center gap-6 lg:grid-cols-[1.4fr_auto]">
             <div>
-              <h2 className="rd-display text-3xl sm:text-4xl" style={{ textTransform: "none" }}>
+              <h2 className="rd-display text-2xl sm:text-4xl" style={{ textTransform: "none" }}>
                 {RD_CTA_1.title}
               </h2>
-              <p className="mt-3 max-w-2xl text-white/70">{RD_CTA_1.sub}</p>
+              <p className="mt-3 max-w-2xl text-sm sm:text-base text-white/70">{RD_CTA_1.sub}</p>
             </div>
-            <RdMagnetic href="#contact" className="rd-btn--gold shrink-0">
-              Book Free Consultation <ArrowRight />
-            </RdMagnetic>
+            <div className="flex flex-col sm:flex-row flex-wrap items-center gap-3">
+              <RdMagnetic href="#contact" className="w-full sm:w-auto justify-center">
+                Get Started <ArrowRight />
+              </RdMagnetic>
+            </div>
           </div>
         </div>
       </div>

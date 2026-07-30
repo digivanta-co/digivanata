@@ -27,8 +27,8 @@ export default function WhyChoose() {
       className="relative overflow-hidden py-20 lg:py-32"
       style={{ backgroundImage: "linear-gradient(180deg,#ffffff 0%,#eef4fb 55%,#e7f0fa 100%)" }}
     >
-      <div aria-hidden className="pointer-events-none absolute right-[-10%] top-[-6%] size-[480px] rounded-full bg-[#235EA7]/10 blur-[130px]" />
-      <div aria-hidden className="pointer-events-none absolute left-[-8%] bottom-[-10%] size-[420px] rounded-full bg-[#D4AF37]/10 blur-[130px]" />
+      <div aria-hidden className="pointer-events-none absolute right-[-10%] top-[-6%] size-[480px] rounded-full bg-[#235EA7]/10 blur-[64px]" />
+      <div aria-hidden className="pointer-events-none absolute left-[-8%] bottom-[-10%] size-[420px] rounded-full bg-[#D4AF37]/10 blur-[64px]" />
 
       <div className="container relative">
         <motion.div
@@ -38,7 +38,7 @@ export default function WhyChoose() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-[700px] text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#235EA7]/20 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#235EA7] backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#235EA7]/20 bg-white/95 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#235EA7]">
             <span className="size-1.5 rounded-full bg-[#D4AF37]" /> Why Digivanta
           </span>
           <h2 className="mt-5 font-[family-name:var(--font-display),var(--font)] text-[clamp(2.2rem,5vw,3.4rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#0C243D]">
@@ -66,7 +66,7 @@ export default function WhyChoose() {
                   (s.wide ? "lg:col-span-2 " : "") +
                   (gold
                     ? "border-[#D4AF37]/30 bg-[linear-gradient(150deg,#fffdf6,#fbf3dc)] hover:shadow-[0_30px_60px_-28px_rgba(212,175,55,0.5)]"
-                    : "border-[#235EA7]/15 bg-white/85 backdrop-blur-xl hover:shadow-[0_30px_60px_-28px_rgba(35,94,167,0.5)]")
+                    : "border-[#235EA7]/15 bg-white/95 hover:shadow-[0_30px_60px_-28px_rgba(35,94,167,0.5)]")
                 }
               >
                 <span
@@ -108,7 +108,7 @@ export default function WhyChoose() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: (i % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="group rounded-[24px] border border-slate-200/70 bg-white/85 p-6 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_16px_40px_-26px_rgba(15,23,42,0.2)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#235EA7]/25 hover:shadow-[0_28px_60px_-26px_rgba(35,94,167,0.45)]"
+                className="group rounded-[24px] border border-slate-200/70 bg-white/95 p-6 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_16px_40px_-26px_rgba(15,23,42,0.2)] transition-all duration-300 hover:-translate-y-2 hover:border-[#235EA7]/25 hover:shadow-[0_28px_60px_-26px_rgba(35,94,167,0.45)]"
               >
                 <span className="mb-4 inline-grid size-12 place-items-center rounded-xl bg-[linear-gradient(135deg,#235EA7,#4f93d4)] text-white shadow-lg shadow-[#235EA7]/25 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
                   <Icon size={26} strokeWidth={2} />

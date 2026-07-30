@@ -20,8 +20,8 @@ export default function WorkingProcess() {
 
   return (
     <section className="relative overflow-hidden bg-[#F8FAFC] py-20 lg:py-32">
-      <div aria-hidden className="pointer-events-none absolute -left-32 top-1/3 size-[420px] rounded-full bg-[#235EA7]/[0.07] blur-[120px]" />
-      <div aria-hidden className="pointer-events-none absolute -right-24 bottom-10 size-[360px] rounded-full bg-[#D4AF37]/[0.08] blur-[120px]" />
+      <div aria-hidden className="pointer-events-none absolute -left-32 top-1/3 size-[420px] rounded-full bg-[#235EA7]/[0.07] blur-[64px]" />
+      <div aria-hidden className="pointer-events-none absolute -right-24 bottom-10 size-[360px] rounded-full bg-[#D4AF37]/[0.08] blur-[64px]" />
 
       <div className="container relative">
         <motion.div
@@ -66,7 +66,7 @@ export default function WorkingProcess() {
                       {p.step}
                       <span aria-hidden className="absolute -inset-1 -z-10 rounded-full bg-[#235EA7]/25 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
                     </div>
-                    <div className="mt-7 w-full rounded-[24px] border border-slate-200/70 bg-white/80 p-6 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_18px_40px_-24px_rgba(15,23,42,0.18)] backdrop-blur-sm transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-[#235EA7]/25 group-hover:shadow-[0_28px_60px_-24px_rgba(35,94,167,0.4)]">
+                    <div className="mt-7 w-full rounded-[24px] border border-slate-200/70 bg-white/95 p-6 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_18px_40px_-24px_rgba(15,23,42,0.18)] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-[#235EA7]/25 group-hover:shadow-[0_28px_60px_-24px_rgba(35,94,167,0.4)]">
                       <span className="mb-4 inline-grid size-12 place-items-center rounded-xl bg-[linear-gradient(135deg,#235EA7,#4f93d4)] text-white shadow-lg shadow-[#235EA7]/25 transition-transform duration-300 group-hover:scale-110">
                         <Icon size={24} strokeWidth={2} />
                       </span>

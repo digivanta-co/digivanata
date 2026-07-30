@@ -87,11 +87,11 @@ export default function RdFinalCta() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-4 mb-2">
-          <RdMagnetic href={CONTACT.phoneHref}>
+        <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-2">
+          <RdMagnetic href={CONTACT.phoneHref} className="w-full sm:w-auto justify-center">
             Call {CONTACT.phone} <ArrowRight />
           </RdMagnetic>
-          <RdMagnetic href={CONTACT.whatsapp} external className="rd-btn--ghost !text-white !border-white/20">
+          <RdMagnetic href={CONTACT.whatsapp} external className="rd-btn--ghost !text-white !border-white/20 w-full sm:w-auto justify-center">
             <WhatsApp /> WhatsApp Now
           </RdMagnetic>
         </div>

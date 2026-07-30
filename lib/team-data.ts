@@ -18,7 +18,7 @@ export const TEAM_LEADERS = [
     role: "Founder & CEO",
     specialty: "Digital Strategy & Vision",
     desc: "Visionary leader with a passion for digital growth and innovation. He leads Digivanta with strategy, creativity and purpose.",
-    photo: u("photo-1507003211169-0a1dd7228f2d", 900),
+    photo: u("photo-1560250097-0b93528c311a", 900),
     socials: [
       { type: "linkedin", href: "#" },
       { type: "instagram", href: "#" },
@@ -30,7 +30,7 @@ export const TEAM_LEADERS = [
     role: "Co-Founder",
     specialty: "Operations & Business Growth",
     desc: "Strategic mind behind execution and planning. He ensures every idea turns into measurable digital success.",
-    photo: "/team/sachin.jpg",
+    photo: "/team/sachin.png",
     socials: [
       { type: "linkedin", href: "#" },
       { type: "instagram", href: "#" },
@@ -50,7 +50,7 @@ export const TEAM_GROUPS = [
         name: "Rishku",
         role: "Digital Marketing Executive",
         badge: "SMM & Campaign Specialist",
-        photo: "/team/rishku.jpg",
+        photo: "/team/rishku.png",
         socials: [
           { type: "linkedin", href: "#" },
           { type: "instagram", href: "#" },
@@ -58,10 +58,10 @@ export const TEAM_GROUPS = [
         ] as Social[],
       },
       {
-        name: "Sunny",
+        name: "Suraj",
         role: "Digital Marketing Executive",
         badge: "PPC & Lead Generation",
-        photo: "/team/sunny.jpg",
+        photo: "/team/suraj.png",
         socials: [
           { type: "linkedin", href: "#" },
           { type: "instagram", href: "#" },
@@ -77,19 +77,19 @@ export const TEAM_GROUPS = [
     members: [
       {
         name: "Lakshay",
-        role: "Senior Graphic Designer",
+        role: "Video editor",
         badge: "Brand Identity & Motion",
-        photo: "/team/lakshay.jpg",
+        photo: "/team/lakshay.png",
         socials: [
           { type: "linkedin", href: "#" },
           { type: "instagram", href: "#" },
         ] as Social[],
       },
       {
-        name: "Suraj",
+        name: "Sunny",
         role: "Graphic Designer",
         badge: "Social Media Creatives",
-        photo: "/team/suraj.jpg",
+        photo: "/team/sunny.png",
         socials: [
           { type: "linkedin", href: "#" },
           { type: "instagram", href: "#" },
@@ -104,10 +104,10 @@ export const TEAM_GROUPS = [
     theme: "blue" as const,
     members: [
       {
-        name: "Vikram Singh",
-        role: "Lead Web Developer",
+        name: "Ashutosh",
+        role: "Software developer",
         badge: "Full-Stack & Performance",
-        photo: u("photo-1607990281513-2c110a25bd8c"),
+        photo: u("photo-1534528741775-53994a69daeb"),
         socials: [
           { type: "linkedin", href: "#" },
           { type: "github", href: "#" },

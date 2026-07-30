@@ -69,7 +69,7 @@ function WebHeroPanel() {
       />
 
       {/* Floating Badge Chip A (Top Right) */}
-      <div className="wh-chip--a absolute -right-2 -top-4 z-20 flex items-center gap-2.5 rounded-full border border-[var(--gd-gold)]/40 bg-white/95 px-4 py-2 text-xs font-bold text-[var(--gd-navy)] shadow-[0_10px_25px_rgba(13,18,41,0.12)] backdrop-blur-md">
+      <div className="wh-chip--a absolute -right-2 -top-4 z-20 flex items-center gap-2.5 rounded-full border border-[var(--gd-gold)]/40 bg-white/95 px-4 py-2 text-xs font-bold text-[var(--gd-navy)] shadow-[0_10px_25px_rgba(13,18,41,0.12)]">
         <span className="flex size-2.5 items-center justify-center rounded-full bg-[var(--gd-gold)]">
           <span className="size-1.5 animate-ping rounded-full bg-[var(--gd-gold)]" />
         </span>
@@ -77,13 +77,13 @@ function WebHeroPanel() {
       </div>
 
       {/* Floating Badge Chip B (Bottom Left) */}
-      <div className="wh-chip--b absolute -bottom-4 -left-2 z-20 flex items-center gap-2.5 rounded-full border border-[var(--gd-blue)]/40 bg-white/95 px-4 py-2 text-xs font-bold text-[var(--gd-navy)] shadow-[0_10px_25px_rgba(13,18,41,0.12)] backdrop-blur-md">
+      <div className="wh-chip--b absolute -bottom-4 -left-2 z-20 flex items-center gap-2.5 rounded-full border border-[var(--gd-blue)]/40 bg-white/95 px-4 py-2 text-xs font-bold text-[var(--gd-navy)] shadow-[0_10px_25px_rgba(13,18,41,0.12)]">
         <span className="size-2 rounded-full bg-[var(--gd-blue)]" />
         <span>🛡️ 100% Technical SEO Ready</span>
       </div>
 
       {/* Main Glassmorphism Browser Window Card */}
-      <div className="relative overflow-hidden rounded-3xl border border-[var(--gd-line)] bg-white/95 shadow-[0_30px_70px_rgba(12,36,61,0.12)] backdrop-blur-sm">
+      <div className="relative overflow-hidden rounded-3xl border border-[var(--gd-line)] bg-white/95 shadow-[0_30px_70px_rgba(12,36,61,0.12)]">
         {/* Browser Top Bar */}
         <div className="flex items-center justify-between border-b border-[var(--gd-line)] bg-[var(--gd-soft)]/80 px-5 py-3.5">
           <div className="flex items-center gap-2">
@@ -105,7 +105,7 @@ function WebHeroPanel() {
           {/* Header Preview Banner */}
           <div className="relative overflow-hidden rounded-2xl border border-[var(--gd-line)] bg-gradient-to-br from-[#0C243D] via-[#102a48] to-[#1e4570] p-5 text-white shadow-inner">
             <div className="flex items-center justify-between">
-              <span className="rounded-md bg-white/10 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-[var(--gd-gold)] backdrop-blur-sm">
+              <span className="rounded-md bg-white/10 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-[var(--gd-gold)]">
                 Next.js 16 + React 19
               </span>
               <span className="flex items-center gap-1.5 text-[0.68rem] text-emerald-400 font-semibold">

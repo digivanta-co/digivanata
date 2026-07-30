@@ -93,22 +93,19 @@ export default function RdWhyNeed() {
           ))}
         </ul>
 
-        <div className="mx-auto mt-10 max-w-6xl space-y-4 text-center">
-          <p className="rd-whyneed__closer text-[var(--rd-muted)]">{RD_WHY_NEED.after[0]}
-
-
-          A professional Digital Marketing Agency in Delhi helps solve these challenges using proven online marketing strategies.
-
-At Digivanta, we understand that every business is different. We create customized digital marketing plans based on your business goals, industry competition, audience behavior, and market trends.
-
-Our goal is simple:
-Help your business become visible where your customers are searching.
+        <div className="mx-auto mt-10 max-w-4xl space-y-4 text-center">
+          <p className="rd-whyneed__closer text-sm sm:text-base leading-relaxed text-[var(--rd-muted)]">
+            A professional Digital Marketing Agency in Delhi helps solve these challenges using proven online marketing strategies.
           </p>
-          {/* <p className="rd-whyneed__closer text-[var(--rd-muted)]">{RD_WHY_NEED.after[1]}</p>
-            <span className="text-[var(--rd-blue)]">{RD_WHY_NEED.goalLabel}</span>{" "}
-          <p className="rd-whyneed__closer text-lg font-semibold text-[var(--rd-ink)]">
-            {RD_WHY_NEED.goal}
-          </p> */}
+          <p className="rd-whyneed__closer text-sm sm:text-base leading-relaxed text-[var(--rd-muted)]">
+            At Digivanta, we understand that every business is different. We create customized digital marketing plans based on your business goals, industry competition, audience behavior, and market trends.
+          </p>
+          <div className="pt-2">
+            <span className="rd-whyneed__closer text-xs uppercase tracking-wider font-bold text-[var(--rd-blue)]">Our goal is simple:</span>
+            <p className="rd-whyneed__closer mt-1 text-base sm:text-xl font-bold text-[var(--rd-ink)]">
+              Help your business become visible where your customers are searching.
+            </p>
+          </div>
         </div>
       </div>
     </section>

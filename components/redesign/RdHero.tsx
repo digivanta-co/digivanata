@@ -7,93 +7,167 @@ import { CONTACT } from "@/lib/site-data";
 import { RD_HERO_WORDS, RD_PAGE_TITLE } from "@/lib/redesign-data";
 import { RdMagnetic } from "./primitives";
 import { ArrowRight } from "@/components/ui/Icons";
+import Image from "next/image";
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 const useIso = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
+/* orbit geometry — ONE shared centre (220,220) in a 440 viewBox, i.e. the exact
+   middle of the 520×520 stage. All rings are concentric (same centre, increasing
+   radii); radii are kept small enough that a ring's badge (~27px half) never
+   reaches the stage edge, so the whole illustration stays inside 520×520. */
+const C = 220;
+const RINGS = {
+  outer: { rx: 178, ry: 106 },
+  mid: { rx: 128, ry: 76 },
+  inner: { rx: 80, ry: 48 },
+};
+
+/* platform badges — evenly placed, tied to a ring's speed/direction */
+type Badge = { icon: string; label: string; ring: keyof typeof RINGS; startDeg: number; period: number; dir: 1 | -1 };
+const BADGES: Badge[] = [
+  { icon: "/googleads.svg", label: "Google Ads", ring: "outer", startDeg: -58, period: 28, dir: 1 },
+  { icon: "/hubspot.svg", label: "HubSpot", ring: "outer", startDeg: 122, period: 28, dir: 1 },
+  { icon: "/googleanalytics.svg", label: "Google Analytics", ring: "mid", startDeg: 34, period: 18, dir: -1 },
+  { icon: "/meta.svg", label: "Meta", ring: "mid", startDeg: 214, period: 18, dir: -1 },
+  { icon: "/openai-chatgpt.svg", label: "ChatGPT", ring: "inner", startDeg: -90, period: 12, dir: 1 },
+];
+
+/* glowing nodes drifting along the paths */
+const NODES = [
+  { ring: "outer" as const, startDeg: 60, period: 34, dir: 1 as const, c: "#286FAB" },
+  { ring: "mid" as const, startDeg: 150, period: 22, dir: -1 as const, c: "#C9A227" },
+  { ring: "inner" as const, startDeg: 20, period: 15, dir: 1 as const, c: "#286FAB" },
+];
+
 export default function RdHero() {
   const root = useRef<HTMLElement | null>(null);
   const blobs = useRef<HTMLDivElement | null>(null);
+  const stage = useRef<HTMLDivElement | null>(null);
 
   useIso(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const ctx = gsap.context(() => {
-      const growth = root.current!.querySelector<SVGPathElement>(".rd-hero__growth");
-      if (growth) {
-        const len = growth.getTotalLength();
-        gsap.set(growth, { strokeDasharray: len, strokeDashoffset: len });
-      }
+      const scope = stage.current!;
+      const badgeEls = gsap.utils.toArray<HTMLElement>("[data-badge]", scope);
+      const nodeEls = gsap.utils.toArray<SVGGElement>("[data-node]", scope);
+
+      /* place an HTML badge (left/top %) or an SVG node (transform) on an ellipse */
+      const placeBadge = (el: HTMLElement, r: { rx: number; ry: number }, ang: number) => {
+        el.style.left = `${((C + r.rx * Math.cos(ang)) / 440) * 100}%`;
+        el.style.top = `${((C + r.ry * Math.sin(ang)) / 440) * 100}%`;
+      };
+      const placeNode = (el: SVGGElement, r: { rx: number; ry: number }, ang: number) => {
+        el.setAttribute("transform", `translate(${C + r.rx * Math.cos(ang)}, ${C + r.ry * Math.sin(ang)})`);
+      };
+
+      /* badges orbit via trig (not by rotating the svg) */
+      badgeEls.forEach((el, i) => {
+        const b = BADGES[i];
+        const r = RINGS[b.ring];
+        const start = (b.startDeg * Math.PI) / 180;
+        placeBadge(el, r, start);
+        if (reduce) return;
+        const p = { a: start };
+        gsap.to(p, {
+          a: start + b.dir * Math.PI * 2,
+          duration: b.period,
+          ease: "none",
+          repeat: -1,
+          onUpdate: () => placeBadge(el, r, p.a),
+        });
+      });
+
+      /* drifting nodes */
+      nodeEls.forEach((el, i) => {
+        const n = NODES[i];
+        const r = RINGS[n.ring];
+        const start = (n.startDeg * Math.PI) / 180;
+        placeNode(el, r, start);
+        if (reduce) return;
+        const p = { a: start };
+        gsap.to(p, {
+          a: start + n.dir * Math.PI * 2,
+          duration: n.period,
+          ease: "none",
+          repeat: -1,
+          onUpdate: () => placeNode(el, r, p.a),
+        });
+      });
+
+      if (reduce) return;
+
+      /* centre logo — slow breathe, glow pulse, tiny drift-rotate */
+      gsap.to(".rd-core__disc", { scale: 1.045, duration: 2.6, ease: "sine.inOut", yoyo: true, repeat: -1 });
+      gsap.to(".rd-core__glow", { opacity: 0.9, scale: 1.14, transformOrigin: "50% 50%", duration: 2.6, ease: "sine.inOut", yoyo: true, repeat: -1 });
+      gsap.to(".rd-core__mark", { rotate: 4, transformOrigin: "50% 50%", duration: 7, ease: "sine.inOut", yoyo: true, repeat: -1 });
+      /* rings quietly shimmer */
+      gsap.to(".rd-hero-ring", { opacity: "-=0.18", duration: 3.4, ease: "sine.inOut", yoyo: true, repeat: -1, stagger: 0.6 });
+
+      /* self-drawing gold underline in the copy */
       const uline = root.current!.querySelector<SVGPathElement>(".rd-hero__uline");
       if (uline) {
         const len = uline.getTotalLength();
         gsap.set(uline, { strokeDasharray: len, strokeDashoffset: len });
       }
+
+      /* intro (fromTo so Strict Mode double-mount can't leave text hidden) */
       const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-      tl.from(".rd-hero__eyebrow", { y: 20, autoAlpha: 0, duration: 0.6 })
-        .from(
-          ".rd-hero__char",
-          { yPercent: 120, rotate: 8, transformOrigin: "0% 100%", autoAlpha: 0, duration: 0.9, stagger: 0.03 },
-          "-=0.2"
-        )
-        .from(".rd-hero__title", { y: 20, autoAlpha: 0, duration: 0.7 }, "-=0.5")
-        .from(".rd-hero__cta > *", { y: 22, autoAlpha: 0, duration: 0.6, stagger: 0.1 }, "-=0.4")
-        .from(".rd-hero__viz", { autoAlpha: 0, x: 40, duration: 1 }, "-=0.8")
-        .from(".rd-hero__bar", { scaleY: 0, transformOrigin: "bottom", duration: 0.8, stagger: 0.1 }, "-=0.6");
-      if (growth) tl.to(growth, { strokeDashoffset: 0, duration: 1, ease: "power2.out" }, "-=0.5");
-      if (uline) tl.to(uline, { strokeDashoffset: 0, duration: 0.7, ease: "power2.inOut" }, "-=0.9");
-      tl.from(
-        ".rd-hero__pt",
-        { scale: 0, transformOrigin: "50% 50%", duration: 0.4, ease: "back.out(2.5)", stagger: 0.07 },
-        "-=0.7"
-      ).from(
-        ".rd-hero__pill",
-        { scale: 0, autoAlpha: 0, duration: 0.5, ease: "back.out(2)" },
-        "-=0.3"
-      );
+      tl.fromTo(
+        ".rd-hero__char",
+        { yPercent: 120, rotate: 8, autoAlpha: 0, transformOrigin: "0% 100%" },
+        { yPercent: 0, rotate: 0, autoAlpha: 1, duration: 0.9, stagger: 0.03 }
+      )
+        .fromTo(".rd-hero__title", { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7 }, "-=0.5")
+        .fromTo(".rd-hero__cta > *", { y: 22, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.1 }, "-=0.4")
+        .fromTo(".rd-viz-scene", { autoAlpha: 0, scale: 0.92, transformOrigin: "50% 50%" }, { autoAlpha: 1, scale: 1, duration: 1, ease: "power3.out" }, "-=0.8")
+        .fromTo(".rd-core", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.7, ease: "back.out(2)" }, "-=0.7")
+        .fromTo(
+          "[data-badge-fx]",
+          { autoAlpha: 0, scale: 0.3 },
+          { autoAlpha: 1, scale: 1, duration: 0.55, stagger: 0.08, ease: "back.out(1.9)", clearProps: "transform" },
+          "-=0.5"
+        );
+      if (uline) tl.to(uline, { strokeDashoffset: 0, duration: 0.7, ease: "power2.inOut" }, "-=0.6");
 
-      // last data point keeps pulsing — "live" growth
-      gsap.to(".rd-hero__pt:last-of-type", {
-        scale: 1.6,
-        transformOrigin: "50% 50%",
-        duration: 0.9,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-        delay: 2.4,
-      });
-
-      // hero content drifts up + fades slightly as you scroll away (depth)
+      /* hero drifts up on scroll-away; blobs sink slower */
       gsap.to(".rd-hero__parallax", {
         yPercent: -8,
-        autoAlpha: 0.25,
         ease: "none",
-        scrollTrigger: { trigger: root.current, start: "top top", end: "bottom top", scrub: true },
+        force3D: true,
+        scrollTrigger: { trigger: root.current, start: "top top", end: "bottom top", scrub: 0.5 },
       });
-      // blobs sink slower than the content — parallax layering
       if (blobs.current)
         gsap.to(blobs.current, {
           y: 120,
           ease: "none",
-          scrollTrigger: { trigger: root.current, start: "top top", end: "bottom top", scrub: true },
+          force3D: true,
+          scrollTrigger: { trigger: root.current, start: "top top", end: "bottom top", scrub: 0.5 },
         });
     }, root);
     return () => ctx.revert();
   }, []);
 
-  // mouse parallax
+  /* mouse parallax on the blobs */
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const el = blobs.current;
-    if (!el) return;
-    const kids = Array.from(el.children) as HTMLElement[];
+    const blobEl = blobs.current;
+    const blobKids = blobEl ? (Array.from(blobEl.children) as HTMLElement[]) : [];
+    let ticking = false;
     const onMove = (e: MouseEvent) => {
-      const cx = e.clientX / window.innerWidth - 0.5;
-      const cy = e.clientY / window.innerHeight - 0.5;
-      kids.forEach((n, i) => {
-        gsap.to(n, { x: cx * (i + 1) * 24, y: cy * (i + 1) * 24, duration: 0.9, ease: "power2.out" });
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const cx = e.clientX / window.innerWidth - 0.5;
+        const cy = e.clientY / window.innerHeight - 0.5;
+        blobKids.forEach((n, i) =>
+          gsap.to(n, { x: cx * (i + 1) * 16, y: cy * (i + 1) * 16, duration: 0.8, ease: "power2.out", force3D: true })
+        );
+        ticking = false;
       });
     };
-    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mousemove", onMove, { passive: true });
     return () => window.removeEventListener("mousemove", onMove);
   }, []);
 
@@ -107,59 +181,39 @@ export default function RdHero() {
         <div className="rd-blob rd-blob--gold rd-blob--float bottom-[10%] left-[38%] size-[24vw] max-w-[360px]" style={{ animationDelay: "-7s" }} />
       </div>
 
-      {/* two-column at every size so the phone layout mirrors desktop */}
-      <div className="rd-hero__parallax container relative z-10 grid grid-cols-[1.15fr_0.85fr] items-center gap-4 sm:gap-8 lg:gap-14">
+      <div className="rd-hero__parallax container relative z-10 grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14 pt-2 sm:pt-0">
         {/* copy */}
-        <div>
-
-          {/* Decorative oversized wordmark */}
+        <div className="text-center lg:text-left">
           <div aria-hidden className="rd-display rd-hero__words text-[var(--rd-ink)]">
             {RD_HERO_WORDS.map((w, wi) => (
               <span key={wi} className="relative block">
                 <span className="block overflow-hidden">
-                <span className="block">
-                  {Array.from(w).map((ch, ci) => (
-                    <span
-                      key={ci}
-                      className={
-                        "rd-hero__char inline-block " +
-                        (wi === 3 ? "text-[var(--rd-blue)]" : "")
-                      }
-                      style={{ whiteSpace: ch === " " ? "pre" : "normal" }}
-                    >
-                      {ch === " " ? " " : ch}
-                    </span>
-                  ))}
+                  <span className="block">
+                    {Array.from(w).map((ch, ci) => (
+                      <span
+                        key={ci}
+                        className={"rd-hero__char inline-block " + (wi === 3 ? "text-[var(--rd-blue)]" : "")}
+                        style={{ whiteSpace: ch === " " ? "pre" : "normal" }}
+                      >
+                        {ch === " " ? " " : ch}
+                      </span>
+                    ))}
+                  </span>
                 </span>
-                </span>
-                {/* self-drawing gold underline beneath the accent word */}
                 {wi === 3 && (
-                  <svg
-                    aria-hidden
-                    viewBox="0 0 300 16"
-                    preserveAspectRatio="none"
-                    className="absolute -bottom-1 left-0 h-[0.12em] w-[62%]"
-                  >
-                    <path
-                      className="rd-hero__uline"
-                      d="M4 11 C 80 3, 210 4, 296 9"
-                      fill="none"
-                      stroke="#C9A227"
-                      strokeWidth="6"
-                      strokeLinecap="round"
-                    />
+                  <svg aria-hidden viewBox="0 0 300 16" preserveAspectRatio="none" className="absolute -bottom-1 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 h-[0.12em] w-[62%] max-w-[260px] lg:max-w-none">
+                    <path className="rd-hero__uline" d="M4 11 C 80 3, 210 4, 296 9" fill="none" stroke="#C9A227" strokeWidth="6" strokeLinecap="round" />
                   </svg>
                 )}
               </span>
             ))}
           </div>
 
-          {/* Exact SEO H1 — preserved verbatim */}
-          <h1 className="rd-hero__title mt-4 max-w-xl text-xs font-medium leading-relaxed text-[var(--rd-muted)] sm:mt-7 sm:text-lg lg:text-xl">
+          <h1 className="rd-hero__title mt-3 sm:mt-7 max-w-xl mx-auto lg:mx-0 text-sm sm:text-lg lg:text-xl font-medium leading-relaxed text-[var(--rd-muted)]">
             {RD_PAGE_TITLE}
           </h1>
 
-          <div className="rd-hero__cta mt-5 flex flex-wrap items-center gap-2.5 sm:mt-9 sm:gap-4">
+          <div className="rd-hero__cta mt-6 sm:mt-9 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
             <RdMagnetic href="#contact">
               Get a Free Consultation <ArrowRight />
             </RdMagnetic>
@@ -169,80 +223,73 @@ export default function RdHero() {
           </div>
         </div>
 
-        {/* animated digital-growth SVG */}
-        <div className="rd-hero__viz relative mx-auto w-full max-w-[440px]">
-          {/* slow-rotating dashed ring behind the card */}
-          <svg
-            aria-hidden
-            viewBox="0 0 200 200"
-            className="absolute -right-5 -top-5 size-20 text-[var(--rd-blue)]/25 sm:-right-12 sm:-top-12 sm:size-44"
-          >
-            <g className="rd-orbit-spin">
-              <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 10" />
-              <circle cx="100" cy="10" r="4" fill="#C9A227" />
-            </g>
-          </svg>
-          <div className="rd-glass rd-float-slow p-3.5 sm:p-7">
-            <div className="mb-3 flex items-center justify-between sm:mb-6">
-              <span className="text-[0.68rem] font-semibold text-[var(--rd-ink)] sm:text-sm">
-                Growth Snapshot
-              </span>
-              <span className="rd-hero__pill rounded-full bg-[var(--rd-blue-soft)] px-2 py-0.5 text-[0.6rem] font-semibold text-[var(--rd-blue)] sm:px-3 sm:py-1 sm:text-xs">
-                +142%
-              </span>
-            </div>
-            <svg viewBox="0 0 320 200" className="w-full" role="img" aria-label="Digital growth chart">
+        {/* ===== premium orbital ecosystem — responsive mobile & desktop stage ===== */}
+        <div className="rd-hero__viz relative mx-auto w-full max-w-[320px] sm:max-w-[440px] lg:max-w-[520px] mt-2 lg:mt-0">
+          {/* soft background glows (<15%) */}
+          <div aria-hidden className="pointer-events-none absolute left-[14%] top-[10%] size-[64%] rounded-full bg-[radial-gradient(circle,rgba(40,111,171,0.18),transparent_70%)] blur-2xl" />
+          <div aria-hidden className="pointer-events-none absolute bottom-[8%] right-[12%] size-[48%] rounded-full bg-[radial-gradient(circle,rgba(201,162,39,0.15),transparent_70%)] blur-2xl" />
+
+          <div ref={stage} className="relative aspect-square w-full">
+            {/* rings + drifting nodes */}
+            <svg viewBox="0 0 440 440" className="rd-viz-scene absolute inset-0 size-full [overflow:visible]" aria-hidden>
               <defs>
-                <linearGradient id="rdBar" x1="0" y1="1" x2="0" y2="0">
-                  <stop offset="0%" stopColor="#286FAB" stopOpacity="0.25" />
-                  <stop offset="100%" stopColor="#286FAB" />
+                <linearGradient id="rdInnerStroke" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#286FAB" stopOpacity="0.05" />
+                  <stop offset="50%" stopColor="#286FAB" stopOpacity="0.5" />
+                  <stop offset="100%" stopColor="#286FAB" stopOpacity="0.05" />
                 </linearGradient>
+                <filter id="rdRingGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="2.2" result="b" />
+                  <feMerge>
+                    <feMergeNode in="b" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
               </defs>
-              {[60, 95, 80, 130, 115, 165].map((h, i) => (
-                <rect
-                  key={i}
-                  className="rd-hero__bar"
-                  x={20 + i * 50}
-                  y={190 - h}
-                  width="30"
-                  height={h}
-                  rx="6"
-                  fill="url(#rdBar)"
-                />
-              ))}
-              <path
-                className="rd-hero__growth"
-                d="M35 150 L85 120 L135 130 L185 80 L235 92 L300 40"
-                fill="none"
-                stroke="#C9A227"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              {[[35,150],[85,120],[135,130],[185,80],[235,92],[300,40]].map(([x,y],i)=>(
-                <circle key={i} className="rd-hero__pt" cx={x} cy={y} r="4" fill="#C9A227" />
+
+              <g filter="url(#rdRingGlow)">
+                <ellipse className="rd-hero-ring" cx={C} cy={C} rx={RINGS.outer.rx} ry={RINGS.outer.ry} fill="none" stroke="rgba(23,75,155,0.55)" strokeWidth="1.5" />
+                <ellipse className="rd-hero-ring" cx={C} cy={C} rx={RINGS.mid.rx} ry={RINGS.mid.ry} fill="none" stroke="rgba(201,162,39,0.75)" strokeWidth="1.5" strokeDasharray="1 7" strokeLinecap="round" />
+                <ellipse className="rd-hero-ring" cx={C} cy={C} rx={RINGS.inner.rx} ry={RINGS.inner.ry} fill="none" stroke="url(#rdInnerStroke)" strokeWidth="1.5" />
+              </g>
+
+              {NODES.map((n, i) => (
+                <g key={i} data-node>
+                  <circle r="7" fill={n.c} opacity="0.18" />
+                  <circle r="2.6" fill={n.c} />
+                </g>
               ))}
             </svg>
-            <div className="mt-3 grid grid-cols-3 gap-1.5 text-center sm:mt-6 sm:gap-3">
-              {[
-                { n: "800+", l: "Clients" },
-                { n: "16+", l: "Years" },
-                { n: "3.2×", l: "ROAS" },
-              ].map((s) => (
-                <div key={s.l} className="rounded-xl bg-[var(--rd-gray)] py-1.5 sm:py-3">
-                  <div className="rd-display text-xs text-[var(--rd-ink)] sm:text-xl">{s.n}</div>
-                  <div className="text-[0.55rem] text-[var(--rd-muted)] sm:text-xs">{s.l}</div>
-                </div>
-              ))}
+
+            {/* centre — glass Digivanta logo */}
+            <div className="rd-core absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="rd-core__glow pointer-events-none absolute -inset-7 rounded-full bg-[radial-gradient(circle,rgba(201,162,39,0.4),transparent_68%)] opacity-70" />
+              <div className="rd-core__disc relative grid size-[clamp(76px,20vw,104px)] place-items-center rounded-full border-2 border-[#C9A227]/70  shadow-[0_22px_50px_-14px_rgba(15,45,82,0.75),inset_0_1px_3px_rgba(255,255,255,0.18)]">
+               <Image src="/digivanta.png" alt="Digivanta" width={100} height={50}/>
+              </div>
             </div>
+
+            {/* orbiting platform badges */}
+            {BADGES.map((b) => (
+              <div key={b.label} data-badge className="absolute left-0 top-0">
+                <div className="-translate-x-1/2 -translate-y-1/2">
+                  <div
+                    data-badge-fx
+                    title={b.label}
+                    className="grid size-[clamp(40px,10.5vw,54px)] place-items-center rounded-full border border-white/70 bg-white/80 shadow-[0_10px_26px_-8px_rgba(15,45,82,0.3)] backdrop-blur-md transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_34px_-10px_rgba(15,45,82,0.4)]"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={b.icon} alt={b.label} className="size-[54%] object-contain" draggable={false} />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
       <div className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3">
-        <span className="text-[0.68rem] uppercase tracking-[0.3em] text-[var(--rd-muted)]">
-          Scroll
-        </span>
+        <span className="text-[0.68rem] uppercase tracking-[0.3em] text-[var(--rd-muted)]">Scroll</span>
         <span aria-hidden className="rd-scrolldown" />
       </div>
     </section>

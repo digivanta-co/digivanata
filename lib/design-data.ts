@@ -15,7 +15,7 @@ export const GD_HERO = {
   meta: [
     { n: "0.05s", l: "First impression window" },
     { n: "800+", l: "Brands served in NCR" },
-    { n: "16+", l: "Years of creative work" },
+    { n: "1+", l: "Years of creative work" },
   ],
   marquee: ["Logo", "Branding", "Social", "Packaging", "Print", "UI Graphics"],
 };
@@ -47,7 +47,7 @@ export const GD_IMPACT = {
   ],
   stats: [
     { value: 800, suffix: "+", label: "Happy clients across Delhi NCR" },
-    { value: 16, suffix: "+", label: "Years of creative experience" },
+    { value: 1, suffix: "+", label: "Years of creative experience" },
     { value: 100, suffix: "%", label: "Brand-consistent deliverables" },
   ],
 };

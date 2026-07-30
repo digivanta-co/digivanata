@@ -127,7 +127,7 @@ export const DIGITAL_BENEFITS = [
 export const STATS = [
   { value: "800+", label: "Happy Clients" },
   { value: "Award", label: "Winning Agency" },
-  { value: "16+", label: "Years Experience" },
+  { value: "1+", label: "Years Experience" },
 ];
 
 // Headline outcome metrics for the dark "track record" band

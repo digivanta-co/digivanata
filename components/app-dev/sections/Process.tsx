@@ -83,7 +83,7 @@ export function SupportSection() {
           {APP_SUPPORT.map((s) => (
             <div
               key={s}
-              className="flex items-center gap-3 rounded-2xl border border-white/70 bg-white/65 px-5 py-4 shadow-[0_10px_30px_rgba(40,111,171,0.06)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+              className="flex items-center gap-3 rounded-2xl border border-white/70 bg-white/95 px-5 py-4 shadow-[0_10px_30px_rgba(40,111,171,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90"
             >
               <span className="grid size-7 shrink-0 place-items-center rounded-lg bg-[linear-gradient(135deg,#286FAB,#286FAB)] text-white">
                 <Check size={15} strokeWidth={3} />

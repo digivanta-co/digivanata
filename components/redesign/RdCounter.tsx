@@ -60,7 +60,7 @@ function Metric({ raw, label, index }: { raw: string; label: string; index: numb
       <motion.div
         animate={finished ? { scale: [1, 1.1, 1] } : {}}
         transition={{ duration: 0.45, ease: "easeOut" }}
-        className="rd-display text-[clamp(2.6rem,6vw,4.6rem)] leading-none text-[var(--rd-ink)]"
+        className="rd-display text-[clamp(1.85rem,5.5vw,4.6rem)] leading-none text-[var(--rd-ink)]"
       >
         {prefix}
         {val.toFixed(decimals)}
@@ -70,9 +70,9 @@ function Metric({ raw, label, index }: { raw: string; label: string; index: numb
         aria-hidden
         animate={finished ? { scaleX: 1 } : { scaleX: 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto mt-3 block h-0.5 w-8 origin-center rounded bg-[var(--rd-gold)]"
+        className="mx-auto mt-2.5 block h-0.5 w-8 origin-center rounded bg-[var(--rd-gold)]"
       />
-      <div className="mt-2 text-sm uppercase tracking-[0.18em] text-[var(--rd-muted)]">
+      <div className="mt-2 text-xs sm:text-sm uppercase tracking-[0.14em] sm:tracking-[0.18em] text-[var(--rd-muted)]">
         {label}
       </div>
     </motion.div>

@@ -43,7 +43,7 @@ export function StatisticsSection() {
 
         <div ref={glanceRef} className="mx-auto mt-14 flex max-w-4xl flex-wrap justify-center gap-3">
           {APP_GLANCE.map((g) => (
-            <span key={g} className="glance-item rounded-full border border-white/12 bg-white/[0.05] px-4 py-2 text-[0.84rem] font-medium text-slate-200 backdrop-blur">
+            <span key={g} className="glance-item rounded-full border border-white/12 bg-white/[0.05] px-4 py-2 text-[0.84rem] font-medium text-slate-200">
               {g}
             </span>
           ))}

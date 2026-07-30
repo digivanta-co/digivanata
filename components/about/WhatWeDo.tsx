@@ -87,7 +87,7 @@ export default function WhatWeDo() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: (i % 3) * 0.08 }}
-                className="group mb-6 break-inside-avoid rounded-[24px] border border-slate-200/70 bg-white/70 p-7 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_12px_32px_-16px_rgba(15,23,42,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#235EA7]/30 hover:shadow-[0_28px_60px_-24px_rgba(35,94,167,0.45)]"
+                className="group mb-6 break-inside-avoid rounded-[24px] border border-slate-200/70 bg-white/95 p-7 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_12px_32px_-16px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-[#235EA7]/30 hover:shadow-[0_28px_60px_-24px_rgba(35,94,167,0.45)]"
               >
                 <span
                   className={

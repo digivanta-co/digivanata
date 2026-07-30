@@ -7,17 +7,17 @@ export const WEB_HERO = {
   primaryCta: "Start Your Project",
   ghostCta: "View Features",
   meta: [
-    { n: "200+", l: "Projects Delivered" },
+    { n: "100%", l: "Project Delivered" },
     { n: "98%", l: "Client Satisfaction" },
     { n: "<1.2s", l: "Average Load Time" },
-    { n: "5+", l: "Years Experience" },
+    { n: "1+", l: "Years Experience" },
   ],
 };
 
 export const WEB_STATS = [
-  { value: 200, suffix: "+", label: "Projects Delivered" },
+  { value: 100, suffix: "%", label: "Project Delivered" },
   { value: 98, suffix: "%", label: "Client Satisfaction" },
-  { value: 5, suffix: "+", label: "Years Experience" },
+  { value: 1, suffix: "+", label: "Years Experience" },
   { value: 100, suffix: "%", label: "Mobile Responsive" },
 ];
 

@@ -168,7 +168,7 @@ export function AiPlatformsSection() {
               </ul>
             </div>
 
-            <div className="sv-ai__item rounded-3xl border border-white/12 bg-white/[0.05] p-7 backdrop-blur-sm">
+            <div className="sv-ai__item rounded-3xl border border-white/12 bg-white/[0.05] p-7">
               <h3 className="m-0 text-lg font-bold text-white">Visibility Across Platforms</h3>
               <ul className="m-0 mt-5 grid list-none gap-3.5 p-0">
                 {SEO_AI_PLATFORMS.visibilityAcross.map((platform, i) => (

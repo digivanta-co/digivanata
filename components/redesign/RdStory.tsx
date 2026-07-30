@@ -17,27 +17,27 @@ export default function RdStory() {
 
     const ctx = gsap.context(() => {
       const lines = gsap.utils.toArray<HTMLElement>(".rd-story__line");
-      gsap.set(lines, { autoAlpha: 0, y: 60, scale: 0.94, filter: "blur(10px)" });
+      gsap.set(lines, { autoAlpha: 0, y: 50, scale: 0.95 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: root.current,
           start: "center center",
-          end: "+=" + lines.length * 220,
+          end: "+=" + lines.length * 200,
           pin: true,
-          scrub: 0.6,
+          scrub: 0.5,
           anticipatePin: 1,
           invalidateOnRefresh: true,
           onUpdate: (self) => gsap.set(".rd-story__progFill", { scaleX: self.progress }),
         },
       });
 
-      // each line arrives from below out of focus, sharpens, then floats past the camera
+      // each line arrives from below, then floats up cleanly — GPU accelerated
       lines.forEach((line, i) => {
-        tl.to(line, { autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.4 })
+        tl.to(line, { autoAlpha: 1, y: 0, scale: 1, duration: 0.4, force3D: true })
           .to(
             line,
-            { autoAlpha: 0, y: -60, scale: 1.05, filter: "blur(8px)", duration: 0.4 },
+            { autoAlpha: 0, y: -50, scale: 1.04, duration: 0.4, force3D: true },
             i === lines.length - 1 ? ">" : ">+=0.3"
           );
       });

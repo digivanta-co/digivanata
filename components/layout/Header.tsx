@@ -106,10 +106,14 @@ export default function Header() {
       <div
         aria-hidden
         className={
-          "absolute inset-0 -z-10 backdrop-blur-xl transition-all duration-300 " +
+          // Solid background (no backdrop-filter): the sticky header is always
+          // on screen, and a backdrop blur re-samples + re-blurs its backdrop on
+          // every scroll frame — the biggest single source of scroll jank. An
+          // opaque white bar looks nearly identical (it was already 80–95% white).
+          "absolute inset-0 -z-10 transition-all duration-300 " +
           (scrolled
-            ? "bg-white/95 shadow-[0_8px_30px_rgba(13,18,41,0.06)]"
-            : "bg-white/80")
+            ? "bg-white shadow-[0_8px_30px_rgba(13,18,41,0.06)]"
+            : "bg-white/90")
         }
       />
       <div

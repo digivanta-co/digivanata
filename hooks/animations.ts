@@ -12,6 +12,20 @@ import { gsap, ScrollTrigger, reduced, REVEAL_FROM, REVEAL_TO, EASE, type Reveal
 // run before paint on the client so there's no flash of un-animated content
 const useIso = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
+/* Coalesced ScrollTrigger.refresh — dozens of reveal hooks mount together on
+   load; refreshing once per hook forces a full layout recalc each time
+   (O(n²) reflow thrash that stutters the first scrolls). Batch them into a
+   single refresh on the next frame instead. */
+let refreshQueued = false;
+function scheduleRefresh() {
+  if (refreshQueued) return;
+  refreshQueued = true;
+  requestAnimationFrame(() => {
+    refreshQueued = false;
+    ScrollTrigger.refresh();
+  });
+}
+
 /** Fade / slide / scale / blur / rotate an element in as it enters the viewport. */
 export function useReveal<T extends HTMLElement = HTMLDivElement>(opts: {
   variant?: RevealVariant;
@@ -34,7 +48,7 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(opts: {
       });
     }, el);
     // Refresh ScrollTrigger after paint to ensure initial triggers evaluate on first load
-    requestAnimationFrame(() => ScrollTrigger.refresh());
+    scheduleRefresh();
     return () => ctx.revert();
   }, [variant, delay, duration, start]);
   return ref;
@@ -71,7 +85,7 @@ export function useStagger<T extends HTMLElement = HTMLDivElement>(opts: {
         }
       );
     }, el);
-    requestAnimationFrame(() => ScrollTrigger.refresh());
+    scheduleRefresh();
     return () => ctx.revert();
   }, [selector, y, scale, duration, stagger, start]);
   return ref;
@@ -107,7 +121,7 @@ export function useTextReveal<T extends HTMLElement = HTMLHeadingElement>(opts: 
         }
       );
     }, el);
-    requestAnimationFrame(() => ScrollTrigger.refresh());
+    scheduleRefresh();
     return () => ctx.revert();
   }, [selector, stagger, start]);
   return ref;

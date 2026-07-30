@@ -96,7 +96,7 @@ export function RdTilt({
         px.set(0.5);
         py.set(0.5);
       }}
-      style={{ rotateX: rx, rotateY: ry, transformPerspective: 900 }}
+      style={{ rotateX: rx, rotateY: ry, transformPerspective: 900, willChange: "transform" }}
       className={className}
     >
       {children}
@@ -144,7 +144,7 @@ export function RdHeadingFx() {
             duration: 0.65,
             ease: "power4.out",
             stagger: 0.04,
-            scrollTrigger: { trigger: h, start: "top 92%" },
+            scrollTrigger: { trigger: h, start: "top 95%", once: true },
           });
         });
       });
@@ -157,9 +157,14 @@ export function RdHeadingFx() {
   return null;
 }
 
-/* Top scroll-progress bar. */
+/* Top scroll-progress bar — lightweight GPU accelerated transform. */
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
-  return <motion.div aria-hidden style={{ scaleX }} className="rd-progress" />;
+  return (
+    <motion.div
+      aria-hidden
+      style={{ scaleX: scrollYProgress, transformOrigin: "0% 50%", willChange: "transform" }}
+      className="rd-progress"
+    />
+  );
 }

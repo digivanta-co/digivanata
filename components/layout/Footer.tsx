@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CONTACT, FOOTER_LINKS, SOCIAL } from "@/lib/site-data";
 import { RD_FOOTER, RD_FOOTER_SERVICES } from "@/lib/redesign-data";
 import { Phone, Mail, MapPin, SocialIcon, ArrowRight } from "@/components/ui/Icons";
+import Image from "next/image";
 
 /* Animated-underline link (self-contained, no scoped CSS needed). */
 function AniLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -62,7 +63,7 @@ export default function Footer() {
         {/* big brand wordmark */}
         <div className="mb-14">
           <div className="font-[family-name:var(--font-display),var(--font)] text-[clamp(2.5rem,7vw,5rem)] font-bold uppercase leading-[0.9] tracking-tight text-white">
-           <img src="/digi-vanta-logo.png" alt="" />
+           <Image src="/digivanta.png" alt="" width={28} height={28}/>
           </div>
           <p className="mt-4 max-w-2xl text-white/60">{RD_FOOTER.brandLine}</p>
           <p className="mt-2 max-w-2xl text-white/50">{RD_FOOTER.about}</p>

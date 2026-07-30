@@ -31,7 +31,7 @@ function Phone3D() {
                   <span className="grid size-6 place-items-center rounded-full bg-white/15 text-[0.7rem]">3</span>
                 </div>
                 <p className="mt-1 text-lg font-bold">Good morning 👋</p>
-                <div className="mt-3 flex items-center gap-2 rounded-xl bg-white/12 px-3 py-2 text-[0.72rem] text-white/90 backdrop-blur">
+                <div className="mt-3 flex items-center gap-2 rounded-xl bg-white/12 px-3 py-2 text-[0.72rem] text-white/90">
                   <span className="size-1.5 rounded-full bg-[#C9A227]" />
                   Revenue up 24% this week
                 </div>
@@ -88,14 +88,14 @@ function Phone3D() {
       {/* floating badges */}
       <div
         data-phone-badge="a"
-        className="absolute -left-8 top-16 hidden rounded-2xl border border-[#E5E7EB] bg-white/90 px-3 py-2 shadow-[0_16px_38px_rgba(40,111,171,0.18)] backdrop-blur sm:block"
+        className="absolute -left-8 top-16 hidden rounded-2xl border border-[#E5E7EB] bg-white/90 px-3 py-2 shadow-[0_16px_38px_rgba(40,111,171,0.18)] sm:block"
       >
         <p className="text-base font-bold text-[#C9A227]">4.9★</p>
         <p className="text-[0.62rem] text-[#64748B]">App rating</p>
       </div>
       <div
         data-phone-badge="b"
-        className="absolute -right-10 bottom-20 hidden rounded-2xl border border-[#E5E7EB] bg-white/90 px-3 py-2 shadow-[0_16px_38px_rgba(40,111,171,0.18)] backdrop-blur sm:block"
+        className="absolute -right-10 bottom-20 hidden rounded-2xl border border-[#E5E7EB] bg-white/90 px-3 py-2 shadow-[0_16px_38px_rgba(40,111,171,0.18)] sm:block"
       >
         <p className="text-base font-bold text-[#0F172A]">+210%</p>
         <p className="text-[0.62rem] text-[#64748B]">Engagement</p>

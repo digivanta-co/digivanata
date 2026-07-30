@@ -37,7 +37,7 @@ export function CTASection() {
               <Button href="#contact" variant="light">Put My Business on Every Phone</Button>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40"
               >
                 Discuss My Idea
               </a>

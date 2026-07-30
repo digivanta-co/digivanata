@@ -79,7 +79,7 @@ function SceneHead({
 }
 
 const cardCls =
-  "group relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/50 p-6 backdrop-blur transition-colors duration-300 hover:border-[#286fab]/50 hover:bg-slate-100/50";
+  "group relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/50 p-6 transition-colors duration-300 hover:border-[#286fab]/50 hover:bg-slate-100/50";
 const chipCls = "rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700";
 
 function StoryStat({ value, suffix, label }: { value: number; suffix?: string; label: string }) {
@@ -241,7 +241,7 @@ export default function AppStory() {
           <p className="intro-sub mx-auto mt-7 max-w-2xl text-[1.05rem] leading-relaxed text-slate-600">{APP_HERO.sub}</p>
           {/* 90% stat + areas */}
           <div className="mt-10 flex flex-col items-center gap-6">
-            <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-3 backdrop-blur">
+            <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-3">
               <span className="bg-[linear-gradient(120deg,#286fab,#3d96d4)] bg-clip-text text-3xl font-bold text-transparent">{APP_HERO.stat}%</span>
               <p className="max-w-[200px] text-left text-[0.8rem] leading-snug text-slate-600">{APP_HERO.statText}</p>
             </div>
@@ -463,7 +463,7 @@ export default function AppStory() {
           <SceneHead center eyebrow="Pricing Approach" title="Affordable development for" gradWord="startups & SMBs" desc={APP_PRICING.intro} />
           <div className="story-stagger mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
             {APP_PRICING.plans.map((plan) => (
-              <div key={plan.name} className={cn("relative rounded-3xl border p-7 backdrop-blur", plan.featured ? "border-[#286fab] bg-slate-50 lg:-translate-y-3" : "border-slate-200 bg-white")}>
+              <div key={plan.name} className={cn("relative rounded-3xl border p-7", plan.featured ? "border-[#286fab] bg-slate-50 lg:-translate-y-3" : "border-slate-200 bg-white")}>
                 {plan.featured && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[linear-gradient(120deg,#0c243d,#286fab)] px-4 py-1 text-[0.66rem] font-bold uppercase tracking-wide text-white">Most Popular</span>
                 )}
