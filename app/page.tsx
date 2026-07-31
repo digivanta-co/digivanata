@@ -37,7 +37,7 @@ export default function Home() {
       <RdProcess />
       <RdIndustries />
       <RdTools />
-      <RdCounter />
+    
       <RdResults />
       <RdFaq />
       <RdFinalCta />

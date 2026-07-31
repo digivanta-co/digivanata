@@ -107,7 +107,7 @@ export const TEAM_GROUPS = [
         name: "Ashutosh",
         role: "Software developer",
         badge: "Full-Stack & Performance",
-        photo: u("photo-1534528741775-53994a69daeb"),
+        photo: "/team/ashu.png",
         socials: [
           { type: "linkedin", href: "#" },
           { type: "github", href: "#" },

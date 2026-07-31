@@ -131,7 +131,7 @@ export const TOOLS = [
   { name: "Google AdSense", icon: "/googleads.svg" },
   { name: "100+ AI Tools", icon: "/ai.svg" },
   { name: " ", icon: "nextdotjs.svg" },
-  { name: "Angular ", icon: "Angular.svg" },
+  { name: "Angular ", icon: "Angularjs.svg" },
 ];
 
 export const FAQS = [

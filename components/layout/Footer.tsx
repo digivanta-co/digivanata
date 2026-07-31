@@ -63,7 +63,7 @@ export default function Footer() {
         {/* big brand wordmark */}
         <div className="mb-14">
           <div className="font-[family-name:var(--font-display),var(--font)] text-[clamp(2.5rem,7vw,5rem)] font-bold uppercase leading-[0.9] tracking-tight text-white">
-           <Image src="/digivanta.png" alt="" width={28} height={28}/>
+           <Image src="/whitelogo.png" alt="" width={400} height={400}/>
           </div>
           <p className="mt-4 max-w-2xl text-white/60">{RD_FOOTER.brandLine}</p>
           <p className="mt-2 max-w-2xl text-white/50">{RD_FOOTER.about}</p>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <li key={l.href}><AniLink href={l.href}>{l.label}</AniLink></li>
               ))}
             </ul>
-          </div>
+          </div>x
 
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#C9A227]">Our Services</h4>
