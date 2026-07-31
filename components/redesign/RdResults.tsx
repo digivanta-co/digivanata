@@ -14,7 +14,7 @@ export default function RdResults() {
   const root = useRef<HTMLElement | null>(null);
 
   useIso(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
     const ctx = gsap.context(() => {
       gsap.from(".rd-results__chip", {
         y: 20,

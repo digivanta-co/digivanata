@@ -5634,12 +5634,28 @@ html.lenis, html.lenis body { height: auto; }
     margin-top: 1.4rem;
   }
 
-  .rd-hero__cta .rd-btn {
-    width: min(100%, 320px);
+  .rd-actions {
+    width: 100%;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: .5rem !important;
+  }
+
+  .rd-actions .rd-btn {
+    width: calc(50% - .25rem) !important;
+    min-width: 0;
     min-height: 48px;
     justify-content: center;
-    padding: .8rem 1.2rem;
-    font-size: .88rem;
+    padding: .7rem .65rem;
+    font-size: clamp(.68rem, 3vw, .78rem);
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .rd-actions .rd-btn svg {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
   }
 
   .rd-hero__viz {
@@ -5708,6 +5724,22 @@ html.lenis, html.lenis body { height: auto; }
     transform: none !important;
     opacity: 1 !important;
     visibility: visible !important;
+  }
+
+  .rd-big__char,
+  .rd-final__word,
+  .rd-results__chip,
+  .rd-reveal,
+  .rd-focus__item,
+  .rd-journey__node,
+  .rd-step,
+  .rd-whyneed__card,
+  .rd-whyneed__closer,
+  .rd-why__item,
+  .rd-ind__item {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
   }
 }
 

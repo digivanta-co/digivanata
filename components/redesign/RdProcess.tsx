@@ -13,7 +13,7 @@ export default function RdProcess() {
   const root = useRef<HTMLElement | null>(null);
 
   useIso(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
     const ctx = gsap.context(() => {
       // fill the connecting line as the timeline scrolls through
       gsap.to(".rd-time-fill", {

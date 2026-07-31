@@ -14,7 +14,7 @@ export default function RdWhyNeed() {
   const root = useRef<HTMLElement | null>(null);
 
   useIso(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
     const ctx = gsap.context(() => {
       const bg = root.current!.querySelector<SVGPathElement>(".rd-whyneed__draw");
       if (bg) {

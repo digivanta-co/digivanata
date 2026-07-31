@@ -16,10 +16,10 @@ if (typeof window !== "undefined") {
 
 export { gsap, ScrollTrigger };
 
-/** Respect the user's OS-level reduced-motion preference. */
+/** Respect reduced motion and keep phone rendering independent of scroll triggers. */
 export const reduced = () =>
   typeof window !== "undefined" &&
-  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches;
 
 export type RevealVariant = "up" | "left" | "right" | "scale" | "blur" | "rotate";
 

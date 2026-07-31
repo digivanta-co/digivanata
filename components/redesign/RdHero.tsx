@@ -46,7 +46,7 @@ export default function RdHero() {
   const stage = useRef<HTMLDivElement | null>(null);
 
   useIso(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches;
 
     const ctx = gsap.context(() => {
       const scope = stage.current!;
@@ -151,7 +151,7 @@ export default function RdHero() {
 
   /* mouse parallax on the blobs */
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
     const blobEl = blobs.current;
     const blobKids = blobEl ? (Array.from(blobEl.children) as HTMLElement[]) : [];
     let ticking = false;
@@ -213,7 +213,7 @@ export default function RdHero() {
             {RD_PAGE_TITLE}
           </h1>
 
-          <div className="rd-hero__cta mt-6 sm:mt-9 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
+          <div className="rd-actions rd-hero__cta mt-6 sm:mt-9 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
             <RdMagnetic href="#contact">
               Get a Free Consultation <ArrowRight />
             </RdMagnetic>

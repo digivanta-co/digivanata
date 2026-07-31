@@ -25,7 +25,7 @@ function Metric({ raw, label, index }: { raw: string; label: string; index: numb
     const run = () => {
       if (done.current) return;
       done.current = true;
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) {
         setVal(num);
         return;
       }

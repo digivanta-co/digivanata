@@ -47,7 +47,7 @@ export default function RdWhyDigivanta() {
   const root = useRef<HTMLElement | null>(null);
 
   useIso(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
     const ctx = gsap.context(() => {
       // rows cascade in; their divider lines draw from the left
       gsap.utils.toArray<HTMLElement>(".rd-why__row").forEach((row) => {

@@ -15,7 +15,7 @@ export default function RdFinalCta() {
   const root = useRef<HTMLElement | null>(null);
 
   useIso(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
     const ctx = gsap.context(() => {
       gsap.from(".rd-final__word", {
         yPercent: 120,
@@ -41,7 +41,7 @@ export default function RdFinalCta() {
   // cursor-tracking spotlight over the dark section
   function onMove(e: React.MouseEvent) {
     const el = root.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
     const r = el.getBoundingClientRect();
     el.style.setProperty("--sx", `${((e.clientX - r.left) / r.width) * 100}%`);
     el.style.setProperty("--sy", `${((e.clientY - r.top) / r.height) * 100}%`);
@@ -87,7 +87,7 @@ export default function RdFinalCta() {
           ))}
         </div>
 
-        <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-2">
+        <div className="rd-actions mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-2">
           <RdMagnetic href={CONTACT.phoneHref} className="w-full sm:w-auto justify-center">
             Call {CONTACT.phone} <ArrowRight />
           </RdMagnetic>
