@@ -5561,6 +5561,156 @@ html.lenis, html.lenis body { height: auto; }
 .rd-faq__q { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
 .rd-faq__q:hover { transform: translateX(6px); }
 
+/* Homepage — phone layout and typography */
+@media (max-width: 767px) {
+  .rd {
+    overflow-x: hidden;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .rd .container {
+    padding-inline: 1.15rem;
+  }
+
+  .rd section {
+    scroll-margin-top: 5rem;
+  }
+
+  .rd .rd-eyebrow,
+  .rd-hero .rd-eyebrow {
+    gap: .45rem;
+    font-size: .68rem;
+    line-height: 1.3;
+    letter-spacing: .15em;
+  }
+
+  .rd .rd-eyebrow::before,
+  .rd-hero .rd-eyebrow::before {
+    width: 18px;
+  }
+
+  .rd .rd-h2 {
+    max-width: 100%;
+    font-size: clamp(1.7rem, 8vw, 2.15rem);
+    line-height: 1.12;
+    letter-spacing: -.035em;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .rd p {
+    max-width: 100%;
+    line-height: 1.65;
+    overflow-wrap: break-word;
+  }
+
+  .rd-hero {
+    min-height: auto;
+    padding-top: 6.75rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .rd-hero__parallax {
+    gap: 1.75rem;
+    transform: none !important;
+  }
+
+  .rd-hero__words {
+    font-size: clamp(2rem, 10.5vw, 2.65rem);
+    line-height: .94;
+    letter-spacing: -.045em;
+  }
+
+  .rd-hero__title {
+    margin-top: 1rem;
+    padding-inline: .25rem;
+    font-size: .94rem;
+    line-height: 1.6;
+  }
+
+  .rd-hero__cta {
+    width: 100%;
+    margin-top: 1.4rem;
+  }
+
+  .rd-hero__cta .rd-btn {
+    width: min(100%, 320px);
+    min-height: 48px;
+    justify-content: center;
+    padding: .8rem 1.2rem;
+    font-size: .88rem;
+  }
+
+  .rd-hero__viz {
+    max-width: 280px !important;
+    margin-top: .25rem;
+  }
+
+  .rd-hero > div:last-child {
+    display: none;
+  }
+
+  .rd-panel {
+    margin-inline: .45rem;
+    border-radius: 18px;
+  }
+
+  .rd-story__glow {
+    width: 85vw;
+  }
+
+  .rd-story__line {
+    grid-area: auto !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    font-size: clamp(1.35rem, 6.5vw, 1.8rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  .rd-story__line + .rd-story__line {
+    margin-top: 1.4rem;
+  }
+
+  .rd-story .container > div,
+  .rd-story__line[style] {
+    min-height: 0;
+  }
+
+  .rd-story__progFill {
+    transform: scaleX(1) !important;
+  }
+
+  .rd .rd-mega,
+  .rd .rd-huge {
+    font-size: clamp(1.8rem, 9vw, 2.45rem);
+    line-height: 1.05;
+  }
+
+  .rd-whyneed__card {
+    min-width: 0;
+  }
+
+  .rd-services button {
+    min-width: 0;
+  }
+
+  .rd-faq__q {
+    transform: none !important;
+  }
+
+  .rd-word,
+  .rd-word__in {
+    overflow: visible;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
 /* Homepage — problem diagnostic */
 @media (width < 0px) {
 .rd-whyneed {

@@ -13,7 +13,7 @@ export default function RdStory() {
   const root = useRef<HTMLElement | null>(null);
 
   useIso(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
 
     const ctx = gsap.context(() => {
       const lines = gsap.utils.toArray<HTMLElement>(".rd-story__line");

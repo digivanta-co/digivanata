@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 const reduce = () =>
   typeof window !== "undefined" &&
-  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches;
 
 /* Magnetic CTA — renders a real <a>, leans toward the cursor. */
 export function RdMagnetic({
