@@ -46,7 +46,7 @@ export default function RdHero() {
   const stage = useRef<HTMLDivElement | null>(null);
 
   useIso(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const ctx = gsap.context(() => {
       const scope = stage.current!;
@@ -151,7 +151,7 @@ export default function RdHero() {
 
   /* mouse parallax on the blobs */
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const blobEl = blobs.current;
     const blobKids = blobEl ? (Array.from(blobEl.children) as HTMLElement[]) : [];
     let ticking = false;

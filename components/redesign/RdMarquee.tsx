@@ -14,7 +14,7 @@ export default function RdMarquee() {
   const track = useRef<HTMLDivElement | null>(null);
 
   useIso(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const el = track.current;
     if (!el) return;
 

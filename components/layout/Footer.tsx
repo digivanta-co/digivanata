@@ -37,13 +37,13 @@ function AniLink({ href, children }: { href: string; children: React.ReactNode }
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#0b0b0d] pt-20 text-white">
+    <footer className="site-footer relative overflow-hidden bg-[#0b0b0d] pt-20 text-white">
       {/* glow */}
       <div aria-hidden className="pointer-events-none absolute -top-32 left-1/2 size-[560px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(40,111,171,0.18),transparent_70%)] blur-3xl" />
 
       <div className="container relative">
         {/* CTA row */}
-        <div className="mb-16 grid items-center gap-8 border-b border-white/10 pb-14 lg:grid-cols-[1.4fr_auto]">
+        <div className="site-footer__cta mb-16 grid items-center gap-8 border-b border-white/10 pb-14 lg:grid-cols-[1.4fr_auto]">
           <div>
             <h2 className="font-[family-name:var(--font-display),var(--font)] text-3xl font-bold tracking-tight sm:text-4xl">
               {RD_FOOTER.ctaTitle}
@@ -61,16 +61,22 @@ export default function Footer() {
         </div>
 
         {/* big brand wordmark */}
-        <div className="mb-14">
+        <div className="site-footer__brand mb-14">
           <div className="font-[family-name:var(--font-display),var(--font)] text-[clamp(2.5rem,7vw,5rem)] font-bold uppercase leading-[0.9] tracking-tight text-white">
-           <Image src="/whitelogo.png" alt="" width={400} height={400}/>
+            <Image
+              src="/whitelogo.png"
+              alt="Digivanta"
+              width={400}
+              height={120}
+              className="h-auto w-[220px] sm:w-[300px]"
+            />
           </div>
           <p className="mt-4 max-w-2xl text-white/60">{RD_FOOTER.brandLine}</p>
           <p className="mt-2 max-w-2xl text-white/50">{RD_FOOTER.about}</p>
         </div>
 
         {/* link columns */}
-        <div className="grid gap-10 border-t border-white/10 pt-14 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="site-footer__links grid grid-cols-2 gap-10 border-t border-white/10 pt-14 lg:grid-cols-4">
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#C9A227]">Quick Links</h4>
             <ul className="space-y-3">
@@ -78,7 +84,7 @@ export default function Footer() {
                 <li key={l.href}><AniLink href={l.href}>{l.label}</AniLink></li>
               ))}
             </ul>
-          </div>x
+          </div>
 
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#C9A227]">Our Services</h4>
@@ -105,7 +111,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="sm:col-span-2 lg:col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#C9A227]">Get in Touch</h4>
             <ul className="space-y-3 text-white/60">
               <li><a href={CONTACT.phoneHref} className="inline-flex items-center gap-2 transition-colors hover:text-white [&_svg]:size-4"><Phone /> {CONTACT.phone}</a></li>
