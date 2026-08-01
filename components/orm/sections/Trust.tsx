@@ -206,7 +206,7 @@ export function ClosingSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-t border-[var(--gd-line)] py-20" id="orm-closing">
+    <section ref={root} className="relative border-t border-[var(--gd-line)] py-12 sm:py-20" id="orm-closing">
       <div className="container max-w-[860px]">
         <div className="orm-close__item">
           <Label>Your most valuable asset</Label>

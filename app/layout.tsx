@@ -9,7 +9,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import SiteChrome from "@/components/layout/SiteChrome";
-import Preloader from "@/components/ui/Preloader";
+
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -68,7 +68,7 @@ export default function RootLayout({
       style={fontVars}
     >
       <body className={cn("min-h-full flex flex-col font-sans", poppins.className)}>
-        <Preloader />
+
         <SmoothScroll />
         
           <CursorGlow />

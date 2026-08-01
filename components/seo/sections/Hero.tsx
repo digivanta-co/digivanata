@@ -145,7 +145,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-24">
+    <section ref={root} className="relative overflow-hidden pt-24 pb-10 lg:pt-28 lg:pb-24">
       {/* static background accents */}
       <div
         aria-hidden
@@ -176,17 +176,19 @@ export default function HeroSection() {
               {SEO_HERO.sub}
             </p>
 
-            <div className="sh2__ctas mt-8 flex flex-wrap items-center gap-4">
+            <div className="sh2__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
               <MagneticButton href="#contact">
-                {SEO_HERO.ctaPrimary} <ArrowRight />
+                <span className="hidden sm:inline">{SEO_HERO.ctaPrimary}</span>
+                <span className="sm:hidden">SEO Consultation</span>
+                <ArrowRight />
               </MagneticButton>
               <MagneticButton href={CONTACT.whatsapp} external className="ag-btn--ghost">
-                <WhatsApp width={17} height={17} className="text-[#25d366]" /> {SEO_HERO.ctaGhost}
+                <WhatsApp width={17} height={17} className="hidden text-[#25d366] sm:inline" /> {SEO_HERO.ctaGhost}
               </MagneticButton>
             </div>
 
             {/* trust row */}
-            <div className="sh2__trust mt-12 flex flex-wrap items-center gap-x-10 gap-y-5 border-t border-[var(--gd-line)] pt-7">
+            <div className="sh2__trust mt-8 flex flex-wrap items-center gap-x-10 gap-y-4 border-t border-[var(--gd-line)] pt-6 sm:mt-12 sm:pt-7">
               <div className="flex items-center gap-2">
                 <span className="flex text-[var(--gd-gold)]">
                   {Array.from({ length: 5 }).map((_, i) => (

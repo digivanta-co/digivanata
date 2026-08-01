@@ -19,7 +19,7 @@ export default function WorkingProcess() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 65%", "end 65%"] });
 
   return (
-    <section className="relative overflow-hidden bg-[#F8FAFC] py-20 lg:py-32">
+    <section className="relative overflow-hidden bg-[#F8FAFC] py-12 sm:py-20 lg:py-32">
       <div aria-hidden className="pointer-events-none absolute -left-32 top-1/3 size-[420px] rounded-full bg-[#235EA7]/[0.07] blur-[64px]" />
       <div aria-hidden className="pointer-events-none absolute -right-24 bottom-10 size-[360px] rounded-full bg-[#D4AF37]/[0.08] blur-[64px]" />
 

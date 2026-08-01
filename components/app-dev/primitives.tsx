@@ -41,7 +41,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn("relative overflow-hidden py-20 lg:py-28", light && "bg-[#F8FAFC]", className)}
+      className={cn("relative overflow-hidden py-12 sm:py-20 lg:py-28", light && "bg-[#F8FAFC]", className)}
     >
       {children}
     </section>

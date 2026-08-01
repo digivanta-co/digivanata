@@ -27,7 +27,7 @@ export function ProblemSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="relative py-14 sm:py-24">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         {/* sticky heading */}
         <div className="lg:sticky lg:top-28">
@@ -100,7 +100,7 @@ export function BigStatement({ lines = ["Every pixel", "tells a story."] }: { li
   }, []);
 
   return (
-    <section ref={root} className="flex items-center border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-20">
+    <section ref={root} className="flex items-center border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-12 sm:py-20">
       <div className="container">
         <h2 className="gd-display m-0 text-[clamp(2.2rem,7vw,5.4rem)] text-[var(--gd-ink)]">
           {lines.map((line, li) => (

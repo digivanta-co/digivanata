@@ -121,17 +121,24 @@ export const WEB_COMPARE = {
 };
 
 export const WEB_TECH = [
-  { name: "Next.js", category: "Frontend & SSR" },
-  { name: "React", category: "UI Library" },
-  { name: "TypeScript", category: "Type Safety" },
-  { name: "Tailwind CSS", category: "Styling" },
-  { name: "Node.js", category: "Backend Runtime" },
-  { name: "WordPress", category: "CMS Solution" },
-  { name: "Shopify", category: "Ecommerce" },
-  { name: "Laravel", category: "Custom PHP" },
-  { name: "GSAP", category: "High-Perf Motion" },
-  { name: "Framer Motion", category: "Interactive Primitives" },
+  { name: "Next.js", category: "Full-stack framework", image: "/nextdotjs.svg", featured: true },
+  { name: "React", category: "Interface engineering", image: "/react-svgrepo-com.svg", featured: true },
+  { name: "WordPress", category: "Flexible content systems", image: "/wordpress-color-svgrepo-com.svg" },
+  { name: "Shopify", category: "Conversion-led commerce", image: "/shopify-color-svgrepo-com.svg" },
+  { name: "JavaScript", category: "Modern web experiences", image: "/js-svgrepo-com.svg" },
+  { name: "Angular", category: "Enterprise applications", image: "/angularjs.svg" },
+  { name: "Python", category: "Back-end & automation", image: "/python-svgrepo-com.svg" },
+  { name: "Figma", category: "Design-to-code workflow", image: "/figma.svg" },
 ];
+
+export const WEB_TECH_SECTION = {
+  eyebrow: "Modern framework stack",
+  title: ["Our technology", "stack"],
+  description:
+    "We pair ambitious ideas with proven technologies to create fast, secure and scalable digital experiences.",
+  revealLabel: "Built for what comes next",
+  revealTitle: "Our technology stack",
+};
 
 export const WEB_PROBLEMS = [
   "Poor website structure & navigation",

@@ -98,12 +98,15 @@ export default function HeroSection() {
           {GD_HERO.sub}
         </p>
 
-        <div className="gd-hero__ctas mt-9 flex flex-wrap items-center gap-4">
+        <div className="gd-hero__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
           <MagneticButton href="#contact">
-            {GD_HERO.primaryCta} <ArrowRight />
+            <span className="hidden sm:inline">{GD_HERO.primaryCta}</span>
+            <span className="sm:hidden">Start Design</span>
+            <ArrowRight />
           </MagneticButton>
           <MagneticButton href="#services" className="ag-btn--ghost">
-            {GD_HERO.ghostCta}
+            <span className="hidden sm:inline">{GD_HERO.ghostCta}</span>
+            <span className="sm:hidden">Our Services</span>
           </MagneticButton>
         </div>
 

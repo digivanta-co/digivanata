@@ -216,12 +216,15 @@ export default function HeroSection() {
               {ORM_HERO.sub}
             </p>
 
-            <div className="orm-h__ctas mt-8 flex flex-wrap items-center gap-4">
+            <div className="orm-h__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
               <MagneticButton href="#contact">
-                {ORM_HERO.primaryCta} <ArrowRight />
+                <span className="hidden sm:inline">{ORM_HERO.primaryCta}</span>
+                <span className="sm:hidden">Protect Reputation</span>
+                <ArrowRight />
               </MagneticButton>
               <MagneticButton href="#orm-services" className="ag-btn--ghost">
-                {ORM_HERO.ghostCta}
+                <span className="hidden sm:inline">{ORM_HERO.ghostCta}</span>
+                <span className="sm:hidden">ORM Services</span>
               </MagneticButton>
             </div>
           </div>
@@ -278,7 +281,7 @@ export function IntroSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-20">
+    <section ref={root} className="relative py-12 sm:py-20">
       <div className="container">
         <div className="grid gap-8 md:grid-cols-3">
           {ORM_INTRO.paragraphs.map((p, i) => (

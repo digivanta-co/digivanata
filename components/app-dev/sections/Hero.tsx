@@ -151,9 +151,15 @@ export default function HeroSection() {
               {APP_HERO.sub}
             </p>
 
-            <div ref={ctaRef} className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start">
-              <Button href="#contact" variant="primary">{APP_HERO.primaryCta}</Button>
-              <Button href="#pricing" variant="ghost">{APP_HERO.ghostCta}</Button>
+            <div ref={ctaRef} className="mt-8 flex items-center justify-center gap-2.5 lg:justify-start">
+              <Button href="#contact" variant="primary">
+                <span className="hidden sm:inline">{APP_HERO.primaryCta}</span>
+                <span className="sm:hidden">Build App</span>
+              </Button>
+              <Button href="#pricing" variant="ghost">
+                <span className="hidden sm:inline">{APP_HERO.ghostCta}</span>
+                <span className="sm:hidden">Pricing</span>
+              </Button>
             </div>
 
             {/* stat */}

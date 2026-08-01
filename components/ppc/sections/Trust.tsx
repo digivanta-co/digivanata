@@ -135,7 +135,7 @@ export function GrowSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-b border-[var(--gd-line)] py-20">
+    <section ref={root} className="relative border-b border-[var(--gd-line)] py-12 sm:py-20">
       <div className="container">
         <div className="ppc-grow__item max-w-2xl">
           <Label>Grow with smarter strategies</Label>

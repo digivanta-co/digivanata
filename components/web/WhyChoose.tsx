@@ -5,7 +5,7 @@ import { WEB_COMPARE } from "@/lib/web-data";
 
 export default function WebWhyChooseSection() {
   return (
-    <section id="web-why" className="relative bg-[var(--gd-soft)] py-20 lg:py-28 border-t border-[var(--gd-line)]">
+    <section id="web-why" className="relative bg-[var(--gd-soft)] py-12 sm:py-20 lg:py-28 border-t border-[var(--gd-line)]">
       <div className="container relative z-10">
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <span className="mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--gd-gold)]">

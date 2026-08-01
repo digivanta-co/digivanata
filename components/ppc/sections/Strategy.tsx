@@ -35,7 +35,7 @@ export function MgmtSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="relative py-14 sm:py-24">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Professional PPC management</Label>
@@ -88,7 +88,7 @@ export function SeoPpcSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-24">
+    <section ref={root} className="relative border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-14 sm:py-24">
       <div className="container">
         <div className="ppc-sp__item max-w-2xl">
           <Label>SEO + PPC, together</Label>
@@ -101,7 +101,7 @@ export function SeoPpcSection() {
           <p className="mt-4 font-medium text-[var(--gd-ink)]">{PPC_SEO_PPC.lead}</p>
         </div>
 
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {PPC_SEO_PPC.points.map((p, i) => (
             <div key={p} className="ppc-sp__item gd-card p-5">
               <div className="gd-display text-xs text-[var(--gd-gold)]">0{i + 1}</div>
@@ -134,7 +134,7 @@ export function DataDrivenSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="relative py-14 sm:py-24">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Data-driven advertising</Label>

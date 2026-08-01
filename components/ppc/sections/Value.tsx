@@ -27,7 +27,7 @@ export function FailSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="relative py-14 sm:py-24">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         {/* sticky heading */}
         <div className="lg:sticky lg:top-28">
@@ -83,7 +83,7 @@ export function QualifiedSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-24">
+    <section ref={root} className="relative border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-14 sm:py-24">
       <div className="container">
         <div className="ppc-qual__item max-w-2xl">
           <Label>Qualified leads, not random clicks</Label>

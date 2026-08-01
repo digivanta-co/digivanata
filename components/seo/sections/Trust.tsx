@@ -48,7 +48,7 @@ export function AreasSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-20" id="seo-areas">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-12 sm:py-20" id="seo-areas">
       <div className="container">
         <div className="sv-area__item max-w-2xl">
           <Label>Service Areas</Label>
@@ -83,7 +83,7 @@ export function ToolsSection() {
   const doubled = [...SEO_TOOLS, ...SEO_TOOLS];
 
   return (
-    <section className="relative overflow-hidden py-20" id="seo-tools">
+    <section className="relative overflow-hidden py-12 sm:py-20" id="seo-tools">
       <div className="container mb-10">
         <Label>Our Toolkit</Label>
         <h2 className="gd-display text-[clamp(1.7rem,3.8vw,2.6rem)] text-[var(--gd-ink)]">
@@ -132,7 +132,7 @@ export function AiPlatformsSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-10" id="seo-ai">
+    <section ref={root} className="relative py-6 sm:py-10" id="seo-ai">
       <div className="container">
         <div className="relative overflow-hidden rounded-[32px] bg-[linear-gradient(150deg,#0C243D_0%,#0a1c30_100%)] px-6 py-16 sm:px-12">
           <div
@@ -211,7 +211,7 @@ export function TrendsSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24" id="seo-trends">
+    <section ref={root} className="relative py-14 sm:py-24" id="seo-trends">
       <div className="container">
         <div className="max-w-2xl">
           <Label>SEO Trends 2026</Label>
@@ -277,7 +277,7 @@ export function BenefitsSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-24" id="seo-benefits">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-14 sm:py-24" id="seo-benefits">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Business Impact</Label>
@@ -330,7 +330,7 @@ export function WhyChooseSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24" id="seo-why-choose">
+    <section ref={root} className="relative py-14 sm:py-24" id="seo-why-choose">
       <div className="container">
         <div className="sv-choose__row max-w-2xl">
           <Label>Why Digivanta</Label>
@@ -376,7 +376,7 @@ export function TrustSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-24" id="seo-trust">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-14 sm:py-24" id="seo-trust">
       <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="sv-trust__l">
           <Label>Trust Digivanta</Label>
@@ -437,7 +437,7 @@ export function AuthorSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-20" id="seo-author">
+    <section ref={root} className="relative py-12 sm:py-20" id="seo-author">
       <div className="container max-w-[860px]">
         <div className="sv-author__card gd-card relative overflow-hidden p-8 sm:p-10">
           <div aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,var(--gd-navy),var(--gd-blue)_55%,var(--gd-gold))]" />
@@ -484,7 +484,7 @@ export function FinalThoughtsSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-t border-[var(--gd-line)] py-20" id="seo-final">
+    <section ref={root} className="relative border-t border-[var(--gd-line)] py-12 sm:py-20" id="seo-final">
       <div className="container max-w-[860px]">
         <div className="sv-final__item">
           <Label>Final Thoughts</Label>

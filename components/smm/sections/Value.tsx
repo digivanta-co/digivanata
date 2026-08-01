@@ -31,7 +31,7 @@ export function WhyNeedSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="relative py-14 sm:py-24">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Why It Matters</Label>
@@ -92,7 +92,7 @@ export function ImpactSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="relative py-14 sm:py-24">
       <div className="container">
         <div className="smm-imp__item max-w-2xl">
           <Label>The Impact of SMM</Label>

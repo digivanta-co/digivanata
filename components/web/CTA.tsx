@@ -59,7 +59,7 @@ export default function CTA({
     <section
       ref={ref}
       id={id}
-      className={`web-section border-t border-black/10 py-20 lg:py-28 ${isDark ? "bg-[#0a0a0a] text-white" : "bg-white"}`}
+      className={`web-section border-t border-black/10 py-12 sm:py-20 lg:py-28 ${isDark ? "bg-[#0a0a0a] text-white" : "bg-white"}`}
     >
       <div className="container text-center">
         <h2

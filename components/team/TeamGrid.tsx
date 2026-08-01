@@ -11,7 +11,7 @@ const GROUP_ICONS: Record<string, LucideIcon> = {
 
 export default function TeamGrid() {
   return (
-    <section className="relative bg-gradient-to-b from-white via-[var(--gd-soft,#f6f7fb)] to-white py-20 lg:py-28">
+    <section className="relative bg-gradient-to-b from-white via-[var(--gd-soft,#f6f7fb)] to-white py-12 sm:py-20 lg:py-28">
       <div className="container">
         {/* Section Header */}
         <Reveal className="mx-auto mb-12 max-w-2xl text-center">

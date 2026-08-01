@@ -37,7 +37,7 @@ const gradText: React.CSSProperties = {
 
 export default function WhatWeDo() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 lg:py-32">
+    <section className="relative overflow-hidden bg-white py-12 sm:py-20 lg:py-32">
       {/* soft radial glow + subtle grid texture */}
       <div
         aria-hidden

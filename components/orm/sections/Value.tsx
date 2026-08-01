@@ -38,7 +38,7 @@ export function DykAlertSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-20">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-12 sm:py-20">
       <div className="container">
         <div className="grid items-center gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
           <div className="orm-dyk__item">

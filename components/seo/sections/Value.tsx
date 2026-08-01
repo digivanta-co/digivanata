@@ -32,7 +32,7 @@ export function DidYouKnowIntro() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-20" id="seo-intro">
+    <section ref={root} className="relative border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-12 sm:py-20" id="seo-intro">
       <div className="container">
         <div className="grid items-center gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
           {/* 60% stat */}
@@ -91,36 +91,35 @@ export function WhyNeedSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-14 text-center" id="why-seo">
+    <section ref={root} className="relative py-10 text-center sm:py-14" id="why-seo">
                  
-      <div className="container flex flex-col-reverse items-center justify-center gap-8 sm:flex-row sm:gap-10">
+      <div className="container flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-10">
         
-
-        <div className="mt-0 grid w-full grid-cols-4 gap-2 sm:w-auto sm:gap-4 lg:grid-cols-2">
-          {SEO_WHY_NEED.platforms.map((p, i) => (
-            <TiltCard key={p.name} max={6} className="sv-why__item gd-card p-3 sm:p-6">
-              <div className="gd-display text-xs text-[var(--gd-gold)]"></div>
-              <span className="grid size-8 place-items-center rounded-lg bg-[rgba(40,111,171,0.08)] text-[var(--gd-blue)] sm:size-12 sm:rounded-xl">
-              <Image src={p.image} alt={p.name} width={24} height={24} />
-              </span>
-             
-              <h3 className="mb-0 mt-2 text-[0.7rem] font-bold text-[var(--gd-ink)] sm:mt-4 sm:text-[1.02rem]">{p.name}</h3>
-            </TiltCard>
-          ))}
-        </div>
-
-
+        {/* Text block — shows first on mobile (natural order in flex-col) */}
         <div className="sv-why__item max-w-2xl">
           <h2 className="gd-display text-[clamp(1.9rem,4.2vw,5.1rem)] text-[var(--gd-ink)]">
             Why businesses
             <br />
             <span className="gd-grad">need SEO today.</span>
           </h2>
-          <p className="mt-5 text-[var(--gd-muted)]">{SEO_WHY_NEED.desc}</p>
+          <p className="mt-4 text-[var(--gd-muted)] sm:mt-5">{SEO_WHY_NEED.desc}</p>
 
-          <p className="sv-why__item mb-0 mt-8 max-w-2xl border-l-2 border-[var(--gd-gold)] pl-4 text-sm italic leading-relaxed text-[var(--gd-muted)]">
+          <p className="sv-why__item mb-0 mt-5 max-w-2xl border-l-2 border-[var(--gd-gold)] pl-4 text-left text-sm italic leading-relaxed text-[var(--gd-muted)] sm:mt-8">
           {SEO_WHY_NEED.note}
         </p>
+        </div>
+
+        {/* Platform cards — 2×2 grid on mobile, consistent centering */}
+        <div className="mt-0 grid w-full grid-cols-2 gap-3 sm:w-auto sm:grid-cols-4 sm:gap-4 lg:grid-cols-2">
+          {SEO_WHY_NEED.platforms.map((p, i) => (
+            <TiltCard key={p.name} max={6} className="sv-why__item gd-card flex flex-col items-center justify-center p-4 sm:p-6">
+              <span className="grid size-10 place-items-center rounded-xl bg-[rgba(40,111,171,0.08)] text-[var(--gd-blue)] sm:size-12">
+              <Image src={p.image} alt={p.name} width={24} height={24} />
+              </span>
+             
+              <h3 className="mb-0 mt-2.5 text-[0.78rem] font-bold leading-tight text-[var(--gd-ink)] sm:mt-4 sm:text-[1.02rem]">{p.name}</h3>
+            </TiltCard>
+          ))}
         </div>
 
       
@@ -153,7 +152,7 @@ export function ProblemsSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-24" id="seo-problems">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-14 sm:py-24" id="seo-problems">
       <div className="container">
         <div className="sv-prob__row max-w-2xl">
           <Label>Common Issues</Label>
@@ -215,7 +214,7 @@ export function DifferenceSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24" id="seo-difference">
+    <section ref={root} className="relative py-14 sm:py-24" id="seo-difference">
       <div className="container grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="sv-diff__l">
           <Label>Our Approach</Label>
@@ -303,7 +302,7 @@ export function SeoCtaBand({
   }, []);
 
   return (
-    <section ref={root} className="relative py-10" id={id}>
+    <section ref={root} className="relative py-6 sm:py-10" id={id}>
       <div className="container">
         <div className="sv-cta__panel relative overflow-hidden rounded-[28px] bg-[linear-gradient(150deg,#0C243D_0%,#0a1c30_100%)] px-6 py-14 text-center sm:px-12">
           <div

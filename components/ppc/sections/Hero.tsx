@@ -96,12 +96,15 @@ export default function HeroSection() {
             {PPC_HERO.sub}
           </p>
 
-          <div className="ppc-hero__ctas mt-9 flex flex-wrap items-center gap-4">
+          <div className="ppc-hero__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
             <MagneticButton href="#contact">
-              {PPC_HERO.primaryCta} <ArrowRight />
+              <span className="hidden sm:inline">{PPC_HERO.primaryCta}</span>
+              <span className="sm:hidden">PPC Audit</span>
+              <ArrowRight />
             </MagneticButton>
             <MagneticButton href="#services" className="ag-btn--ghost">
-              {PPC_HERO.ghostCta}
+              <span className="hidden sm:inline">{PPC_HERO.ghostCta}</span>
+              <span className="sm:hidden">Our Services</span>
             </MagneticButton>
           </div>
 
@@ -155,7 +158,7 @@ export function IntroSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-20">
+    <section ref={root} className="relative py-12 sm:py-20">
       <div className="container">
         <p className="ppc-intro__item m-0 max-w-3xl text-[clamp(1.2rem,2.4vw,1.7rem)] font-medium leading-snug text-[var(--gd-ink)]">
           {PPC_INTRO.lead}

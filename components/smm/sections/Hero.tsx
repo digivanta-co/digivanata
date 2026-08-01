@@ -91,12 +91,15 @@ export default function HeroSection() {
           {SMM_HERO.sub}
         </p>
 
-        <div className="smm-hero__ctas mt-9 flex flex-wrap items-center gap-4">
+        <div className="smm-hero__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
           <MagneticButton href="#contact">
-            {SMM_HERO.primaryCta} <ArrowRight />
+            <span className="hidden sm:inline">{SMM_HERO.primaryCta}</span>
+            <span className="sm:hidden">SMM Strategy</span>
+            <ArrowRight />
           </MagneticButton>
           <MagneticButton href={CONTACT.whatsapp} external className="ag-btn--ghost">
-            {SMM_HERO.ghostCta}
+            <span className="hidden sm:inline">{SMM_HERO.ghostCta}</span>
+            <span className="sm:hidden">WhatsApp Now</span>
           </MagneticButton>
         </div>
 
@@ -144,7 +147,7 @@ export function IntroSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-20">
+    <section ref={root} className="relative py-12 sm:py-20">
       <div className="container">
         <p className="smm-intro__item m-0 max-w-3xl text-[clamp(1.2rem,2.4vw,1.7rem)] font-medium leading-snug text-[var(--gd-ink)]">
           {SMM_INTRO.lead}

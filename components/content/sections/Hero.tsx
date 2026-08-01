@@ -97,12 +97,15 @@ export default function HeroSection() {
           {CM_HERO.sub}
         </p>
 
-        <div className="cm-hero__ctas mt-9 flex flex-wrap items-center gap-4">
+        <div className="cm-hero__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
           <MagneticButton href="#contact">
-            {CM_HERO.primaryCta} <ArrowRight />
+            <span className="hidden sm:inline">{CM_HERO.primaryCta}</span>
+            <span className="sm:hidden">Content Strategy</span>
+            <ArrowRight />
           </MagneticButton>
           <MagneticButton href="#services" className="ag-btn--ghost">
-            {CM_HERO.ghostCta}
+            <span className="hidden sm:inline">{CM_HERO.ghostCta}</span>
+            <span className="sm:hidden">Our Services</span>
           </MagneticButton>
         </div>
 

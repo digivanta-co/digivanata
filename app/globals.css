@@ -4977,11 +4977,12 @@ html.lenis, html.lenis body { height: auto; }
 /* magnetic / gradient button */
 .ag-btn {
   position: relative;
-  display: inline-flex; align-items: center; gap: 0.6rem;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
   padding: 1rem 2rem;
   border-radius: 100px;
   font-weight: 600; font-size: 1rem;
   color: #fff;
+  white-space: nowrap;
   background: linear-gradient(120deg, #4F7DFD, #a855f7);
   overflow: hidden;
   will-change: transform;
@@ -5256,6 +5257,19 @@ html.lenis, html.lenis body { height: auto; }
   border: 1px solid var(--gd-line);
   box-shadow: none;
   color: var(--gd-ink);
+}
+
+/* mobile-size buttons globally (.ag-btn, .cm, .gd, etc) so CTAs sit side-by-side */
+@media (max-width: 639px) {
+  .ag-btn,
+  .gd .ag-btn,
+  .cm .ag-btn {
+    padding: 0.55rem 0.85rem !important;
+    font-size: 0.76rem !important;
+    gap: 0.35rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0;
+  }
 }
 
 /* ================================================================

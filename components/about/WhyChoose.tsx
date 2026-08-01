@@ -24,7 +24,7 @@ const gradText: React.CSSProperties = {
 export default function WhyChoose() {
   return (
     <section
-      className="relative overflow-hidden py-20 lg:py-32"
+      className="relative overflow-hidden py-12 sm:py-20 lg:py-32"
       style={{ backgroundImage: "linear-gradient(180deg,#ffffff 0%,#eef4fb 55%,#e7f0fa 100%)" }}
     >
       <div aria-hidden className="pointer-events-none absolute right-[-10%] top-[-6%] size-[480px] rounded-full bg-[#235EA7]/10 blur-[64px]" />

@@ -210,12 +210,16 @@ export default function WebHeroSection() {
             {WEB_HERO.sub}
           </p>
 
-          <div className="gd-hero__ctas mt-9 flex flex-wrap items-center gap-4">
+          <div className="gd-hero__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
             <MagneticButton href="#web-contact">
-              {WEB_HERO.primaryCta} <ArrowRight />
+              <span className="hidden sm:inline">{WEB_HERO.primaryCta}</span>
+              <span className="sm:hidden">Web Quote</span>
+              <ArrowRight />
             </MagneticButton>
             <MagneticButton href="#web-services" className="ag-btn--ghost">
-              <Spark /> {WEB_HERO.ghostCta}
+              <Spark />
+              <span className="hidden sm:inline">{WEB_HERO.ghostCta}</span>
+              <span className="sm:hidden">Services</span>
             </MagneticButton>
           </div>
 

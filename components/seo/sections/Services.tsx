@@ -29,7 +29,7 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section ref={root} id="seo-services" className="relative py-24">
+    <section ref={root} id="seo-services" className="relative py-14 sm:py-24">
       <div className="container">
         <div className="mb-14 max-w-3xl">
           <Label>What we provide</Label>
