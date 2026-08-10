@@ -52,7 +52,7 @@ export default function RdJourney() {
   }, []);
 
   return (
-    <section ref={root} className="relative overflow-hidden py-16 sm:py-20">
+    <section ref={root} className="relative overflow-hidden py-8 sm:py-12">
       <div className="container">
         <span className="rd-eyebrow mb-4">The journey</span>
         <h2 className="rd-h2 mb-3 text-[var(--rd-ink)]" style={{ textTransform: "none" }}>

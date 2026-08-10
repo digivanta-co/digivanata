@@ -29,7 +29,7 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section ref={root} id="services" className="relative py-14 sm:py-24">
+    <section ref={root} id="services" className="relative py-10 sm:py-14">
       <div className="container">
         <div className="mb-14 max-w-3xl">
           <Label>What we create</Label>
@@ -45,7 +45,7 @@ export function ServicesSection() {
           {GD_SERVICES.items.map((s, i) => (
             <a
               key={s.title}
-              href="#contact"
+              href="/contact"
               className="gd-svc__row group block border-b border-[var(--gd-line)] py-7 transition-colors duration-300 hover:bg-[var(--gd-soft)]"
             >
               <div className="grid items-baseline gap-x-8 gap-y-3 md:grid-cols-[3.2rem_1.2fr_1fr_auto]">

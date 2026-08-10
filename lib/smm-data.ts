@@ -29,8 +29,8 @@ export const SMM_HERO = {
 export const SMM_INTRO = {
   lead: "Social media is the modern storefront of your brand. In Delhi's dynamic market, winning requires strategy, visual storytelling, and continuous audience interaction.",
   paragraphs: [
-    "Every business has a unique audience and communication style. Instead of generic promotions, Digivanta builds platform-specific strategies on Instagram, Facebook, and LinkedIn designed for authentic engagement and long-term brand authority.",
-    "We craft scroll-stopping visual content, high-converting ad campaigns, and consistent brand messaging so your business stays top-of-mind when prospective buyers make decisions.",
+    "Every business has a unique audience and communication style. Instead of generic promotions, Digivanta builds platform specific strategies on Instagram, Facebook, and LinkedIn designed for authentic engagement and long term brand authority.",
+    "We craft scroll stopping visual content, high converting ad campaigns, and consistent brand messaging so your business stays top of mind when prospective buyers make decisions.",
     "Whether you're an ecommerce brand, local business, clinic, startup, or corporate enterprise, our team helps turn passive followers into active customers across Delhi NCR.",
   ],
 };
@@ -49,15 +49,15 @@ export const SMM_WHY_NEED = {
     { title: "Build Customer Trust", desc: "Earn credibility with a consistent, authentic brand voice." },
     { title: "Increase Brand Awareness", desc: "Put your brand in front of the right people, consistently." },
     { title: "Improve Engagement", desc: "Turn passive scrollers into an active, interactive community." },
-    { title: "Generate Quality Leads", desc: "Attract high-intent audiences ready to convert." },
-    { title: "Long-Term Brand Authority", desc: "Establish your business as a trusted leader in your niche." },
-    { title: "Stay Competitive", desc: "Keep pace with — and outperform — competitors online." },
+    { title: "Generate Quality Leads", desc: "Attract high intent audiences ready to convert." },
+    { title: "Long Term Brand Authority", desc: "Establish your business as a trusted leader in your niche." },
+    { title: "Stay Competitive", desc: "Keep pace with and outperform competitors online." },
   ],
 };
 
 export const SMM_AGENCY_APPROACH = {
   heading: "A Social Media Marketing Agency That Thinks Strategy First",
-  desc: "Every business has a different audience, industry, and communication style. Instead of generic promotions, Digivanta builds platform-specific strategies for sustainable growth.",
+  desc: "Every business has a different audience, industry, and communication style. Instead of generic promotions, Digivanta builds platform specific strategies for sustainable growth.",
   steps: [
     "Audience research",
     "Competitor analysis",
@@ -74,7 +74,7 @@ export const SMM_PLATFORMS = [
     name: "Instagram Marketing",
     icon: "instagram",
     gradient: "linear-gradient(137deg, #e4c17a 0%, #c9a961 45%, #286fab 100%)",
-    desc: "We help brands grow on Instagram through storytelling and engagement — not just posting images.",
+    desc: "We help brands grow on Instagram through storytelling and engagement not just posting images.",
     items: [
       "Instagram reels strategy",
       "Engagement-focused content",
@@ -88,7 +88,7 @@ export const SMM_PLATFORMS = [
     name: "Facebook Marketing",
     icon: "facebook",
     gradient: "linear-gradient(137deg, #1e3a8a 0%, #286fab 50%, #3d96d4 100%)",
-    desc: "Reach highly specific customer groups and generate leads with performance-focused Facebook campaigns.",
+    desc: "Reach highly specific customer groups and generate leads with performance focused Facebook campaigns.",
     items: [
       "Facebook ad campaigns",
       "Precision audience targeting",
@@ -102,7 +102,7 @@ export const SMM_PLATFORMS = [
     name: "LinkedIn Marketing",
     icon: "linkedin",
     gradient: "linear-gradient(137deg, #286fab 0%, #5aa9de 45%, #cfe6f7 100%)",
-    desc: "Build authority and connect with decision-makers through professional B2B branding on LinkedIn.",
+    desc: "Build authority and connect with decision makers through professional B2B branding on LinkedIn.",
     items: [
       "LinkedIn profile optimization",
       "B2B content strategy",
@@ -122,7 +122,7 @@ export const SMM_PLATFORMS = [
       "Video and reel creation",
       "Content calendars & scheduling",
       "Creative copywriting",
-      "Consistent cross-platform branding",
+      "Consistent cross platform branding",
     ],
   },
 ];
@@ -132,8 +132,8 @@ export const SMM_PROCESS = {
   steps: [
     { title: "Audience Research", desc: "We study your goals, market, and buyer behavior to set the right foundation." },
     { title: "Competitor Analysis", desc: "We analyze competitors to find content gaps and positioning opportunities you can own." },
-    { title: "Content Planning", desc: "We map a platform-specific monthly content calendar aligned with your brand voice." },
-    { title: "Creative Design & Copy", desc: "We craft scroll-stopping visual assets and compelling copy that spark interaction." },
+    { title: "Content Planning", desc: "We map a platform specific monthly content calendar aligned with your brand voice." },
+    { title: "Creative Design & Copy", desc: "We craft scroll stopping visual assets and compelling copy that spark interaction." },
     { title: "Publishing & Management", desc: "We publish consistently and actively interact with your growing online community." },
     { title: "Paid Ad Management", desc: "We deploy targeted ad campaigns to amplify your reach and generate qualified leads." },
     { title: "Reporting & Optimization", desc: "We track performance metrics and continuously refine our tactics for higher ROI." },
@@ -158,14 +158,14 @@ export const SMM_AREAS = ["Dwarka", "Dwarka Mor", "Janakpuri", "Palam", "Uttam N
 
 export const SMM_WHY = {
   intro:
-    "Businesses partner with Digivanta because we combine strategy, high-end visual design, and performance marketing under one roof.",
+    "Businesses partner with Digivanta because we combine strategy, high end visual design, and performance marketing under one roof.",
   points: [
-    { title: "Audience-First Strategy", desc: "We build strategies around real consumer psychology, not vanity metrics." },
-    { title: "Creative & Branding Excellence", desc: "Eye-catching visuals and videos designed by experienced digital artists." },
-    { title: "Platform-Specific Mastery", desc: "Tailored content for Instagram Reels, Facebook Ads, and LinkedIn Thought Leadership." },
-    { title: "Data-Driven Optimizations", desc: "Continuous monitoring of engagement rates, click-throughs, and conversion costs." },
+    { title: "Audience First Strategy", desc: "We build strategies around real consumer psychology, not vanity metrics." },
+    { title: "Creative & Branding Excellence", desc: "Eye catching visuals and videos designed by experienced digital artists." },
+    { title: "Platform Specific Mastery", desc: "Tailored content for Instagram Reels, Facebook Ads, and LinkedIn Thought Leadership." },
+    { title: "Data Driven Optimizations", desc: "Continuous monitoring of engagement rates, click throughs, and conversion costs." },
     { title: "Transparent Reporting", desc: "Clear monthly reports detailing reach, growth, ad spend efficiency, and leads generated." },
-    { title: "Sustainable Growth Focus", desc: "Long-term brand authority combined with immediate campaign performance." },
+    { title: "Sustainable Growth Focus", desc: "Long term brand authority combined with immediate campaign performance." },
   ],
 };
 
@@ -212,7 +212,7 @@ export const SMM_FAQS: FaqItem[] = [
   {
     question: "How long does social media marketing take to show results?",
     answer:
-      "Organic social media growth usually takes around 3–6 months depending on content quality, consistency, audience engagement, and marketing strategy.",
+      "Organic social media growth usually takes around 3 6 months depending on content quality, consistency, audience engagement, and marketing strategy.",
   },
   {
     question: "How does Instagram marketing help businesses?",
@@ -242,13 +242,13 @@ export const SMM_FAQS: FaqItem[] = [
   {
     question: "What makes Digivanta different from other agencies?",
     answer:
-      "As a growing Social Media Marketing Company in Delhi, Digivanta focuses on audience-focused strategies, consistent branding, creative content, and performance-driven marketing rather than generic promotional campaigns.",
+      "As a growing Social Media Marketing Company in Delhi, Digivanta focuses on audience focused strategies, consistent branding, creative content, and performance driven marketing rather than generic promotional campaigns.",
   },
 ];
 
 export const SMM_CTA = {
   kicker: "Ready to grow your brand on social media?",
   lines: ["Connect with", "your audience."] as [string, string],
-  desc: "Whether you need a full social media management solution, high-converting ad campaigns, or strategic visual branding, Digivanta can help build your online presence.",
+  desc: "Whether you need a full social media management solution, high converting ad campaigns, or strategic visual branding, Digivanta can help build your online presence.",
   primary: "Get Your Free Social Media Strategy",
 };

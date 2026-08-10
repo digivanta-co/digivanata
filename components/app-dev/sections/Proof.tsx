@@ -23,7 +23,7 @@ function DarkStat({ value, suffix, label }: { value: number; suffix?: string; la
 export function StatisticsSection() {
   const glanceRef = useStagger<HTMLDivElement>({ selector: ".glance-item", scale: 0.96 });
   return (
-    <section id="statistics" className="relative overflow-hidden bg-[#0F172A] py-20 lg:py-28">
+    <section id="statistics" className="relative overflow-hidden bg-[#0F172A] py-10 lg:py-8 sm:py-10">
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(70%_120%_at_50%_-10%,rgba(40,111,171,0.55),transparent_60%)]" />
         <div className="absolute inset-0 [background-image:linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] [background-size:54px_54px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_75%)]" />

@@ -11,6 +11,7 @@ import { BigStatement } from "@/components/design/sections/Value";
 import { FAQSection } from "@/components/design/sections/Faq";
 import { CTASection } from "@/components/design/sections/Cta";
 import { CtaRibbon } from "@/components/design/primitives";
+import { AreasSection } from "@/components/seo/sections/Trust";
 
 import {
   SMM_HERO,
@@ -73,6 +74,7 @@ export default function SocialMediaMarketingPage() {
         label="Our Process"
         headingTop="The SMM"
         headingAccent="process."
+        headingBreak={false}
       />
 
       {/* 8. Impact & stats */}
@@ -91,10 +93,12 @@ export default function SocialMediaMarketingPage() {
       <IndustriesSection
         items={SMM_INDUSTRIES}
         label="Industries We Grow"
-        note={SMM_INDUSTRIES_NOTE}
       />
 
-      {/* 13. FAQs */}
+      {/* 13. Service Areas Grid */}
+      <AreasSection />
+
+      {/* 14. FAQs */}
       <FAQSection items={SMM_FAQS} />
 
       {/* 14. Final CTA */}

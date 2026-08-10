@@ -40,13 +40,10 @@ export function CTASection({
     <section
       ref={root}
       id="contact"
-      className="relative flex min-h-[70svh] items-center overflow-hidden border-t border-[var(--gd-line)] py-24"
+      className="gd-cta relative flex min-h-0 sm:min-h-[70svh] items-center overflow-hidden border-t border-[var(--gd-line)] py-3 sm:py-4"
     >
       {/* static background accents */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_420px_at_50%_-10%,rgba(40,111,171,0.07),transparent_60%),radial-gradient(600px_360px_at_85%_110%,rgba(176,141,63,0.08),transparent_55%)]"
-      />
+     
 
       <div className="container relative z-10 text-center">
         <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--gd-gold)]">
@@ -71,9 +68,7 @@ export function CTASection({
           <MagneticButton href={CONTACT.whatsapp} external>
             {primary} <ArrowRight />
           </MagneticButton>
-          <MagneticButton href={CONTACT.phoneHref} external className="ag-btn--ghost">
-            {CONTACT.phone}
-          </MagneticButton>
+        
         </div>
 
         <p className="mt-9 text-sm text-[var(--gd-muted)]">

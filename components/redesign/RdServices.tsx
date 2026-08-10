@@ -85,7 +85,7 @@ function Body({ s }: { s: Service }) {
 
         {/* CTA */}
         <div className="flex flex-wrap items-center gap-3 pt-3">
-          <RdMagnetic href="#contact">
+          <RdMagnetic href="/contact">
             {str(r.cta) ?? "Get Started"} <ArrowRight />
           </RdMagnetic>
           {url && (
@@ -117,7 +117,7 @@ export default function RdServices() {
   const rowsRef = useStagger<HTMLDivElement>({ y: 50, scale: 1, stagger: 0.08 });
 
   return (
-    <section id="services" className="relative bg-white py-16 sm:py-20">
+    <section id="services" className="relative bg-white py-8 sm:py-12">
       <div className="container">
         {/* Section header */}
         <div className="mb-12 flex flex-wrap items-end justify-between gap-6">

@@ -24,11 +24,11 @@ const gradText: React.CSSProperties = {
 export default function WhyChoose() {
   return (
     <section
-      className="relative overflow-hidden py-12 sm:py-20 lg:py-32"
+      className="relative overflow-hidden py-5"
       style={{ backgroundImage: "linear-gradient(180deg,#ffffff 0%,#eef4fb 55%,#e7f0fa 100%)" }}
     >
       <div aria-hidden className="pointer-events-none absolute right-[-10%] top-[-6%] size-[480px] rounded-full bg-[#235EA7]/10 blur-[64px]" />
-      <div aria-hidden className="pointer-events-none absolute left-[-8%] bottom-[-10%] size-[420px] rounded-full bg-[#D4AF37]/10 blur-[64px]" />
+      <div aria-hidden className="pointer-events-none absolute left-[-8%] bottom-[-10%] size-[420px] rounded-full bg-[#235EA7]/10 blur-[64px]" />
 
       <div className="container relative">
         <motion.div
@@ -39,7 +39,7 @@ export default function WhyChoose() {
           className="mx-auto max-w-[700px] text-center"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-[#235EA7]/20 bg-white/95 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#235EA7]">
-            <span className="size-1.5 rounded-full bg-[#D4AF37]" /> Why Digivanta
+            <span className="size-1.5 rounded-full bg-[#235EA7]" /> Why Digivanta
           </span>
           <h2 className="mt-5 font-[family-name:var(--font-display),var(--font)] text-[clamp(2.2rem,5vw,3.4rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#0C243D]">
             Why brands <span style={gradText}>choose us</span>
@@ -50,10 +50,9 @@ export default function WhyChoose() {
         </motion.div>
 
         {/* Trust stats */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {ABOUT_STATS.map((s, i) => {
             const Icon = STAT_ICONS[s.icon] ?? Star;
-            const gold = s.accent === "gold";
             return (
               <motion.div
                 key={s.label}
@@ -64,23 +63,16 @@ export default function WhyChoose() {
                 className={
                   "group relative overflow-hidden rounded-[24px] border p-7 shadow-[0_2px_10px_rgba(15,23,42,0.04),0_20px_44px_-28px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-2 " +
                   (s.wide ? "lg:col-span-2 " : "") +
-                  (gold
-                    ? "border-[#D4AF37]/30 bg-[linear-gradient(150deg,#fffdf6,#fbf3dc)] hover:shadow-[0_30px_60px_-28px_rgba(212,175,55,0.5)]"
-                    : "border-[#235EA7]/15 bg-white/95 hover:shadow-[0_30px_60px_-28px_rgba(35,94,167,0.5)]")
+                  "border-[#235EA7]/15 bg-white/95 hover:shadow-[0_30px_60px_-28px_rgba(35,94,167,0.5)]"
                 }
               >
                 <span
-                  className={
-                    "mb-4 inline-grid size-12 place-items-center rounded-xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110 " +
-                    (gold
-                      ? "bg-[linear-gradient(135deg,#D4AF37,#eacb66)] shadow-[#D4AF37]/30"
-                      : "bg-[linear-gradient(135deg,#235EA7,#4f93d4)] shadow-[#235EA7]/30")
-                  }
+                  className="mb-4 inline-grid size-12 place-items-center rounded-xl text-white shadow-lg shadow-[#235EA7]/30 bg-[linear-gradient(135deg,#235EA7,#4f93d4)] transition-transform duration-300 group-hover:scale-110"
                 >
                   <Icon size={26} strokeWidth={2} />
                 </span>
                 {s.stars ? (
-                  <div className="flex gap-1 text-[#D4AF37]">
+                  <div className="flex gap-1 text-[#235EA7]">
                     {Array.from({ length: 5 }).map((_, k) => (
                       <Star key={k} size={22} className="fill-current" />
                     ))}

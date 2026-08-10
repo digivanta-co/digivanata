@@ -184,7 +184,7 @@ export function Stagger({
 
 /* ---- Button (rounded, gradient hover, arrow slide) ---- */
 export function Button({
-  href = "#contact",
+  href = "/contact",
   children,
   variant = "primary",
   className,
@@ -198,7 +198,7 @@ export function Button({
     <Link
       href={href}
       className={cn(
-        "group inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-300",
+        "site-cta group inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold transition-all duration-300",
         variant === "primary" &&
           "bg-[#286FAB] text-white hover:-translate-y-0.5 hover:bg-[linear-gradient(120deg,#286FAB,#286FAB)] hover:shadow-[0_16px_36px_rgba(40,111,171,0.35)]",
         variant === "ghost" &&
@@ -268,7 +268,7 @@ export function CtaBand({
   title,
   desc,
   button,
-  href = "#contact",
+  href = "/contact",
 }: {
   title: string;
   desc?: string;

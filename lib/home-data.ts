@@ -15,27 +15,26 @@ export const BUSINESS_CHALLENGES = [
   "High ad spending with low returns",
   "Weak online presence",
   "Low conversion rates",
-  "Inconsistent lead generation",
 ];
 
 export const WHY_CHOOSE = [
   "Customized marketing strategies",
   "Transparent reporting",
-  "ROI-focused campaigns",
+  "ROI focused campaigns",
   "Experienced digital marketing team",
-  "Data-driven decision making",
+  "Data driven decision making",
   "Local market expertise",
-  "Multi-channel marketing solutions",
+  "Multi channel marketing solutions",
 ];
 
 export const WHY_CHOOSE_DESC: Record<string, string> = {
-  "Customized marketing strategies": "Plans built around your goals, industry and audience — never templated.",
+  "Customized marketing strategies": "Plans built around your goals, industry and audience never templated.",
   "Transparent reporting": "Clear, honest dashboards so you always know what is working and why.",
-  "ROI-focused campaigns": "We optimise for revenue and leads, not vanity metrics.",
+  "ROI focused campaigns": "We optimise for revenue and leads, not vanity metrics.",
   "Experienced digital marketing team": "Specialists across SEO, ads, social, design and development.",
-  "Data-driven decision making": "Every move is backed by analytics and continuous testing.",
+  "Data driven decision making": "Every move is backed by analytics and continuous testing.",
   "Local market expertise": "Deep understanding of Delhi's customers and competition.",
-  "Multi-channel marketing solutions": "SEO, PPC, social and web working together under one roof.",
+  "Multi channel marketing solutions": "SEO, PPC, social and web working together under one roof.",
 };
 
 export const MARQUEE_ITEMS = [
@@ -145,7 +144,7 @@ export const FAQS = [
   },
   {
     q: "Why is my website not ranking on Google?",
-    a: "Websites may not rank due to poor SEO optimization, technical issues, low-quality content, slow speed, poor backlinks, or high competition. Digivanta performs detailed SEO audits to identify and fix these issues.",
+    a: "Websites may not rank due to poor SEO optimization, technical issues, low quality content, slow speed, poor backlinks, or high competition. Digivanta performs detailed SEO audits to identify and fix these issues.",
   },
   {
     q: "What are the benefits of hiring a Digital Marketing Agency in Delhi?",
@@ -153,11 +152,11 @@ export const FAQS = [
   },
   {
     q: "Which is better for my business: SEO or paid ads?",
-    a: "SEO is best for long-term organic growth, while paid ads provide faster visibility and lead generation. Most businesses achieve better results using a combination of both.",
+    a: "SEO is best for long term organic growth, while paid ads provide faster visibility and lead generation. Most businesses achieve better results using a combination of both.",
   },
   {
     q: "How much time does SEO take to show results?",
-    a: "SEO usually takes 3–6 months to show noticeable improvements depending on competition, website condition, and keyword difficulty.",
+    a: "SEO usually takes 3 6 months to show noticeable improvements depending on competition, website condition, and keyword difficulty.",
   },
   {
     q: "Why are my Google Ads not generating leads?",
@@ -169,7 +168,7 @@ export const FAQS = [
   },
   {
     q: "What makes Digivanta different from other digital marketing companies?",
-    a: "Digivanta focuses on problem-solving marketing strategies, transparent reporting, customized campaigns, and measurable business growth instead of generic marketing solutions.",
+    a: "Digivanta focuses on problem solving marketing strategies, transparent reporting, customized campaigns, and measurable business growth instead of generic marketing solutions.",
   },
   {
     q: "Do small businesses need digital marketing services?",
@@ -182,19 +181,19 @@ export const SERVICES_DETAIL = [
     id: "seo",
     title: "SEO Services in Delhi",
     intro:
-      "Search Engine Optimization is one of the most effective ways to generate long-term organic traffic and quality leads. Many businesses struggle because their websites are not optimized properly for search engines.",
+      "Search Engine Optimization is one of the most effective ways to generate long term organic traffic and quality leads. Many businesses struggle because their websites are not optimized properly for search engines.",
     helps: [
       "Improve Google rankings",
       "Increase organic traffic",
       "Generate local leads",
       "Improve website authority",
-      "Target high-intent customers",
+      "Target high intent customers",
     ],
     includes: [
       "Keyword Research",
       "Technical SEO",
-      "On-Page SEO",
-      "Off-Page SEO",
+      "On Page SEO",
+      "Off Page SEO",
       "Local SEO",
       "SEO Audits",
       "Content Optimization",
@@ -206,7 +205,7 @@ export const SERVICES_DETAIL = [
       "Low search visibility",
       "Poor local rankings",
       "Traffic decline after Google updates",
-      "Low-quality leads",
+      "Low quality leads",
       "Slow website performance",
     ],
     cta: "Want Your Website to Rank Higher on Google?",
@@ -241,7 +240,7 @@ export const SERVICES_DETAIL = [
     id: "performance",
     title: "Performance Marketing Agency Delhi",
     intro:
-      "Running ads without strategy often leads to wasted budgets and poor conversions. Many businesses spend heavily on ads but fail to generate quality leads. Digivanta helps businesses improve ad performance through data-driven campaigns.",
+      "Running ads without strategy often leads to wasted budgets and poor conversions. Many businesses spend heavily on ads but fail to generate quality leads. Digivanta helps businesses improve ad performance through data driven campaigns.",
     includes: [
       "Google Ads",
       "Meta Ads",
@@ -266,7 +265,7 @@ export const SERVICES_DETAIL = [
     ],
     cta: "Looking for Better ROI from Ads?",
     ctaSub:
-      "Let Digivanta create high-converting performance marketing campaigns for your business.",
+      "Let Digivanta create high converting performance marketing campaigns for your business.",
   },
   {
     id: "web",
@@ -295,7 +294,7 @@ export const SERVICES_DETAIL = [
     id: "app",
     title: "App Development Services",
     intro:
-      "Mobile apps help businesses improve customer engagement and accessibility. Digivanta develops user-friendly mobile applications tailored to business needs.",
+      "Mobile apps help businesses improve customer engagement and accessibility. Digivanta develops user friendly mobile applications tailored to business needs.",
     includes: [
       "Android App Development",
       "iOS App Development",

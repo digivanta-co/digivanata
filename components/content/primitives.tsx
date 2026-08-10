@@ -34,7 +34,7 @@ export function Aura({ className }: { className?: string }) {
 export function CtaRibbon({
   text,
   cta,
-  href = "#contact",
+  href = "/contact",
 }: {
   text: string;
   cta: string;

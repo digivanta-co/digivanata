@@ -88,6 +88,8 @@ export default function SeoServicesPage() {
         label="Our Process"
         headingTop="Our SEO"
         headingAccent="process."
+        headingBreak={false}
+        scrollFactor={0.55}
       />
 
       {/* 8. SEO Services Detail */}
@@ -120,7 +122,6 @@ export default function SeoServicesPage() {
       <IndustriesSection
         items={SEO_INDUSTRIES}
         label="Industries We Serve"
-        note="Our SEO Services support businesses across multiple industries with customized strategies."
       />
 
       {/* 16. Why Choose Digivanta */}

@@ -57,7 +57,7 @@ export default function Stats() {
   }, []);
 
   return (
-    <section ref={ref} className="web-section relative overflow-hidden border-t border-black/10 bg-white py-12 sm:py-20 lg:py-24">
+    <section ref={ref} className="web-section relative overflow-hidden border-t border-black/10 bg-white py-8 sm:py-12 lg:py-14">
       <SectionDecor />
       <div className="container relative z-[1]">
         <p className="mb-12 text-center text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#286FAB]">

@@ -8,36 +8,79 @@ import { FaqItem } from "@/components/ui/faq-accordion";
 export const GD_HERO = {
   badge: "Graphic Designing Company · Delhi",
   // line render styles: solid → outline → gradient
-  titleLines: ["Your brand", "is judged", "in 0.05s"],
-  sub: "Make your design speak first. People form a first impression about a brand in just 0.05 seconds — and design plays a major role in that decision. A strong visual identity instantly increases trust, engagement and brand recall.",
-  primaryCta: "Discover my brand's potential",
-  ghostCta: "See the services",
+  titleLines: ["Turn bold ideas", "into memorable", "brand stories"],
+  sub: "We shape strategy, identity and visual design into a brand people recognize, trust and remember across every customer touchpoint.",
+  primaryCta: "Build my brand",
+  ghostCta: "See how we work",
+  disciplines: "Strategy / Identity / Design",
+  sideNote: "Visual systems built to stay consistent from the first impression to every campaign after it.",
   meta: [
     { n: "0.05s", l: "First impression window" },
-    { n: "800+", l: "Brands served in NCR" },
-    { n: "1+", l: "Years of creative work" },
+    { n: "∞", l: "Revisions until you approve" },
+    { n: "48h", l: "First concepts in your inbox" },
   ],
   marquee: ["Logo", "Branding", "Social", "Packaging", "Print", "UI Graphics"],
+};
+
+/* Abstract poster art — used as decorative accents in text-only
+   sections. Not client work; purely graphic. */
+export const GD_DECK = {
+  title: "Studio deck",
+  posters: [
+    { id: "type", label: "Typography", lines: ["Bold", "Type"] },
+    { id: "mark", label: "Logo & marks", lines: ["Marks", "that stick"] },
+    { id: "blocks", label: "Brand systems", lines: ["One", "system"] },
+    { id: "editorial", label: "Social & print", lines: ["Every", "channel"] },
+  ],
+};
+
+/* Real client work — its own section, images only. Files live in
+   public/work/. Add a project by dropping the file in and adding an
+   entry here; the grid reflows to the list. */
+export const GD_WORK = {
+  label: "Selected work",
+  titleLines: ["Recent work", "from the studio."],
+  projects: [
+    {
+      id: "achaar",
+      type: "Logo & identity",
+      name: "Achaär",
+      src: "/work/achaar-logo.png",
+      alt: "Achaär — gold serif wordmark with botanical flourish",
+      /* backdrop behind logo art that has its own transparency */
+      bg: "#000000",
+      contain: true,
+    },
+    {
+      id: "ziva",
+      type: "Logo & identity",
+      name: "Ziva Beauty",
+      src: "/work/ziva-logo.png",
+      alt: "Ziva Beauty — gold floral icon & typography logo",
+      bg: "#000000",
+      contain: true,
+    },
+  ],
 };
 
 export const GD_PROBLEM = {
   titleLines: ["Why businesses need", "professional design"],
   intro:
-    "Many businesses invest heavily in marketing but overlook the importance of quality design. Generic visuals, inconsistent branding and low-quality graphics quietly cost you customers.",
+    "Many businesses invest heavily in marketing but overlook the importance of quality design. Generic visuals, inconsistent branding and low quality graphics quietly cost you customers.",
   cta: "Fix My Brand Image",
   pains: [
     { title: "Low customer trust", desc: "Outdated creatives make even great products look unprofessional.", icon: "shield" },
     { title: "Poor social engagement", desc: "Generic visuals get scrolled past in crowded feeds.", icon: "thumbs" },
     { title: "Weak brand recognition", desc: "Inconsistent branding means customers simply forget you.", icon: "eye" },
     { title: "Reduced conversion rates", desc: "Confusing layouts and visuals push buyers away.", icon: "trending" },
-    { title: "Unprofessional appearance", desc: "First impressions form in 0.05 seconds — design decides them.", icon: "alert" },
+    { title: "Unprofessional appearance", desc: "First impressions form in 0.05 seconds design decides them.", icon: "alert" },
   ],
 };
 
 export const GD_IMPACT = {
   titleLines: ["Good design isn't decoration.", "It's business growth."],
   intro:
-    "Professional design directly influences how customers perceive your business — turning ideas into meaningful visual experiences that support long-term growth.",
+    "Professional design directly influences how customers perceive your business turning ideas into meaningful visual experiences that support long term growth.",
   benefits: [
     "Build trust faster",
     "Increase social engagement",
@@ -48,14 +91,14 @@ export const GD_IMPACT = {
   stats: [
     { value: 800, suffix: "+", label: "Happy clients across Delhi NCR" },
     { value: 1, suffix: "+", label: "Years of creative experience" },
-    { value: 100, suffix: "%", label: "Brand-consistent deliverables" },
+    { value: 100, suffix: "%", label: "Brand consistent deliverables" },
   ],
 };
 
 export const GD_SERVICES = {
   titleLines: ["Our graphic design", "services in Delhi"],
   intro:
-    "As a trusted graphic design studio in Delhi NCR, we offer creative solutions tailored for modern businesses — from startups to growing brands across Delhi, Noida and Gurugram.",
+    "As a trusted graphic design studio in Delhi NCR, we offer creative solutions tailored for modern businesses from startups to growing brands across Delhi, Noida and Gurugram.",
   items: [
     {
       title: "Logo Design",
@@ -67,7 +110,7 @@ export const GD_SERVICES = {
     {
       title: "Brand Identity Design",
       icon: "palette",
-      desc: "A unified visual identity for both online and offline communication — no more inconsistent branding across platforms.",
+      desc: "A unified visual identity for both online and offline communication no more inconsistent branding across platforms.",
       points: ["Brand identity kits", "Corporate branding materials", "Packaging designs", "Business stationery"],
       wide: true,
     },
@@ -86,7 +129,7 @@ export const GD_SERVICES = {
     {
       title: "Website & Digital Graphics",
       icon: "monitor",
-      desc: "Modern, conversion-friendly visuals that improve user experience and reduce bounce rates.",
+      desc: "Modern, conversion friendly visuals that improve user experience and reduce bounce rates.",
       points: ["Website banners", "Landing page graphics", "UI design elements", "Web ads & promos"],
     },
   ],
@@ -95,7 +138,7 @@ export const GD_SERVICES = {
 export const GD_PROCESS = {
   titleLines: ["Our graphic", "design process"],
   intro:
-    "Every color, font and visual tells a story. Our process makes sure yours tells the right one — strategically, consistently, beautifully.",
+    "Every color, font and visual tells a story. Our process makes sure yours tells the right one strategically, consistently, beautifully.",
   steps: [
     { title: "Discover", desc: "Understanding your brand, business goals and target audience." },
     { title: "Research", desc: "Studying industry trends and competitor designs." },
@@ -103,7 +146,7 @@ export const GD_PROCESS = {
     { title: "Design", desc: "Creating custom design concepts and brand visuals." },
     { title: "Feedback", desc: "Sharing designs for your review and suggestions." },
     { title: "Refine", desc: "Polishing designs based on client feedback." },
-    { title: "Finalize", desc: "High-quality output for digital and print use." },
+    { title: "Finalize", desc: "High quality output for digital and print use." },
     { title: "Deliver", desc: "Optimized design files with full brand consistency." },
   ],
 };
@@ -111,10 +154,10 @@ export const GD_PROCESS = {
 export const GD_WHY = {
   titleLines: ["Why choose our design", "studio in Delhi"],
   intro:
-    "We combine creativity with strategy to deliver designs that are not only visually attractive but business-oriented — helping startups, local businesses and growing brands across Delhi NCR build impactful visual identities.",
+    "We combine creativity with strategy to deliver designs that are not only visually attractive but business oriented helping startups, local businesses and growing brands across Delhi NCR build impactful visual identities.",
   points: [
-    { title: "Research-Driven Creativity", desc: "Every design decision is backed by audience and market insight.", icon: "lightbulb" },
-    { title: "Customized Solutions", desc: "No templates — visuals tailored to your brand and goals.", icon: "wand" },
+    { title: "Research Driven Creativity", desc: "Every design decision is backed by audience and market insight.", icon: "lightbulb" },
+    { title: "Customized Solutions", desc: "No templates visuals tailored to your brand and goals.", icon: "wand" },
     { title: "Brand Consistency", desc: "One unified identity across every platform and touchpoint.", icon: "layers" },
     { title: "Experienced Designers", desc: "A seasoned creative team behind every deliverable.", icon: "users" },
     { title: "Affordable & Scalable", desc: "Plans that grow with you, without breaking budgets.", icon: "coins" },
@@ -124,7 +167,7 @@ export const GD_WHY = {
 
 export const GD_INDUSTRIES = [
   "Startups",
-  "E-commerce Brands",
+  "Ecommerce Brands",
   "Restaurants & Cafes",
   "Real Estate",
   "Healthcare",
@@ -137,12 +180,12 @@ export const GD_FAQS: FaqItem[] = [
   {
     question: "How does graphic design help increase sales?",
     answer:
-      "Professional graphic design improves the way customers see your brand. High-quality visuals create trust, attract attention and make marketing campaigns more effective — leading to better conversions and increased sales.",
+      "Professional graphic design improves the way customers see your brand. High quality visuals create trust, attract attention and make marketing campaigns more effective leading to better conversions and increased sales.",
   },
   {
     question: "Can graphic design improve social media engagement?",
     answer:
-      "Yes. Creative, visually appealing social media designs help brands stand out in crowded feeds. Well-designed posts receive higher engagement, shares and better audience interaction.",
+      "Yes. Creative, visually appealing social media designs help brands stand out in crowded feeds. Well designed posts receive higher engagement, shares and better audience interaction.",
   },
   {
     question: "Why is branding important for small businesses?",
@@ -172,7 +215,7 @@ export const GD_FAQS: FaqItem[] = [
   {
     question: "Can good design improve website conversion rates?",
     answer:
-      "Yes. User-friendly, visually appealing website design improves customer experience and encourages visitors to take action. Clear layouts and attractive visuals increase leads, inquiries and sales.",
+      "Yes. User friendly, visually appealing website design improves customer experience and encourages visitors to take action. Clear layouts and attractive visuals increase leads, inquiries and sales.",
   },
   {
     question: "How does packaging design influence buying decisions?",
@@ -182,7 +225,7 @@ export const GD_FAQS: FaqItem[] = [
   {
     question: "What are the benefits of hiring a graphic design company in Delhi?",
     answer:
-      "A professional graphic designing company in Delhi provides creative expertise, branding consistency and customized design solutions — improving communication, customer trust and overall market presence.",
+      "A professional graphic designing company in Delhi provides creative expertise, branding consistency and customized design solutions improving communication, customer trust and overall market presence.",
   },
 ];
 

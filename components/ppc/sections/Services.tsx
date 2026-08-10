@@ -28,7 +28,7 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section ref={root} id="services" className="relative py-14 sm:py-24">
+    <section ref={root} id="services" className="relative py-10 sm:py-14">
       <div className="container">
         <div className="mb-14 max-w-3xl">
           <Label>Our Google Ads services</Label>
@@ -44,15 +44,15 @@ export function ServicesSection() {
           {PPC_SERVICES.items.map((s, i) => (
             <a
               key={s.title}
-              href="#contact"
+              href="/contact"
               className="ppc-svc__row group block border-b border-[var(--gd-line)] py-7 transition-colors duration-300 hover:bg-[var(--gd-soft)]"
             >
-              <div className="grid items-baseline gap-x-8 gap-y-3 md:grid-cols-[3.2rem_1.2fr_1fr_auto]">
-                <span className="gd-display text-sm text-[var(--gd-gold)]">0{i + 1}</span>
-                <h3 className="gd-display m-0 text-[clamp(1.25rem,2.4vw,1.9rem)] text-[var(--gd-ink)] transition-transform duration-400 group-hover:translate-x-3">
+              <div className="grid grid-cols-[2.5rem_1fr] items-baseline gap-x-3 gap-y-2 md:grid-cols-[3.2rem_1.2fr_1fr_auto] md:gap-x-8 md:gap-y-3">
+                <span className="gd-display row-span-2 text-sm text-[var(--gd-gold)] md:row-span-1">0{i + 1}</span>
+                <h3 className="gd-display m-0 text-[clamp(1.15rem,5vw,1.9rem)] text-[var(--gd-ink)] transition-transform duration-400 group-hover:translate-x-3">
                   {s.title}
                 </h3>
-                <p className="m-0 max-w-sm text-sm leading-relaxed text-[var(--gd-muted)]">{s.desc}</p>
+                <p className="col-start-2 m-0 max-w-sm text-sm leading-relaxed text-[var(--gd-muted)] md:col-start-auto">{s.desc}</p>
                 <span className="hidden size-10 items-center justify-center justify-self-end rounded-full border border-[var(--gd-line)] text-[var(--gd-navy)] transition-all duration-300 group-hover:-rotate-45 group-hover:border-[var(--gd-navy)] md:inline-flex [&_svg]:size-4">
                   <ArrowRight />
                 </span>

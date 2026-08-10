@@ -11,6 +11,7 @@ import { IndustriesSection } from "@/components/design/sections/Trust";
 import { FAQSection } from "@/components/design/sections/Faq";
 import { CTASection } from "@/components/design/sections/Cta";
 import { CtaRibbon } from "@/components/design/primitives";
+import { AreasSection } from "@/components/seo/sections/Trust";
 import {
   PPC_HERO,
   PPC_PROCESS,
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
 
 export default function PpcCompanyPage() {
   return (
-    <main className="gd">
+    <main className="gd ppc-page">
       <HeroSection />
       <IntroSection />
       <VelocityMarquee items={PPC_HERO.marquee} />
@@ -71,7 +72,6 @@ export default function PpcCompanyPage() {
       <IndustriesSection
         items={PPC_INDUSTRIES}
         label="Industries we work with"
-        note={PPC_INDUSTRIES_NOTE}
       />
       <DataDrivenSection />
 
@@ -83,6 +83,7 @@ export default function PpcCompanyPage() {
       <LeadGenSection />
       <WhySection />
       <GrowSection />
+      <AreasSection />
       <FAQSection items={PPC_FAQS} />
       <CTASection
         kicker={PPC_CTA.kicker}

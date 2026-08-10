@@ -124,7 +124,7 @@ function FaqRow({ q, a, open0 }: { q: string; a: React.ReactNode; open0?: boolea
   );
 }
 
-function DarkCta({ title, gradWord, desc, button, href = "#contact" }: { title: string; gradWord?: string; desc?: string; button: string; href?: string }) {
+function DarkCta({ title, gradWord, desc, button, href = "/contact" }: { title: string; gradWord?: string; desc?: string; button: string; href?: string }) {
   return (
     <section className="relative py-10 border-b border-slate-200/60 bg-slate-50/10">
       <div className="container">
@@ -257,7 +257,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ WHY BUSINESSES NEED APPS ============ */}
-      <section className="relative py-14 lg:py-16 bg-slate-50/50 border-b border-slate-200/60">
+      <section className="relative py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
         <div className="container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <SceneHead eyebrow="The Opportunity" title="Why businesses need" gradWord="mobile apps today" desc={APP_PROBLEM.intro} />
           <div className="story-stagger grid gap-3.5">
@@ -299,7 +299,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ CUSTOM DEVELOPMENT ============ */}
-      <section className="relative py-14 lg:py-16 bg-slate-50/50 border-b border-slate-200/60">
+      <section className="relative py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
         <div className="container">
           <SceneHead center eyebrow="Tailored to You" title="Custom apps, built around" gradWord="your business" desc={APP_CUSTOM.intro} />
           <div className="story-stagger mx-auto mt-10 flex max-w-3xl flex-wrap justify-center gap-2.5">
@@ -311,7 +311,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ TECHNOLOGIES ============ */}
-      <section className="relative overflow-hidden py-14 lg:py-16 border-b border-slate-200/60">
+      <section className="relative overflow-hidden py-8 lg:py-12 border-b border-slate-200/60">
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_70%_at_30%_0%,rgba(40,111,171,0.05),transparent_60%)]" />
         <div className="container relative z-[1]">
           <SceneHead center eyebrow="Our Stack" title="Technologies" gradWord="we use" desc="Modern, scalable technologies chosen around your app goals, performance needs and future growth." />
@@ -334,7 +334,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ PLATFORMS (Android, iOS, cross-platform) ============ */}
-      <section className="relative py-14 lg:py-16 bg-slate-50/50 border-b border-slate-200/60">
+      <section className="relative py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
         <div className="container">
           <SceneHead center eyebrow="Platforms" title="Android, iOS &" gradWord="cross-platform" desc="Android users dominate reach, iOS users represent premium segments — we deliver native quality on both, plus cross-platform & hybrid apps from a single codebase using Flutter and React Native." />
           <div className="story-stagger mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2.5">
@@ -389,7 +389,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ PROCESS ============ */}
-      <section className="relative py-14 lg:py-16 border-b border-slate-200/60">
+      <section className="relative py-8 lg:py-12 border-b border-slate-200/60">
         <div className="container">
           <SceneHead center eyebrow="How We Work" title="Our development" gradWord="process" desc="A structured, transparent process for smooth execution, faster delivery and high-quality results." />
           <div className="story-stagger mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -407,7 +407,7 @@ export default function AppStory() {
       <DarkCta title="The next big app could be" gradWord="yours." desc="Whether you're building a customer app, business app, or marketplace, we'll help bring your vision to life." button="Discuss My Idea" />
 
       {/* ============ SUPPORT ============ */}
-      <section className="relative overflow-hidden py-14 lg:py-16 bg-slate-50/50 border-b border-slate-200/60">
+      <section className="relative overflow-hidden py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_70%_at_70%_0%,rgba(40,111,171,0.05),transparent_60%)]" />
         <div className="container relative z-[1]">
           <SceneHead center eyebrow="Beyond Launch" title="End-to-end app" gradWord="support" desc="Our work doesn't end at launch. We keep your app secure, updated and ready to scale." />
@@ -425,7 +425,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ AI ============ */}
-      <section className="relative py-14 lg:py-16 border-b border-slate-200/60">
+      <section className="relative py-8 lg:py-12 border-b border-slate-200/60">
         <div className="container">
           <SceneHead center eyebrow="Smarter Apps" title="AI-powered" gradWord="mobile applications" desc={APP_AI.intro} />
           <div className="story-stagger mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -442,7 +442,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ ENTERPRISE ============ */}
-      <section className="relative py-14 lg:py-16 bg-slate-50/50 border-b border-slate-200/60">
+      <section className="relative py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
         <div className="container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <SceneHead eyebrow="Enterprise" title="Enterprise mobile" gradWord="app development" desc={APP_ENTERPRISE.intro} />
           <div className="story-stagger grid gap-3 sm:grid-cols-2">
@@ -457,7 +457,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ PRICING ============ */}
-      <section className="relative overflow-hidden py-14 lg:py-16 border-b border-slate-200/60">
+      <section className="relative overflow-hidden py-8 lg:py-12 border-b border-slate-200/60">
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_70%_at_50%_0%,rgba(40,111,171,0.22),transparent_60%)]" />
         <div className="container relative z-[1]">
           <SceneHead center eyebrow="Pricing Approach" title="Affordable development for" gradWord="startups & SMBs" desc={APP_PRICING.intro} />
@@ -478,7 +478,7 @@ export default function AppStory() {
                   ))}
                 </ul>
                 <div className="mt-8">
-                  <Button href="#contact" variant={plan.featured ? "primary" : "ghost"} className="w-full justify-center">Get Estimate</Button>
+                  <Button href="/contact" variant={plan.featured ? "primary" : "ghost"} className="w-full justify-center">Get Estimate</Button>
                 </div>
               </div>
             ))}
@@ -487,7 +487,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ DEDICATED DEVELOPERS ============ */}
-      <section className="relative py-14 lg:py-16 bg-slate-50/50 border-b border-slate-200/60">
+      <section className="relative py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
         <div className="container">
           <SceneHead center eyebrow="Long-Term Partner" title="Hire dedicated" gradWord="app developers" desc={APP_DEDICATED.intro} />
           <div className="story-stagger mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -502,7 +502,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ BUILD REAL PROBLEMS (narrative) ============ */}
-      <section className="relative py-14 lg:py-16 border-b border-slate-200/60">
+      <section className="relative py-8 lg:py-12 border-b border-slate-200/60">
         <div className="container">
           <div className="story-reveal mx-auto max-w-3xl text-center">
             <p className="mb-3 text-[0.74rem] font-bold uppercase tracking-[0.3em] text-[#286fab]">Our Philosophy</p>
@@ -517,7 +517,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ WHY CHOOSE ============ */}
-      <section className="relative overflow-hidden py-14 lg:py-16 bg-slate-50/50 border-b border-slate-200/60">
+      <section className="relative overflow-hidden py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_70%_at_40%_0%,rgba(40,111,171,0.2),transparent_60%)]" />
         <div className="container relative z-[1]">
           <SceneHead center eyebrow="Why Digivanta" title="Why choose us for" gradWord="app development" />
@@ -538,7 +538,7 @@ export default function AppStory() {
       <DarkCta title="Imagine your business in your" gradWord="customer's pocket." desc="One tap. Instant access. Unlimited opportunities. Let's create an app your customers will love to use." button="Put My Business on Every Phone" />
 
       {/* ============ IMPACT / GLANCE ============ */}
-      <section className="relative overflow-hidden border-b border-slate-200 py-16 lg:py-20">
+      <section className="relative overflow-hidden border-b border-slate-200 py-8 lg:py-14">
         <div aria-hidden className="pointer-events-none absolute inset-0 [background-image:linear-gradient(rgba(12,36,61,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(12,36,61,0.03)_1px,transparent_1px)] [background-size:60px_60px] [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_75%)]" />
         <div className="container relative z-[1]">
           <h2 className="story-reveal mx-auto mb-16 max-w-2xl text-center text-[clamp(1.8rem,4vw,2.8rem)] font-bold tracking-tight text-[#0c243d]">Digivanta at a glance</h2>
@@ -556,7 +556,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ LET'S DISCUSS ============ */}
-      <section className="relative py-14 lg:py-16 bg-slate-50/50 border-b border-slate-200/60">
+      <section className="relative py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
         <div className="container">
           <div className="story-reveal mx-auto max-w-3xl text-center">
             <p className="mb-3 text-[0.74rem] font-bold uppercase tracking-[0.3em] text-[#286fab]">Start Here</p>
@@ -588,7 +588,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ FAQ ============ */}
-      <section className="relative py-14 lg:py-16 bg-slate-50/50 border-b border-slate-200/60">
+      <section className="relative py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
         <div className="container">
           <SceneHead center eyebrow="FAQ" title="Frequently asked" gradWord="questions" />
           <div className="story-reveal mx-auto mt-12 max-w-3xl rounded-3xl border border-slate-200 bg-slate-50 px-6 sm:px-9">
@@ -600,7 +600,7 @@ export default function AppStory() {
       </section>
 
       {/* ============ LAUNCH FINALE ============ */}
-      <section className="launch-scene relative grid min-h-screen place-items-center overflow-hidden py-24">
+      <section className="launch-scene relative grid min-h-screen place-items-center overflow-hidden py-10 sm:py-14">
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_100%_at_50%_120%,rgba(40,111,171,0.15),transparent_60%)]" />
         <div className="relative z-[1] flex flex-col items-center px-6 text-center">
           <div className="launch-phone mb-10">
@@ -614,8 +614,8 @@ export default function AppStory() {
               From Android and iOS to AI-powered and cross-platform solutions, Digivanta helps you create apps that are user-focused, scalable and growth-ready. Looking for reliable app developers in Delhi? Let&apos;s build it.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
-              <Button href="#contact" variant="primary">Start My App Journey</Button>
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-7 py-3.5 text-sm font-semibold text-[#0c243d] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#286fab] hover:bg-slate-100">Discuss My Idea</a>
+              <Button href="/contact" variant="primary">Start My App Journey</Button>
+              <a href="/contact" className="site-cta inline-flex items-center gap-2 border border-slate-200 bg-slate-50 px-7 py-3.5 text-sm font-semibold text-[#0c243d] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#286fab] hover:bg-slate-100">Discuss My Idea</a>
             </div>
           </div>
         </div>

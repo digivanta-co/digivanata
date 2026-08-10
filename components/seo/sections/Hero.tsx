@@ -53,7 +53,7 @@ function SerpPanel() {
             <span className="absolute -top-2.5 right-4 rounded-full bg-[linear-gradient(120deg,var(--gd-navy),var(--gd-blue))] px-2.5 py-0.5 text-[0.62rem] font-bold uppercase tracking-wider text-white">
               Rank #1
             </span>
-            <p className="m-0 text-[0.68rem] text-[var(--gd-muted)]">digivanta.co.in</p>
+            <p className="m-0 text-[0.68rem] text-[var(--gd-muted)]">digivanta.co</p>
             <p className="m-0 mt-0.5 text-[0.88rem] font-bold text-[var(--gd-navy)]">
               Digivanta — Best SEO Company in Delhi
             </p>
@@ -104,7 +104,7 @@ function SerpPanel() {
       {/* floating stat chips (kept from the original hero) */}
       <div className="sh2__chip--a absolute -left-4 -top-5 hidden rounded-2xl border border-[var(--gd-line)] bg-white/95 px-4 py-3 shadow-[0_14px_34px_rgba(12,36,61,0.12)] sm:block">
         <div className="flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-xl bg-[var(--gd-gold-soft)] text-[var(--gd-gold)]">
+          <span className="grid size-10 place-items-center rounded-xl bg-[rgba(40,111,171,0.1)] text-[var(--gd-blue)]">
             <SeoIcon name="trendUp" width={20} height={20} />
           </span>
           <div>
@@ -177,7 +177,7 @@ export default function HeroSection() {
             </p>
 
             <div className="sh2__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
-              <MagneticButton href="#contact">
+              <MagneticButton href="/contact">
                 <span className="hidden sm:inline">{SEO_HERO.ctaPrimary}</span>
                 <span className="sm:hidden">SEO Consultation</span>
                 <ArrowRight />
@@ -198,7 +198,7 @@ export default function HeroSection() {
                 <span className="text-[0.85rem] font-semibold text-[var(--gd-ink)]">4.9/5 Google rating</span>
               </div>
               <div>
-                <strong className="gd-display block text-2xl text-[var(--gd-navy)]">800+</strong>
+                <strong className="gd-display block text-2xl text-[var(--gd-navy)]">100+</strong>
                 <span className="text-[0.74rem] text-[var(--gd-muted)]">Clients served</span>
               </div>
               <div>

@@ -31,17 +31,17 @@ export const BI_FEATURES = [
   {
     icon: "Video",
     title: "Live Dealers",
-    desc: "Professionally trained dealers hosting every table in real time — the authentic casino floor, streamed to you.",
+    desc: "Professionally trained dealers hosting every table in real time the authentic casino floor, streamed to you.",
   },
   {
     icon: "MonitorPlay",
     title: "HD Streaming",
-    desc: "Crystal-clear 1080p tables with multi-angle cameras and near-zero latency, on any device.",
+    desc: "Crystal clear 1080p tables with multi angle cameras and near zero latency, on any device.",
   },
   {
     icon: "IndianRupee",
     title: "Real Money",
-    desc: "Real stakes, real wins. Boot amounts for every bankroll — from ₹10 casual tables to VIP high-roller rooms.",
+    desc: "Real stakes, real wins. Boot amounts for every bankroll from ₹10 casual tables to VIP high roller rooms.",
   },
   {
     icon: "Zap",
@@ -51,12 +51,12 @@ export const BI_FEATURES = [
   {
     icon: "ShieldCheck",
     title: "Secure Platform",
-    desc: "256-bit encryption, certified RNG and independently audited game fairness on every hand dealt.",
+    desc: "256 bit encryption, certified RNG and independently audited game fairness on every hand dealt.",
   },
   {
     icon: "Headset",
     title: "24×7 Support",
-    desc: "A dedicated concierge team in Hindi and English, around the clock — chat, call or WhatsApp.",
+    desc: "A dedicated concierge team in Hindi and English, around the clock chat, call or WhatsApp.",
   },
 ];
 
@@ -70,7 +70,7 @@ export const BI_JOURNEY = [
   {
     step: "02",
     title: "Choose Table",
-    desc: "Pick your boot amount — casual, classic or the VIP Royale room.",
+    desc: "Pick your boot amount casual, classic or the VIP Royale room.",
     icon: "LayoutGrid",
   },
   {
@@ -100,7 +100,7 @@ export const BI_JOURNEY = [
   {
     step: "07",
     title: "Win The Pot",
-    desc: "Strongest hand at showdown takes it all — paid to your wallet instantly.",
+    desc: "Strongest hand at showdown takes it all paid to your wallet instantly.",
     icon: "Trophy",
   },
 ];
@@ -116,7 +116,7 @@ export const BI_RANKINGS: {
 }[] = [
   {
     name: "Trail",
-    desc: "Three cards of the same rank. The undisputed king of Teen Patti — three Aces beats everything.",
+    desc: "Three cards of the same rank. The undisputed king of Teen Patti three Aces beats everything.",
     odds: "0.24%",
     tier: 1,
     cards: [
@@ -127,7 +127,7 @@ export const BI_RANKINGS: {
   },
   {
     name: "Pure Sequence",
-    desc: "Three consecutive cards of the same suit. A straight flush — rare, elegant, devastating.",
+    desc: "Three consecutive cards of the same suit. A straight flush rare, elegant, devastating.",
     odds: "0.22%",
     tier: 2,
     cards: [
@@ -171,7 +171,7 @@ export const BI_RANKINGS: {
   },
   {
     name: "High Card",
-    desc: "No combination — your highest card decides. This is where nerve beats numbers.",
+    desc: "No combination your highest card decides. This is where nerve beats numbers.",
     odds: "74.4%",
     tier: 6,
     cards: [
@@ -197,7 +197,7 @@ export const BI_WHY = [
   },
   {
     icon: "Wallet",
-    title: "UPI-First Payments",
+    title: "UPI First Payments",
     desc: "Deposit with UPI, Paytm or net banking. Withdraw winnings in minutes.",
   },
   {
@@ -207,18 +207,18 @@ export const BI_WHY = [
   },
   {
     icon: "Lock",
-    title: "Bank-Grade Security",
-    desc: "256-bit SSL encryption and two-factor login protect every rupee and every hand.",
+    title: "Bank Grade Security",
+    desc: "256 bit SSL encryption and two factor login protect every rupee and every hand.",
   },
   {
     icon: "Gauge",
-    title: "Zero-Lag Tables",
-    desc: "Purpose-built streaming infrastructure across India for flawless live play.",
+    title: "Zero Lag Tables",
+    desc: "Purpose built streaming infrastructure across India for flawless live play.",
   },
   {
     icon: "Gift",
     title: "Daily Rewards",
-    desc: "Cashback, leaderboards and festival specials — being at the table always pays.",
+    desc: "Cashback, leaderboards and festival specials being at the table always pays.",
   },
 ];
 
@@ -231,7 +231,7 @@ export const BI_STRATEGIES = [
   {
     icon: "PiggyBank",
     title: "Protect Your Bankroll",
-    desc: "Never sit with more than you can smile about losing. Fix a session budget, and step away when you've doubled — discipline is the real edge.",
+    desc: "Never sit with more than you can smile about losing. Fix a session budget, and step away when you've doubled discipline is the real edge.",
   },
   {
     icon: "Users",
@@ -248,7 +248,7 @@ export const BI_STRATEGIES = [
 export const BI_FAQS = [
   {
     q: "Is Teen Patti on BetIndia played with real dealers?",
-    a: "Yes. Every table is hosted by a professionally trained live dealer and streamed in HD from our studio floor. You see every shuffle, every deal and every card in real time — nothing is simulated.",
+    a: "Yes. Every table is hosted by a professionally trained live dealer and streamed in HD from our studio floor. You see every shuffle, every deal and every card in real time nothing is simulated.",
   },
   {
     q: "How fast are withdrawals?",
@@ -260,14 +260,14 @@ export const BI_FAQS = [
   },
   {
     q: "What does playing 'blind' mean?",
-    a: "A blind player bets without looking at their cards and pays only half the current stake. It's a signature Teen Patti move — cheaper to stay in the pot, and impossible for opponents to read.",
+    a: "A blind player bets without looking at their cards and pays only half the current stake. It's a signature Teen Patti move cheaper to stay in the pot, and impossible for opponents to read.",
   },
   {
     q: "Is my money safe on BetIndia?",
-    a: "All transactions run over 256-bit SSL encryption, player balances are held in segregated accounts, and game fairness is verified by an independently certified RNG that is audited monthly.",
+    a: "All transactions run over 256 bit SSL encryption, player balances are held in segregated accounts, and game fairness is verified by an independently certified RNG that is audited monthly.",
   },
   {
     q: "Who can play on BetIndia?",
-    a: "You must be 18 or older and located in a region where real-money card games are permitted. We enforce age verification at signup and offer deposit limits and self-exclusion tools to every player.",
+    a: "You must be 18 or older and located in a region where real money card games are permitted. We enforce age verification at signup and offer deposit limits and self exclusion tools to every player.",
   },
 ];

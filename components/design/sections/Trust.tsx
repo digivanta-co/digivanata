@@ -30,7 +30,7 @@ export function ImpactSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="relative py-10 sm:py-14">
       <div className="container">
         <div className="gd-imp__item max-w-2xl">
           <Label>The impact of good design</Label>
@@ -85,7 +85,7 @@ export function WhySection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-24">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-10 sm:py-14">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Why Digivanta</Label>
@@ -96,7 +96,7 @@ export function WhySection() {
           </h2>
           <p className="mt-5 max-w-md text-[var(--gd-muted)]">{GD_WHY.intro}</p>
           <div className="mt-8">
-            <MagneticButton href="#contact">
+            <MagneticButton href="/contact">
               Start a project <ArrowRight />
             </MagneticButton>
           </div>
@@ -120,11 +120,9 @@ export function WhySection() {
 export function IndustriesSection({
   items = GD_INDUSTRIES,
   label = "Industries we design for",
-  note,
 }: {
   items?: readonly string[];
   label?: string;
-  note?: string;
 }) {
   const row = useMarquee<HTMLDivElement>({ duration: 34 });
   const doubled = [...items, ...items];
@@ -146,11 +144,6 @@ export function IndustriesSection({
           </span>
         ))}
       </div>
-      {note && (
-        <div className="container mt-6">
-          <p className="m-0 max-w-2xl text-sm leading-relaxed text-[var(--gd-muted)]">{note}</p>
-        </div>
-      )}
     </section>
   );
 }

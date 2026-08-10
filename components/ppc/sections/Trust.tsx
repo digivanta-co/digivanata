@@ -29,7 +29,7 @@ export function LeadGenSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="relative py-10 sm:py-14">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Lead generation, done right</Label>
@@ -84,7 +84,7 @@ export function WhySection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-24">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-10 sm:py-14">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Why trust our expertise</Label>
@@ -95,7 +95,7 @@ export function WhySection() {
           </h2>
           <p className="mt-5 max-w-md text-[var(--gd-muted)]">{PPC_WHY.intro}</p>
           <div className="mt-8">
-            <MagneticButton href="#contact">
+            <MagneticButton href="/contact">
               Start a campaign <ArrowRight />
             </MagneticButton>
           </div>
@@ -135,7 +135,7 @@ export function GrowSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-b border-[var(--gd-line)] py-12 sm:py-20">
+    <section ref={root} className="relative border-b border-[var(--gd-line)] py-8 sm:py-12">
       <div className="container">
         <div className="ppc-grow__item max-w-2xl">
           <Label>Grow with smarter strategies</Label>

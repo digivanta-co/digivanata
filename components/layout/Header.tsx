@@ -39,21 +39,16 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [mobileServices, setMobileServices] = useState(false);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const megaTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const lastY = useRef(0);
   const progressRef = useRef<HTMLDivElement>(null);
 
-  /* compact header + hide-on-scroll-down + scroll progress hairline */
+  /* compact header + scroll progress hairline */
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 12);
-      /* 6px dead zone so tiny scroll jitter doesn't flicker the header */
-      if (Math.abs(y - lastY.current) > 6) {
-        setHidden(y > lastY.current && y > 96);
-        lastY.current = y;
-      }
       const doc = document.documentElement;
       const max = doc.scrollHeight - window.innerHeight;
       const p = max > 0 ? Math.min(y / max, 1) : 0;
@@ -74,7 +69,13 @@ export default function Header() {
   const closeAll = () => {
     setOpen(false);
     setMobileServices(false);
+    setMegaOpen(false);
   };
+
+  /* Close mega dropdown on route change */
+  useEffect(() => {
+    setMegaOpen(false);
+  }, [pathname]);
 
   const handleNavClick = (href: string, e: React.MouseEvent) => {
     if (href.includes("#")) {
@@ -91,25 +92,12 @@ export default function Header() {
 
   return (
     <header
-      className={
-        "sticky top-0 z-50 w-full transition-transform duration-300 " +
-        (hidden && !open ? "-translate-y-full" : "")
-      }
+      className="sticky top-0 z-50 w-full"
     >
-      {/* Glass background lives on an inner overlay, NOT on <header>:
-          backdrop-filter on the header itself would make it the containing
-          block for position:fixed children — trapping the mobile drawer
-          inside the header and widening the page (pinch-zoom-out bug).
-          Same reason the hide-on-scroll transform above is only applied
-          while hidden AND the drawer is closed — a transform would also
-          become the containing block for the fixed drawer. */}
+      
       <div
         aria-hidden
         className={
-          // Solid background (no backdrop-filter): the sticky header is always
-          // on screen, and a backdrop blur re-samples + re-blurs its backdrop on
-          // every scroll frame — the biggest single source of scroll jank. An
-          // opaque white bar looks nearly identical (it was already 80–95% white).
           "absolute inset-0 -z-10 transition-all duration-300 " +
           (scrolled
             ? "bg-white shadow-[0_8px_30px_rgba(13,18,41,0.06)]"
@@ -122,7 +110,7 @@ export default function Header() {
           (scrolled ? "py-2" : "py-3.5")
         }
       >
-        {/* Left — logo */}
+      
         <Link href="/" className="justify-self-start transition-transform duration-300 hover:-translate-y-0.5" onClick={closeAll}>
           <Image
             src="/digivanta.png"
@@ -139,18 +127,24 @@ export default function Header() {
           <ul className="m-0 flex list-none items-center gap-1 p-0">
             {NAV_ITEMS.map((item) =>
               item.children ? (
-                /* Services — mega dropdown */
-                <li key={item.label} className="group relative">
+                /* Services — mega dropdown (controlled) */
+                <li
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => { if (megaTimer.current) clearTimeout(megaTimer.current); setMegaOpen(true); }}
+                  onMouseLeave={() => { megaTimer.current = setTimeout(() => setMegaOpen(false), 200); }}
+                >
                   <button
                     type="button"
-                    className="flex cursor-pointer items-center gap-1.5 rounded-full border-none bg-transparent px-4 py-2.5 text-[0.95rem] font-semibold text-[#3a4155] transition-colors duration-200 group-hover:text-[#0C243D]"
+                    onClick={() => setMegaOpen((v) => !v)}
+                    className={"flex cursor-pointer items-center gap-1.5 rounded-full border-none bg-transparent px-4 py-2.5 text-[0.95rem] font-semibold transition-colors duration-200 " + (megaOpen ? "text-[#0C243D]" : "text-[#3a4155] hover:text-[#0C243D]")}
                   >
                     {item.label}
-                    <ChevronDown className="size-3.5 transition-transform duration-300 group-hover:rotate-180" />
+                    <ChevronDown className={"size-3.5 transition-transform duration-300 " + (megaOpen ? "rotate-180" : "")} />
                   </button>
 
                   {/* mega panel */}
-                  <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 translate-y-3 pt-3 opacity-0 transition-all duration-300 [transition-timing-function:cubic-bezier(.22,1,.36,1)] group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className={"absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 transition-all duration-300 [transition-timing-function:cubic-bezier(.22,1,.36,1)] " + (megaOpen ? "visible translate-y-0 opacity-100" : "invisible translate-y-3 opacity-0 pointer-events-none")}>
                     <div className="w-[620px] overflow-hidden rounded-2xl border border-[rgba(13,18,41,0.08)] bg-white p-2.5 shadow-[0_24px_60px_rgba(13,18,41,0.14)]">
                       {/* gold hairline */}
                       <div aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,#0C243D,#286FAB_55%,#b08d3f)]" />
@@ -159,9 +153,9 @@ export default function Header() {
                           <Link
                             key={child.label}
                             href={child.href}
-                            onClick={(e) => handleNavClick(child.href, e)}
+                            onClick={(e) => { setMegaOpen(false); handleNavClick(child.href, e); }}
                             style={{ transitionDelay: `${ci * 35}ms` }}
-                            className="group/card flex translate-y-1.5 items-center gap-3 rounded-xl p-3 opacity-0 transition-all duration-300 hover:bg-[#f5f7fc] group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100"
+                            className={"group/card flex items-center gap-3 rounded-xl p-3 transition-all duration-300 hover:bg-[#f5f7fc] " + (megaOpen ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0")}
                           >
                             <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-[rgba(40,111,171,0.08)] text-[#286FAB] transition-all duration-300 group-hover/card:-rotate-6 group-hover/card:scale-105 group-hover/card:bg-[linear-gradient(120deg,#0C243D,#286FAB)] group-hover/card:text-white [&_svg]:size-5">
                               {child.icon && <ServiceIcon name={child.icon} />}
@@ -231,7 +225,7 @@ export default function Header() {
             href={CONTACT.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/cta relative hidden items-center gap-2 overflow-hidden rounded-full bg-[linear-gradient(120deg,#0C243D,#286FAB)] px-5 py-2.5 text-[0.82rem] font-bold text-white! shadow-[0_10px_24px_rgba(10,31,102,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(10,31,102,0.36)] md:inline-flex"
+            className="site-cta group/cta relative hidden items-center gap-2 overflow-hidden bg-[linear-gradient(120deg,#0C243D,#286FAB)] px-5 py-2.5 text-[0.82rem] font-bold text-white! shadow-[0_10px_24px_rgba(10,31,102,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(10,31,102,0.36)] md:inline-flex"
           >
             <span aria-hidden className="absolute inset-0 -translate-x-[120%] bg-[linear-gradient(100deg,transparent,rgba(255,255,255,0.45),transparent)] transition-transform duration-700 group-hover/cta:translate-x-[120%]" />
             <span aria-hidden className="relative size-1.5 rounded-full bg-[#e8c574]" />
@@ -322,7 +316,7 @@ export default function Header() {
             href={CONTACT.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="drawer__cta mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(120deg,#0C243D,#286FAB)] px-6 py-3 text-sm font-bold text-white!"
+            className="drawer__cta site-cta mt-4 inline-flex items-center justify-center gap-2 bg-[linear-gradient(120deg,#0C243D,#286FAB)] px-6 py-3 text-sm font-bold text-white!"
             onClick={closeAll}
           >
             Chat with Expert

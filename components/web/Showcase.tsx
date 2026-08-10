@@ -5,7 +5,7 @@ import { ArrowRight, Spark } from "@/components/ui/Icons";
 
 export default function WebShowcaseSection() {
   return (
-    <section id="web-showcase" className="relative bg-white py-12 sm:py-20 lg:py-28 border-t border-[var(--gd-line)]">
+    <section id="web-showcase" className="relative bg-white py-8 sm:py-12 lg:py-16 border-t border-[var(--gd-line)]">
       <div className="container relative z-10">
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <span className="mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--gd-blue)]">

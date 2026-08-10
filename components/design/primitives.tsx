@@ -48,7 +48,7 @@ export function StatBig({
 }
 
 /* ---- Slim inline CTA ribbon between sections ---- */
-export function CtaRibbon({ text, cta, href = "#contact" }: { text: string; cta: string; href?: string }) {
+export function CtaRibbon({ text, cta, href = "/contact" }: { text: string; cta: string; href?: string }) {
   const ref = useReveal<HTMLDivElement>({ variant: "up", duration: 0.8 });
   return (
     <div className="border-y border-[var(--gd-line)] bg-[var(--gd-soft)]">

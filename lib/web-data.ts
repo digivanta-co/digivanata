@@ -1,9 +1,15 @@
 import { FaqItem } from "@/components/ui/faq-accordion";
 
 export const WEB_HERO = {
-  badge: "Best Web Development Company in Delhi",
-  titleLines: ["CUSTOM WEB", "DEVELOPMENT", "THAT SCALES."],
-  sub: "Most businesses don't lose customers because their product is bad. They lose them because their website creates confusion, loads slowly, looks outdated, or fails to build customer confidence. We build fast, responsive, and conversion-focused web solutions.",
+  eyebrow: "Best Web Development Company in Delhi",
+  h1: [
+    { t: "Custom", grad: true },
+    { t: "Web", grad: true },
+    { t: "Development" },
+    { t: "That", grad: true },
+    { t: "Scales.", grad: true },
+  ] as { t: string; grad?: boolean }[],
+  sub: "Most businesses don't lose customers because their product is bad. They lose them because their website creates confusion, loads slowly, looks outdated, or fails to build customer confidence. We build fast, responsive, and conversion focused web solutions.",
   primaryCta: "Start Your Project",
   ghostCta: "View Features",
   meta: [
@@ -27,7 +33,7 @@ export const WEB_SERVICES = [
     title: "Custom Website Development",
     tag: "Enterprise Architecture",
     badge: "Next.js / React",
-    desc: "Scalable, brand-aligned websites built for peak performance, security, and long-term business growth.",
+    desc: "Scalable, brand aligned websites built for peak performance, security, and long term business growth.",
     highlights: ["Modular Codebase", "Headless Capability", "Scalable Performance"],
     color: "from-[#0C243D] to-[#286FAB]",
   },
@@ -36,13 +42,13 @@ export const WEB_SERVICES = [
     title: "Ecommerce Development",
     tag: "High Conversion",
     badge: "Shopify / Custom",
-    desc: "Conversion-focused online storefronts with fast checkout, mobile UX, and secure payment integrations.",
+    desc: "Conversion focused online storefronts with fast checkout, mobile UX, and secure payment integrations.",
     highlights: ["Fast Checkout Flow", "Payment Integrations", "Inventory System"],
     color: "from-[#286FAB] to-[#b08d3f]",
   },
   {
     icon: "search",
-    title: "SEO-Friendly Websites",
+    title: "SEO Friendly Websites",
     tag: "Rank #1 Foundation",
     badge: "Technical SEO",
     desc: "Clean architecture, technical SEO foundation, and optimized Core Web Vitals built right from day one.",
@@ -52,10 +58,10 @@ export const WEB_SERVICES = [
   {
     icon: "content",
     title: "Responsive Web Design",
-    tag: "Mobile-First UX",
+    tag: "Mobile First UX",
     badge: "Universal Fit",
-    desc: "Mobile-first layouts engineered to render perfectly and perform smoothly across every screen size.",
-    highlights: ["Touch-Optimized UX", "Fluid Breakpoints", "Retina Assets"],
+    desc: "Mobile first layouts engineered to render perfectly and perform smoothly across every screen size.",
+    highlights: ["Touch Optimized UX", "Fluid Breakpoints", "Retina Assets"],
     color: "from-[#286FAB] to-[#0C243D]",
   },
   {
@@ -72,7 +78,7 @@ export const WEB_SERVICES = [
     title: "Performance & Optimization",
     tag: "Core Web Vitals",
     badge: "<1.2s Load Speed",
-    desc: "Lightweight code, asset compression, and lightning-fast speed improvements that boost conversions.",
+    desc: "Lightweight code, asset compression, and lightning fast speed improvements that boost conversions.",
     highlights: ["Global CDN Setup", "Zero Layout Shift", "99/100 Speed Score"],
     color: "from-[#286FAB] to-[#0C243D]",
   },
@@ -85,50 +91,50 @@ export const WEB_PROCESS_STEPS = [
   },
   {
     title: "UX/UI Design & Prototyping",
-    desc: "Our designers craft modern, accessible, and high-converting interface wireframes and interactive visual prototypes.",
+    desc: "Our designers craft modern, accessible, and high converting interface wireframes and interactive visual prototypes.",
   },
   {
-    title: "High-Performance Build",
+    title: "High Performance Build",
     desc: "We write clean, modular, and scalable code using Next.js, React, and modern web frameworks with SEO best practices integrated.",
   },
   {
     title: "Rigorous QA & Speed Audit",
-    desc: "Comprehensive cross-browser testing, mobile responsiveness checks, accessibility audits, and Core Web Vitals optimization.",
+    desc: "Comprehensive cross browser testing, mobile responsiveness checks, accessibility audits, and Core Web Vitals optimization.",
   },
   {
     title: "Deployment & Ongoing Growth",
-    desc: "Smooth domain setup, SSL security, continuous monitoring, and ongoing technical support for long-term scalability.",
+    desc: "Smooth domain setup, SSL security, continuous monitoring, and ongoing technical support for long term scalability.",
   },
 ];
 
 export const WEB_COMPARE = {
   others: [
-    "Generic pre-made templates",
+    "Generic pre made templates",
     "Slow loading speeds & bloated code",
     "Weak mobile UX & broken layouts",
     "SEO added as an afterthought",
     "No scalability or future planning",
-    "Minimal post-launch technical support",
+    "Minimal post launch technical support",
   ],
   ours: [
-    "Custom strategy & tailor-made architecture",
-    "Performance-first engineering (<1.5s load)",
-    "Mobile-first, conversion-driven UX",
+    "Custom strategy & tailor made architecture",
+    "Performance first engineering (<1.5s load)",
+    "Mobile first, conversion driven UX",
     "Technical SEO built from day one",
     "Modern, scalable framework stack",
-    "Long-term technical partnership & maintenance",
+    "Long term technical partnership & maintenance",
   ],
 };
 
-export const WEB_TECH = [
-  { name: "Next.js", category: "Full-stack framework", image: "/nextdotjs.svg", featured: true },
+export const  WEB_TECH = [
+  { name: "Next.js", category: "Full stack framework", image: "/nextdotjs.svg", featured: true },
   { name: "React", category: "Interface engineering", image: "/react-svgrepo-com.svg", featured: true },
   { name: "WordPress", category: "Flexible content systems", image: "/wordpress-color-svgrepo-com.svg" },
-  { name: "Shopify", category: "Conversion-led commerce", image: "/shopify-color-svgrepo-com.svg" },
+  { name: "Shopify", category: "Conversion led commerce", image: "/shopify-color-svgrepo-com.svg" },
   { name: "JavaScript", category: "Modern web experiences", image: "/js-svgrepo-com.svg" },
   { name: "Angular", category: "Enterprise applications", image: "/angularjs.svg" },
-  { name: "Python", category: "Back-end & automation", image: "/python-svgrepo-com.svg" },
-  { name: "Figma", category: "Design-to-code workflow", image: "/figma.svg" },
+  { name: "Python", category: "Back end & automation", image: "/python-svgrepo-com.svg" },
+  { name: "Figma", category: "Design to code workflow", image: "/figma.svg" },
 ];
 
 export const WEB_TECH_SECTION = {
@@ -143,16 +149,16 @@ export const WEB_TECH_SECTION = {
 export const WEB_PROBLEMS = [
   "Poor website structure & navigation",
   "Slow loading speeds & high bounce rates",
-  "Non-responsive layouts on mobile devices",
+  "Non responsive layouts on mobile devices",
   "Outdated UI/UX that hurts credibility",
   "Technical SEO errors blocking Google rankings",
   "Poor Core Web Vitals scores",
-  "Hard-to-update legacy backend systems",
-  "Low visitor-to-lead conversion rates",
+  "Hard to update legacy backend systems",
+  "Low visitor to lead conversion rates",
 ];
 
 export const WEB_INDUSTRIES = [
-  "E-Commerce & Retail",
+  "Ecommerce & Retail",
   "Healthcare & Medical",
   "Real Estate & Property",
   "SaaS & Tech Startups",
@@ -175,10 +181,10 @@ export const WEB_REGIONS = [
 
 export const WEB_WHY = [
   "Transparent communication & progress reporting",
-  "SEO-first development methodology",
-  "Mobile-first design priority",
+  "SEO first development methodology",
+  "Mobile first design priority",
   "Core Web Vitals & speed optimization",
-  "Scalable, enterprise-grade codebase",
+  "Scalable, enterprise grade codebase",
   "Dedicated ongoing support & maintenance",
 ];
 
@@ -204,9 +210,9 @@ export const WEB_FAQS: FaqItem[] = [
       "Custom web development delivers a tailored digital presence, optimized performance, brand distinction, and a seamless user experience that converts visitors into customers better than rigid templates.",
   },
   {
-    question: "What makes a website SEO-friendly from day one?",
+    question: "What makes a website SEO friendly from day one?",
     answer:
-      "An SEO-friendly website features fast loading speed, clean HTML5 semantic structure, mobile responsiveness, structured data markup, clean URL architecture, and optimized Core Web Vitals.",
+      "An SEO friendly website features fast loading speed, clean HTML5 semantic structure, mobile responsiveness, structured data markup, clean URL architecture, and optimized Core Web Vitals.",
   },
   {
     question: "Why is responsive web design critical for mobile users?",
@@ -216,7 +222,7 @@ export const WEB_FAQS: FaqItem[] = [
   {
     question: "How long does a website development project take?",
     answer:
-      "Project timelines depend on complexity. Standard corporate websites take 2–4 weeks, while complex custom ecommerce portals or web applications may take 4–8 weeks.",
+      "Project timelines depend on complexity. Standard corporate websites take 2 4 weeks, while complex custom ecommerce portals or web applications may take 4 8 weeks.",
   },
   {
     question: "Will I be able to update content on my website easily?",
@@ -226,6 +232,6 @@ export const WEB_FAQS: FaqItem[] = [
   {
     question: "How does website speed affect Google search rankings?",
     answer:
-      "Google uses Core Web Vitals as an official ranking factor. Fast-loading websites deliver superior user experiences, reduce bounce rates, and rank higher in search results.",
+      "Google uses Core Web Vitals as an official ranking factor. Fast loading websites deliver superior user experiences, reduce bounce rates, and rank higher in search results.",
   },
 ];

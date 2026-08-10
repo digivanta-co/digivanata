@@ -94,7 +94,7 @@ export default function RdWhyDigivanta() {
   }, []);
 
   return (
-    <section ref={root} className="relative overflow-hidden bg-[var(--rd-gray)] py-16 sm:py-20">
+    <section ref={root} className="relative overflow-hidden bg-[var(--rd-gray)] py-8 sm:py-12">
       <div className="container grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         {/* sticky intro + animated orbit mark */}
         <div className="lg:sticky lg:top-28 lg:self-start">

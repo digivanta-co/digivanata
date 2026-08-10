@@ -11,11 +11,11 @@ export const SEO_HERO = {
     { t: "Services", grad: true },
     { t: "That" },
     { t: "Build" },
-    { t: "Long-Term" },
+    { t: "Long Term" },
     { t: "Online" },
     { t: "Visibility", grad: true },
   ] as { t: string; grad?: boolean }[],
-  sub: "As a trusted SEO Company in Delhi, Digivanta focuses on creating SEO strategies that improve visibility, strengthen brand authority, and help businesses appear where users are actively searching — on search engines, AI platforms, and voice search systems.",
+  sub: "As a trusted SEO Company in Delhi, Digivanta focuses on creating SEO strategies that improve visibility, strengthen brand authority, and help businesses appear where users are actively searching on search engines, AI platforms, and voice search systems.",
   ctaPrimary: "Request an SEO Consultation",
   ctaGhost: "WhatsApp Now",
 };
@@ -33,7 +33,7 @@ export const SEO_WHY_NEED = {
     { name: "Google", image: "/google-color-svgrepo-com.svg" },
     { name: "OpenAI ChatGPT", image: "/openai-chatgpt.svg" },
     { name: "Google Gemini", image: "/gemini.svg" },
-    { name: "Voice Assistants & AI Tools", image: "/ai.svg" },
+    { name: "AI Tools", image: "/ai.svg" },
   ],
   note: "If your website content is not optimized properly, search engines and AI systems may fail to understand your business, reducing your online visibility.",
 };
@@ -44,21 +44,21 @@ export const SEO_PROBLEMS: { text: string; icon: string }[] = [
   { text: "Slow website speed", icon: "gauge" },
   { text: "Weak content structure", icon: "layout" },
   { text: "Technical SEO issues", icon: "wrench" },
-  { text: "Low-quality backlinks", icon: "link" },
+  { text: "Low quality backlinks", icon: "link" },
   { text: "Poor mobile experience", icon: "smartphone" },
   { text: "No visibility in local searches", icon: "mapPin" },
-  { text: "Difficulty appearing in AI-generated search results", icon: "bot" },
+  { text: "Difficulty appearing in AI generated search results", icon: "bot" },
 ];
 
 export const SEO_DIFFERENCE = {
   heading: "What Makes Our SEO Services Different?",
-  desc: "Many SEO providers focus only on rankings. However, modern SEO requires a complete understanding of user intent, search behavior, technical website health, AI-generated search experiences, helpful content systems, mobile usability, website authority, and local SEO visibility.",
+  desc: "Many SEO providers focus only on rankings. However, modern SEO requires a complete understanding of user intent, search behavior, technical website health, AI generated search experiences, helpful content systems, mobile usability, website authority, and local SEO visibility.",
   focuses: [
     "Real user experience",
     "Helpful content creation",
     "Search engine compliance",
-    "AI-friendly content structure",
-    "Long-term ranking stability",
+    "AI friendly content structure",
+    "Long term ranking stability",
     "Organic lead generation",
   ],
 };
@@ -67,7 +67,7 @@ export const SEO_SERVICES = [
   {
     num: "01",
     title: "Website SEO Audit",
-    desc: "A detailed SEO audit identifies technical and content-related issues affecting your website performance. This creates a strong SEO foundation for better rankings.",
+    desc: "A detailed SEO audit identifies technical and content related issues affecting your website performance. This creates a strong SEO foundation for better rankings.",
     items: [
       "Website crawl analysis",
       "Broken links check",
@@ -82,11 +82,11 @@ export const SEO_SERVICES = [
   {
     num: "02",
     title: "Keyword Research & Search Intent Analysis",
-    desc: "Keyword research is one of the most important parts of SEO. Long-tail keywords help websites attract more targeted users with higher conversion potential.",
+    desc: "Keyword research is one of the most important parts of SEO. Long tail keywords help websites attract more targeted users with higher conversion potential.",
     items: [
       "Primary keywords",
       "Secondary keywords",
-      "Long-tail keywords",
+      "Long tail keywords",
       "Search intent mapping",
       "Competitor keyword analysis",
       "Keyword difficulty assessment",
@@ -96,10 +96,10 @@ export const SEO_SERVICES = [
   },
   {
     num: "03",
-    title: "On-Page SEO Optimization",
-    desc: "On-page SEO helps search engines understand your content clearly. Well-optimized pages improve both user experience and rankings.",
+    title: "On Page SEO Optimization",
+    desc: "On page SEO helps search engines understand your content clearly. Well optimized pages improve both user experience and rankings.",
     items: [
-      "SEO-friendly headings",
+      "SEO friendly headings",
       "Keyword optimization",
       "Internal linking",
       "Meta title optimization",
@@ -119,7 +119,7 @@ export const SEO_SERVICES = [
       "Robots.txt management",
       "HTTPS security setup",
       "Structured data implementation",
-      "Mobile-first optimization",
+      "Mobile first optimization",
       "Canonical tag optimization",
       "Website architecture improvement",
     ],
@@ -127,14 +127,14 @@ export const SEO_SERVICES = [
   {
     num: "05",
     title: "Content Optimization for AI Search",
-    desc: "Search behavior is evolving rapidly. We create AI-friendly SEO content that increases visibility across both traditional and AI-powered search systems.",
+    desc: "Search behavior is evolving rapidly. We create AI friendly SEO content that increases visibility across both traditional and AI powered search systems.",
     items: [
       "Natural language optimization",
       "Clear content structuring",
       "FAQ sections",
       "Conversational search optimization",
       "Topical authority building",
-      "User-focused content",
+      "User focused content",
       "Entity optimization",
       "AI citation optimization",
     ],
@@ -142,11 +142,11 @@ export const SEO_SERVICES = [
   {
     num: "06",
     title: "Local SEO Services in Delhi",
-    desc: "Local businesses need visibility in nearby searches. Our local SEO services help businesses rank for high-intent local search queries.",
+    desc: "Local businesses need visibility in nearby searches. Our local SEO services help businesses rank for high intent local search queries.",
     items: [
       "Google Business Profile optimization",
       "Local citation building",
-      "Location-based keyword optimization",
+      "Location based keyword optimization",
       "Local schema markup",
       "Review management",
       "Map ranking optimization",
@@ -169,7 +169,7 @@ export const SEO_PROCESS_STEPS = [
   },
   {
     step: "03",
-    title: "On-Page Optimization",
+    title: "On Page Optimization",
     desc: "Optimize content, meta tags, headings, internal links, and schema markup for better rankings.",
   },
   {
@@ -180,22 +180,22 @@ export const SEO_PROCESS_STEPS = [
   {
     step: "05",
     title: "Content & Authority",
-    desc: "Create helpful, AI-friendly content and build high-quality backlinks for domain authority.",
+    desc: "Create helpful, AI friendly content and build high quality backlinks for domain authority.",
   },
   {
     step: "06",
     title: "Monitor & Grow",
-    desc: "Track rankings, traffic, and conversions. Continuously refine strategy for long-term growth.",
+    desc: "Track rankings, traffic, and conversions. Continuously refine strategy for long term growth.",
   },
 ];
 
 export const SEO_AREAS = [
-  "Dwarka",
-  "Dwarka Mor",
-  "Janakpuri",
-  "Palam",
-  "Uttam Nagar",
-  "Delhi NCR",
+  "Delhi",
+  "Noida",
+  "Gurugram",
+  "Ghaziabad",
+  "Faridabad",
+  "All over India",
 ];
 
 export const SEO_TOOLS = [
@@ -213,14 +213,14 @@ export const SEO_TOOLS = [
 
 export const SEO_AI_PLATFORMS = {
   heading: "SEO for Search Engines & AI Platforms",
-  desc: "SEO is no longer limited to traditional search engines. Modern websites must now optimize for AI-powered search experiences and conversational search systems.",
+  desc: "SEO is no longer limited to traditional search engines. Modern websites must now optimize for AI powered search experiences and conversational search systems.",
   optimizeFor: [
     "Traditional search engines",
-    "AI-generated search results",
+    "AI generated search results",
     "Voice assistants",
     "Conversational search queries",
     "Semantic search systems",
-    "Mobile-first indexing",
+    "Mobile first indexing",
   ],
   visibilityAcross: [
     "Google",
@@ -234,22 +234,22 @@ export const SEO_AI_PLATFORMS = {
 export const SEO_TRENDS = [
   {
     title: "AI Search Evolution",
-    desc: "AI-generated search experiences are changing how users discover information online.",
+    desc: "AI generated search experiences are changing how users discover information online.",
     icon: "bot",
     items: [
       "Natural language optimization",
-      "AI-friendly content structure",
+      "AI friendly content structure",
       "Topic authority",
       "Conversational search intent",
     ],
   },
   {
     title: "E-E-A-T Signals",
-    desc: "Search engines increasingly prioritize trustworthy and expert-driven content.",
+    desc: "Search engines increasingly prioritize trustworthy and expert driven content.",
     icon: "trophy",
     items: [
       "Authoritative content creation",
-      "Trust-focused website optimization",
+      "Trust focused website optimization",
       "Quality backlinks",
       "Accurate business information",
     ],
@@ -259,21 +259,21 @@ export const SEO_TRENDS = [
     desc: "Search engines reward content that genuinely helps users solve problems.",
     icon: "fileText",
     items: [
-      "User-first content",
+      "User first content",
       "Informative SEO pages",
       "Clear content structure",
       "Search intent matching",
     ],
   },
   {
-    title: "Zero-Click Search",
+    title: "Zero Click Search",
     desc: "Many users now get answers directly from search results without clicking websites.",
     icon: "search",
     items: [
       "Featured snippets",
       "FAQ sections",
       "Knowledge panels",
-      "AI-generated summaries",
+      "AI generated summaries",
     ],
   },
 ];
@@ -290,7 +290,7 @@ export const SEO_BENEFITS = [
     icon: "shield",
   },
   {
-    title: "Long-Term Growth",
+    title: "Long Term Growth",
     desc: "Unlike paid ads, SEO provides sustainable visibility over time.",
     icon: "growth",
   },
@@ -306,7 +306,7 @@ export const SEO_BENEFITS = [
   },
   {
     title: "AI Search Visibility",
-    desc: "Optimized content performs better in AI-generated search experiences.",
+    desc: "Optimized content performs better in AI generated search experiences.",
     icon: "ai",
   },
 ];
@@ -323,9 +323,9 @@ export const SEO_INDUSTRIES = [
 export const SEO_WHY_CHOOSE = [
   "Ethical SEO practices",
   "Transparent reporting",
-  "User-focused optimization",
-  "AI-ready SEO strategies",
-  "Long-term organic growth",
+  "User focused optimization",
+  "AI ready SEO strategies",
+  "Long term organic growth",
   "Quality content optimization",
   "Technical SEO expertise",
 ];
@@ -333,10 +333,10 @@ export const SEO_WHY_CHOOSE = [
 export const SEO_TRUST_POINTS = [
   "Transparent SEO strategies",
   "Ethical optimization practices",
-  "Focus on long-term growth",
-  "AI-ready SEO solutions",
+  "Focus on long term growth",
+  "AI ready SEO solutions",
   "Technical SEO expertise",
-  "User-focused content optimization",
+  "User focused content optimization",
 ];
 
 export const SEO_AUTHOR = {
@@ -358,27 +358,27 @@ export const SEO_FAQS: FaqItem[] = [
   {
     question: "How do I rank higher on Google?",
     answer:
-      "Create high-quality content, target relevant keywords, improve website speed, and build quality backlinks. Search engines also prioritize websites that offer a good user experience and helpful information.",
+      "Create high quality content, target relevant keywords, improve website speed, and build quality backlinks. Search engines also prioritize websites that offer a good user experience and helpful information.",
   },
   {
     question: "What are the best SEO strategies right now?",
     answer:
-      "Modern SEO focuses on topical authority, helpful content, EEAT, internal linking, and AI search optimization. User-focused and technically optimized websites perform better in search results.",
+      "Modern SEO focuses on topical authority, helpful content, EEAT, internal linking, and AI search optimization. User focused and technically optimized websites perform better in search results.",
   },
   {
-    question: "How do I find low-competition keywords?",
+    question: "How do I find low competition keywords?",
     answer:
-      "Use keyword research tools to find long-tail keywords with lower competition and decent search volume. These keywords are easier to rank for and attract more targeted visitors.",
+      "Use keyword research tools to find long tail keywords with lower competition and decent search volume. These keywords are easier to rank for and attract more targeted visitors.",
   },
   {
-    question: "Can AI-generated content rank on Google?",
+    question: "Can AI generated content rank on Google?",
     answer:
-      "Yes, AI-generated content can rank if it is original, accurate, and useful for users. Google prioritizes high-quality content that provides real value and matches search intent.",
+      "Yes, AI generated content can rank if it is original, accurate, and useful for users. Google prioritizes high quality content that provides real value and matches search intent.",
   },
   {
     question: "How do I optimize content for ChatGPT and Gemini AI search?",
     answer:
-      "Use clear headings, conversational language, FAQ sections, schema markup, and trustworthy information. AI systems prefer structured and easy-to-understand content.",
+      "Use clear headings, conversational language, FAQ sections, schema markup, and trustworthy information. AI systems prefer structured and easy to understand content.",
   },
   {
     question: "What are the best free SEO tools?",
@@ -388,7 +388,7 @@ export const SEO_FAQS: FaqItem[] = [
   {
     question: "How do backlinks improve SEO rankings?",
     answer:
-      "Backlinks act as trust signals that improve website authority and search visibility. High-quality backlinks from trusted websites can help improve rankings on search engines.",
+      "Backlinks act as trust signals that improve website authority and search visibility. High quality backlinks from trusted websites can help improve rankings on search engines.",
   },
   {
     question: "How long should an SEO article be?",
@@ -398,7 +398,7 @@ export const SEO_FAQS: FaqItem[] = [
   {
     question: "What is topical authority and how do I build it?",
     answer:
-      "Topical authority means becoming a trusted source in a specific niche by publishing detailed and connected content regularly. Consistent high-quality content improves search trust and visibility.",
+      "Topical authority means becoming a trusted source in a specific niche by publishing detailed and connected content regularly. Consistent high quality content improves search trust and visibility.",
   },
   {
     question: "Why did my website traffic suddenly drop?",

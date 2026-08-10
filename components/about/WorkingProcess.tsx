@@ -19,9 +19,9 @@ export default function WorkingProcess() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 65%", "end 65%"] });
 
   return (
-    <section className="relative overflow-hidden bg-[#F8FAFC] py-12 sm:py-20 lg:py-32">
+    <section className="relative overflow-hidden bg-[#F8FAFC] py-5">
       <div aria-hidden className="pointer-events-none absolute -left-32 top-1/3 size-[420px] rounded-full bg-[#235EA7]/[0.07] blur-[64px]" />
-      <div aria-hidden className="pointer-events-none absolute -right-24 bottom-10 size-[360px] rounded-full bg-[#D4AF37]/[0.08] blur-[64px]" />
+      <div aria-hidden className="pointer-events-none absolute -right-24 bottom-10 size-[360px] rounded-full bg-[#235EA7]/[0.07] blur-[64px]" />
 
       <div className="container relative">
         <motion.div
@@ -32,7 +32,7 @@ export default function WorkingProcess() {
           className="mx-auto max-w-[700px] text-center"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-[#235EA7]/20 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#235EA7]">
-            <span className="size-1.5 rounded-full bg-[#D4AF37]" /> Our process
+            <span className="size-1.5 rounded-full bg-[#235EA7]" /> Our process
           </span>
           <h2 className="mt-5 font-[family-name:var(--font-display),var(--font)] text-[clamp(2.2rem,5vw,3.4rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#0C243D]">
             Our Working <span style={gradText}>Process</span>
@@ -42,13 +42,13 @@ export default function WorkingProcess() {
           </p>
         </motion.div>
 
-        <div ref={ref} className="relative mt-16 lg:mt-24">
+        <div ref={ref} className="relative mt-8 lg:mt-12">
           {/* ============ Desktop — horizontal timeline ============ */}
           <div className="hidden lg:block">
             <div className="absolute left-[10%] right-[10%] top-9 h-[3px] -translate-y-1/2 rounded-full bg-slate-200" />
             <motion.div
               style={{ scaleX: scrollYProgress }}
-              className="absolute left-[10%] right-[10%] top-9 h-[3px] -translate-y-1/2 origin-left rounded-full bg-[linear-gradient(90deg,#235EA7,#D4AF37)]"
+              className="absolute left-[10%] right-[10%] top-9 h-[3px] -translate-y-1/2 origin-left rounded-full bg-[linear-gradient(90deg,#235EA7,#4f93d4)]"
             />
             <div className="relative grid grid-cols-5 gap-6">
               {ABOUT_PROCESS.map((p, i) => {
@@ -84,7 +84,7 @@ export default function WorkingProcess() {
             <div className="absolute left-[27px] top-4 bottom-4 w-[3px] rounded-full bg-slate-200" />
             <motion.div
               style={{ scaleY: scrollYProgress }}
-              className="absolute left-[27px] top-4 bottom-4 w-[3px] origin-top rounded-full bg-[linear-gradient(180deg,#235EA7,#D4AF37)]"
+              className="absolute left-[27px] top-4 bottom-4 w-[3px] origin-top rounded-full bg-[linear-gradient(180deg,#235EA7,#4f93d4)]"
             />
             <div className="space-y-8">
               {ABOUT_PROCESS.map((p, i) => {

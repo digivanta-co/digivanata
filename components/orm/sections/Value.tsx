@@ -38,7 +38,7 @@ export function DykAlertSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-12 sm:py-20">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-8 sm:py-12">
       <div className="container">
         <div className="grid items-center gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
           <div className="orm-dyk__item">
@@ -59,8 +59,8 @@ export function DykAlertSection() {
                 </h2>
               </div>
               <Link
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--gd-navy),var(--gd-blue))] px-6 py-3.5 text-sm font-bold text-white! shadow-[0_10px_26px_rgba(12,36,61,0.28)] transition-all duration-300 hover:-translate-y-0.5 [&_svg]:size-4"
+                href="/contact"
+                className="site-cta inline-flex items-center gap-2 bg-[linear-gradient(120deg,var(--gd-navy),var(--gd-blue))] px-6 py-3.5 text-sm font-bold text-white! shadow-[0_10px_26px_rgba(12,36,61,0.28)] transition-all duration-300 hover:-translate-y-0.5 [&_svg]:size-4"
               >
                 {ORM_ALERT_CTA.cta} <ArrowRight />
               </Link>
@@ -92,7 +92,7 @@ export function WhyMattersSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24" id="why-orm">
+    <section ref={root} className="relative py-10 sm:py-14" id="why-orm">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Why it matters</Label>
@@ -139,6 +139,13 @@ export function WhyMattersSection() {
 export function BestOrmSection() {
   const root = useRef<HTMLElement | null>(null);
 
+  const pillarSubtitles: Record<string, string> = {
+    SEO: "Search & Keyword Authority",
+    "Content Marketing": "Positive Narrative Control",
+    "Social Media Management": "Active Audience Engagement",
+    "Review Management": "Trust & Rating Enhancement",
+  };
+
   useIso(() => {
     if (reduced()) return;
     const ctx = gsap.context(() => {
@@ -155,33 +162,63 @@ export function BestOrmSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-24">
+    <section ref={root} className="relative border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-10 sm:py-14">
       <div className="container">
-        <div className="orm-best__item max-w-3xl">
-          <Label>Result-driven solutions</Label>
-          <h2 className="gd-display text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
-            Best ORM company in Delhi
-            <br />
-            <span className="gd-grad">for result-driven solutions.</span>
-          </h2>
-        </div>
-        <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
-          <div className="space-y-4">
-            {ORM_BEST.paragraphs.map((p, i) => (
-              <p key={i} className="orm-best__item m-0 text-[1rem] leading-relaxed text-[var(--gd-muted)]">{p}</p>
-            ))}
-          </div>
-          <div className="orm-best__item">
-            <p className="mb-3 mt-0 text-sm font-bold uppercase tracking-[0.14em] text-[var(--gd-ink)]">
-              One strategy, four disciplines:
-            </p>
-            <div className="grid gap-2.5">
-              {ORM_BEST.pillars.map((p, i) => (
-                <div key={p} className="flex items-center gap-4 rounded-2xl border border-[var(--gd-line)] bg-white px-5 py-3.5">
-                  <span className="gd-display text-xs text-[var(--gd-gold)]">0{i + 1}</span>
-                  <span className="text-[0.95rem] font-semibold text-[var(--gd-ink)]">{p}</span>
-                </div>
+        <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
+          {/* left column: header + paragraphs */}
+          <div className="orm-best__item lg:sticky lg:top-28">
+            <Label>Result-driven solutions</Label>
+            <h2 className="gd-display text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
+              Best ORM company in Delhi
+              <br />
+              <span className="gd-grad">for result-driven solutions.</span>
+            </h2>
+            <div className="mt-6 space-y-4">
+              {ORM_BEST.paragraphs.map((p, i) => (
+                <p key={i} className="m-0 text-[0.98rem] leading-relaxed text-[var(--gd-muted)]">
+                  {p}
+                </p>
               ))}
+            </div>
+          </div>
+
+          {/* right column: strategy disciplines grid */}
+          <div className="orm-best__item">
+            <div className="overflow-hidden rounded-3xl border border-[var(--gd-line)] bg-white p-6 shadow-[0_20px_50px_rgba(12,36,61,0.06)] sm:p-7">
+              <div className="mb-5 border-b border-[var(--gd-line)] pb-4">
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--gd-muted)]">
+                  One Strategy, Four Disciplines
+                </span>
+              </div>
+              <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+                {ORM_BEST.pillars.map((p, i) => (
+                  <div
+                    key={p}
+                    className="group relative overflow-hidden rounded-2xl border border-[var(--gd-line)] bg-[var(--gd-soft)] p-4 transition-all duration-300 hover:border-[var(--gd-navy)]/30 hover:bg-white hover:shadow-[0_8px_25px_rgba(12,36,61,0.08)]"
+                  >
+                    <div className="mb-3 flex items-center justify-between">
+                      <span className="flex size-8 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#235EA7,#4f93d4)] text-xs font-bold text-white shadow-[0_4px_12px_rgba(35,94,167,0.25)]">
+                        0{i + 1}
+                      </span>
+                      <svg
+                        className="size-4 text-[var(--gd-line)] transition-colors duration-300 group-hover:text-[var(--gd-navy)]"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                      >
+                        <path d="M4 12 L12 4 M12 4 L5 4 M12 4 L12 11" />
+                      </svg>
+                    </div>
+                    <h3 className="m-0 text-[0.95rem] font-semibold text-[var(--gd-ink)] transition-transform duration-300 group-hover:translate-x-1">
+                      {p}
+                    </h3>
+                    <p className="m-0 mt-1 text-[0.72rem] text-[var(--gd-muted)]">
+                      {pillarSubtitles[p] || "Targeted Strategy"}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -195,7 +232,7 @@ export function BestOrmSection() {
    scroll the next service slides up and stacks over the previous one. ---- */
 export function ServicesStackSection() {
   return (
-    <section className="relative py-24" id="orm-services">
+    <section className="relative py-10 sm:py-14" id="orm-services">
       <div className="container">
         <div className="mb-14 max-w-3xl">
           <Label>What we do</Label>
@@ -256,7 +293,7 @@ export function AffordableSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-24" id="orm-affordable">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-10 sm:py-14" id="orm-affordable">
       <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="orm-aff__l">
           <Label>Fair pricing</Label>

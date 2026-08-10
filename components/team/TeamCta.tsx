@@ -46,7 +46,7 @@ export default function TeamCta() {
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--gd-navy),var(--gd-blue))] px-7 py-3.5 text-[0.95rem] font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-[2px] hover:shadow-xl"
+                  className="site-cta inline-flex items-center gap-2 bg-[linear-gradient(120deg,var(--gd-navy),var(--gd-blue))] px-7 py-3.5 text-[0.95rem] font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-[2px] hover:shadow-xl"
                 >
                   Work With Us
                   <ArrowRight size={17} strokeWidth={2.2} />

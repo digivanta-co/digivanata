@@ -35,7 +35,7 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section id="services" ref={root} className="relative py-24">
+    <section id="services" ref={root} className="relative py-5 sm:py-14">
       <div className="container">
         <div className="cm-serv__head max-w-2xl">
           <Kicker>{CM_SERVICES.label}</Kicker>

@@ -214,7 +214,7 @@ export default function RdHero() {
           </h1>
 
           <div className="rd-actions rd-hero__cta mt-6 sm:mt-9 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
-            <RdMagnetic href="#contact">
+            <RdMagnetic href="/contact">
               Get a Free Consultation <ArrowRight />
             </RdMagnetic>
             <RdMagnetic href={CONTACT.whatsapp} external className="rd-btn--ghost">

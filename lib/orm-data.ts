@@ -7,10 +7,10 @@ import { FaqItem } from "@/components/ui/faq-accordion";
 
 export const ORM_HERO = {
   badge: "Online Reputation Management Company · Delhi",
-  tagline: "Your reputation speaks before your business does — make sure it says the right thing.",
+  tagline: "Your reputation speaks before your business does make sure it says the right thing.",
   // headline lines: solid → gradient
   titleLines: ["Your reputation", "speaks first."],
-  sub: "In today's digital-first world, your online reputation can make or break your business. Whether customers are searching for reviews, browsing social media, or checking Google results, the way your brand appears online directly impacts trust, conversions, and growth.",
+  sub: "In today's digital first world, your online reputation can make or break your business. Whether customers are searching for reviews, browsing social media, or checking Google results, the way your brand appears online directly impacts trust, conversions, and growth.",
   primaryCta: "Get a FREE Reputation Audit",
   ghostCta: "Explore ORM services",
   platforms: ["Google Reviews", "Justdial", "Facebook", "Social Media", "Search Results", "Review Platforms"],
@@ -19,7 +19,7 @@ export const ORM_HERO = {
 export const ORM_INTRO = {
   paragraphs: [
     "That's where a professional Online Reputation Management Company in Delhi can help.",
-    "At our agency, we provide strategic and result-driven ORM solutions designed to build, protect, and strengthen your brand image across digital platforms.",
+    "At our agency, we provide strategic and result driven ORM solutions designed to build, protect, and strengthen your brand image across digital platforms.",
     "From handling negative reviews to improving positive visibility, our customized ORM strategies help businesses create a trustworthy and credible online presence.",
   ],
 };
@@ -52,14 +52,14 @@ export const ORM_WHY = {
     "Protect brand identity online",
   ],
   closing:
-    "Whether you are a startup, local business, healthcare provider, educational institute, or enterprise brand, reputation management is essential for long-term success.",
+    "Whether you are a startup, local business, healthcare provider, educational institute, or enterprise brand, reputation management is essential for long term success.",
 };
 
 export const ORM_BEST = {
   paragraphs: [
     "As a trusted Best ORM Company in Delhi, we focus on creating personalized strategies that align with your business goals.",
     "Our team combines SEO, content marketing, social media management, and review management to ensure your brand maintains a strong and positive online image.",
-    "We don't believe in one-size-fits-all solutions. Every business has unique challenges, and our ORM campaigns are tailored to address them effectively.",
+    "We don't believe in one size fits all solutions. Every business has unique challenges, and our ORM campaigns are tailored to address them effectively.",
   ],
   pillars: ["SEO", "Content Marketing", "Social Media Management", "Review Management"],
 };
@@ -102,7 +102,7 @@ export const ORM_AFFORDABLE = {
   paragraphs: [
     "Businesses often think reputation management is expensive, but we provide Affordable ORM Services in Delhi NCR designed for startups, SMEs, and large enterprises alike.",
     "Our flexible pricing and customized strategies ensure maximum ROI without compromising quality.",
-    "We focus on long-term brand credibility instead of temporary fixes, helping businesses grow sustainably in competitive markets.",
+    "We focus on long term brand credibility instead of temporary fixes, helping businesses grow sustainably in competitive markets.",
   ],
   fits: ["Startups", "SMEs", "Large Enterprises"],
 };
@@ -113,10 +113,10 @@ export const ORM_WHY_CHOOSE = {
   points: [
     "Experienced ORM professionals",
     "Customized reputation strategies",
-    "Ethical and white-hat practices",
+    "Ethical and white hat practices",
     "Advanced monitoring tools",
     "Transparent reporting",
-    "SEO-focused ORM campaigns",
+    "SEO focused ORM campaigns",
     "Fast response to negative publicity",
     "Dedicated support team",
   ],
@@ -131,7 +131,7 @@ export const ORM_INDUSTRIES = {
     "Education",
     "Real Estate",
     "Hospitality",
-    "E-commerce",
+    "Ecommerce",
     "Legal Services",
     "IT & Technology",
     "Finance & Banking",
@@ -143,8 +143,8 @@ export const ORM_INDUSTRIES = {
 export const ORM_TOP = {
   heading: "Top Reputation Management Agency for Businesses in Delhi",
   paragraphs: [
-    "As a leading ORM service provider, we help businesses improve online credibility and customer trust through data-driven strategies.",
-    "Our goal is simple — to help your business stand out positively in search results and digital conversations.",
+    "As a leading ORM service provider, we help businesses improve online credibility and customer trust through data driven strategies.",
+    "Our goal is simple to help your business stand out positively in search results and digital conversations.",
     "From reputation repair to proactive brand management, we offer complete solutions that strengthen your digital presence and improve customer confidence.",
   ],
 };
@@ -194,7 +194,7 @@ export const ORM_FAQS: FaqItem[] = [
   {
     question: "How long does it take to see results from ORM services?",
     answer:
-      "Initial ORM improvements may appear within weeks, while long-term reputation growth takes a few months.",
+      "Initial ORM improvements may appear within weeks, while long term reputation growth takes a few months.",
   },
   {
     question: "Can ORM remove or manage negative Google reviews?",

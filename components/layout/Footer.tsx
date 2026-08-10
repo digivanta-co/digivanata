@@ -54,7 +54,7 @@ export default function Footer() {
             href={CONTACT.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#286FAB] px-7 py-4 font-semibold text-white shadow-[0_12px_34px_rgba(40,111,171,0.35)] transition-transform hover:-translate-y-0.5"
+            className="site-cta inline-flex shrink-0 items-center gap-2 bg-[#286FAB] px-7 py-4 font-semibold text-white shadow-[0_12px_34px_rgba(40,111,171,0.35)] transition-transform hover:-translate-y-0.5"
           >
             {RD_FOOTER.consult} <ArrowRight />
           </a>
@@ -90,18 +90,17 @@ export default function Footer() {
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#C9A227]">Our Services</h4>
             <ul className="space-y-3">
               {RD_FOOTER_SERVICES.map((s) => {
-                let href = "/#services";
-                if (s === "SEO Services") {
-                  href = "/seo-services-in-delhi";
-                } else if (s === "Social Media Marketing") {
-                  href = "/social-media-marketing-in-delhi";
-                } else if (s === "Website Development") {
-                  href = "/web-development-company-in-delhi";
-                } else if (s === "App Development") {
-                  href = "/mobile-app-development-in-delhi";
-                } else if (s === "Graphic Design") {
-                  href = "/graphic-designing-company-in-delhi";
-                }
+                const serviceHrefs: Record<string, string> = {
+                  "SEO Services": "/seo-services-in-delhi",
+                  "Social Media Marketing": "/social-media-marketing-in-delhi",
+                  "Performance Marketing": "/ppc-company-in-delhi",
+                  "Website Development": "/web-development-company-in-delhi",
+                  "App Development": "/mobile-app-development-in-delhi",
+                  "Graphic Design": "/graphic-designing-company-in-delhi",
+                  "Content Marketing": "/content-marketing-in-delhi",
+                  "ORM Management": "/online-reputation-management-company-in-delhi",
+                };
+                const href = serviceHrefs[s] ?? "/#services";
                 return (
                   <li key={s}>
                     <AniLink href={href}>{s}</AniLink>

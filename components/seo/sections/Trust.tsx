@@ -28,48 +28,98 @@ function Check() {
   );
 }
 
-/* ---- Areas we serve: gold-pin chips ---- */
+const AREA_CARDS = [
+  { name: "Delhi", region: "National Capital Region", detail: "Local & Enterprise SEO", icon: "mapPin" },
+  { name: "Noida", region: "IT & Tech Hub", detail: "Tech & Corporate Visibility", icon: "mapPin" },
+  { name: "Gurugram", region: "Business & Startup Hub", detail: "High-Intent Dominance", icon: "mapPin" },
+  { name: "Ghaziabad", region: "Commercial Zone", detail: "Maps & Citation SEO", icon: "mapPin" },
+  { name: "Faridabad", region: "Industrial Hub", detail: "B2B Lead Generation", icon: "mapPin" },
+  { name: "All Over India", region: "Pan-India Coverage", detail: "National Search Campaigns", icon: "badgeCheck" },
+];
+
+/* ---- Areas we serve: interactive tilt grid cards ---- */
 export function AreasSection() {
   const root = useRef<HTMLElement | null>(null);
 
   useIso(() => {
     if (reduced()) return;
     const ctx = gsap.context(() => {
-      gsap.from(".sv-area__item", {
-        y: 30,
+      const cards = root.current?.querySelectorAll<HTMLElement>(".sv-area__card");
+      if (!cards?.length) return;
+      gsap.set(cards, { autoAlpha: 1 });
+      gsap.from(cards, {
+        y: 40,
         autoAlpha: 0,
-        duration: 0.6,
-        stagger: 0.06,
+        duration: 0.7,
+        stagger: 0.08,
         ease: "power3.out",
-        scrollTrigger: { trigger: root.current, start: "top 82%" },
+        scrollTrigger: {
+          trigger: root.current,
+          start: "top 90%",
+          toggleActions: "play none none none",
+        },
       });
     }, root);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-12 sm:py-20" id="seo-areas">
-      <div className="container">
-        <div className="sv-area__item max-w-2xl">
-          <Label>Service Areas</Label>
-          <h2 className="gd-display text-[clamp(1.7rem,3.8vw,2.6rem)] text-[var(--gd-ink)]">
-            Areas <span className="gd-grad">we serve.</span>
-          </h2>
-          <p className="mt-4 text-[var(--gd-muted)]">
-            Our SEO services are available across Delhi and surrounding regions.
-          </p>
-        </div>
-        <div className="mt-8 flex flex-wrap gap-2.5">
-          {SEO_AREAS.map((area) => (
-            <span
-              key={area}
-              className="sv-area__item inline-flex items-center gap-2 rounded-full border border-[var(--gd-line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--gd-ink)] transition-colors duration-300 hover:border-[var(--gd-gold)]"
-            >
-              <span className="text-[var(--gd-gold)]">
-                <SeoIcon name="mapPin" width={14} height={14} />
-              </span>
-              {area}
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-12 sm:py-16 overflow-hidden" id="seo-areas">
+      {/* Background radial accent */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_50%_at_50%_30%,rgba(40,111,171,0.06),transparent)]"
+      />
+
+      <div className="container relative z-10">
+        <div className="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div className="sv-area__card max-w-2xl">
+            <Label>Service Areas</Label>
+            <h2 className="gd-display text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
+              Areas <span className="gd-grad">we serve.</span>
+            </h2>
+            <p className="mt-3 text-[0.98rem] text-[var(--gd-muted)]">
+              Delivering strategic, data-driven SEO services across Delhi NCR and nationwide to help businesses dominate search rankings.
+            </p>
+          </div>
+
+          <div className="sv-area__card shrink-0">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--gd-line)] bg-white px-4 py-2 text-xs font-semibold text-[var(--gd-navy)] shadow-sm">
+              <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
+              Pan-India &amp; NCR Regional Support
             </span>
+          </div>
+        </div>
+
+        {/* 6-Card Interactive Grid */}
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          {AREA_CARDS.map((item) => (
+            <TiltCard
+              key={item.name}
+              max={8}
+              className="sv-area__card gd-card group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[var(--gd-line)] bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--gd-gold)]/50 hover:shadow-md"
+            >
+              <div>
+                <div className="mb-3 flex items-center justify-between">
+                  <span className="grid size-9 place-items-center rounded-xl bg-[rgba(40,111,171,0.08)] text-[var(--gd-blue)] transition-colors duration-300 group-hover:bg-[var(--gd-gold-soft)] group-hover:text-[var(--gd-gold)]">
+                    <SeoIcon name={item.icon} width={18} height={18} />
+                  </span>
+                  <span className="size-1.5 rounded-full bg-[var(--gd-gold)] opacity-70" />
+                </div>
+                <h3 className="mb-1 text-base font-bold text-[var(--gd-ink)] transition-colors duration-300 group-hover:text-[var(--gd-blue)]">
+                  {item.name}
+                </h3>
+                <p className="mb-0 text-[0.75rem] font-medium text-[var(--gd-gold)]">
+                  {item.region}
+                </p>
+              </div>
+
+              <div className="mt-4 border-t border-[var(--gd-line)] pt-3">
+                <span className="block truncate text-[0.7rem] font-semibold text-[var(--gd-muted)]">
+                  {item.detail}
+                </span>
+              </div>
+            </TiltCard>
           ))}
         </div>
       </div>
@@ -83,7 +133,7 @@ export function ToolsSection() {
   const doubled = [...SEO_TOOLS, ...SEO_TOOLS];
 
   return (
-    <section className="relative overflow-hidden py-12 sm:py-20" id="seo-tools">
+    <section className="relative overflow-hidden py-8 sm:py-12" id="seo-tools">
       <div className="container mb-10">
         <Label>Our Toolkit</Label>
         <h2 className="gd-display text-[clamp(1.7rem,3.8vw,2.6rem)] text-[var(--gd-ink)]">
@@ -211,7 +261,7 @@ export function TrendsSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-14 sm:py-24" id="seo-trends">
+    <section ref={root} className="relative py-10 sm:py-14" id="seo-trends">
       <div className="container">
         <div className="max-w-2xl">
           <Label>SEO Trends 2026</Label>
@@ -235,7 +285,7 @@ export function TrendsSection() {
               >
                 0{i + 1}
               </div>
-              <span className="grid size-11 place-items-center rounded-xl bg-[var(--gd-gold-soft)] text-[var(--gd-gold)]">
+              <span className="grid size-11 place-items-center rounded-xl bg-[rgba(40,111,171,0.08)] text-[var(--gd-blue)]">
                 <SeoIcon name={t.icon} width={20} height={20} />
               </span>
               <h3 className="mb-0 mt-4 text-[1.05rem] font-bold text-[var(--gd-ink)]">{t.title}</h3>
@@ -277,7 +327,7 @@ export function BenefitsSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-14 sm:py-24" id="seo-benefits">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-10 sm:py-14" id="seo-benefits">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Business Impact</Label>
@@ -330,7 +380,7 @@ export function WhyChooseSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-14 sm:py-24" id="seo-why-choose">
+    <section ref={root} className="relative py-10 sm:py-14" id="seo-why-choose">
       <div className="container">
         <div className="sv-choose__row max-w-2xl">
           <Label>Why Digivanta</Label>
@@ -376,7 +426,7 @@ export function TrustSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-14 sm:py-24" id="seo-trust">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-10 sm:py-14" id="seo-trust">
       <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="sv-trust__l">
           <Label>Trust Digivanta</Label>
@@ -437,7 +487,7 @@ export function AuthorSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-12 sm:py-20" id="seo-author">
+    <section ref={root} className="relative py-8 sm:py-12" id="seo-author">
       <div className="container max-w-[860px]">
         <div className="sv-author__card gd-card relative overflow-hidden p-8 sm:p-10">
           <div aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,var(--gd-navy),var(--gd-blue)_55%,var(--gd-gold))]" />
@@ -484,7 +534,7 @@ export function FinalThoughtsSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-t border-[var(--gd-line)] py-12 sm:py-20" id="seo-final">
+    <section ref={root} className="relative border-t border-[var(--gd-line)] py-8 sm:py-12" id="seo-final">
       <div className="container max-w-[860px]">
         <div className="sv-final__item">
           <Label>Final Thoughts</Label>

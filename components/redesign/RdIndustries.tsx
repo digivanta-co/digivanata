@@ -56,7 +56,7 @@ export default function RdIndustries() {
   }, []);
 
   return (
-    <section ref={root} className="relative overflow-hidden py-16 sm:py-20">
+    <section ref={root} className="relative overflow-hidden py-8 sm:py-12">
       <div className="container">
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <span className="rd-eyebrow mb-4 justify-center">Industries</span>

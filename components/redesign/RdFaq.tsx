@@ -63,7 +63,7 @@ function Item({ q, a, open, onToggle }: { q: string; a: string; open: boolean; o
 export default function RdFaq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="relative py-16 sm:py-20">
+    <section id="faq" className="relative py-8 sm:py-12">
       <div className="container grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <span className="rd-eyebrow mb-4">FAQ</span>

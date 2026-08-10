@@ -50,7 +50,7 @@ export function CTASection({
     <section
       ref={root}
       id="contact"
-      className="ag-grain relative flex min-h-[78svh] items-center overflow-hidden border-t border-[var(--cm-line)] py-24"
+      className="ag-grain relative flex min-h-0 sm:min-h-[78svh] items-center overflow-hidden border-t border-[var(--cm-line)] py-5 sm:py-14"
     >
       <Aura />
 

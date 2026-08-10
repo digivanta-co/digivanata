@@ -71,7 +71,7 @@ export function ProcessSection({
   return (
     <section
       ref={root}
-      className="relative overflow-hidden border-y border-[var(--cm-line)] bg-[var(--cm-panel)] py-20 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:py-0"
+      className="relative overflow-hidden border-y border-[var(--cm-line)] bg-[var(--cm-panel)] py-8 sm:py-12 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:py-0"
     >
       <div className="container">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">

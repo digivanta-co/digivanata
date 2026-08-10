@@ -8,6 +8,7 @@ import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import BackToTop from "@/components/ui/BackToTop";
 import SiteChrome from "@/components/layout/SiteChrome";
 
 
@@ -46,6 +47,9 @@ export const metadata: Metadata = {
     "App Development Services",
     "Social Media Marketing Services",
   ],
+  icons: {
+    icon: "/favicon-48.png",
+  },
   openGraph: {
     title: "Digivanta | Digital Marketing Company in Delhi",
     description:
@@ -79,6 +83,7 @@ export default function RootLayout({
   
           <Footer />
           <WhatsAppButton />
+          <BackToTop />
       </body>
     </html>
   );

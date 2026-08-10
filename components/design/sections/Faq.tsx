@@ -28,7 +28,7 @@ export function FAQSection({ items = GD_FAQS }: { items?: typeof GD_FAQS }) {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="gd-faq relative py-10 sm:py-14">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Good to know</Label>

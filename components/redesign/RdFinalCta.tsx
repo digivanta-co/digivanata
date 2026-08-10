@@ -52,7 +52,7 @@ export default function RdFinalCta() {
       ref={root}
       id="contact"
       onMouseMove={onMove}
-      className="rd-panel mb-4 relative flex items-center overflow-hidden bg-[var(--rd-ink)] py-20 text-white"
+      className="rd-panel mb-4 relative flex items-center overflow-hidden bg-[var(--rd-ink)] py-8 sm:py-12 text-white"
     >
       <div aria-hidden className="rd-spotlight pointer-events-none absolute inset-0 z-[1]" />
       <div aria-hidden className="pointer-events-none absolute inset-0">
@@ -88,8 +88,8 @@ export default function RdFinalCta() {
         </div>
 
         <div className="rd-actions mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-2">
-          <RdMagnetic href={CONTACT.phoneHref} className="w-full sm:w-auto justify-center">
-            Call {CONTACT.phone} <ArrowRight />
+          <RdMagnetic href={'/contact'} className="w-full sm:w-auto justify-center">
+           Contact US <ArrowRight />
           </RdMagnetic>
           <RdMagnetic href={CONTACT.whatsapp} external className="rd-btn--ghost !text-white !border-white/20 w-full sm:w-auto justify-center">
             <WhatsApp /> WhatsApp Now

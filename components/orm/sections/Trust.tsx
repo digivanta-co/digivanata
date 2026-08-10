@@ -95,7 +95,7 @@ export function IndustriesSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24" id="orm-industries">
+    <section ref={root} className="relative py-10 sm:py-14" id="orm-industries">
       <div className="container text-center">
         <div className="orm-ind__item mx-auto max-w-2xl">
           <Label center>Industries we serve</Label>
@@ -145,7 +145,7 @@ export function TopAgencySection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-t border-[var(--gd-line)] bg-[var(--gd-soft)] py-24" id="orm-top">
+    <section ref={root} className="relative border-t border-[var(--gd-line)] bg-[var(--gd-soft)] py-10 sm:py-14" id="orm-top">
       <div className="container">
         <div className="orm-top__item max-w-3xl">
           <Label>Leading ORM provider</Label>
@@ -173,8 +173,8 @@ export function TopAgencySection() {
             </h3>
             <div className="mt-6 flex justify-center">
               <Link
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-[var(--gd-navy)]! transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(0,0,0,0.3)] [&_svg]:size-4"
+                href="/contact"
+                className="site-cta inline-flex items-center gap-2 bg-white px-7 py-3.5 text-sm font-bold text-[var(--gd-navy)]! transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(0,0,0,0.3)] [&_svg]:size-4"
               >
                 {ORM_RECOVERY_CTA.cta} <ArrowRight />
               </Link>
@@ -206,7 +206,7 @@ export function ClosingSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-t border-[var(--gd-line)] py-12 sm:py-20" id="orm-closing">
+    <section ref={root} className="relative border-t border-[var(--gd-line)] py-8 sm:py-12" id="orm-closing">
       <div className="container max-w-[860px]">
         <div className="orm-close__item">
           <Label>Your most valuable asset</Label>

@@ -6,12 +6,16 @@ import { FaqItem } from "@/components/ui/faq-accordion";
    ================================================================ */
 
 export const PPC_HERO = {
-  badge: "Google Ads Company · Delhi",
-  // line render styles: solid → outline → gradient
-  titleLines: ["Google Ads", "Company  in Delhi,"],
-  sub: "Many businesses invest in Google Ads expecting quick leads and sales, but often struggle with high CPCs, wasted budget, low-quality clicks, and inconsistent conversions.",
-  primaryCta: "Get a free ads audit",
-  ghostCta: "Explore our services",
+  eyebrow: "Google Ads Company · Delhi",
+  h1: [
+    { t: "Google", grad: true },
+    { t: "Ads", grad: true },
+    { t: "Company in" },
+    { t: "Delhi,", grad: true },
+  ] as { t: string; grad?: boolean }[],
+  sub: "Many businesses invest in Google Ads expecting quick leads and sales, but often struggle with high CPCs, wasted budget, low quality clicks, and inconsistent conversions.",
+  ctaPrimary: "Get a free ads audit",
+  ctaGhost: "Explore our services",
   meta: [
     { n: "−38%", l: "CPL for a Delhi real estate business" },
     { n: "4.2×", l: "ROAS for an ecommerce brand" },
@@ -23,9 +27,9 @@ export const PPC_HERO = {
 export const PPC_INTRO = {
   lead: "In a competitive market like Delhi, running profitable campaigns requires more than simply launching ads. It demands strategic targeting, continuous optimization, and a deep understanding of customer search behavior.",
   paragraphs: [
-    "As a trusted Google Ads Company in Delhi, we help businesses create data-driven campaigns focused on visibility, qualified leads, and measurable growth. Instead of running generic ads, we build customized strategies based on user intent, audience behavior, and conversion goals to maximize campaign performance.",
-    "We help businesses across Delhi, Noida, Gurgaon, and other NCR regions improve Google Ads performance and lead quality. Our campaigns are continuously monitored and optimized based on real-time performance data and changing search trends.",
-    "Whether you are a local business, startup, ecommerce brand, clinic, real estate company, or service provider, a well-planned Google Ads strategy can help you reach potential customers exactly when they are searching for your services.",
+    "As a trusted Google Ads Company in Delhi, we help businesses create data driven campaigns focused on visibility, qualified leads, and measurable growth. Instead of running generic ads, we build customized strategies based on user intent, audience behavior, and conversion goals to maximize campaign performance.",
+    "We help businesses across Delhi, Noida, Gurgaon, and other NCR regions improve Google Ads performance and lead quality. Our campaigns are continuously monitored and optimized based on real time performance data and changing search trends.",
+    "Whether you are a local business, startup, ecommerce brand, clinic, real estate company, or service provider, a well planned Google Ads strategy can help you reach potential customers exactly when they are searching for your services.",
   ],
 };
 
@@ -38,8 +42,8 @@ export const PPC_FAIL = {
     { title: "Low ad quality scores", desc: "Weak relevance quietly inflates the cost of every click." },
     { title: "Broad audience targeting", desc: "Budget spread across people who will never buy." },
     { title: "No conversion tracking", desc: "Spending without knowing which clicks become customers." },
-    { title: "Weak ad copy", desc: "Ads that blend in get skipped — or attract the wrong clicks." },
-    { title: "Lack of optimization", desc: "Set-and-forget campaigns decay as markets shift." },
+    { title: "Weak ad copy", desc: "Ads that blend in get skipped or attract the wrong clicks." },
+    { title: "Lack of optimization", desc: "Set and forget campaigns decay as markets shift." },
   ],
   closing:
     "Without proper campaign management, even a high ad budget can produce disappointing results. Our approach focuses on solving these issues first before scaling campaigns.",
@@ -49,7 +53,7 @@ export const PPC_QUALIFIED = {
   intro:
     "A successful Google Ads campaign is not about getting more traffic. It is about attracting the right audience. As an experienced PPC Company in Delhi, we create campaigns designed to:",
   outcomes: [
-    "Generate high-intent leads",
+    "Generate high intent leads",
     "Reduce wasted ad spend",
     "Improve conversion rates",
     "Increase local visibility",
@@ -60,7 +64,7 @@ export const PPC_QUALIFIED = {
 };
 
 export const PPC_RESULTS = {
-  intro: "Why businesses trust us — real outcomes from managed campaigns:",
+  intro: "Why businesses trust us real outcomes from managed campaigns:",
   stats: [
     { value: 38, suffix: "%", decimals: 0, label: "Reduced CPL for a Delhi real estate business" },
     { value: 4.2, suffix: "×", decimals: 1, label: "Increased ecommerce ROAS" },
@@ -70,7 +74,7 @@ export const PPC_RESULTS = {
 
 export const PPC_SERVICES = {
   intro:
-    "As a performance-focused Google Ads Agency in Delhi, we prioritize business outcomes rather than vanity metrics.",
+    "As a performance focused Google Ads Agency in Delhi, we prioritize business outcomes rather than vanity metrics.",
   items: [
     {
       title: "Search Ads",
@@ -100,7 +104,7 @@ export const PPC_PROCESS = {
     "Managing Google Ads requires ongoing testing and optimization. Every stage of our management process feeds the next.",
   steps: [
     { title: "Business & competitor analysis", desc: "We study your market, competitors and current account performance." },
-    { title: "Keyword research", desc: "High-intent, buyer-focused keywords — plus the negatives that stop waste." },
+    { title: "Keyword research", desc: "High intent, buyer focused keywords plus the negatives that stop waste." },
     { title: "Campaign setup", desc: "Tight structure, right match types and smart bidding aligned to your goals." },
     { title: "Landing page optimization", desc: "Pages built to convert the clicks you pay for." },
     { title: "Conversion tracking", desc: "Forms, calls and sales tracked accurately before scaling spend." },
@@ -124,13 +128,13 @@ export const PPC_MGMT = {
 
 export const PPC_SEO_PPC = {
   intro:
-    "Many businesses rely only on SEO or only on paid ads. The best results usually come from combining both. While SEO builds long-term visibility, Google Ads helps generate immediate traffic and leads. Together, they create a stronger digital presence and faster business growth.",
+    "Many businesses rely only on SEO or only on paid ads. The best results usually come from combining both. While SEO builds long term visibility, Google Ads helps generate immediate traffic and leads. Together, they create a stronger digital presence and faster business growth.",
   lead: "Our integrated Search Engine Marketing Services in Delhi help businesses:",
   points: [
     "Increase brand visibility",
-    "Capture high-intent searches",
+    "Capture high intent searches",
     "Improve conversion opportunities",
-    "Build long-term authority",
+    "Build long term authority",
   ],
 };
 
@@ -147,7 +151,7 @@ export const PPC_INDUSTRIES = [
 ];
 
 export const PPC_INDUSTRIES_NOTE =
-  "Every business has different customer behavior, search trends, and competition levels. That's why we create customized advertising strategies instead of using one-size-fits-all campaigns.";
+  "Every business has different customer behavior, search trends, and competition levels. That's why we create customized advertising strategies instead of using one size fits all campaigns.";
 
 export const PPC_DATA = {
   intro:
@@ -167,16 +171,16 @@ export const PPC_DATA = {
 
 export const PPC_LEADGEN = {
   intro:
-    "Lead generation is not just about increasing website traffic. It is about attracting potential customers who are ready to take action. As a result-oriented Lead Generation Company in Delhi, we focus on:",
+    "Lead generation is not just about increasing website traffic. It is about attracting potential customers who are ready to take action. As a result oriented Lead Generation Company in Delhi, we focus on:",
   points: [
-    { title: "High-converting search intent", desc: "Reaching people who are ready to enquire, not just browse." },
+    { title: "High converting search intent", desc: "Reaching people who are ready to enquire, not just browse." },
     { title: "Better quality leads", desc: "Filters and targeting tuned for buyers, not bots or bargain hunters." },
     { title: "Lower acquisition cost", desc: "Efficiency improvements that bring your cost per lead down." },
     { title: "Continuous optimization", desc: "Campaigns refined weekly against live conversion data." },
     { title: "Transparent reporting", desc: "You always know what was spent, and what it returned." },
   ],
   closing:
-    "Our goal is simple — help businesses generate consistent and scalable growth through intelligent advertising.",
+    "Our goal is simple help businesses generate consistent and scalable growth through intelligent advertising.",
 };
 
 export const PPC_WHY = {
@@ -184,18 +188,18 @@ export const PPC_WHY = {
     "Businesses choose us because we focus on real business outcomes. We believe advertising should solve business problems, not just increase clicks.",
   points: [
     { title: "Transparent Communication", desc: "Clear updates, honest numbers, no jargon walls." },
-    { title: "ROI-Focused Strategies", desc: "Every rupee of budget is accountable to a result." },
+    { title: "ROI Focused Strategies", desc: "Every rupee of budget is accountable to a result." },
     { title: "Continuous Optimization", desc: "Bids, audiences and creatives tuned continuously." },
-    { title: "Industry-Specific Campaigns", desc: "Strategies shaped by your market's real search behavior." },
-    { title: "Conversion-Driven Approach", desc: "Built for enquiries and sales, not vanity clicks." },
-    { title: "Long-Term Growth", desc: "Scaling profitable campaigns into a durable channel." },
+    { title: "Industry Specific Campaigns", desc: "Strategies shaped by your market's real search behavior." },
+    { title: "Conversion Driven Approach", desc: "Built for enquiries and sales, not vanity clicks." },
+    { title: "Long Term Growth", desc: "Scaling profitable campaigns into a durable channel." },
   ],
 };
 
 export const PPC_GROW = {
   paragraphs: [
     "Google Ads can become one of the most effective lead generation channels when campaigns are managed strategically. From keyword targeting and ad optimization to conversion tracking and performance analysis, every element plays a role in improving results.",
-    "Whether you want more local leads, ecommerce sales, or qualified enquiries, a well-optimized PPC strategy can help your business grow faster and more efficiently.",
+    "Whether you want more local leads, ecommerce sales, or qualified enquiries, a well optimized PPC strategy can help your business grow faster and more efficiently.",
     "Our focus is not just increasing clicks, but generating measurable business growth through strategic advertising.",
   ],
 };
@@ -239,7 +243,7 @@ export const PPC_FAQS: FaqItem[] = [
   {
     question: "How do I choose the best Google Ads company in Delhi?",
     answer:
-      "Look for an agency with transparent reporting, proven experience, conversion-focused strategies, and a strong understanding of your industry and business goals.",
+      "Look for an agency with transparent reporting, proven experience, conversion focused strategies, and a strong understanding of your industry and business goals.",
   },
   {
     question: "Can Google Ads increase website traffic and sales?",
@@ -256,6 +260,6 @@ export const PPC_FAQS: FaqItem[] = [
 export const PPC_CTA = {
   kicker: "Ready to improve your Google Ads performance?",
   lines: ["Make ads", "make money."] as [string, string],
-  desc: "If your campaigns are generating clicks but not enough quality leads, it may be time for a more strategic approach. Our team helps businesses across Delhi NCR create performance-focused Google Ads campaigns designed for sustainable growth and better ROI.",
+  desc: "If your campaigns are generating clicks but not enough quality leads, it may be time for a more strategic approach. Our team helps businesses across Delhi NCR create performance focused Google Ads campaigns designed for sustainable growth and better ROI.",
   primary: "Book a free ads consult",
 };

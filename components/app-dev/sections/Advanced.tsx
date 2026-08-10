@@ -126,7 +126,7 @@ export function PricingSection() {
                 ))}
               </ul>
               <div className="mt-8">
-                <Button href="#contact" variant={plan.featured ? "primary" : "ghost"} className="w-full justify-center">
+                <Button href="/contact" variant={plan.featured ? "primary" : "ghost"} className="w-full justify-center">
                   Get Estimate
                 </Button>
               </div>
@@ -162,7 +162,7 @@ export function DedicatedDeveloperSection() {
         </Stagger>
 
         <div className="mt-10 flex justify-center">
-          <Button href="#contact" variant="primary">Hire Dedicated Developers</Button>
+          <Button href="/contact" variant="primary">Hire Dedicated Developers</Button>
         </div>
       </div>
     </Section>

@@ -39,7 +39,7 @@ export default function RdIntro() {
   }, []);
 
   return (
-    <section ref={root} id="about" className="relative py-16 sm:py-20">
+    <section ref={root} id="about" className="relative py-8 sm:py-12">
       <div className="container max-w-5xl">
         {/* AT&T stat callout */}
         <div className="rd-reveal rd-glass mb-8 flex flex-col gap-2 p-6 sm:p-10">
@@ -100,7 +100,7 @@ export default function RdIntro() {
               <p className="mt-3 max-w-2xl text-sm sm:text-base text-white/70">{RD_CTA_1.sub}</p>
             </div>
             <div className="flex flex-col sm:flex-row flex-wrap items-center gap-3">
-              <RdMagnetic href="#contact" className="w-full sm:w-auto justify-center">
+              <RdMagnetic href="/contact" className="w-full sm:w-auto justify-center">
                 Get Started <ArrowRight />
               </RdMagnetic>
             </div>

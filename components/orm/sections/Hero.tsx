@@ -92,7 +92,7 @@ function ReputationMonitor() {
               </svg>
               <div className="text-center">
                 <span className="orm-ring__num gd-display block text-2xl leading-none text-[var(--gd-ink)]">0</span>
-                <span className="text-[0.58rem] font-bold uppercase tracking-wider text-[var(--gd-muted)]">Brand health</span>
+                <span className="text-[0.58rem] font-bold uppercase tracking-wider text-[var(--gd-muted)]">Health</span>
               </div>
             </div>
             <div className="min-w-0 flex-1">
@@ -142,7 +142,7 @@ function ReputationMonitor() {
       {/* floating chips */}
       <div className="orm-chip--a absolute -left-4 -top-5 hidden rounded-2xl border border-[var(--gd-line)] bg-white/95 px-4 py-3 shadow-[0_14px_34px_rgba(12,36,61,0.12)] sm:block">
         <div className="flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-xl bg-[var(--gd-gold-soft)] text-[var(--gd-gold)]">
+          <span className="grid size-10 place-items-center rounded-xl bg-[rgba(40,111,171,0.1)] text-[var(--gd-blue)]">
             <SeoIcon name="star" width={19} height={19} />
           </span>
           <div>
@@ -217,7 +217,7 @@ export default function HeroSection() {
             </p>
 
             <div className="orm-h__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
-              <MagneticButton href="#contact">
+              <MagneticButton href="/contact">
                 <span className="hidden sm:inline">{ORM_HERO.primaryCta}</span>
                 <span className="sm:hidden">Protect Reputation</span>
                 <ArrowRight />
@@ -281,7 +281,7 @@ export function IntroSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-12 sm:py-20">
+    <section ref={root} className="relative py-8 sm:py-12">
       <div className="container">
         <div className="grid gap-8 md:grid-cols-3">
           {ORM_INTRO.paragraphs.map((p, i) => (

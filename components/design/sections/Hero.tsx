@@ -99,7 +99,7 @@ export default function HeroSection() {
         </p>
 
         <div className="gd-hero__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
-          <MagneticButton href="#contact">
+          <MagneticButton href="/contact">
             <span className="hidden sm:inline">{GD_HERO.primaryCta}</span>
             <span className="sm:hidden">Start Design</span>
             <ArrowRight />

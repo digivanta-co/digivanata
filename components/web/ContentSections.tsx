@@ -6,7 +6,7 @@ import { WEB_AUTHOR, WEB_PROBLEMS, WEB_REGIONS, WEB_WHY } from "@/lib/web-data";
 
 export function IntroSection() {
   return (
-    <section className="relative bg-white py-12 sm:py-20 lg:py-28 border-t border-[var(--gd-line)]">
+    <section className="relative bg-white py-8 sm:py-12 lg:py-16 border-t border-[var(--gd-line)]">
       <div className="container relative z-10">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] items-center">
           <div>
@@ -57,7 +57,7 @@ export function WebCtaBand({
   id: string;
 }) {
   return (
-    <section id={id} className="relative bg-[var(--gd-navy)] py-16 text-white overflow-hidden">
+    <section id={id} className="relative bg-[var(--gd-navy)] py-8 sm:py-10 text-white overflow-hidden">
       <div
         aria-hidden
         className="pointer-events-none absolute right-0 top-0 size-96 rounded-full bg-[var(--gd-blue)]/15 blur-3xl"
@@ -81,7 +81,7 @@ export function WebCtaBand({
 
 export function RegionsSection() {
   return (
-    <section className="relative bg-[var(--gd-soft)] py-16 border-t border-[var(--gd-line)]">
+    <section className="relative bg-[var(--gd-soft)] py-8 sm:py-10 border-t border-[var(--gd-line)]">
       <div className="container text-center">
         <span className="mb-4 inline-block text-xs font-bold uppercase tracking-[0.2em] text-[var(--gd-blue)]">
           Serving Delhi NCR & Global Clients
@@ -103,7 +103,7 @@ export function RegionsSection() {
 
 export function WebWhyGridSection() {
   return (
-    <section className="relative bg-white py-12 sm:py-20 border-t border-[var(--gd-line)]">
+    <section className="relative bg-white py-8 sm:py-12 border-t border-[var(--gd-line)]">
       <div className="container">
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <span className="mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--gd-gold)]">
@@ -136,7 +136,7 @@ export function WebWhyGridSection() {
 
 export function AuthorSection() {
   return (
-    <section id="web-author" className="relative bg-[var(--gd-soft)] py-12 sm:py-20 border-t border-[var(--gd-line)]">
+    <section id="web-author" className="relative bg-[var(--gd-soft)] py-8 sm:py-12 border-t border-[var(--gd-line)]">
       <div className="container max-w-3xl">
         <div className="rounded-2xl border border-[var(--gd-line)] bg-white p-8 lg:p-10 shadow-sm">
           <span className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--gd-blue)]">

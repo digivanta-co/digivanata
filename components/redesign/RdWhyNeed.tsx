@@ -57,7 +57,7 @@ export default function RdWhyNeed() {
   }, []);
 
   return (
-    <section ref={root} className="relative overflow-hidden bg-[var(--rd-gray)] py-16 sm:py-20">
+    <section ref={root} className="relative overflow-hidden bg-[var(--rd-gray)] py-8 sm:py-12">
       {/* self-drawing background line */}
       <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.5]" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
         <path
@@ -84,7 +84,7 @@ export default function RdWhyNeed() {
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {BUSINESS_CHALLENGES.map((c) => (
             <li key={c} className="rd-whyneed__card rd-glass p-5">
-              <span className="mb-3 inline-grid size-9 place-items-center rounded-full bg-[var(--rd-gold-soft)] text-[var(--rd-gold)] [&_svg]:size-4">
+              <span className="mb-3 inline-grid size-9 place-items-center rounded-full bg-[var(--rd-blue-soft)] text-[var(--rd-blue)] [&_svg]:size-4">
                 <AlertTriangle />
               </span>
               <p className="font-medium text-[var(--rd-ink)]">{c}</p>

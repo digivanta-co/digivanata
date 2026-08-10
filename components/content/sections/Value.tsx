@@ -35,7 +35,7 @@ export function MattersSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-y border-[var(--cm-line)] bg-[var(--cm-panel)] py-24">
+    <section ref={root} className="relative border-y border-[var(--cm-line)] bg-[var(--cm-panel)] py-5 sm:py-14">
       <div className="container">
         <div className="cm-matters__head max-w-2xl">
           <Kicker>Why content marketing matters</Kicker>
@@ -47,20 +47,29 @@ export function MattersSection() {
           <p className="mt-5 text-[var(--cm-muted)]">{CM_MATTERS.intro}</p>
         </div>
 
-        <div className="cm-matters__grid mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
+        {/* interactive editorial index — hover wipes a steel-blue band
+            across the row, the label shifts and an arrow slides in */}
+        <div className="cm-matters__grid mt-12 grid border-t border-[var(--cm-line)] lg:grid-cols-2 lg:gap-x-14">
           {CM_MATTERS.points.map((p, i) => (
             <div
               key={p}
-              className="cm-matters__cell group flex items-center gap-4 rounded-xl border border-[var(--cm-line)] bg-[var(--cm-glass)] px-5 py-4 transition-colors duration-300 hover:border-[rgba(40,111,171,0.5)]"
+              className="cm-matters__cell group relative flex cursor-default items-center gap-5 overflow-hidden border-b border-[var(--cm-line)] px-2 py-5 sm:gap-6"
             >
-              <span className="cm-display text-sm text-[var(--cm-faint)]">
+              <span
+                aria-hidden
+                className="absolute inset-0 origin-left scale-x-0 bg-[linear-gradient(90deg,var(--cm-blue-soft),transparent_85%)] transition-transform duration-500 ease-out group-hover:scale-x-100"
+              />
+              <span
+                className="cm-display relative shrink-0 text-[1.7rem] leading-none text-transparent transition-colors duration-300 group-hover:text-[var(--cm-blue)]"
+                style={{ WebkitTextStroke: "1px rgba(12,36,61,0.25)" }}
+              >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="grid size-8 shrink-0 place-items-center rounded-full bg-[var(--cm-blue-soft)] text-[var(--cm-blue)] [&_svg]:size-4">
-                <Check />
-              </span>
-              <span className="text-[0.98rem] font-medium text-[var(--cm-ink)] transition-transform duration-300 group-hover:translate-x-1">
+              <span className="relative text-[clamp(1rem,1.6vw,1.2rem)] font-semibold text-[var(--cm-ink)] transition-transform duration-400 group-hover:translate-x-2">
                 {p}
+              </span>
+              <span className="relative ml-auto grid size-8 shrink-0 -translate-x-2 place-items-center rounded-full bg-[var(--cm-blue)] text-white opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 [&_svg]:size-3.5">
+                <Check />
               </span>
             </div>
           ))}
@@ -98,7 +107,7 @@ export function ApproachSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="relative py-5 sm:py-14">
       <div className="container grid items-start gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         {/* left — narrative */}
         <div>

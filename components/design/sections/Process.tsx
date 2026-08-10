@@ -15,12 +15,19 @@ export function ProcessSection({
   label = "How we work",
   headingTop = "The process,",
   headingAccent = "start to ship.",
+  headingBreak = true,
+  scrollFactor = 1,
 }: {
   steps?: readonly { title: string; desc: string }[];
   intro?: string;
   label?: string;
   headingTop?: string;
   headingAccent?: string;
+  headingBreak?: boolean;
+  /* Scroll distance as a multiple of the track's overflow width. 1 maps
+     one pixel of scroll to one pixel of pan; lower values make the
+     gallery pan faster so the pin holds the viewport for less time. */
+  scrollFactor?: number;
 }) {
   const root = useRef<HTMLElement | null>(null);
   const track = useRef<HTMLDivElement | null>(null);
@@ -33,6 +40,9 @@ export function ProcessSection({
       mm.add("(min-width: 900px)", () => {
         const el = track.current!;
         const getDist = () => el.scrollWidth - window.innerWidth;
+        /* how far the page scrolls while pinned — the pan itself always
+           covers the full track, so a lower factor just pans faster */
+        const getScroll = () => getDist() * scrollFactor;
 
         gsap.to(el, {
           x: () => -getDist(),
@@ -40,7 +50,7 @@ export function ProcessSection({
           scrollTrigger: {
             trigger: root.current,
             start: "top top",
-            end: () => "+=" + getDist(),
+            end: () => "+=" + getScroll(),
             scrub: 1,
             pin: true,
             anticipatePin: 1,
@@ -54,7 +64,7 @@ export function ProcessSection({
           scrollTrigger: {
             trigger: root.current,
             start: "top top",
-            end: () => "+=" + getDist(),
+            end: () => "+=" + getScroll(),
             scrub: 1,
           },
         });
@@ -72,20 +82,21 @@ export function ProcessSection({
       });
     }, root);
     return () => ctx.revert();
-  }, []);
+  }, [scrollFactor]);
 
   return (
     <section
       ref={root}
-      className="relative overflow-hidden bg-[var(--gd-soft)] py-0 md:pb-24 md:pt-[7.5rem] lg:pt-[8.5rem]"
+      id="process"
+      className="relative flex flex-col justify-center overflow-hidden bg-[var(--gd-soft)] py-8 md:min-h-[80vh] md:py-12 lg:min-h-[85vh]"
     >
       <div className="container">
-        <div className="mb-8 text-center gap-6 md:mb-6" >
+        <div className="mb-6 text-center gap-4 md:mb-4" >
           <div>
             <Label>{label}</Label>
-            <h2 className="gd-display m-0 mb-10 text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
+            <h2 className="gd-display m-0 mb-4 text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
               {headingTop}
-              <br />
+              {headingBreak ? <br /> : " "}
               <span className="gd-grad ">{headingAccent}</span>
             </h2>
           </div>
@@ -100,7 +111,7 @@ export function ProcessSection({
         </div>
       </div>
 
-      <div className="overflow-hidden max-md:container">
+      <div className="gd-proc__viewport overflow-hidden max-md:container">
         <div
           ref={track}
           className="flex flex-col gap-4 md:w-max md:flex-row md:gap-5 md:pl-[max(1rem,calc((100vw-1200px)/2))] md:pr-[8vw]"

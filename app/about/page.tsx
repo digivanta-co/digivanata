@@ -26,7 +26,7 @@ export default function AboutPage() {
   return (
     <main className="about dv-grain">
       {/* ── Hero ── */}
-      <section className="ab-hero">
+      <section className="ab-hero py-5">
         <div className="ab-hero__bg" aria-hidden="true">
           <span className="herox__blob herox__blob--a" />
           <span className="herox__blob herox__blob--b" />
@@ -48,7 +48,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Story ── */}
-      <section className="section section--surface">
+      <section className="section section--surface py-5">
         <div className="container split">
           <Reveal className="split__content">
             <span className="ab-label">Our story</span>
@@ -114,7 +114,7 @@ export default function AboutPage() {
       <AboutTeamPhoto />
 
       {/* ── Mission & Vision ── */}
-      <section className="section section--soft">
+      <section className="section section--soft py-5">
         <div className="container">
           <div className="ab-mv">
             <Reveal as="article" className="ab-mv__card ab-mv__card--light">
@@ -150,7 +150,7 @@ export default function AboutPage() {
       <WhatWeDo />
 
       {/* ── How We Work ── */}
-      <section className="section section--soft">
+      <section className="section section--soft py-5">
         <div className="container split">
           <Reveal className="split__content">
             <span className="ab-label">How we work</span>
@@ -183,7 +183,7 @@ export default function AboutPage() {
       <WhyChoose />
 
       {/* ── CTA ── */}
-      <section className="section">
+      <section className="section py-5">
         <div className="container">
           <Reveal>
             <div className="ab-cta">

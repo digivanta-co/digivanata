@@ -35,7 +35,7 @@ export default function WebServicesSection() {
   }, []);
 
   return (
-    <section ref={root} id="web-services" className="relative py-24">
+    <section ref={root} id="web-services" className="relative py-10 sm:py-14">
       <div className="container">
         {/* Section Header — heading left, description right */}
         <div className="mb-14 grid items-end gap-6 md:grid-cols-2">

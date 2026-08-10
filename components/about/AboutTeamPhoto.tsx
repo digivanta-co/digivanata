@@ -6,7 +6,7 @@ import { ABOUT_TEAM_IMAGE } from "@/lib/team-data";
 
 export default function AboutTeamPhoto() {
   return (
-    <section className="section section--soft section--tight ab-team">
+    <section className="section section--soft section--tight ab-team py-5">
       <div className="container">
         <Reveal className="section-head section-head--center ab-team__head">
           <span className="ab-label">Our people</span>
@@ -24,7 +24,7 @@ export default function AboutTeamPhoto() {
                 src={ABOUT_TEAM_IMAGE.src}
                 alt={ABOUT_TEAM_IMAGE.alt}
                 width={1400}
-                height={240}
+                height={480}
                 className="ab-team__img"
                 priority={false}
               />
@@ -38,10 +38,7 @@ export default function AboutTeamPhoto() {
                   <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
               </span>
-              <div>
-                <strong>One team, one vision</strong>
-                <span>Creativity · Strategy · Growth</span>
-              </div>
+              
             </div>
           </div>
         </Reveal>

@@ -11,7 +11,6 @@ export default function WhatsAppButton() {
       aria-label="Chat with us on WhatsApp"
     >
       <WhatsApp />
-      WhatsApp us
     </a>
   );
 }

@@ -5,7 +5,6 @@ import { MattersSection, ApproachSection } from "@/components/content/sections/V
 import { ServicesSection } from "@/components/content/sections/Services";
 import { ProcessSection } from "@/components/content/sections/Process";
 import { WhySection, GrowthSection, AudienceSection } from "@/components/content/sections/Trust";
-import { BigStatement } from "@/components/content/sections/BigStatement";
 import { FAQSection } from "@/components/content/sections/Faq";
 import { CTASection } from "@/components/content/sections/Cta";
 import { CtaRibbon } from "@/components/content/primitives";
@@ -47,8 +46,6 @@ export default function ContentMarketingPage() {
       <ServicesSection />
       <ProcessSection />
       <WhySection />
-
-      <BigStatement />
 
       <GrowthSection />
       <AudienceSection />

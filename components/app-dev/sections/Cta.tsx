@@ -9,7 +9,7 @@ export function CTASection() {
   const shapeB = useParallax<HTMLDivElement>({ y: 50 });
 
   return (
-    <section id="contact" className="relative py-20 lg:py-28">
+    <section id="contact" className="relative py-10 lg:py-8 sm:py-10">
       <div className="container">
         <div
           ref={panel}
@@ -34,10 +34,10 @@ export function CTASection() {
               cross-platform apps, Digivanta turns your idea into a high-performing product.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
-              <Button href="#contact" variant="light">Put My Business on Every Phone</Button>
+              <Button href="/contact" variant="light">Put My Business on Every Phone</Button>
               <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40"
+                href="/contact"
+                className="site-cta inline-flex items-center gap-2 border border-white/20 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40"
               >
                 Discuss My Idea
               </a>

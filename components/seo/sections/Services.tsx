@@ -3,6 +3,7 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap, reduced } from "@/animations/gsap";
 import { Label } from "@/components/design/primitives";
+import { MagneticButton } from "@/components/agency/primitives";
 import { ArrowRight } from "@/components/ui/Icons";
 import { SEO_SERVICES } from "@/lib/seo-data";
 
@@ -29,25 +30,49 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section ref={root} id="seo-services" className="relative py-14 sm:py-24">
+    <section ref={root} id="seo-services" className="relative py-10 sm:py-14">
       <div className="container">
-        <div className="mb-14 max-w-3xl">
-          <Label>What we provide</Label>
-          <h2 className="gd-display text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
-            Comprehensive SEO
-            <br />
-            <span className="gd-grad">services we provide.</span>
-          </h2>
-          <p className="mt-5 max-w-xl text-[var(--gd-muted)]">
-            Each service is designed to improve search visibility and drive sustainable organic growth.
-          </p>
+        <div className="mb-14 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
+          {/* Left: Heading & Intro */}
+          <div className="max-w-2xl">
+            <Label>What we provide</Label>
+            <h2 className="gd-display text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
+              Comprehensive SEO
+              <br />
+              <span className="gd-grad">services we provide.</span>
+            </h2>
+            <p className="mt-4 max-w-xl text-[var(--gd-muted)]">
+              Each service is designed to improve search visibility and drive sustainable organic growth.
+            </p>
+          </div>
+
+          {/* Right: Interactive CTA & Growth Card */}
+          <div className="w-full shrink-0 lg:max-w-sm">
+            <div className="gd-card relative overflow-hidden rounded-2xl border border-[var(--gd-line)] bg-white p-5 shadow-sm sm:p-6">
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[rgba(40,111,171,0.08)] px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-wider text-[var(--gd-blue)]">
+                  <span className="size-2 rounded-full bg-[var(--gd-blue)] animate-pulse" />
+                  SEO Growth
+                </span>
+                <span className="text-xs font-bold text-[var(--gd-gold)]">Custom Strategy</span>
+              </div>
+              <p className="mb-4 text-xs leading-relaxed text-[var(--gd-muted)]">
+                Want to see how your site ranks against top competitors? Get a free SEO audit &amp; personalized growth plan.
+              </p>
+              <div>
+                <MagneticButton href="/contact">
+                  Get Free SEO Audit <ArrowRight />
+                </MagneticButton>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="border-t border-[var(--gd-line)]">
           {SEO_SERVICES.map((s) => (
             <a
               key={s.title}
-              href="#contact"
+              href="/contact"
               className="sv-svc__row group block border-b border-[var(--gd-line)] py-7 transition-colors duration-300 hover:bg-[var(--gd-soft)]"
             >
               <div className="grid items-baseline gap-x-8 gap-y-3 md:grid-cols-[3.2rem_1.2fr_1fr_auto]">

@@ -28,7 +28,7 @@ export function WhySection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="relative py-5 sm:py-14">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Kicker>{CM_WHY.label}</Kicker>
@@ -87,9 +87,9 @@ export function GrowthSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative border-y border-[var(--cm-line)] bg-[var(--cm-panel)] py-24">
+    <section ref={root} className="relative border-y border-[var(--cm-line)] bg-[var(--cm-panel)] py-14">
       <div className="container">
-        <div className="cm-grow__item max-w-2xl">
+        <div className="cm-grow__item max-w-4xl">
           <Kicker>{CM_GROWTH.label}</Kicker>
           <h2 className="cm-display text-[clamp(1.9rem,4.4vw,3.2rem)] text-[var(--cm-ink)]">
             {CM_GROWTH.heading[0]}
@@ -149,7 +149,7 @@ export function AudienceSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24">
+    <section ref={root} className="relative py-5 sm:py-14">
       <div className="container">
         <div className="cm-aud__item max-w-2xl">
           <Kicker>{CM_AUDIENCE.label}</Kicker>
@@ -180,7 +180,7 @@ export function AudienceSection() {
             {CM_SMARTER.body}
           </p>
           <a
-            href="#contact"
+            href="/contact"
             className="ag-link mt-7 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--cm-blue)] [&_svg]:size-4"
           >
             Build a smarter strategy <ArrowRight />

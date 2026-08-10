@@ -3,48 +3,12 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap, reduced } from "@/animations/gsap";
 import { MagneticButton } from "@/components/agency/primitives";
-import { ArrowRight, Spark } from "@/components/ui/Icons";
+import { ArrowRight, WhatsApp } from "@/components/ui/Icons";
+import { SeoIcon } from "@/components/seo/SeoIcons";
+import { CONTACT } from "@/lib/site-data";
 import { WEB_HERO } from "@/lib/web-data";
 
 const useIso = typeof window !== "undefined" ? useLayoutEffect : useEffect;
-
-/* Character flip animation helper */
-function FlipLine({ text, variant }: { text: string; variant: "solid" | "outline" | "gradient" }) {
-  const words = text.trim().split(/\s+/);
-  return (
-    <span className="block overflow-hidden [transform-style:preserve-3d]">
-      <span className="block [transform-style:preserve-3d]">
-        {words.map((word, wi) => (
-          <span key={wi}>
-            <span className="inline-block whitespace-nowrap [transform-style:preserve-3d]">
-              {Array.from(word).map((ch, i) => (
-                <span
-                  key={i}
-                  className={
-                    "gd-hero__char inline-block will-change-transform " +
-                    (variant === "gradient"
-                      ? "gd-grad"
-                      : variant === "outline"
-                      ? "text-transparent"
-                      : "text-[var(--gd-navy)]")
-                  }
-                  style={
-                    variant === "outline"
-                      ? { WebkitTextStroke: "1.8px #0C243D", WebkitTextFillColor: "transparent" }
-                      : undefined
-                  }
-                >
-                  {ch}
-                </span>
-              ))}
-            </span>
-            {wi < words.length - 1 && " "}
-          </span>
-        ))}
-      </span>
-    </span>
-  );
-}
 
 /* Web Architecture & Performance Panel — populates the right side of the hero */
 function WebHeroPanel() {
@@ -94,7 +58,7 @@ function WebHeroPanel() {
           <div className="flex flex-1 items-center justify-center px-4">
             <div className="flex w-full max-w-[260px] items-center gap-2 rounded-full border border-[var(--gd-line)] bg-white px-3.5 py-1 text-[0.72rem] text-[var(--gd-muted)] font-mono">
               <span className="text-[var(--gd-blue)]">🔒</span>
-              <span className="truncate">digivanta.com/web-dev</span>
+              <span className="truncate">digivanta.co/web-development</span>
             </div>
           </div>
           <div className="size-3" />
@@ -167,81 +131,82 @@ export default function WebHeroSection() {
     if (reduced()) return;
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-      tl.from(".gd-hero__eyebrow", { y: 24, autoAlpha: 0, duration: 0.7 })
-        .from(
-          ".gd-hero__char",
-          { rotateX: -95, yPercent: 120, autoAlpha: 0, duration: 0.9, stagger: 0.02, ease: "back.out(1.4)" },
-          "-=0.3"
-        )
-        .from(".gd-hero__sub", { y: 24, autoAlpha: 0, duration: 0.7 }, "-=0.5")
-        .from(".gd-hero__ctas > *", { y: 20, autoAlpha: 0, duration: 0.6, stagger: 0.1 }, "-=0.4")
-        .from(".gd-hero__meta > *", { y: 16, autoAlpha: 0, duration: 0.6, stagger: 0.08 }, "-=0.4");
+      tl.from(".web2__eyebrow", { y: 24, autoAlpha: 0, duration: 0.7 })
+        .from(".web2__word", { yPercent: 120, rotateX: -80, autoAlpha: 0, duration: 0.9, stagger: 0.06, ease: "back.out(1.4)" }, "-=0.3")
+        .from(".web2__sub", { y: 24, autoAlpha: 0, duration: 0.7 }, "-=0.5")
+        .from(".web2__ctas > *", { y: 20, autoAlpha: 0, duration: 0.6, stagger: 0.1 }, "-=0.4")
+        .from(".web2__trust > *", { y: 16, autoAlpha: 0, duration: 0.6, stagger: 0.08 }, "-=0.4");
     }, root);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section
-      ref={root}
-      className="relative flex min-h-[88svh] items-center overflow-hidden pt-24 pb-16 lg:pt-28"
-    >
+    <section ref={root} className="relative overflow-hidden pt-24 pb-4 lg:pt-28 lg:pb-10">
       {/* Radial soft glow backdrop */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_460px_at_85%_-10%,rgba(40,111,171,0.08),transparent_60%),radial-gradient(700px_420px_at_-10%_110%,rgba(176,141,63,0.08),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_460px_at_88%_-10%,rgba(40,111,171,0.08),transparent_60%),radial-gradient(700px_420px_at_-10%_110%,rgba(176,141,63,0.08),transparent_55%)]"
       />
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--gd-line)]" />
 
-      <div className="container relative z-10 grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12">
-        {/* Left Column: Copy & CTAs */}
-        <div>
-          <span className="gd-hero__eyebrow mb-7 inline-flex items-center gap-2.5 rounded-full border border-[var(--gd-line)] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gd-muted)] shadow-[0_4px_14px_rgba(13,18,41,0.05)]">
-            <span className="size-2 rounded-full bg-[var(--gd-gold)] shadow-[0_0_10px_rgba(176,141,63,0.8)]" />
-            {WEB_HERO.badge}
-          </span>
+      <div className="container relative z-10">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+          {/* copy */}
+          <div>
+            <span className="web2__eyebrow inline-flex items-center gap-2.5 rounded-full border border-[var(--gd-line)] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gd-muted)] shadow-[0_4px_14px_rgba(12,36,61,0.05)]">
+              <span className="size-2 rounded-full bg-[var(--gd-gold)] shadow-[0_0_10px_rgba(176,141,63,0.8)]" />
+              {WEB_HERO.eyebrow}
+            </span>
 
-          <h1 className="gd-display m-0 text-[clamp(2.4rem,6vw,4.8rem)] [perspective:900px]">
-            <FlipLine text={WEB_HERO.titleLines[0]} variant="solid" />
-            <FlipLine text={WEB_HERO.titleLines[1]} variant="outline" />
-            <FlipLine text={WEB_HERO.titleLines[2]} variant="gradient" />
-          </h1>
+            <h1 className="gd-display mt-7 text-[clamp(2.2rem,5.4vw,3.9rem)] leading-[1.02] text-[var(--gd-ink)] [perspective:900px]">
+              {WEB_HERO.h1.map((w, i) => (
+                <span key={i} className="inline-block overflow-hidden pb-[0.08em] align-top">
+                  <span className={"web2__word mr-[0.28em] inline-block will-change-transform " + (w.grad ? "gd-grad" : "")}>
+                    {w.t}
+                  </span>
+                </span>
+              ))}
+            </h1>
 
-          <p className="gd-hero__sub mt-7 max-w-xl text-[1.05rem] leading-relaxed text-[#334155]">
-            {WEB_HERO.sub}
-          </p>
+            <p className="web2__sub mt-6 max-w-xl text-[1.02rem] leading-relaxed text-[var(--gd-muted)]">
+              {WEB_HERO.sub}
+            </p>
 
-          <div className="gd-hero__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
-            <MagneticButton href="#web-contact">
-              <span className="hidden sm:inline">{WEB_HERO.primaryCta}</span>
-              <span className="sm:hidden">Web Quote</span>
-              <ArrowRight />
-            </MagneticButton>
-            <MagneticButton href="#web-services" className="ag-btn--ghost">
-              <Spark />
-              <span className="hidden sm:inline">{WEB_HERO.ghostCta}</span>
-              <span className="sm:hidden">Services</span>
-            </MagneticButton>
-          </div>
+            <div className="web2__ctas mt-8 flex items-center gap-2.5 sm:gap-4">
+              <MagneticButton href="/contact">
+                <span className="hidden sm:inline">{WEB_HERO.primaryCta}</span>
+                <span className="sm:hidden">Web Quote</span>
+                <ArrowRight />
+              </MagneticButton>
+              <MagneticButton href={CONTACT.whatsapp} external className="ag-btn--ghost">
+                <WhatsApp width={17} height={17} className="hidden text-[#25d366] sm:inline" /> {WEB_HERO.ghostCta}
+              </MagneticButton>
+            </div>
 
-          <div className="gd-hero__meta mt-14 flex flex-wrap gap-x-12 gap-y-6 border-t border-[var(--gd-line)] pt-8">
-            {WEB_HERO.meta.map((m) => (
-              <div key={m.l}>
-                <div className="gd-display text-2xl font-extrabold text-[var(--gd-navy)]">{m.n}</div>
-                <div className="mt-1 text-sm font-medium text-[var(--gd-muted)]">{m.l}</div>
+            {/* trust row */}
+            <div className="web2__trust mt-8 grid grid-cols-2 gap-4 border-t border-[var(--gd-line)] pt-6 sm:mt-12 sm:grid-cols-5 sm:gap-6 sm:pt-7">
+              <div className="flex flex-col items-start gap-1">
+                <span className="flex text-[var(--gd-gold)]">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <SeoIcon key={i} name="star" width={16} height={16} />
+                  ))}
+                </span>
+                <span className="text-[0.82rem] font-semibold text-[var(--gd-ink)]">4.9/5 Google rating</span>
               </div>
-            ))}
+              {WEB_HERO.meta.map((m) => (
+                <div key={m.l} className="flex flex-col items-start">
+                  <strong className="gd-display text-2xl text-[var(--gd-navy)]">{m.n}</strong>
+                  <span className="text-[0.72rem] leading-snug text-[var(--gd-muted)]">{m.l}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* graphic */}
+          <div className="flex justify-center lg:justify-end">
+            <WebHeroPanel />
           </div>
         </div>
-
-        {/* Right Column: Interactive Web Architecture & Performance Panel */}
-        <div className="flex justify-center lg:justify-end">
-          <WebHeroPanel />
-        </div>
-      </div>
-
-      {/* scroll cue */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[0.65rem] uppercase tracking-[0.3em] text-[var(--gd-muted)]">
-        Scroll to Explore
       </div>
     </section>
   );

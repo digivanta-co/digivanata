@@ -37,7 +37,7 @@ const gradText: React.CSSProperties = {
 
 export default function WhatWeDo() {
   return (
-    <section className="relative overflow-hidden bg-white py-12 sm:py-20 lg:py-32">
+    <section className="relative overflow-hidden bg-white py-5">
       {/* soft radial glow + subtle grid texture */}
       <div
         aria-hidden
@@ -65,7 +65,7 @@ export default function WhatWeDo() {
           className="mx-auto max-w-[700px] text-center"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-[#235EA7]/20 bg-[#235EA7]/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#235EA7]">
-            <span className="size-1.5 rounded-full bg-[#D4AF37]" /> What we do
+            <span className="size-1.5 rounded-full bg-[#235EA7]" /> What we do
           </span>
           <h2 className="mt-5 font-[family-name:var(--font-display),var(--font)] text-[clamp(2.2rem,5vw,3.4rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#0C243D]">
             Everything you need to <span style={gradText}>grow online</span>
@@ -76,10 +76,9 @@ export default function WhatWeDo() {
         </motion.div>
 
         {/* masonry */}
-        <div className="mt-14 gap-6 sm:columns-2 lg:columns-3">
+        <div className="mt-8 gap-6 sm:columns-2 lg:columns-3">
           {ABOUT_SERVICES.map((s, i) => {
             const Icon = ICONS[s.icon] ?? Boxes;
-            const gold = GOLD.has(i);
             return (
               <motion.article
                 key={s.title}
@@ -90,12 +89,7 @@ export default function WhatWeDo() {
                 className="group mb-6 break-inside-avoid rounded-[24px] border border-slate-200/70 bg-white/95 p-7 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_12px_32px_-16px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-[#235EA7]/30 hover:shadow-[0_28px_60px_-24px_rgba(35,94,167,0.45)]"
               >
                 <span
-                  className={
-                    "mb-5 inline-grid size-14 place-items-center rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3 " +
-                    (gold
-                      ? "bg-[linear-gradient(135deg,#D4AF37,#eacb66)] shadow-[#D4AF37]/30"
-                      : "bg-[linear-gradient(135deg,#235EA7,#4f93d4)] shadow-[#235EA7]/30")
-                  }
+                  className="mb-5 inline-grid size-14 place-items-center rounded-2xl bg-[linear-gradient(135deg,#235EA7,#4f93d4)] text-white shadow-lg shadow-[#235EA7]/30 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3"
                 >
                   <Icon size={30} strokeWidth={2} />
                 </span>
@@ -103,7 +97,7 @@ export default function WhatWeDo() {
                 <p className="mt-2 text-[0.95rem] leading-relaxed text-slate-500">{s.desc}</p>
                 <Link
                   href={s.href}
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#235EA7] transition-colors hover:text-[#D4AF37]"
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#235EA7] transition-colors hover:text-[#4f93d4]"
                 >
                   Learn More
                   <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />

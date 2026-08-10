@@ -32,7 +32,7 @@ export function WhyChooseSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-[var(--gd-soft)] py-24">
+    <section ref={root} className="relative bg-[var(--gd-soft)] py-10 sm:py-14">
       <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Why Digivanta</Label>
@@ -43,7 +43,7 @@ export function WhyChooseSection() {
           </h2>
           <p className="mt-5 max-w-md text-[var(--gd-muted)]">{SMM_WHY.intro}</p>
           <div className="mt-8">
-            <MagneticButton href="#contact">
+            <MagneticButton href="/contact">
               Start Your Strategy <ArrowRight />
             </MagneticButton>
           </div>

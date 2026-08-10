@@ -10,17 +10,16 @@ export const CONTACT = {
 };
 
 export const SOCIAL = [
-  { label: "Instagram", href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/official.digivanta/" },
   { label: "Facebook", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "YouTube", href: "#" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/digivanta-ltd" },
+  { label: "YouTube", href: "https://www.youtube.com/@Digivanta_co" },
 ];
 
 export const NAV = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/seo-services-in-delhi" },
-  { label: "FAQ", href: "/faq" },
   { label: "Team", href: "/digivanta-team" },
   { label: "Contact", href: "/contact" },
 ];
@@ -30,7 +29,7 @@ export const HERO_TAGS = [
   "Analytics and Reporting",
   "Keyword Research",
   "Technical SEO Audit",
-  "On-Page Setup",
+  "On Page Setup",
   "Competitor Analysis",
 ];
 
@@ -48,14 +47,14 @@ export const SERVICES = [
     href: "social-media-marketing-in-delhi"
   },
   {
-    title: "Pay-Per-Click Advertising (PPC)",
+    title: "Pay Per Click Advertising (PPC)",
     desc: "Generate instant traffic and qualified leads",
     icon: "ppc" as const,
     href: "ppc-company-in-delhi"
   },
   {
     title: "Website Design & Development",
-    desc: "Create fast, responsive, and conversion-focused websites",
+    desc: "Create fast, responsive, and conversion focused websites",
     icon: "web" as const,
     href: "web-development-company-in-delhi"
   },
@@ -73,12 +72,12 @@ export const SERVICES = [
   },
   {
     title: "Lead Generation Services",
-    desc: "Attract and convert high-quality prospects",
+    desc: "Attract and convert high quality prospects",
     icon: "leads" as const,
   },
   {
     title: "App Development",
-    desc: "Build scalable and user-friendly mobile applications",
+    desc: "Build scalable and user friendly mobile applications",
     icon: "app" as const,
     href: "mobile-app-development-in-delhi"
   },
@@ -87,15 +86,15 @@ export const SERVICES = [
 export const PARTNER_POINTS = [
   "Delivering consistent performance",
   "Maintaining complete transparency",
-  "Building long-term business relationships",
+  "Building long term business relationships",
   "Helping you scale sustainably",
 ];
 
 export const APPROACH_POINTS = [
-  "Data-driven SEO strategies to improve search rankings",
-  "High-performance paid advertising for instant visibility",
+  "Data driven SEO strategies to improve search rankings",
+  "High performance paid advertising for instant visibility",
   "Creative content marketing to engage and convert audiences",
-  "Strategic planning to ensure long-term business growth",
+  "Strategic planning to ensure long term business growth",
 ];
 
 export const RESULTS_EXPECT = [
@@ -117,8 +116,8 @@ export const CAMPAIGN_BASED = [
 
 export const DIGITAL_BENEFITS = [
   "Target the right audience with precision",
-  "Build long-term trust and brand authority",
-  "Generate consistent and high-quality leads",
+  "Build long term trust and brand authority",
+  "Generate consistent and high quality leads",
   "Increase sales and overall revenue",
   "Track and measure performance in real time",
   "Stay ahead of competitors in your industry",
@@ -164,7 +163,7 @@ export const REVIEWS = [
 export const FAQS: FaqItem[] = [
   {
     question: "What makes Digivanta a reliable digital marketing agency?",
-    answer: "We focus on data-driven strategies, transparent reporting, and customized campaigns tailored to your business goals — delivering measurable growth, not vanity metrics.",
+    answer: "We focus on data driven strategies, transparent reporting, and customized campaigns tailored to your business goals delivering measurable growth, not vanity metrics.",
   },
   {
     question: "How soon can I expect results?",
@@ -176,7 +175,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: "Can digital marketing help local businesses?",
-    answer: "Absolutely — local SEO and targeted paid ads deliver strong results for businesses looking to reach nearby customers in Delhi and across India.",
+    answer: "Absolutely local SEO and targeted paid ads deliver strong results for businesses looking to reach nearby customers in Delhi and across India.",
   },
   {
     question: "What types of industries do you support?",
@@ -186,7 +185,6 @@ export const FAQS: FaqItem[] = [
 
 export const FOOTER_SERVICES = [
   "SEO Services",
-  "Google Ads",
   "Social Media Marketing",
   "Performance Marketing",
   "Website Development",
@@ -199,7 +197,6 @@ export const FOOTER_SERVICES = [
 export const FOOTER_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "FAQ", href: "/faq" },
   { label: "Team", href: "/digivanta-team" },
   { label: "Contact Us", href: "/contact" },
 ];

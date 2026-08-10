@@ -152,7 +152,7 @@ export default function HeroSection() {
             </p>
 
             <div ref={ctaRef} className="mt-8 flex items-center justify-center gap-2.5 lg:justify-start">
-              <Button href="#contact" variant="primary">
+              <Button href="/contact" variant="primary">
                 <span className="hidden sm:inline">{APP_HERO.primaryCta}</span>
                 <span className="sm:hidden">Build App</span>
               </Button>

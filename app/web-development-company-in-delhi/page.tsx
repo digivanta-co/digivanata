@@ -85,6 +85,7 @@ export default function WebDevelopmentPage() {
         label="Development Process"
         headingTop="Our Web"
         headingAccent="Process."
+        headingBreak={false}
       />
 
       {/* 7. Tech Stack Section */}
@@ -108,11 +109,9 @@ export default function WebDevelopmentPage() {
       <IndustriesSection
         items={WEB_INDUSTRIES}
         label="Industries We Serve"
-        note="Custom web development solutions tailored to high-growth industry verticals."
       />
 
-      {/* 12. Serving Regions */}
-      <RegionsSection />
+    
 
       {/* 13. Core Development Principles */}
       <WebWhyGridSection />

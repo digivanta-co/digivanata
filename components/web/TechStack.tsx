@@ -17,7 +17,7 @@ export default function WebTechStackSection() {
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
 
-      mm.add("(min-width: 900px)", () => {
+      mm.add("(min-width: 800px)", () => {
         const cards = gsap.utils.toArray<HTMLElement>(".web-tech-card");
         const orbitState = { rotation: 0 };
 

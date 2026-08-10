@@ -30,7 +30,7 @@ export default function RdResults() {
   }, []);
 
   return (
-    <section ref={root} className="rd-panel relative overflow-hidden bg-[var(--rd-ink)] py-16 text-white sm:py-20">
+    <section ref={root} className="rd-panel relative overflow-hidden bg-[var(--rd-ink)] py-8 sm:py-12 text-white">
       <div aria-hidden className="rd-blob rd-blob--blue right-[6%] top-[10%] size-[30vw] max-w-[440px] opacity-40" />
       <div className="container relative z-10 max-w-4xl">
         <span className="rd-eyebrow mb-4 text-[var(--rd-gold)] [&::before]:bg-[var(--rd-gold)]">
