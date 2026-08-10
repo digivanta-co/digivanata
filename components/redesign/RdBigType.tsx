@@ -3,6 +3,7 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LazyVideo from "@/components/ui/LazyVideo";
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 const useIso = typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -61,7 +62,7 @@ export default function RdBigType({
         (dark ? "rd-panel bg-black text-white" : "")
       }
     >
-      <div className="container grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+      <div className="container grid gap-5 items-center lg:grid-cols-[1.1fr_0.9fr]">
         <h2 className="rd-display rd-mega leading-[0.9]">
           {words.map((w, wi) => (
             <span key={wi} className="rd-big__line block overflow-hidden">
@@ -85,12 +86,8 @@ export default function RdBigType({
             "relative mx-auto w-full max-w-lg overflow-hidden rounded-[24px] shadow-[0_24px_60px_rgba(0,0,0,0.18)] lg:mx-0 lg:max-w-none"
           }
         >
-          <video
+          <LazyVideo
             src="/explore-method.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
             className="aspect-[4/5] w-full object-cover md:aspect-[16/11]"
           />
         </div>

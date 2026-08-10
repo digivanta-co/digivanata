@@ -50,7 +50,7 @@ export default function WhyChoose() {
         </motion.div>
 
         {/* Trust stats */}
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {ABOUT_STATS.map((s, i) => {
             const Icon = STAT_ICONS[s.icon] ?? Star;
             return (
@@ -90,7 +90,7 @@ export default function WhyChoose() {
         </div>
 
         {/* Reasons */}
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {ABOUT_WHY.map((w, i) => {
             const Icon = WHY_ICONS[w.icon] ?? Sparkles;
             return (

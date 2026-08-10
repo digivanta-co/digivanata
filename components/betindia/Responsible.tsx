@@ -31,7 +31,7 @@ export default function BiResponsible() {
         </Reveal>
       </div>
 
-      <div className="mx-auto mt-14 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto mt-14 grid gap-5 max-w-4xl sm:grid-cols-2 lg:grid-cols-4">
         {TOOLS.map((t, i) => (
           <motion.div
             key={t.label}

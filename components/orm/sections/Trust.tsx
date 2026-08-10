@@ -52,7 +52,7 @@ export function WhyChooseSection() {
               <p className="mt-5 text-[#b9cdec]">{ORM_WHY_CHOOSE.intro}</p>
             </div>
 
-            <div className="mt-10 grid gap-x-10 border-t border-white/10 sm:grid-cols-2">
+            <div className="mt-10 grid gap-5 border-t border-white/10 sm:grid-cols-2">
               {ORM_WHY_CHOOSE.points.map((p, i) => (
                 <div
                   key={p}
@@ -155,7 +155,7 @@ export function TopAgencySection() {
             <span className="gd-grad">for businesses in Delhi.</span>
           </h2>
         </div>
-        <div className="mt-7 grid gap-6 md:grid-cols-3">
+        <div className="mt-7 grid gap-5 md:grid-cols-3">
           {ORM_TOP.paragraphs.map((p, i) => (
             <p key={i} className="orm-top__item m-0 text-[0.95rem] leading-relaxed text-[var(--gd-muted)]">{p}</p>
           ))}

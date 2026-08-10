@@ -28,7 +28,7 @@ export function ProblemSection() {
 
   return (
     <section ref={root} className="relative py-10 sm:py-14">
-      <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="container grid gap-5 items-start lg:grid-cols-[0.9fr_1.1fr]">
         {/* sticky heading */}
         <div className="lg:sticky lg:top-28">
           <Label>The cost of poor design</Label>

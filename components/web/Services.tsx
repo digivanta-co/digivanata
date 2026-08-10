@@ -38,7 +38,7 @@ export default function WebServicesSection() {
     <section ref={root} id="web-services" className="relative py-10 sm:py-14">
       <div className="container">
         {/* Section Header — heading left, description right */}
-        <div className="mb-14 grid items-end gap-6 md:grid-cols-2">
+        <div className="mb-14 grid gap-5 items-end md:grid-cols-2">
           <div>
             <Label>What we build</Label>
             <h2 className="gd-display m-0 text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
@@ -57,11 +57,11 @@ export default function WebServicesSection() {
           {WEB_SERVICES.map((s, i) => (
             <a
               key={s.title}
-              href="#web-contact"
+              href="/contact"
               data-svc-row
               className="group block border-b border-[var(--gd-line)] py-7 transition-colors duration-300 hover:bg-[var(--gd-soft)]"
             >
-              <div className="grid items-center gap-x-8 gap-y-3 md:grid-cols-[1fr_1fr]">
+              <div className="grid gap-5 items-center md:grid-cols-[1fr_1fr]">
                 {/* Left: Number + Icon + Title */}
                 <div className="flex items-center gap-4">
                   <span className="gd-display text-sm text-[var(--gd-gold)]">

@@ -17,7 +17,7 @@ export default function BiFeatures() {
         sub="Six promises we make to every player who takes a seat — engineered, audited and kept."
       />
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {BI_FEATURES.map((f, i) => {
           const Icon = BI_ICONS[f.icon];
           return (

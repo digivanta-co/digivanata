@@ -1,5 +1,29 @@
 import { FaqItem } from "@/components/ui/faq-accordion";
 
+/* Canonical origin — single source of truth for metadataBase, the
+   sitemap and robots.txt. Override with NEXT_PUBLIC_SITE_URL per
+   environment (preview deploys, staging) so those don't advertise the
+   production domain. No trailing slash. */
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://digivanta.com").replace(/\/$/, "");
+
+/* Every indexable route, with a rough crawl priority. Add new pages
+   here and both the sitemap and any future nav pick them up. */
+export const ROUTES: { path: string; priority: number; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
+  { path: "/", priority: 1, changeFrequency: "weekly" },
+  { path: "/about", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/digivanta-team", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/faq", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/seo-services-in-delhi", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/ppc-company-in-delhi", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/social-media-marketing-in-delhi", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/content-marketing-in-delhi", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/graphic-designing-company-in-delhi", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/online-reputation-management-company-in-delhi", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/web-development-company-in-delhi", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/mobile-app-development-in-delhi", priority: 0.9, changeFrequency: "monthly" },
+];
+
 export const CONTACT = {
   phone: "+91 9999911195",
   phoneHref: "tel:+919999911195",
@@ -124,8 +148,8 @@ export const DIGITAL_BENEFITS = [
 ];
 
 export const STATS = [
-  { value: "800+", label: "Happy Clients" },
-  { value: "Award", label: "Winning Agency" },
+  { value: "100+", label: "Happy Clients" },
+  { value: "100+", label: "Projects Completed" },
   { value: "1+", label: "Years Experience" },
 ];
 
@@ -134,7 +158,7 @@ export const METRICS = [
   { value: "+142%", label: "Avg. organic traffic growth" },
   { value: "3.2×", label: "Average return on ad spend" },
   { value: "−38%", label: "Lower cost per lead" },
-  { value: "800+", label: "Campaigns delivered" },
+  { value: "100+", label: "Campaigns delivered" },
 ];
 
 export const REVIEWS = [

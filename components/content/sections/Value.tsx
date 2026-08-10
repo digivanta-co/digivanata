@@ -49,7 +49,7 @@ export function MattersSection() {
 
         {/* interactive editorial index — hover wipes a steel-blue band
             across the row, the label shifts and an arrow slides in */}
-        <div className="cm-matters__grid mt-12 grid border-t border-[var(--cm-line)] lg:grid-cols-2 lg:gap-x-14">
+        <div className="cm-matters__grid mt-12 grid gap-5 border-t border-[var(--cm-line)] lg:grid-cols-2">
           {CM_MATTERS.points.map((p, i) => (
             <div
               key={p}
@@ -108,7 +108,7 @@ export function ApproachSection() {
 
   return (
     <section ref={root} className="relative py-5 sm:py-14">
-      <div className="container grid items-start gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="container grid gap-5 items-start lg:grid-cols-[1.05fr_0.95fr]">
         {/* left — narrative */}
         <div>
           <Kicker>Get found · get trusted</Kicker>

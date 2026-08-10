@@ -92,7 +92,7 @@ export function AreasSection() {
         </div>
 
         {/* 6-Card Interactive Grid */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
           {AREA_CARDS.map((item) => (
             <TiltCard
               key={item.name}
@@ -189,7 +189,7 @@ export function AiPlatformsSection() {
             aria-hidden
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_110%_at_15%_-10%,rgba(40,111,171,0.4),transparent_60%),radial-gradient(40%_60%_at_95%_110%,rgba(176,141,63,0.16),transparent_60%)]"
           />
-          <div className="relative z-[1] grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="relative z-[1] grid gap-5 items-start lg:grid-cols-[1.1fr_0.9fr]">
             <div className="sv-ai__item">
               <span className="mb-5 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#d5b76a]">
                 <span className="h-px w-8 bg-[#d5b76a]/70" />
@@ -206,7 +206,7 @@ export function AiPlatformsSection() {
               <h4 className="mb-3 mt-7 text-sm font-bold uppercase tracking-[0.14em] text-white">
                 We optimize websites for:
               </h4>
-              <ul className="m-0 grid list-none gap-2.5 p-0 sm:grid-cols-2">
+              <ul className="m-0 grid gap-5 list-none p-0 sm:grid-cols-2">
                 {SEO_AI_PLATFORMS.optimizeFor.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm font-medium text-[#dbe7f7]">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d5b76a" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0">
@@ -220,7 +220,7 @@ export function AiPlatformsSection() {
 
             <div className="sv-ai__item rounded-3xl border border-white/12 bg-white/[0.05] p-7">
               <h3 className="m-0 text-lg font-bold text-white">Visibility Across Platforms</h3>
-              <ul className="m-0 mt-5 grid list-none gap-3.5 p-0">
+              <ul className="m-0 mt-5 grid gap-5 list-none p-0">
                 {SEO_AI_PLATFORMS.visibilityAcross.map((platform, i) => (
                   <li key={platform} className="flex items-center gap-3 border-b border-white/8 pb-3.5 text-[0.95rem] font-medium text-[#dbe7f7] last:border-b-0 last:pb-0">
                     <span className="gd-display text-xs text-[#d5b76a]">0{i + 1}</span>
@@ -290,7 +290,7 @@ export function TrendsSection() {
               </span>
               <h3 className="mb-0 mt-4 text-[1.05rem] font-bold text-[var(--gd-ink)]">{t.title}</h3>
               <p className="mb-0 mt-2 text-[0.85rem] leading-relaxed text-[var(--gd-muted)]">{t.desc}</p>
-              <ul className="m-0 mt-4 grid list-none gap-1.5 border-t border-[var(--gd-line)] p-0 pt-4">
+              <ul className="m-0 mt-4 grid gap-5 list-none border-t border-[var(--gd-line)] p-0 pt-4">
                 {t.items.map((it) => (
                   <li key={it} className="flex items-center gap-2 text-[0.78rem] font-medium text-[var(--gd-ink)]">
                     <span className="size-1.5 shrink-0 rounded-full bg-[var(--gd-gold)]" />
@@ -328,7 +328,7 @@ export function BenefitsSection() {
 
   return (
     <section ref={root} className="relative bg-[var(--gd-soft)] py-10 sm:py-14" id="seo-benefits">
-      <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="container grid gap-5 items-start lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Business Impact</Label>
           <h2 className="gd-display text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
@@ -427,7 +427,7 @@ export function TrustSection() {
 
   return (
     <section ref={root} className="relative bg-[var(--gd-soft)] py-10 sm:py-14" id="seo-trust">
-      <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="container grid gap-5 items-center lg:grid-cols-[1.1fr_0.9fr]">
         <div className="sv-trust__l">
           <Label>Trust Digivanta</Label>
           <h2 className="gd-display text-[clamp(1.8rem,4vw,2.9rem)] text-[var(--gd-ink)]">
@@ -454,7 +454,7 @@ export function TrustSection() {
         <div className="sv-trust__r gd-card relative overflow-hidden p-8">
           <div aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,var(--gd-navy),var(--gd-blue)_55%,var(--gd-gold))]" />
           <h3 className="m-0 text-xl font-bold text-[var(--gd-ink)]">Why Trust Digivanta?</h3>
-          <ul className="m-0 mt-6 grid list-none gap-4 p-0">
+          <ul className="m-0 mt-6 grid gap-5 list-none p-0">
             {SEO_TRUST_POINTS.map((point) => (
               <li key={point} className="flex items-start gap-3 text-[0.95rem] font-medium text-[var(--gd-ink)]">
                 <Check />

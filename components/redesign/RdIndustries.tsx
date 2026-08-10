@@ -101,7 +101,7 @@ export default function RdIndustries() {
         </div>
 
         {/* small-screen grid */}
-        <div className="rd-ind__grid grid grid-cols-2 gap-3 sm:grid-cols-3 lg:!hidden">
+        <div className="rd-ind__grid grid gap-5 grid-cols-2 sm:grid-cols-3 lg:!hidden">
           {INDUSTRIES.map((ind) => (
             <div
               key={ind}

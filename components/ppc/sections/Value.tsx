@@ -28,7 +28,7 @@ export function FailSection() {
 
   return (
     <section ref={root} className="ppc-fail relative py-10 sm:py-14">
-      <div className="container grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+      <div className="container grid gap-5 items-start lg:grid-cols-[0.9fr_1.1fr]">
         {/* sticky heading */}
         <div className="lg:sticky lg:top-28">
           <Label>Why most campaigns fail</Label>
@@ -42,7 +42,7 @@ export function FailSection() {
         </div>
 
         {/* numbered ledger */}
-        <ol className="m-0 grid list-none grid-cols-2 gap-3 p-0 max-[359px]:grid-cols-1 lg:block lg:border-t lg:border-[var(--gd-line)]">
+        <ol className="m-0 grid gap-5 list-none grid-cols-2 p-0 max-[359px]:grid-cols-1 lg:block lg:border-t lg:border-[var(--gd-line)]">
           {PPC_FAIL.reasons.map((r, i) => (
             <li
               key={r.title}
@@ -92,7 +92,7 @@ export function QualifiedSection() {
   return (
     <section ref={root} className="relative border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-10 sm:py-14">
       <div className="container">
-        <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+        <div className="grid gap-5 items-start lg:grid-cols-[1fr_1.1fr]">
           {/* left — copy */}
           <div className="ppc-qual__item lg:sticky lg:top-28">
             <Label>Qualified leads, not random clicks</Label>
@@ -108,7 +108,7 @@ export function QualifiedSection() {
           </div>
 
           {/* right — outcome cards */}
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="grid gap-5 grid-cols-1 sm:grid-cols-2">
             {PPC_QUALIFIED.outcomes.map((o, i) => (
               <div
                 key={o}
@@ -176,7 +176,7 @@ export function ResultsSection() {
           </h2>
         </div>
 
-        <div className="ppc-results__grid mt-9 grid grid-cols-3 gap-3 border-t border-[var(--gd-line)] pt-7 sm:mt-12 sm:gap-8 sm:pt-10">
+        <div className="ppc-results__grid mt-9 grid gap-5 grid-cols-3 border-t border-[var(--gd-line)] pt-7 sm:mt-12 sm:pt-10">
           {PPC_RESULTS.stats.map((s) => (
             <div key={s.label} className="ppc-res__item border-l border-[var(--gd-line)] pl-3 first:border-l-0 first:pl-0 sm:border-l-0 sm:pl-0">
               <StatBig value={s.value} suffix={s.suffix} decimals={s.decimals} label={s.label} />

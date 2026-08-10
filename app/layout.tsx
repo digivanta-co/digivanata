@@ -10,6 +10,7 @@ import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import BackToTop from "@/components/ui/BackToTop";
 import SiteChrome from "@/components/layout/SiteChrome";
+import { SITE_URL } from "@/lib/site-data";
 
 
 const poppins = Poppins({
@@ -32,6 +33,9 @@ const fontVars = {
 } as React.CSSProperties;
 
 export const metadata: Metadata = {
+  /* Without metadataBase, Next resolves openGraph/twitter image paths
+     relative and they break wherever a link is shared. */
+  metadataBase: new URL(SITE_URL),
   title: "Digivanta | Digital Marketing Company in Delhi — SEO, Ads & Online Growth",
   description:
     "Digivanta is a result-driven digital marketing company in Delhi offering SEO, Social Media Marketing, PPC, Performance Marketing, Website & App Development to grow your traffic, leads and sales.",
@@ -50,13 +54,25 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon-48.png",
   },
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Digivanta | Digital Marketing Company in Delhi",
     description:
       "Result-driven SEO, social media, performance marketing and web solutions that grow your business online.",
     type: "website",
     locale: "en_IN",
+    siteName: "Digivanta",
+    url: "/",
+    images: [{ url: "/digivanta.png", width: 1600, height: 318, alt: "Digivanta" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Digivanta | Digital Marketing Company in Delhi",
+    description:
+      "Result-driven SEO, social media, performance marketing and web solutions that grow your business online.",
+    images: ["/digivanta.png"],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

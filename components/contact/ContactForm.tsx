@@ -45,7 +45,7 @@ export default function ContactForm() {
         setSent(true);
       }}
     >
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <input name="firstName" type="text" placeholder="First Name *" required aria-label="First Name" className={FIELD} />
         <input name="lastName" type="text" placeholder="Last Name *" required aria-label="Last Name" className={FIELD} />
         <input name="email" type="email" placeholder="Email *" required aria-label="Email" className={FIELD} />

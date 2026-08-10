@@ -7,6 +7,7 @@ import { ArrowRight, WhatsApp } from "@/components/ui/Icons";
 import { SeoIcon } from "@/components/seo/SeoIcons";
 import { CONTACT } from "@/lib/site-data";
 import { PPC_HERO, PPC_INTRO } from "@/lib/ppc-data";
+import LazyVideo from "@/components/ui/LazyVideo";
 
 const useIso = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
@@ -37,7 +38,7 @@ export default function HeroSection() {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--gd-line)]" />
 
       <div className="container relative z-10">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid gap-5 items-center lg:grid-cols-[1.05fr_0.95fr]">
           {/* copy */}
           <div>
             <span className="ppc2__eyebrow inline-flex items-center gap-2.5 rounded-full border border-[var(--gd-line)] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gd-muted)] shadow-[0_4px_14px_rgba(12,36,61,0.05)]">
@@ -71,7 +72,7 @@ export default function HeroSection() {
             </div>
 
             {/* trust row */}
-            <div className="ppc2__trust mt-8 grid grid-cols-2 gap-4 border-t border-[var(--gd-line)] pt-6 sm:mt-12 sm:grid-cols-4 sm:gap-6 sm:pt-7">
+            <div className="ppc2__trust mt-8 grid gap-5 grid-cols-2 border-t border-[var(--gd-line)] pt-6 sm:mt-12 sm:grid-cols-4 sm:pt-7">
               <div className="flex flex-col items-start gap-1">
                 <span className="flex text-[var(--gd-gold)]">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -91,12 +92,8 @@ export default function HeroSection() {
 
           {/* video */}
           <div className="ppc2__video relative mx-auto aspect-[16/10] w-full max-w-lg overflow-hidden rounded-[20px] border border-[var(--gd-line)] shadow-[0_18px_45px_rgba(12,36,61,0.12)] sm:rounded-[24px] lg:mx-0 lg:max-w-none">
-            <video
+            <LazyVideo
               src="/perfomance-marketing.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
               className="h-full w-full object-cover"
             />
           </div>
@@ -131,7 +128,7 @@ export function IntroSection() {
         <p className="ppc-intro__item m-0 text-[clamp(1.2rem,2.4vw,1.7rem)] font-medium leading-snug text-[var(--gd-ink)]">
           {PPC_INTRO.lead}
         </p>
-        <div className="mt-7 grid gap-3 border-t border-[var(--gd-line)] pt-7 md:mt-9 md:grid-cols-3 md:gap-8 md:pt-9">
+        <div className="mt-7 grid gap-5 border-t border-[var(--gd-line)] pt-7 md:mt-9 md:grid-cols-3 md:pt-9">
           {PPC_INTRO.paragraphs.map((p, i) => (
             <p key={i} className="ppc-intro__item m-0 border-l-2 border-[var(--gd-line)] py-1 pl-4 text-sm leading-relaxed text-[var(--gd-muted)] md:border-0 md:p-0">
               {p}

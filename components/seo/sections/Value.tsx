@@ -34,7 +34,7 @@ export function DidYouKnowIntro() {
   return (
     <section ref={root} className="relative border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-8 sm:py-12" id="seo-intro">
       <div className="container">
-        <div className="grid items-center gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
+        <div className="grid gap-5 items-center lg:grid-cols-[0.75fr_1.25fr]">
           {/* 60% stat */}
           <div className="sv-dyk__item">
             <Label>{SEO_DID_YOU_KNOW.label}</Label>
@@ -143,7 +143,7 @@ export function WhyNeedSection() {
             </div>
 
             {/* 2x2 Platform Cards Grid */}
-            <div className="relative z-10 grid grid-cols-2 gap-3.5 sm:gap-4">
+            <div className="relative z-10 grid gap-5 grid-cols-2">
               {SEO_WHY_NEED.platforms.map((p) => {
                 const info = PLATFORM_DETAILS[p.name] ?? { tag: "Search Engine", metric: "Targeted Audience" };
                 return (
@@ -283,7 +283,7 @@ export function DifferenceSection() {
 
   return (
     <section ref={root} className="relative py-10 sm:py-14" id="seo-difference">
-      <div className="container grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="container grid gap-5 items-center lg:grid-cols-[1.05fr_0.95fr]">
         <div className="sv-diff__l">
           <Label>Our Approach</Label>
           <h2 className="gd-display text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
@@ -295,7 +295,7 @@ export function DifferenceSection() {
           <h4 className="mb-3 mt-6 text-sm font-bold uppercase tracking-[0.14em] text-[var(--gd-ink)]">
             We focus on:
           </h4>
-          <ul className="m-0 grid list-none gap-2.5 p-0 sm:grid-cols-2">
+          <ul className="m-0 grid gap-5 list-none p-0 sm:grid-cols-2">
             {SEO_DIFFERENCE.focuses.map((f) => (
               <li key={f} className="flex items-start gap-2.5 text-sm font-medium text-[var(--gd-ink)]">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--gd-gold)" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0">

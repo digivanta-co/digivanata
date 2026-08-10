@@ -6,10 +6,6 @@ export default function TopBar() {
     <div className="topbar">
       <div className="container topbar__inner">
         <div className="topbar__left">
-          <a href={CONTACT.phoneHref}>
-            <Phone /> {CONTACT.phone}
-          </a>
-          <span className="topbar__sep" />
           <a href={CONTACT.emailHref}>
             <Mail /> {CONTACT.email}
           </a>

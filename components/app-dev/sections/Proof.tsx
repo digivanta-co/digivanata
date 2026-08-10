@@ -35,7 +35,7 @@ export function StatisticsSection() {
           <h2 className="text-[clamp(1.8rem,4vw,2.6rem)] font-bold tracking-tight text-white">Trusted experience, real results</h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
+        <div className="grid gap-5 grid-cols-1 sm:grid-cols-3">
           {APP_STATS.map((s) => (
             <DarkStat key={s.label} value={s.value} suffix={s.suffix} label={s.label} />
           ))}

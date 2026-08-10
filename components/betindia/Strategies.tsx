@@ -17,7 +17,7 @@ export default function BiStrategies() {
         sub="Teen Patti rewards temperament over luck. Four disciplines that separate winners from wishers."
       />
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2">
         {BI_STRATEGIES.map((s, i) => {
           const Icon = BI_ICONS[s.icon];
           return (

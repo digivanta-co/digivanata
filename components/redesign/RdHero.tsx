@@ -181,7 +181,7 @@ export default function RdHero() {
         <div className="rd-blob rd-blob--gold rd-blob--float bottom-[10%] left-[38%] size-[24vw] max-w-[360px]" style={{ animationDelay: "-7s" }} />
       </div>
 
-      <div className="rd-hero__parallax container relative z-10 grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14 pt-2 sm:pt-0">
+      <div className="rd-hero__parallax container relative z-10 grid gap-5 grid-cols-1 items-center lg:grid-cols-[1.15fr_0.85fr] pt-2 sm:pt-0">
         {/* copy */}
         <div className="text-center lg:text-left">
           <div aria-hidden className="rd-display rd-hero__words text-[var(--rd-ink)]">
@@ -278,8 +278,20 @@ export default function RdHero() {
                     title={b.label}
                     className="grid size-[clamp(40px,10.5vw,54px)] place-items-center rounded-full border border-white/70 bg-white/80 shadow-[0_10px_26px_-8px_rgba(15,45,82,0.3)] backdrop-blur-md transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_34px_-10px_rgba(15,45,82,0.4)]"
                   >
+                    {/* Plain <img> on purpose: these are static SVGs, and
+                        next/image won't optimise SVG without
+                        dangerouslyAllowSVG — it'd add overhead for nothing.
+                        Explicit dimensions keep them out of CLS. */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={b.icon} alt={b.label} className="size-[54%] object-contain" draggable={false} />
+                    <img
+                      src={b.icon}
+                      alt={b.label}
+                      width={54}
+                      height={54}
+                      decoding="async"
+                      className="size-[54%] object-contain"
+                      draggable={false}
+                    />
                   </div>
                 </div>
               </div>

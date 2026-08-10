@@ -34,7 +34,7 @@ export function WhyNeedSection() {
 
   return (
     <section ref={root} className="relative py-10 sm:py-14">
-      <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="container grid gap-5 items-start lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Why It Matters</Label>
           <h2 className="gd-display text-[clamp(2rem,4.6vw,3.4rem)] text-[var(--gd-ink)]">
@@ -133,7 +133,7 @@ export function ImpactSection() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-8 border-t border-[var(--gd-line)] pt-10 sm:grid-cols-3">
+        <div className="mt-10 grid gap-5 border-t border-[var(--gd-line)] pt-10 sm:grid-cols-3">
           {SMM_IMPACT.stats.map((s) => (
             <div key={s.label} className="smm-imp__item">
               <StatBig value={s.value} suffix={s.suffix} label={s.label} />

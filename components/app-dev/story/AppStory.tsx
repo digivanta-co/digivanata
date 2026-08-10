@@ -258,9 +258,9 @@ export default function AppStory() {
 
       {/* ============ WHY BUSINESSES NEED APPS ============ */}
       <section className="relative py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
-        <div className="container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="container grid gap-5 items-center lg:grid-cols-2">
           <SceneHead eyebrow="The Opportunity" title="Why businesses need" gradWord="mobile apps today" desc={APP_PROBLEM.intro} />
-          <div className="story-stagger grid gap-3.5">
+          <div className="story-stagger grid gap-5">
             {APP_PROBLEM.solutions.map((s) => (
               <div key={s} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                 <span className="grid size-7 shrink-0 place-items-center rounded-lg bg-[linear-gradient(135deg,#0c243d,#286fab)] text-white">
@@ -276,7 +276,7 @@ export default function AppStory() {
       {/* ============ BUILD (pinned phone) ============ */}
       <section className="build-scene relative flex min-h-screen items-center overflow-hidden py-14 lg:py-0 border-b border-slate-200">
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_80%_at_80%_50%,rgba(40,111,171,0.05),transparent_60%)]" />
-        <div className="container relative z-[1] grid items-center gap-12 lg:grid-cols-2">
+        <div className="container relative z-[1] grid gap-5 items-center lg:grid-cols-2">
           <div className="order-2 space-y-10 lg:order-1">
             {BUILD_STAGES.map((s) => (
               <div key={s.n} className="build-stage">
@@ -371,7 +371,7 @@ export default function AppStory() {
               <p className="mt-5 max-w-md text-slate-500">Scroll across to explore apps we build for real-world industries →</p>
             </div>
             {APP_INDUSTRIES.map((s, i) => (
-              <div key={s.name} className="h-panel grid shrink-0 items-center gap-8 px-6 lg:h-screen lg:w-screen lg:grid-cols-2 lg:px-[7vw]">
+              <div key={s.name} className="h-panel grid gap-5 shrink-0 items-center px-6 lg:h-screen lg:w-screen lg:grid-cols-2 lg:px-[7vw]">
                 <div className="order-2 lg:order-1">
                   <span className="bg-[linear-gradient(120deg,#286fab,#3d96d4)] bg-clip-text text-6xl font-bold text-transparent">{`0${i + 1}`}</span>
                   <h3 className="mt-3 text-[clamp(2rem,4vw,3.2rem)] font-bold tracking-tight text-[#0c243d]">{s.name}</h3>
@@ -411,7 +411,7 @@ export default function AppStory() {
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_70%_at_70%_0%,rgba(40,111,171,0.05),transparent_60%)]" />
         <div className="container relative z-[1]">
           <SceneHead center eyebrow="Beyond Launch" title="End-to-end app" gradWord="support" desc="Our work doesn't end at launch. We keep your app secure, updated and ready to scale." />
-          <div className="story-stagger mt-12 grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+          <div className="story-stagger mt-12 grid gap-5 grid-cols-1 sm:grid-cols-2">
             {APP_SUPPORT.map((s) => (
               <div key={s} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4">
                 <span className="grid size-7 shrink-0 place-items-center rounded-lg bg-[linear-gradient(135deg,#0c243d,#286fab)] text-white">
@@ -443,9 +443,9 @@ export default function AppStory() {
 
       {/* ============ ENTERPRISE ============ */}
       <section className="relative py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
-        <div className="container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="container grid gap-5 items-center lg:grid-cols-2">
           <SceneHead eyebrow="Enterprise" title="Enterprise mobile" gradWord="app development" desc={APP_ENTERPRISE.intro} />
-          <div className="story-stagger grid gap-3 sm:grid-cols-2">
+          <div className="story-stagger grid gap-5 sm:grid-cols-2">
             {APP_ENTERPRISE.points.map((p) => (
               <div key={p} className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-[0.92rem] font-medium text-slate-700">
                 <span className="size-2 shrink-0 rounded-full bg-[linear-gradient(120deg,#286fab,#3d96d4)]" />
@@ -461,7 +461,7 @@ export default function AppStory() {
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_70%_at_50%_0%,rgba(40,111,171,0.22),transparent_60%)]" />
         <div className="container relative z-[1]">
           <SceneHead center eyebrow="Pricing Approach" title="Affordable development for" gradWord="startups & SMBs" desc={APP_PRICING.intro} />
-          <div className="story-stagger mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="story-stagger mt-14 grid gap-5 grid-cols-1 lg:grid-cols-3">
             {APP_PRICING.plans.map((plan) => (
               <div key={plan.name} className={cn("relative rounded-3xl border p-7", plan.featured ? "border-[#286fab] bg-slate-50 lg:-translate-y-3" : "border-slate-200 bg-white")}>
                 {plan.featured && (
@@ -469,7 +469,7 @@ export default function AppStory() {
                 )}
                 <h3 className="text-xl font-bold text-[#0c243d]">{plan.name}</h3>
                 <p className="mt-2 text-[0.92rem] leading-relaxed text-slate-600">{plan.desc}</p>
-                <ul className="mt-6 grid gap-3">
+                <ul className="mt-6 grid gap-5">
                   {plan.points.map((pt) => (
                     <li key={pt} className="flex items-center gap-2.5 text-[0.9rem] text-slate-700">
                       <span className="size-1.5 rounded-full bg-[#286fab]" />
@@ -490,7 +490,7 @@ export default function AppStory() {
       <section className="relative py-8 lg:py-12 bg-slate-50/50 border-b border-slate-200/60">
         <div className="container">
           <SceneHead center eyebrow="Long-Term Partner" title="Hire dedicated" gradWord="app developers" desc={APP_DEDICATED.intro} />
-          <div className="story-stagger mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="story-stagger mx-auto mt-12 grid gap-5 max-w-4xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {APP_DEDICATED.supports.map((s) => (
               <div key={s} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4">
                 <span className="size-2 shrink-0 rounded-full bg-[linear-gradient(120deg,#286fab,#3d96d4)]" />
@@ -542,7 +542,7 @@ export default function AppStory() {
         <div aria-hidden className="pointer-events-none absolute inset-0 [background-image:linear-gradient(rgba(12,36,61,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(12,36,61,0.03)_1px,transparent_1px)] [background-size:60px_60px] [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_75%)]" />
         <div className="container relative z-[1]">
           <h2 className="story-reveal mx-auto mb-16 max-w-2xl text-center text-[clamp(1.8rem,4vw,2.8rem)] font-bold tracking-tight text-[#0c243d]">Digivanta at a glance</h2>
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-3">
+          <div className="grid gap-5 grid-cols-1 sm:grid-cols-3">
             {APP_STATS.map((s) => (
               <StoryStat key={s.label} value={s.value} suffix={s.suffix} label={s.label} />
             ))}

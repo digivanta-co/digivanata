@@ -29,7 +29,7 @@ export function WhySection() {
 
   return (
     <section ref={root} className="relative py-5 sm:py-14">
-      <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="container grid gap-5 items-start lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Kicker>{CM_WHY.label}</Kicker>
           <h2 className="cm-display text-[clamp(2rem,4.6vw,3.4rem)] text-[var(--cm-ink)]">
@@ -99,7 +99,7 @@ export function GrowthSection() {
           <p className="mt-5 text-[var(--cm-muted)]">{CM_GROWTH.body}</p>
         </div>
 
-        <div className="cm-grow__item mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="cm-grow__item mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {CM_GROWTH.supports.map((s) => (
             <div
               key={s}

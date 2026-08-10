@@ -130,7 +130,7 @@ export default function AppHeroSection() {
   return (
     <section
       ref={root}
-      className="relative flex items-start overflow-hidden pb-16 pt-12 sm:min-h-[92svh] sm:items-center sm:pb-20 sm:pt-24 lg:pt-28"
+      className="relative flex items-start overflow-hidden pb-6 pt-20 sm:min-h-[82svh] sm:items-center sm:pb-8 sm:pt-24 lg:pt-24"
     >
       <div
         aria-hidden
@@ -144,7 +144,7 @@ export default function AppHeroSection() {
       />
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--gd-line)]" />
 
-      <div className="container relative z-10 grid items-center gap-12 sm:gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+      <div className="container relative z-10 grid gap-5 items-center lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <span className="app-hero__eyebrow mb-5 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--gd-gold)]">
             <span aria-hidden className="h-px w-8 bg-[var(--gd-gold)]/70" />
@@ -177,13 +177,13 @@ export default function AppHeroSection() {
               <span className="sm:hidden">Start my app</span>
               <ArrowRight />
             </MagneticButton>
-            <MagneticButton href="#app-pricing" className="ag-btn--ghost">
+            <MagneticButton href="/contact" className="ag-btn--ghost">
               <span className="hidden sm:inline">{APP_HERO.ghostCta}</span>
               <span className="sm:hidden">Cost estimate</span>
             </MagneticButton>
           </div>
 
-          <div className="app-hero__meta mt-10 grid grid-cols-3 border-t border-[var(--gd-line)] pt-5 sm:mt-14 sm:flex sm:flex-wrap sm:gap-x-12 sm:gap-y-6 sm:pt-8">
+          <div className="app-hero__meta mt-10 grid gap-5 grid-cols-3 border-t border-[var(--gd-line)] pt-5 sm:mt-14 sm:flex sm:flex-wrap sm:pt-8">
             {APP_STATS.map((s) => (
               <div key={s.label} className="px-3 first:pl-0 sm:p-0">
                 <div className="gd-display text-xl text-[var(--gd-navy)] sm:text-2xl">

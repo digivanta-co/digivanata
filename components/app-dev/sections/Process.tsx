@@ -79,7 +79,7 @@ export function SupportSection() {
           </Lead>
         </div>
 
-        <Stagger className="mt-12 grid grid-cols-1 gap-3.5 sm:grid-cols-2" scale={0.95}>
+        <Stagger className="mt-12 grid gap-5 grid-cols-1 sm:grid-cols-2" scale={0.95}>
           {APP_SUPPORT.map((s) => (
             <div
               key={s}

@@ -35,8 +35,8 @@ export type AboutStat = { icon: string; value: number; suffix?: string; stars?: 
 
 export const ABOUT_STATS: AboutStat[] = [
   { icon: "Star", value: 5, stars: true, label: "Trusted Agency", desc: "Rated by clients across industries", accent: "gold", wide: true },
-  { icon: "Rocket", value: 100, suffix: "%", label: "Project Delivered", desc: "Across web, brand & marketing", accent: "blue" },
-  { icon: "ThumbsUp", value: 98, suffix: "%", label: "Client Satisfaction", desc: "Long term, happy partnerships", accent: "blue" },
+  { icon: "Rocket", value: 100, suffix: "+", label: "Projects Completed", desc: "Across web, brand & marketing", accent: "blue" },
+  { icon: "ThumbsUp", value: 100, suffix: "+", label: "Happy Clients", desc: "Long term, happy partnerships", accent: "blue" },
   { icon: "TrendingUp", value: 250, suffix: "%", label: "Business Growth", desc: "Average uplift we help drive", accent: "gold" },
 ];
 

@@ -148,7 +148,7 @@ export default function Header() {
                     <div className="w-[620px] overflow-hidden rounded-2xl border border-[rgba(13,18,41,0.08)] bg-white p-2.5 shadow-[0_24px_60px_rgba(13,18,41,0.14)]">
                       {/* gold hairline */}
                       <div aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,#0C243D,#286FAB_55%,#b08d3f)]" />
-                      <div className="grid grid-cols-2 gap-1">
+                      <div className="grid gap-5 grid-cols-2">
                         {item.children.map((child, ci) => (
                           <Link
                             key={child.label}
@@ -213,9 +213,9 @@ export default function Header() {
             <Mail className="size-4" />
           </Link>
           <Link
-            href={CONTACT.phoneHref}
+            href="/contact"
             className="hidden size-10 items-center justify-center rounded-full border border-[rgba(13,18,41,0.1)] text-[#3a4155]! transition-all duration-200 hover:-translate-y-0.5 hover:border-[#b08d3f] hover:text-[#0C243D]! md:flex"
-            aria-label="Call Us"
+            aria-label="Contact Us"
           >
             <Phone className="size-4" />
           </Link>

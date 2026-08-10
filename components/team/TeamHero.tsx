@@ -30,7 +30,7 @@ export default function TeamHero() {
   const member = ALL_MEMBERS[index] || ALL_MEMBERS[0];
   const photo = member?.photo || "/team/team-member-1.png";
   const name = member?.name || "Our Team";
-  const badge = member?.badge || member?.role || "Digital Specialist";
+  const role = member?.role || member?.role || "Digital Specialist";
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-[var(--gd-soft,#f6f7fb)] to-white pt-[7.5rem] pb-[4rem] lg:pt-[9rem] lg:pb-[5.5rem]">
@@ -98,7 +98,7 @@ export default function TeamHero() {
                 </div>
                 <div className="pr-4 py-1">
                   <p className="text-sm font-bold text-[var(--gd-ink,#0d1229)] leading-tight">{name}</p>
-                  <p className="text-xs font-semibold text-[var(--gd-gold,#b08d3f)] leading-tight mt-1">{badge}</p>
+                  <p className="text-xs font-semibold text-[var(--gd-gold,#b08d3f)] leading-tight mt-1">{role}</p>
                 </div>
               </motion.div>
             </AnimatePresence>

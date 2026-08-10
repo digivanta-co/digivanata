@@ -30,7 +30,7 @@ export function LeadGenSection() {
 
   return (
     <section ref={root} className="relative py-10 sm:py-14">
-      <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="container grid gap-5 items-start lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Lead generation, done right</Label>
           <h2 className="gd-display text-[clamp(2rem,4.6vw,3.4rem)] text-[var(--gd-ink)]">
@@ -85,7 +85,7 @@ export function WhySection() {
 
   return (
     <section ref={root} className="relative bg-[var(--gd-soft)] py-10 sm:py-14">
-      <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="container grid gap-5 items-start lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Why trust our expertise</Label>
           <h2 className="gd-display text-[clamp(2rem,4.6vw,3.4rem)] text-[var(--gd-ink)]">
@@ -145,7 +145,7 @@ export function GrowSection() {
             <span className="gd-grad">faster growth.</span>
           </h2>
         </div>
-        <div className="mt-9 grid gap-8 md:grid-cols-3">
+        <div className="mt-9 grid gap-5 md:grid-cols-3">
           {PPC_GROW.paragraphs.map((p, i) => (
             <p key={i} className="ppc-grow__item m-0 text-sm leading-relaxed text-[var(--gd-muted)]">
               {p}

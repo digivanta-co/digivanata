@@ -33,7 +33,7 @@ export function WhyChooseSection() {
 
   return (
     <section ref={root} className="relative bg-[var(--gd-soft)] py-10 sm:py-14">
-      <div className="container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="container grid gap-5 items-start lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Why Digivanta</Label>
           <h2 className="gd-display text-[clamp(2rem,4.6vw,3.4rem)] text-[var(--gd-ink)]">

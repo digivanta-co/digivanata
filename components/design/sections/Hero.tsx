@@ -81,7 +81,7 @@ export default function HeroSection() {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--gd-line)]" />
 
       <div className="container relative z-10">
-       <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12">
+       <div className="grid gap-5 items-center lg:grid-cols-[1.02fr_0.98fr]">
         <div>
         <span className="gd-hero__eyebrow mb-7 inline-flex items-center gap-2.5 rounded-full border border-[var(--gd-line)] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gd-muted)] shadow-[0_4px_14px_rgba(13,18,41,0.05)]">
         <span className="size-2 rounded-full bg-[var(--gd-gold)] shadow-[0_0_10px_rgba(176,141,63,0.8)]" />
@@ -104,7 +104,7 @@ export default function HeroSection() {
             <span className="sm:hidden">Start Design</span>
             <ArrowRight />
           </MagneticButton>
-          <MagneticButton href="#services" className="ag-btn--ghost">
+          <MagneticButton href="/contact" className="ag-btn--ghost">
             <span className="hidden sm:inline">{GD_HERO.ghostCta}</span>
             <span className="sm:hidden">Our Services</span>
           </MagneticButton>

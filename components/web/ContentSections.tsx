@@ -8,7 +8,7 @@ export function IntroSection() {
   return (
     <section className="relative bg-white py-8 sm:py-12 lg:py-16 border-t border-[var(--gd-line)]">
       <div className="container relative z-10">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] items-center">
+        <div className="grid gap-5 lg:grid-cols-[1fr_1.1fr] items-center">
           <div>
             <span className="mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--gd-blue)]">
               <Spark /> Business Communication Strategy
@@ -25,7 +25,7 @@ export function IntroSection() {
             <h3 className="gd-display mb-4 text-sm text-[var(--gd-navy)] uppercase tracking-wider">
               Common Website Pitfalls We Solve
             </h3>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-5 sm:grid-cols-2">
               {WEB_PROBLEMS.map((prob) => (
                 <div
                   key={prob}
@@ -70,7 +70,7 @@ export function WebCtaBand({
           {desc}
         </p>
         <div className="mt-8">
-          <MagneticButton href="#web-contact" className="ag-btn--gold">
+          <MagneticButton href="/contact" className="ag-btn--gold">
             {ctaText}
           </MagneticButton>
         </div>
@@ -118,7 +118,7 @@ export function WebWhyGridSection() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
           {WEB_WHY.map((item) => (
             <div
               key={item}

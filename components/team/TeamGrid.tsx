@@ -28,7 +28,7 @@ export default function TeamGrid() {
         </Reveal>
 
         {/* Grouped Grid */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="grid gap-5 grid-cols-1 lg:grid-cols-3">
           {TEAM_GROUPS.map((group, gi) => {
             const Icon = GROUP_ICONS[group.icon] ?? PenTool;
             return (
@@ -52,7 +52,7 @@ export default function TeamGrid() {
                   </div>
 
                   {/* Members */}
-                  <div className="grid gap-4">
+                  <div className="grid gap-5">
                     {group.members.map((m) => (
                       <article
                         key={m.name}

@@ -38,12 +38,12 @@ export function EnterpriseSection() {
   return (
     <Section id="enterprise">
       <div className="container">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-5 items-center lg:grid-cols-2">
           <div>
             <Eyebrow>Enterprise</Eyebrow>
             <Heading lines={APP_ENTERPRISE.titleLines} gradient={[1]} className="text-[clamp(1.9rem,4vw,2.8rem)]" />
             <Lead className="mt-5">{APP_ENTERPRISE.intro}</Lead>
-            <Stagger className="mt-7 grid gap-3 sm:grid-cols-2" selector=".ent-point">
+            <Stagger className="mt-7 grid gap-5 sm:grid-cols-2" selector=".ent-point">
               {APP_ENTERPRISE.points.map((p) => (
                 <div key={p} className="ent-point flex items-center gap-2.5 text-[0.94rem] font-medium text-[#0F172A]">
                   <span className="grid size-6 shrink-0 place-items-center rounded-md bg-[#286FAB] text-white">
@@ -63,7 +63,7 @@ export function EnterpriseSection() {
                 <span className="size-2.5 rounded-full bg-[#E5E7EB]" />
                 <span className="size-2.5 rounded-full bg-[#E5E7EB]" />
               </div>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid gap-5 grid-cols-3">
                 {[0, 1, 2].map((i) => (
                   <div key={i} className="rounded-xl bg-[#F8FAFC] p-3">
                     <div className="h-2 w-8 rounded-full bg-[#0F172A]/10" />
@@ -98,7 +98,7 @@ export function PricingSection() {
           <Lead className="mx-auto mt-5 text-center">{APP_PRICING.intro}</Lead>
         </div>
 
-        <Stagger className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <Stagger className="mt-14 grid gap-5 grid-cols-1 lg:grid-cols-3">
           {APP_PRICING.plans.map((plan) => (
             <div
               key={plan.name}
@@ -115,7 +115,7 @@ export function PricingSection() {
               )}
               <h3 className="text-xl font-bold text-[#0F172A]">{plan.name}</h3>
               <p className="mt-2 text-[0.92rem] leading-relaxed text-[#64748B]">{plan.desc}</p>
-              <ul className="mt-6 grid gap-3">
+              <ul className="mt-6 grid gap-5">
                 {plan.points.map((pt) => (
                   <li key={pt} className="flex items-center gap-2.5 text-[0.9rem] text-[#0F172A]">
                     <span className="grid size-5 shrink-0 place-items-center rounded-full bg-[#286FAB]/10 text-[#286FAB]">
@@ -149,7 +149,7 @@ export function DedicatedDeveloperSection() {
           <Lead className="mx-auto mt-5 text-center">{APP_DEDICATED.intro}</Lead>
         </div>
 
-        <Stagger className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <Stagger className="mx-auto mt-12 grid gap-5 max-w-4xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {APP_DEDICATED.supports.map((s) => (
             <div
               key={s}

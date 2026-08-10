@@ -50,7 +50,7 @@ export default function WorkingProcess() {
               style={{ scaleX: scrollYProgress }}
               className="absolute left-[10%] right-[10%] top-9 h-[3px] -translate-y-1/2 origin-left rounded-full bg-[linear-gradient(90deg,#235EA7,#4f93d4)]"
             />
-            <div className="relative grid grid-cols-5 gap-6">
+            <div className="relative grid gap-5 grid-cols-5">
               {ABOUT_PROCESS.map((p, i) => {
                 const Icon = ICONS[p.icon] ?? Search;
                 return (

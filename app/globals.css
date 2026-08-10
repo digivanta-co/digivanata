@@ -171,8 +171,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: inherit; text-decoration: none; }
-img, svg { display: block; max-width: 100%; }
+/* These are element-level resets, so they belong in @layer base.
+   Unlayered they outranked Tailwind's utilities regardless of
+   specificity, which silently broke `text-*` on links and made `hidden`
+   a no-op on every <img> and <svg> on the site. */
+@layer base {
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+}
 
 ::selection { background: var(--accent); color: #fff; }
 
@@ -1718,7 +1724,14 @@ a.btn--primary:focus-visible {
 /* ----------------------------------------------------------------
    Cards / grids
 ---------------------------------------------------------------- */
-.grid { display: grid; gap: 1.25rem; }
+/* Legacy grid helper, used with .grid--2/3/4 markup. It lives in
+   @layer components so Tailwind's utilities (in @layer utilities) can
+   override it — unlayered it beat every gap-* on the site regardless of
+   specificity, forcing a 20px gap everywhere. Elements that relied on
+   that 20px have been pinned with an explicit gap-5, so nothing moved. */
+@layer components {
+  .grid { display: grid; gap: 1.25rem; }
+}
 .grid--2 { grid-template-columns: 1fr; }
 .grid--3 { grid-template-columns: 1fr; }
 .grid--4 { grid-template-columns: 1fr; }
@@ -5468,12 +5481,16 @@ html.lenis, html.lenis body { height: auto; }
 .rd-step__node { position: absolute; top: 0; left: -3.5rem; transform: none; }
 @media (min-width: 640px) { .rd-step__node { left: -4rem; } }
 @media (min-width: 768px) {
+  /* Equal 1fr rows are what keep each node lined up with its point on
+     the SVG wave; the fixed height keeps rows tight so the section
+     doesn't sprawl. */
   .rd-zig {
     display: grid;
     grid-auto-rows: 1fr;
-    height: calc(var(--rd-zig-rows, 5) * 9.5rem);
+    height: calc(var(--rd-zig-rows, 5) * 8.5rem);
   }
-  .rd-step__node { left: var(--x); top: 50%; transform: translate(-50%, -50%); }
+  /* every node sits on the centre line — the curve does the weaving */
+  .rd-step__node { left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1; }
 }
 
 /* soft grid / blob helpers */
@@ -5657,6 +5674,20 @@ html.lenis, html.lenis body { height: auto; }
   box-shadow: 0 10px 26px rgba(40, 111, 171, 0.35);
 }
 .rd-step.is-on .rd-step__num .rd-display { color: #fff; }
+
+/* Card lights up as the travelling marker reaches its node.
+   No transform here on purpose — GSAP owns the card's transform for the
+   slide-in, and a CSS transform would overwrite it mid-animation. */
+@media (min-width: 768px) {
+  .rd-step__card {
+    transition: border-color 0.45s ease, box-shadow 0.45s ease, background-color 0.45s ease;
+  }
+  .rd-step.is-on .rd-step__card {
+    border-color: color-mix(in srgb, var(--rd-blue) 55%, transparent);
+    box-shadow: 0 18px 44px rgba(40, 111, 171, 0.18);
+  }
+  .rd-step.is-on .rd-step__card h4 { color: var(--rd-blue); transition: color 0.45s ease; }
+}
 
 /* FAQ question nudges right on hover */
 .rd-faq__q { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }

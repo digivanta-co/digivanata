@@ -81,7 +81,7 @@ export default function RdWhyNeed() {
         </div>
 
         {/* challenge cards */}
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {BUSINESS_CHALLENGES.map((c) => (
             <li key={c} className="rd-whyneed__card rd-glass p-5">
               <span className="mb-3 inline-grid size-9 place-items-center rounded-full bg-[var(--rd-blue-soft)] text-[var(--rd-blue)] [&_svg]:size-4">

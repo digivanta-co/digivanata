@@ -85,7 +85,7 @@ export default function RdJourney() {
             <circle className="rd-journey__dot" r="10" fill="#C9A227" filter="url(#rdGlow)" />
           </svg>
 
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="mt-8 grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
             {RD_JOURNEY.map((label, i) => (
               <div key={label} className="rd-journey__node rd-glass px-4 py-5 text-center">
                 <div className="rd-display text-sm text-[var(--rd-blue)]">0{i + 1}</div>

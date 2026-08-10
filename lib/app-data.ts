@@ -204,9 +204,10 @@ export const APP_DEDICATED = {
 };
 
 export const APP_STATS = [
-  { value: 1, suffix: "+", label: "Years of Experience" },
-  { value: 100, suffix: "%", label: "App Project Delivered" },
-  { value: 25, suffix: "+", label: "Industries Served" },
+  { value: 100, suffix: "+", label: "App Projects Completed" },
+  { value: 100, suffix: "+", label: "Happy Clients" },
+  { value: 1, suffix: "+", label: "Years Experience" },
+  { value: 100, suffix: "%", label: "Store Approval Rate" },
 ];
 
 export const APP_GLANCE = [

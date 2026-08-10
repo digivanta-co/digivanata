@@ -71,7 +71,7 @@ export default function RdIntro() {
           <p className="rd-reveal mb-5 text-base sm:text-lg font-semibold text-[var(--rd-ink)]">
             {RD_INTRO.focusLead}
           </p>
-          <ul className="grid gap-2.5 sm:grid-cols-2">
+          <ul className="grid gap-5 sm:grid-cols-2">
             {FOCUS_AREAS.map((f) => (
               <li
                 key={f}
@@ -92,7 +92,7 @@ export default function RdIntro() {
 
         {/* CTA band 1 */}
         <div className="rd-reveal mt-10 sm:mt-12 overflow-hidden rounded-2xl sm:rounded-[28px] bg-[var(--rd-ink)] p-6 sm:p-12 text-white">
-          <div className="grid items-center gap-6 lg:grid-cols-[1.4fr_auto]">
+          <div className="grid gap-5 items-center lg:grid-cols-[1.4fr_auto]">
             <div>
               <h2 className="rd-display text-2xl sm:text-4xl" style={{ textTransform: "none" }}>
                 {RD_CTA_1.title}

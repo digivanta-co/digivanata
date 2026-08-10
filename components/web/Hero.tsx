@@ -86,7 +86,7 @@ function WebHeroPanel() {
           </div>
 
           {/* Speed & Performance Gauges Grid */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+          <div className="grid gap-5 grid-cols-3">
             <div className="rounded-xl sm:rounded-2xl border border-[var(--gd-line)] bg-[var(--gd-soft)] p-2.5 sm:p-3.5 text-center">
               <div className="gd-display text-base sm:text-xl font-extrabold text-[var(--gd-navy)]">99/100</div>
               <div className="mt-0.5 text-[0.58rem] sm:text-[0.65rem] font-medium text-[var(--gd-muted)] uppercase tracking-wider truncate">Performance</div>
@@ -150,7 +150,7 @@ export default function WebHeroSection() {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--gd-line)]" />
 
       <div className="container relative z-10">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+        <div className="grid gap-5 items-center lg:grid-cols-[1.05fr_0.95fr]">
           {/* copy */}
           <div>
             <span className="web2__eyebrow inline-flex items-center gap-2.5 rounded-full border border-[var(--gd-line)] bg-white px-3.5 py-1.5 sm:px-4 sm:py-2 text-[0.7rem] sm:text-xs font-semibold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[var(--gd-muted)] shadow-[0_4px_14px_rgba(12,36,61,0.05)]">
@@ -184,7 +184,7 @@ export default function WebHeroSection() {
             </div>
 
             {/* trust row */}
-            <div className="web2__trust mt-8 grid grid-cols-2 gap-x-4 gap-y-5 border-t border-[var(--gd-line)] pt-6 sm:mt-12 sm:grid-cols-5 sm:gap-6 sm:pt-7">
+            <div className="web2__trust mt-8 grid gap-5 grid-cols-2 border-t border-[var(--gd-line)] pt-6 sm:mt-12 sm:grid-cols-5 sm:pt-7">
               <div className="flex flex-col items-start gap-1">
                 <span className="flex text-[var(--gd-gold)]">
                   {Array.from({ length: 5 }).map((_, i) => (

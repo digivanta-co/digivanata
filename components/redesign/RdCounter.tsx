@@ -83,7 +83,7 @@ export default function RdCounter() {
   return (
     <section className="relative overflow-hidden py-8 sm:py-12">
       <div aria-hidden className="rd-blob rd-blob--blue rd-blob--float left-1/2 top-1/2 size-[40vw] max-w-[560px] -translate-x-1/2 -translate-y-1/2 opacity-40" />
-      <div className="container relative z-10 grid grid-cols-2 gap-y-12 md:grid-cols-4">
+      <div className="container relative z-10 grid gap-5 grid-cols-2 md:grid-cols-4">
         {METRICS.map((m, i) => (
           <Metric key={m.label} raw={m.value} label={m.label} index={i} />
         ))}

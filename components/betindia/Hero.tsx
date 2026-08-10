@@ -148,7 +148,7 @@ export default function BiHero() {
       <Atmosphere />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
-        <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
+        <div className="grid gap-5 items-center lg:grid-cols-[1.05fr_1fr]">
           {/* Copy */}
           <motion.div initial="hidden" animate="show" className="max-w-xl">
             <motion.span variants={biRise} custom={0} className="bi-eyebrow">
@@ -199,7 +199,7 @@ export default function BiHero() {
         </div>
 
         {/* Stat cards */}
-        <div className="mt-20 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+        <div className="mt-20 grid gap-5 grid-cols-2 lg:grid-cols-4">
           {BI_HERO_STATS.map((s, i) => (
             <motion.div
               key={s.label}

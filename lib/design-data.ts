@@ -101,9 +101,9 @@ export const GD_IMPACT = {
     "Communicate professionally",
   ],
   stats: [
-    { value: 800, suffix: "+", label: "Happy clients across Delhi NCR" },
+    { value: 100, suffix: "+", label: "Happy clients across Delhi NCR" },
+    { value: 100, suffix: "+", label: "Projects Completed" },
     { value: 1, suffix: "+", label: "Years of creative experience" },
-    { value: 100, suffix: "%", label: "Brand consistent deliverables" },
   ],
 };
 

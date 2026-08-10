@@ -47,7 +47,7 @@ export function ServicesSection() {
               href="/contact"
               className="ppc-svc__row group block border-b border-[var(--gd-line)] py-7 transition-colors duration-300 hover:bg-[var(--gd-soft)]"
             >
-              <div className="grid grid-cols-[2.5rem_1fr] items-baseline gap-x-3 gap-y-2 md:grid-cols-[3.2rem_1.2fr_1fr_auto] md:gap-x-8 md:gap-y-3">
+              <div className="grid gap-5 grid-cols-[2.5rem_1fr] items-baseline md:grid-cols-[3.2rem_1.2fr_1fr_auto]">
                 <span className="gd-display row-span-2 text-sm text-[var(--gd-gold)] md:row-span-1">0{i + 1}</span>
                 <h3 className="gd-display m-0 text-[clamp(1.15rem,5vw,1.9rem)] text-[var(--gd-ink)] transition-transform duration-400 group-hover:translate-x-3">
                   {s.title}

@@ -16,7 +16,7 @@ export default function BiWhy() {
         sub="Not the loudest casino. The most considered one — every detail exists because a player asked for it."
       />
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {BI_WHY.map((f, i) => {
           const Icon = BI_ICONS[f.icon];
           return (

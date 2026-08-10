@@ -47,7 +47,7 @@ export function HeroVisual() {
               Get Started
             </div>
           </div>
-          <div className="mt-3 grid grid-cols-3 gap-2">
+          <div className="mt-3 grid gap-5 grid-cols-3">
             {[40, 65, 55].map((h, i) => (
               <div key={i} className="rounded-lg bg-black/[0.04] p-2">
                 <div className="w-full rounded bg-[#286FAB]/20" style={{ height: h * 0.4 }} />
@@ -246,12 +246,12 @@ export function ShowcaseWireframe() {
   return (
     <div data-show="img" className="relative min-h-[260px] overflow-hidden rounded-2xl border border-[#286FAB]/10 bg-gradient-to-br from-[#286FAB]/5 to-white">
       <div className="absolute inset-0 p-5">
-        <div className="grid h-full grid-cols-2 gap-3">
+        <div className="grid gap-5 h-full grid-cols-2">
           <div className="space-y-2">
             <div className="h-3 w-3/4 rounded bg-[#286FAB]/25" />
             <div className="h-2 w-1/2 rounded bg-black/10" />
             <div className="mt-4 h-20 rounded-lg bg-[#286FAB]/10" />
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid gap-5 grid-cols-2">
               <div className="h-12 rounded-md bg-white shadow-sm" />
               <div className="h-12 rounded-md bg-white shadow-sm" />
             </div>

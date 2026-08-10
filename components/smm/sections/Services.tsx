@@ -120,7 +120,7 @@ export function ServicesSection() {
         </div>
 
         {/* 4-Card Platform Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
           {SMM_PLATFORMS.map((p, i) => (
             <TiltCard
               key={p.name}
@@ -162,7 +162,7 @@ export function ServicesSection() {
               </div>
 
               {p.items && p.items.length > 0 && (
-                <ul className="mt-6 grid list-none gap-2.5 border-t border-[var(--gd-line)] p-0 pt-5">
+                <ul className="mt-6 grid gap-5 list-none border-t border-[var(--gd-line)] p-0 pt-5">
                   {p.items.map((it) => (
                     <li key={it} className="flex items-start gap-2.5 text-xs font-semibold text-[var(--gd-ink)]">
                       <span className="mt-0.5 grid size-4 shrink-0 place-items-center rounded-full bg-[var(--gd-gold-soft)] text-[var(--gd-gold)] [&_svg]:size-2.5">

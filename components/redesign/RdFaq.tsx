@@ -64,7 +64,7 @@ export default function RdFaq() {
   const [open, setOpen] = useState<number | null>(null);
   return (
     <section id="faq" className="relative py-8 sm:py-12">
-      <div className="container grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+      <div className="container grid gap-5 lg:grid-cols-[0.7fr_1.3fr]">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <span className="rd-eyebrow mb-4">FAQ</span>
           <h2 className="rd-h2 text-[var(--rd-ink)]">{RD_FAQ_HEADING}</h2>

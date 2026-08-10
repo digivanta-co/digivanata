@@ -48,7 +48,7 @@ export const TEAM_GROUPS = [
     members: [
       {
         name: "Rishku",
-        role: "sr.Digital marketing executive",
+        role: "Sr.Digital marketing executive",
         badge: "sr.marketing executive",
         photo: "/team/rishku.png",
         socials: [
@@ -59,7 +59,7 @@ export const TEAM_GROUPS = [
       },
       {
         name: "Suraj",
-        role: "sr.Digital marketing executive",
+        role: "Sr.Digital marketing executive",
         badge: "PPC & Lead Generation",
         photo: "/team/suraj.png",
         socials: [

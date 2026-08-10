@@ -12,7 +12,7 @@ export function ProblemSection() {
   return (
     <Section id="problem">
       <div className="container">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-5 items-center lg:grid-cols-2">
           <div>
             <Eyebrow>The Opportunity</Eyebrow>
             <Heading lines={APP_PROBLEM.titleLines} gradient={[1]} className="text-[clamp(1.9rem,4vw,2.8rem)]" />
@@ -25,7 +25,7 @@ export function ProblemSection() {
           <div ref={cardRef}>
             <div className="rounded-3xl border border-[#E5E7EB] bg-white p-7 shadow-[0_24px_50px_rgba(15,23,42,0.06)]">
               <p className="mb-5 text-sm font-semibold uppercase tracking-wide text-[#64748B]">A great app helps you</p>
-              <Stagger className="grid gap-3.5" selector=".sol-item">
+              <Stagger className="grid gap-5" selector=".sol-item">
                 {APP_PROBLEM.solutions.map((s) => (
                   <div key={s} className="sol-item flex items-center gap-3 rounded-xl border border-[#E5E7EB] bg-[#F8FAFC] px-4 py-3">
                     <span className="grid size-7 shrink-0 place-items-center rounded-lg bg-[#286FAB] text-white">

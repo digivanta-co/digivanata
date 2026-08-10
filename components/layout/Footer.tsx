@@ -43,7 +43,7 @@ export default function Footer() {
 
       <div className="container relative">
         {/* CTA row */}
-        <div className="site-footer__cta mb-16 grid items-center gap-8 border-b border-white/10 pb-14 lg:grid-cols-[1.4fr_auto]">
+        <div className="site-footer__cta mb-16 grid gap-5 items-center border-b border-white/10 pb-14 lg:grid-cols-[1.4fr_auto]">
           <div>
             <h2 className="font-[family-name:var(--font-display),var(--font)] text-3xl font-bold tracking-tight sm:text-4xl">
               {RD_FOOTER.ctaTitle}
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         {/* link columns */}
-        <div className="site-footer__links grid grid-cols-2 gap-10 border-t border-white/10 pt-14 lg:grid-cols-4">
+        <div className="site-footer__links grid gap-5 grid-cols-2 border-t border-white/10 pt-14 lg:grid-cols-4">
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#C9A227]">Quick Links</h4>
             <ul className="space-y-3">

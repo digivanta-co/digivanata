@@ -101,7 +101,7 @@ function Section({
     <section
       ref={rootRef}
       id={id}
-      className={"relative py-14 sm:py-20 " + (soft ? "bg-[var(--gd-soft)]" : "")}
+      className={"relative py-5 " + (soft ? "bg-[var(--gd-soft)]" : "")}
     >
       <div className="container">{children}</div>
     </section>
@@ -123,7 +123,7 @@ export function OpportunitySection() {
 
   return (
     <Section rootRef={root}>
-      <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+      <div className="grid gap-5 items-start lg:grid-cols-[1fr_1.1fr]">
         {/* left column: copy & cta */}
         <div className="app-opp__row lg:sticky lg:top-28">
           <Label>{APP_EXPERIENCE.labels.opportunity}</Label>
@@ -134,14 +134,14 @@ export function OpportunitySection() {
           </h2>
           <p className="mt-5 max-w-lg text-[var(--gd-muted)]">{APP_PROBLEM.intro}</p>
           <div className="mt-8">
-            <MagneticButton href="#app-pricing">
+            <MagneticButton href="/contact">
               {APP_PROBLEM.cta} <ArrowRight />
             </MagneticButton>
           </div>
         </div>
 
         {/* right column: solution cards grid */}
-        <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+        <div className="grid gap-5 grid-cols-1 sm:grid-cols-2">
           {APP_PROBLEM.solutions.map((s, i) => (
             <div
               key={s}
@@ -182,7 +182,7 @@ export function CustomSection() {
 
   return (
     <Section id="custom-apps" soft rootRef={root}>
-      <div className="app-custom__reveal grid items-end gap-8 lg:grid-cols-[1.1fr_0.72fr]">
+      <div className="app-custom__reveal grid gap-5 items-end lg:grid-cols-[1.1fr_0.72fr]">
         <div>
           <Label>{APP_EXPERIENCE.labels.why}</Label>
           <h2 className="gd-display max-w-[15ch] text-[clamp(2.5rem,5.7vw,5.4rem)] leading-[0.9] text-[var(--gd-ink)]">
@@ -198,7 +198,7 @@ export function CustomSection() {
               {APP_CUSTOM.primaryCta} <ArrowRight />
             </MagneticButton>
             <a
-              href="#process"
+              href="/contact"
               className="ag-link inline-flex min-h-11 items-center gap-2 text-[0.76rem] font-semibold uppercase tracking-[0.14em] text-[var(--gd-navy)] [&_svg]:size-4 [&_svg]:text-[var(--gd-gold)]"
             >
               {APP_CUSTOM.secondaryCta} <ArrowRight />
@@ -342,7 +342,7 @@ export function WhyChooseSection() {
     <Section rootRef={root}>
       <Head label={APP_EXPERIENCE.labels.why} top="Built by a team" accent="that ships." />
       {/* bento: first card dark + wide, last card gold + wide, rest standard */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {APP_WHY_CHOOSE.map((r, i) => {
           const dark = i === 0;
           const gold = i === APP_WHY_CHOOSE.length - 1;
@@ -452,7 +452,7 @@ export function IndustryShowcaseSection() {
         accent={APP_EXPERIENCE.industryTitle[1]}
       />
 
-      <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-16">
+      <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
         {/* device — above the list on mobile, sticky beside it on desktop */}
         <div
           ref={stage}
@@ -659,7 +659,7 @@ export function StackSection() {
           />
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-12">
+        <div className="grid gap-5 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
           {/* ── terminal window ── */}
           <div className="app-term__window overflow-hidden rounded-2xl border border-white/10 bg-[#0A1930] shadow-[0_40px_90px_rgba(12,36,61,0.35)]">
             <div className="flex items-center gap-2 border-b border-white/10 px-5 py-3.5">
@@ -715,7 +715,7 @@ export function StackSection() {
 
           {/* ── packages land here as they install ── */}
           <div>
-            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5 lg:gap-3.5">
+            <div className="grid gap-5 grid-cols-3 sm:grid-cols-4 lg:grid-cols-5">
               {STACK.map((name) => (
                 <div
                   key={name}
@@ -797,7 +797,7 @@ export function PlatformSection() {
           {APP_PLATFORMS.map((p, i) => (
             <article
               key={p.name}
-              className="app-plat__row group relative grid items-center gap-4 overflow-hidden border-b border-[var(--gd-line)] py-8 transition-colors duration-300 hover:bg-[var(--gd-soft)] sm:grid-cols-[auto_1fr] sm:gap-8"
+              className="app-plat__row group relative grid gap-5 items-center overflow-hidden border-b border-[var(--gd-line)] py-8 transition-colors duration-300 hover:bg-[var(--gd-soft)] sm:grid-cols-[auto_1fr]"
             >
               {/* oversized ghost brand mark */}
               <span
@@ -840,7 +840,7 @@ export function SupportSection() {
         intro={APP_EXPERIENCE.supportIntro}
       />
       {/* numbered two-column rows — deliberately not another card grid */}
-      <ul className="m-0 grid list-none gap-x-12 p-0 md:grid-cols-2">
+      <ul className="m-0 grid gap-5 list-none p-0 md:grid-cols-2">
         {APP_SUPPORT.map((s, i) => (
           <li
             key={s}
@@ -919,7 +919,7 @@ export function AISection() {
           <p className="mx-auto mt-5 max-w-xl text-white/60">{APP_AI.intro}</p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {APP_AI.features.map((f) => (
             <div
               key={f.title}
@@ -942,7 +942,7 @@ export function EnterpriseSection() {
   const root = useSectionReveal(".app-ent__item");
   return (
     <Section soft rootRef={root}>
-      <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+      <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
         <div>
           <Label>{APP_EXPERIENCE.labels.enterprise}</Label>
           <h2 className="gd-display text-[clamp(2rem,4.4vw,3.1rem)] text-[var(--gd-ink)]">
@@ -952,7 +952,7 @@ export function EnterpriseSection() {
           </h2>
           <p className="mt-5 max-w-xl text-[var(--gd-muted)]">{APP_ENTERPRISE.intro}</p>
         </div>
-        <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
+        <ul className="m-0 grid gap-5 list-none p-0 sm:grid-cols-2">
           {APP_ENTERPRISE.points.map((p, i) => (
             <li key={p} className="app-ent__item gd-card p-6">
               <span className="gd-display text-sm text-[var(--gd-gold)]">0{i + 1}</span>
@@ -1008,7 +1008,7 @@ export function PricingSection() {
             <p className={"relative m-0 mt-3 text-[0.92rem] leading-6 " + (plan.featured ? "text-white/65" : "text-[var(--gd-muted)]")}>
               {plan.desc}
             </p>
-            <ul className="relative m-0 mt-6 grid list-none gap-3 p-0">
+            <ul className="relative m-0 mt-6 grid gap-5 list-none p-0">
               {plan.points.map((pt) => (
                 <li
                   key={pt}
@@ -1044,7 +1044,7 @@ export function DedicatedSection() {
   const root = useSectionReveal(".app-ded__item");
   return (
     <Section soft rootRef={root}>
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+      <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
           <Label>{APP_EXPERIENCE.labels.dedicated}</Label>
           <h2 className="gd-display text-[clamp(2rem,4.4vw,3.1rem)] text-[var(--gd-ink)]">
@@ -1059,7 +1059,7 @@ export function DedicatedSection() {
             </MagneticButton>
           </div>
         </div>
-        <ul className="m-0 grid list-none grid-cols-2 gap-3 p-0 sm:gap-4">
+        <ul className="m-0 grid gap-5 list-none grid-cols-2 p-0">
           {APP_DEDICATED.supports.map((item, i) => (
             <li key={item} className="app-ded__item gd-card p-5">
               <span className="gd-display text-sm text-[var(--gd-gold)]">0{i + 1}</span>
@@ -1117,7 +1117,7 @@ export function ResultsSection() {
         accent={APP_EXPERIENCE.resultsTitle[1]}
         center
       />
-      <div className="grid gap-8 border-y border-[var(--gd-line)] py-10 sm:grid-cols-3">
+      <div className="grid gap-5 border-y border-[var(--gd-line)] py-10 sm:grid-cols-3">
         {APP_STATS.map((s) => (
           <div key={s.label} className="app-res__item text-center">
             <div className="gd-display text-[clamp(2.4rem,6vw,3.8rem)] text-[var(--gd-navy)]">

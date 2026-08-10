@@ -30,7 +30,7 @@ export function FAQSection({ items = CM_FAQS }: { items?: FaqItem[] }) {
 
   return (
     <section ref={root} className="relative py-5 sm:py-14">
-      <div className="container grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+      <div className="container grid gap-5 items-start lg:grid-cols-[0.8fr_1.2fr]">
         <div className="lg:sticky lg:top-28">
           <Kicker>Frequently asked questions</Kicker>
           <h2 className="cm-display text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--cm-ink)]">

@@ -55,7 +55,7 @@ function Body({ s }: { s: Service }) {
   const url = URLS[s.id];
 
   return (
-    <div className="grid gap-8 pb-9 pt-2 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+    <div className="grid gap-5 pb-9 pt-2 lg:grid-cols-[0.9fr_1.1fr]">
       {/* left — narrative */}
       <div className="space-y-4">
         <p className="m-0 text-[1.05rem] leading-relaxed text-[var(--rd-muted)]">{s.intro}</p>
@@ -70,7 +70,7 @@ function Body({ s }: { s: Service }) {
         {str(r.problemsLabel) && (
           <div className="pt-1">
             <p className="mb-2 text-sm font-semibold text-[var(--rd-ink)]">{str(r.problemsLabel)}</p>
-            <ul className="m-0 grid list-none gap-1.5 p-0 sm:grid-cols-2">
+            <ul className="m-0 grid gap-5 list-none p-0 sm:grid-cols-2">
               {(arr(r.problems) ?? []).map((p) => (
                 <li key={p} className="flex items-start gap-2 text-sm text-[var(--rd-muted)]">
                   <span className="mt-1 grid size-4 shrink-0 place-items-center rounded-full bg-[var(--rd-gold-soft)] text-[var(--rd-gold)] [&_svg]:size-2.5">
@@ -147,7 +147,7 @@ export default function RdServices() {
                   type="button"
                   aria-expanded={isOpen}
                   onClick={() => setOpen(isOpen ? -1 : i)}
-                  className="grid w-full cursor-pointer grid-cols-[2.4rem_auto_1fr_auto] items-center gap-3 border-none bg-transparent py-6 text-left sm:gap-5"
+                  className="grid gap-5 w-full cursor-pointer grid-cols-[2.4rem_auto_1fr_auto] items-center border-none bg-transparent py-6 text-left"
                 >
                   <span
                     className={cn(

@@ -4,7 +4,6 @@ import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "re
 import { gsap, reduced } from "@/animations/gsap";
 import { MagneticButton } from "@/components/agency/primitives";
 import { ArrowRight } from "@/components/ui/Icons";
-import Image from "next/image";
 import { Poster, PosterDeck } from "@/components/design/gdx/PosterDeck";
 import { GD_DECK, GD_HERO, GD_WORK, GD_IMPACT, GD_PROBLEM, GD_SERVICES, GD_WHY } from "@/lib/design-data";
 
@@ -152,11 +151,11 @@ export function GdxHero() {
           </p>
 
           <div className="gdx-hero__ctas mt-7 flex flex-wrap items-center gap-3 sm:gap-4">
-            <MagneticButton href="#contact" className="!bg-[#e4c766] !text-[#07111d]">
+            <MagneticButton href="/contact" className="!bg-[#e4c766] !text-[#07111d]">
               {GD_HERO.primaryCta} <ArrowRight />
             </MagneticButton>
             <a
-              href="#process"
+              href="/contact"
               className="inline-flex min-h-12 items-center gap-3 border-b border-white/40 px-1 text-sm font-bold text-white transition-colors hover:border-[#e4c766] hover:text-[#e4c766]"
             >
               {GD_HERO.ghostCta} <ArrowRight />
@@ -304,7 +303,7 @@ export function GdxCost() {
         </div>
 
         <div className="gdx-up mt-9">
-          <MagneticButton href="#contact">
+          <MagneticButton href="/contact">
             {GD_PROBLEM.cta} <ArrowRight />
           </MagneticButton>
         </div>
@@ -689,17 +688,17 @@ export function GdxImpact() {
         <p className="gdx-imp__item mt-8 max-w-2xl text-[1rem] leading-[1.8] text-white/60">{GD_IMPACT.intro}</p>
 
         {/* benefits as colour-tagged rows */}
-        <ul className="m-0 mt-12 grid list-none gap-x-10 p-0 p-0 md:grid-cols-2">
-          {GD_IMPACT.benefits.map((b, i) => (
+        <ul className="m-0 mt-12 grid gap-5 list-none p-0 md:grid-cols-2">
+          {GD_IMPACT.benefits.map((b) => (
             <li key={b} className="gdx-imp__item flex items-center gap-4 border-b border-white/12 py-5">
-              <span className="size-2.5 shrink-0 rounded-full" style={{ background: SERVICE_COLORS[i % SERVICE_COLORS.length] }} />
-              <span className="text-[1rem] font-semibold">{b}</span>
+              <span className="size-2.5 shrink-0 rounded-full shadow-[0_0_10px_rgba(228,199,102,0.6)]" style={{ background: GOLD }} />
+              <span className="text-[1rem] font-semibold text-white">{b}</span>
             </li>
           ))}
         </ul>
 
         {/* stats */}
-        <div className="mt-14 grid gap-8 sm:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:grid-cols-3">
           {GD_IMPACT.stats.map((s) => (
             <div key={s.label} className="gdx-imp__item">
               <p className="m-0 font-bold leading-none tracking-[-0.05em] text-[clamp(2.6rem,7vw,4.4rem)]">

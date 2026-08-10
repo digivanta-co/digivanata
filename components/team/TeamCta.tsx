@@ -15,7 +15,7 @@ export default function TeamCta() {
               className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_120%_at_50%_-20%,rgba(40,111,171,0.35),transparent_55%)]"
             />
 
-            <div className="relative z-[1] grid items-center gap-8 lg:grid-cols-[auto_1fr_auto] lg:gap-12">
+            <div className="relative z-[1] grid gap-5 items-center lg:grid-cols-[auto_1fr_auto]">
               {/* Orbital Graphic */}
               <div className="relative mx-auto size-36 shrink-0">
                 <svg viewBox="0 0 200 200" className="absolute inset-0 size-full" aria-hidden>

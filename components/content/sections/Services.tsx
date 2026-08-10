@@ -48,7 +48,7 @@ export function ServicesSection() {
           <p className="mt-5 text-[var(--cm-muted)]">{CM_SERVICES.intro}</p>
         </div>
 
-        <div className="cm-serv__grid mt-14 grid gap-6 lg:grid-cols-2">
+        <div className="cm-serv__grid mt-14 grid gap-5 lg:grid-cols-2">
           {CM_SERVICES.items.map((s, i) => (
             <TiltCard
               key={s.title}
@@ -77,7 +77,7 @@ export function ServicesSection() {
               <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--cm-blue)]">
                 {s.listLabel}
               </p>
-              <ul className="mt-4 grid list-none grid-cols-1 gap-x-6 gap-y-2.5 p-0 sm:grid-cols-2">
+              <ul className="mt-4 grid gap-5 list-none grid-cols-1 p-0 sm:grid-cols-2">
                 {s.points.map((p) => (
                   <li key={p} className="flex items-center gap-2.5 text-[0.92rem] text-[var(--cm-ink)]">
                     <span className="grid size-5 shrink-0 place-items-center rounded-full bg-[var(--cm-violet-soft)] text-[var(--cm-violet)] [&_svg]:size-3">

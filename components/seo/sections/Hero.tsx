@@ -154,7 +154,7 @@ export default function HeroSection() {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--gd-line)]" />
 
       <div className="container relative z-10">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid gap-5 items-center lg:grid-cols-[1.05fr_0.95fr]">
           {/* copy */}
           <div>
             <span className="sh2__eyebrow inline-flex items-center gap-2.5 rounded-full border border-[var(--gd-line)] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gd-muted)] shadow-[0_4px_14px_rgba(12,36,61,0.05)]">
@@ -199,7 +199,7 @@ export default function HeroSection() {
               </div>
               <div>
                 <strong className="gd-display block text-2xl text-[var(--gd-navy)]">100+</strong>
-                <span className="text-[0.74rem] text-[var(--gd-muted)]">Clients served</span>
+                <span className="text-[0.74rem] text-[var(--gd-muted)]">Happy Clients</span>
               </div>
               <div>
                 <strong className="gd-display block text-2xl text-[var(--gd-navy)]">1+</strong>

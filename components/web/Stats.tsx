@@ -63,7 +63,7 @@ export default function Stats() {
         <p className="mb-12 text-center text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#286FAB]">
           Trusted by Businesses Across Delhi NCR
         </p>
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
+        <div className="grid gap-5 grid-cols-1 md:grid-cols-3">
           {WEB_STATS.map((s, i) => (
             <div key={s.label} data-stat className="text-center">
               <StatIcon index={i} />

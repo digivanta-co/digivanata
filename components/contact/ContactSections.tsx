@@ -117,11 +117,6 @@ const INFO_BLOCKS = [
     body: (
       <p className="m-0 text-[0.88rem] leading-relaxed text-white/75">
         Phone :{" "}
-        <a href="tel:+919999911195" className="transition-colors hover:text-[#e4c766]">
-          +91 99999 11195
-        </a>
-        <br />
-        Phone :{" "}
         <a href="tel:+918800585867" className="transition-colors hover:text-[#e4c766]">
           +91 88005 85867
         </a>
@@ -227,7 +222,7 @@ export function ContactMain() {
         </div>
 
         {/* form + info card */}
-        <div className="mt-10 grid items-start gap-8 lg:grid-cols-[1.55fr_1fr] lg:gap-10">
+        <div className="mt-10 grid gap-5 items-start lg:grid-cols-[1.55fr_1fr]">
           <div className="cx-main__rev">
             <ContactForm />
           </div>
@@ -241,7 +236,7 @@ export function ContactMain() {
               }}
             />
 
-            <div className="relative grid gap-7">
+            <div className="relative grid gap-5">
               {INFO_BLOCKS.map((b) => (
                 <div key={b.title}>
                   <h3 className="gd-display m-0 mb-2.5 flex items-center gap-2.5 text-[1.05rem] text-white [&_svg]:size-4 [&_svg]:text-[#e4c766]">

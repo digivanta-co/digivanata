@@ -144,7 +144,7 @@ export default function HeroSection() {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--cm-line)]" />
 
       <div className="container relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10">
+        <div className="grid gap-5 items-center lg:grid-cols-[1.02fr_0.98fr]">
           {/* ── left: copy ── */}
           <div>
             <span className="cm-hero__eyebrow inline-flex items-center gap-2.5 rounded-full border border-[var(--gd-line)] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gd-muted)] shadow-[0_4px_14px_rgba(12,36,61,0.05)]">
@@ -185,7 +185,7 @@ export default function HeroSection() {
             </div>
 
             {/* trust row */}
-            <div className="cm-hero__trust mt-8 grid grid-cols-2 gap-4 border-t border-[var(--gd-line)] pt-6 sm:mt-12 sm:grid-cols-4 sm:gap-6 sm:pt-7">
+            <div className="cm-hero__trust mt-8 grid gap-5 grid-cols-2 border-t border-[var(--gd-line)] pt-6 sm:mt-12 sm:grid-cols-4 sm:pt-7">
               <div className="flex flex-col items-start gap-1">
                 <span className="flex text-[var(--gd-gold)]">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -330,7 +330,7 @@ export function IntroSection() {
             </span>
           ))}
         </p>
-        <div className="cm-intro__grid mt-10 grid gap-8 border-t border-[var(--cm-line)] pt-10 md:grid-cols-2">
+        <div className="cm-intro__grid mt-10 grid gap-5 border-t border-[var(--cm-line)] pt-10 md:grid-cols-2">
           {CM_INTRO.paragraphs.map((p, i) => (
             <p key={i} className="cm-intro__item m-0 text-[0.95rem] leading-relaxed text-[var(--cm-muted)]">
               {p}

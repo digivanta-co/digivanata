@@ -191,7 +191,7 @@ export default function HeroSection() {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--gd-line)]" />
 
       <div className="container relative z-10">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid gap-5 items-center lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <span className="orm-h__eyebrow inline-flex items-center gap-2.5 rounded-full border border-[var(--gd-line)] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gd-muted)] shadow-[0_4px_14px_rgba(12,36,61,0.05)]">
               <span className="size-2 rounded-full bg-[var(--gd-gold)] shadow-[0_0_10px_rgba(176,141,63,0.8)]" />
@@ -222,7 +222,7 @@ export default function HeroSection() {
                 <span className="sm:hidden">Protect Reputation</span>
                 <ArrowRight />
               </MagneticButton>
-              <MagneticButton href="#orm-services" className="ag-btn--ghost">
+              <MagneticButton href="/contact" className="ag-btn--ghost">
                 <span className="hidden sm:inline">{ORM_HERO.ghostCta}</span>
                 <span className="sm:hidden">ORM Services</span>
               </MagneticButton>
@@ -283,7 +283,7 @@ export function IntroSection() {
   return (
     <section ref={root} className="relative py-8 sm:py-12">
       <div className="container">
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-3">
           {ORM_INTRO.paragraphs.map((p, i) => (
             <div key={i} className="orm-intro__item border-t-2 border-[var(--gd-line)] pt-5 transition-colors duration-300 hover:border-[var(--gd-gold)]">
               <span className="gd-display text-xs text-[var(--gd-gold)]">0{i + 1}</span>

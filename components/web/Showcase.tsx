@@ -36,7 +36,7 @@ export default function WebShowcaseSection() {
 
           {/* Window Content */}
           <div className="p-8 lg:p-12 bg-gradient-to-b from-white to-[var(--gd-soft)]">
-            <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="grid gap-5 items-center lg:grid-cols-[1.1fr_0.9fr]">
               <div>
                 <span className="gd-eyebrow mb-3">Live Architecture</span>
                 <h3 className="gd-display m-0 text-2xl lg:text-3xl text-[var(--gd-ink)]">
@@ -47,14 +47,14 @@ export default function WebShowcaseSection() {
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
-                  <MagneticButton href="#web-contact">
+                  <MagneticButton href="/contact">
                     Build Yours <ArrowRight />
                   </MagneticButton>
                 </div>
               </div>
 
               {/* Performance metrics grid inside browser */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid gap-5 grid-cols-2">
                 <div className="rounded-xl border border-[var(--gd-line)] bg-white p-5 shadow-sm text-center">
                   <div className="gd-display text-3xl text-[var(--gd-navy)]">99</div>
                   <div className="mt-1 text-xs font-medium text-[var(--gd-muted)]">Performance Score</div>

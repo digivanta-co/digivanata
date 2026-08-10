@@ -20,7 +20,7 @@ export default function WebWhyChooseSection() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
+        <div className="grid gap-5 lg:grid-cols-2 max-w-5xl mx-auto">
           {/* Traditional Agencies */}
           <div className="rounded-3xl border border-[var(--gd-line)] bg-white p-8 lg:p-10 shadow-sm">
             <div className="mb-6 flex items-center justify-between border-b border-[var(--gd-line)] pb-4">

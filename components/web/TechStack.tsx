@@ -130,7 +130,7 @@ export default function WebTechStackSection() {
 
         <div className="web-tech-stage-glow pointer-events-none absolute left-1/2 top-[55%] hidden size-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--gd-blue)]/10 opacity-0 blur-3xl lg:block" />
 
-        <div className="web-tech-mobile-grid grid grid-cols-2 gap-3 sm:gap-4 lg:absolute lg:left-1/2 lg:top-1/2 lg:block lg:h-px lg:w-px lg:-translate-x-1/2 lg:-translate-y-1/2 motion-reduce:lg:static motion-reduce:lg:grid motion-reduce:lg:h-auto motion-reduce:lg:w-auto motion-reduce:lg:translate-x-0 motion-reduce:lg:translate-y-0 motion-reduce:lg:grid-cols-4">
+        <div className="web-tech-mobile-grid grid gap-5 grid-cols-2 lg:absolute lg:left-1/2 lg:top-1/2 lg:block lg:h-px lg:w-px lg:-translate-x-1/2 lg:-translate-y-1/2 motion-reduce:lg:static motion-reduce:lg:grid motion-reduce:lg:h-auto motion-reduce:lg:w-auto motion-reduce:lg:translate-x-0 motion-reduce:lg:translate-y-0 motion-reduce:lg:grid-cols-4">
           {WEB_TECH.map((item, index) => (
             <article
               key={item.name}

@@ -16,7 +16,7 @@ export function IndustrySection() {
           </Lead>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {APP_INDUSTRIES.map((ind, i) => (
             <Reveal key={ind.name} variant={i % 2 === 0 ? "left" : "right"} delay={(i % 3) * 0.06}>
               <article className="group h-full overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white transition-all duration-300 hover:-translate-y-2 hover:border-[#286FAB]/50 hover:shadow-[0_26px_54px_rgba(40,111,171,0.16)]">

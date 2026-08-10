@@ -39,7 +39,7 @@ function Phone3D() {
 
               {/* content */}
               <div className="space-y-3 p-4">
-                <div data-screen-el className="grid grid-cols-3 gap-2">
+                <div data-screen-el className="grid gap-5 grid-cols-3">
                   {[0, 1, 2].map((i) => (
                     <div key={i} className="rounded-xl border border-[#E5E7EB] bg-[#F8FAFC] py-4">
                       <div className="mx-auto h-5 w-5 rounded-md bg-[#286FAB]/15" />
@@ -132,7 +132,7 @@ export default function HeroSection() {
       </div>
 
       <div className="container relative z-[2]">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid gap-5 items-center lg:grid-cols-[1.1fr_0.9fr]">
           {/* copy */}
           <div className="text-center lg:text-left">
             <span className="inline-flex items-center gap-2 rounded-full border border-[#E5E7EB] bg-[#F8FAFC] px-4 py-1.5 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-[#286FAB]">

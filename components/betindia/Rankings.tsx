@@ -20,7 +20,7 @@ export default function BiRankings() {
         sub="From the untouchable Trail to the fearless High Card — ranked from strongest to weakest, with the odds of being dealt each one."
       />
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {BI_RANKINGS.map((r, i) => (
           <motion.article
             key={r.name}

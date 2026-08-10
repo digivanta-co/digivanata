@@ -15,7 +15,7 @@ export default function TeamLeadership() {
           </h2>
         </Reveal>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2">
           {TEAM_LEADERS.map((leader, i) => (
             <Reveal as="article" key={leader.name} delay={(i + 1) as 1 | 2}>
               <div className="group relative h-full min-h-[430px] overflow-hidden rounded-[26px] border border-[var(--gd-line,rgba(13,18,41,0.1))] bg-[linear-gradient(135deg,#fff_0%,#f7f7fc_55%,#f0f3ff_100%)] shadow-[0_16px_45px_rgba(13,18,41,0.06)] transition-all duration-400 hover:-translate-y-1.5 hover:border-[var(--gd-blue,#286FAB)]/35 hover:shadow-[0_24px_60px_rgba(13,18,41,0.11)]">

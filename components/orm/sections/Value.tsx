@@ -40,7 +40,7 @@ export function DykAlertSection() {
   return (
     <section ref={root} className="relative bg-[var(--gd-soft)] py-8 sm:py-12">
       <div className="container">
-        <div className="grid items-center gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
+        <div className="grid gap-5 items-center lg:grid-cols-[0.7fr_1.3fr]">
           <div className="orm-dyk__item">
             <Label>{ORM_DYK.label}</Label>
             <StatBig value={ORM_DYK.value} suffix={ORM_DYK.suffix} label={ORM_DYK.text} />
@@ -93,7 +93,7 @@ export function WhyMattersSection() {
 
   return (
     <section ref={root} className="relative py-10 sm:py-14" id="why-orm">
-      <div className="container grid items-start gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+      <div className="container grid gap-5 items-start lg:grid-cols-[0.95fr_1.05fr]">
         <div className="lg:sticky lg:top-28">
           <Label>Why it matters</Label>
           <h2 className="gd-display text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
@@ -164,7 +164,7 @@ export function BestOrmSection() {
   return (
     <section ref={root} className="relative border-y border-[var(--gd-line)] bg-[var(--gd-soft)] py-10 sm:py-14">
       <div className="container">
-        <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
+        <div className="grid gap-5 items-start lg:grid-cols-[1fr_1.05fr]">
           {/* left column: header + paragraphs */}
           <div className="orm-best__item lg:sticky lg:top-28">
             <Label>Result-driven solutions</Label>
@@ -190,7 +190,7 @@ export function BestOrmSection() {
                   One Strategy, Four Disciplines
                 </span>
               </div>
-              <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+              <div className="grid gap-5 grid-cols-1 sm:grid-cols-2">
                 {ORM_BEST.pillars.map((p, i) => (
                   <div
                     key={p}
@@ -254,7 +254,7 @@ export function ServicesStackSection() {
                 >
                   {s.num}
                 </div>
-                <div className="relative grid items-start gap-6 md:grid-cols-[auto_1fr]">
+                <div className="relative grid gap-5 items-start md:grid-cols-[auto_1fr]">
                   <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-[linear-gradient(120deg,var(--gd-navy),var(--gd-blue))] text-white">
                     <SeoIcon name={s.icon} width={24} height={24} />
                   </span>
@@ -294,7 +294,7 @@ export function AffordableSection() {
 
   return (
     <section ref={root} className="relative bg-[var(--gd-soft)] py-10 sm:py-14" id="orm-affordable">
-      <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="container grid gap-5 items-center lg:grid-cols-[1.1fr_0.9fr]">
         <div className="orm-aff__l">
           <Label>Fair pricing</Label>
           <h2 className="gd-display text-[clamp(1.9rem,4.2vw,3.1rem)] text-[var(--gd-ink)]">
@@ -312,7 +312,7 @@ export function AffordableSection() {
         <div className="orm-aff__r gd-card relative overflow-hidden p-8">
           <div aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,var(--gd-navy),var(--gd-blue)_55%,var(--gd-gold))]" />
           <h3 className="m-0 text-lg font-bold text-[var(--gd-ink)]">Built for every stage</h3>
-          <ul className="m-0 mt-5 grid list-none gap-4 p-0">
+          <ul className="m-0 mt-5 grid gap-5 list-none p-0">
             {ORM_AFFORDABLE.fits.map((f) => (
               <li key={f} className="flex items-center gap-3 border-b border-[var(--gd-line)] pb-4 text-[0.98rem] font-semibold text-[var(--gd-ink)] last:border-b-0 last:pb-0">
                 <Check />

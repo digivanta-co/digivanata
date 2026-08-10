@@ -77,8 +77,8 @@ export function CTASection({
           <MagneticButton href={CONTACT.whatsapp} external>
             {primary} <ArrowRight />
           </MagneticButton>
-          <MagneticButton href={CONTACT.phoneHref} external className="ag-btn--ghost">
-            {CONTACT.phone}
+          <MagneticButton href="/contact" className="ag-btn--ghost">
+            Contact Our Team
           </MagneticButton>
         </div>
 

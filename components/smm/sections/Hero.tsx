@@ -170,7 +170,7 @@ export default function HeroSection() {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--gd-line)]" />
 
       <div className="container relative z-10">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid gap-5 items-center lg:grid-cols-[1.05fr_0.95fr]">
           {/* copy column */}
           <div>
             <span className="smm-hero__eyebrow inline-flex items-center gap-2.5 rounded-full border border-[var(--gd-line)] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gd-muted)] shadow-[0_4px_14px_rgba(12,36,61,0.05)]">
@@ -273,7 +273,7 @@ export function IntroSection() {
         <p className="smm-intro__item m-0 text-[clamp(1.2rem,2.4vw,1.7rem)] font-medium leading-snug text-[var(--gd-ink)]">
           {SMM_INTRO.lead}
         </p>
-        <div className="mt-7 grid gap-8 border-t border-[var(--gd-line)] pt-7 md:grid-cols-3">
+        <div className="mt-7 grid gap-5 border-t border-[var(--gd-line)] pt-7 md:grid-cols-3">
           {SMM_INTRO.paragraphs.map((p, i) => (
             <p key={i} className="smm-intro__item m-0 text-sm leading-relaxed text-[var(--gd-muted)]">
               {p}

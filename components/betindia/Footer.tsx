@@ -16,7 +16,7 @@ export default function BiFooter() {
             </p>
           </div>
 
-          <nav className="grid grid-cols-2 gap-x-12 gap-y-3 sm:grid-cols-3">
+          <nav className="grid gap-5 grid-cols-2 sm:grid-cols-3">
             {BI_NAV_LINKS.map((l) => (
               <a
                 key={l.href}

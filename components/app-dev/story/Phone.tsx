@@ -58,7 +58,7 @@ export function WireframeScreen() {
     <div className="flex h-full flex-col gap-3 bg-[#F8FAFC] p-4 pt-9">
       <div className="h-6 w-24 rounded bg-[#0F172A]/10" />
       <div className="h-28 w-full rounded-xl border-2 border-dashed border-[#0F172A]/15" />
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid gap-5 grid-cols-3">
         {[0, 1, 2].map((i) => (
           <div key={i} className="h-14 rounded-lg border-2 border-dashed border-[#0F172A]/15" />
         ))}
@@ -76,7 +76,7 @@ export function DesignScreen() {
     <div className="flex h-full flex-col gap-3 bg-white p-4 pt-9">
       <div className="h-6 w-28 rounded-full bg-[#286fab]/20" />
       <div className="h-28 w-full rounded-xl bg-[linear-gradient(135deg,#dbeafe,#eff6ff)]" />
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid gap-5 grid-cols-3">
         {["bg-[#0c243d]/15", "bg-[#286fab]/15", "bg-[#231f20]/10"].map((c, i) => (
           <div key={i} className={`h-14 rounded-lg ${c}`} />
         ))}
@@ -97,7 +97,7 @@ export function AppScreen() {
         <p className="text-base font-bold">Welcome back 👋</p>
       </div>
       <div className="flex flex-1 flex-col gap-3 p-3">
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid gap-5 grid-cols-3">
           {[0, 1, 2].map((i) => (
             <div key={i} className="grid place-items-center rounded-xl border border-[#E5E7EB] bg-[#F8FAFC] py-3">
               <div className="size-4 rounded bg-[#286fab]/25" />
@@ -147,7 +147,7 @@ export function ShowcaseScreen({ kind }: { kind: "shop" | "food" | "health" | "r
           </div>
         </div>
       ) : (
-        <div className="grid flex-1 grid-cols-2 gap-2 p-3">
+        <div className="grid gap-5 flex-1 grid-cols-2 p-3">
           {[0, 1, 2, 3].map((i) => (
             <div key={i} className="overflow-hidden rounded-xl border border-[#E5E7EB]">
               <div className="h-12 bg-[linear-gradient(135deg,#dbeafe,#eff6ff)]" />
