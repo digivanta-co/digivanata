@@ -31,7 +31,7 @@ export function DidYouKnowSection() {
             </p>
 
             <p>
-              Choosing the right <strong>SEO Company in Delhi</strong> can help businesses improve search visibility, generate organic traffic, and create long-term digital growth.
+              Choosing the right SEO Company in Delhi can help businesses improve search visibility, generate organic traffic, and create long-term digital growth.
             </p>
             <Link href="#contact" className="btn btn--primary btn--lg">Get Your Free SEO Consultation</Link>
             <p>
@@ -436,7 +436,7 @@ export function FinalThoughtsSection() {
               SEO is no longer just about rankings. It is about building a trusted online presence that search engines, AI systems, and users can understand easily.
             </p>
             <p>
-              Choosing the right <strong>SEO Company in Delhi</strong> can help businesses improve search visibility, generate organic traffic, and create long-term digital growth.
+              Choosing the right SEO Company in Delhi can help businesses improve search visibility, generate organic traffic, and create long-term digital growth.
             </p>
             <p>
               With strategic keyword optimization, technical SEO, user-focused content, and AI search readiness, businesses can stay competitive in the evolving digital landscape.

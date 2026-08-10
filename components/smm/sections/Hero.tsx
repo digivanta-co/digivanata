@@ -161,7 +161,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative overflow-hidden pt-24 pb-10 lg:pt-28 lg:pb-24">
+    <section ref={root} className="relative overflow-hidden pt-24 pb-4 lg:pt-28 lg:pb-10">
       {/* background radial lighting */}
       <div
         aria-hidden
@@ -268,12 +268,12 @@ export function IntroSection() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-8 sm:py-12">
+    <section ref={root} className="relative py-5">
       <div className="container">
-        <p className="smm-intro__item m-0 max-w-3xl text-[clamp(1.2rem,2.4vw,1.7rem)] font-medium leading-snug text-[var(--gd-ink)]">
+        <p className="smm-intro__item m-0 text-[clamp(1.2rem,2.4vw,1.7rem)] font-medium leading-snug text-[var(--gd-ink)]">
           {SMM_INTRO.lead}
         </p>
-        <div className="mt-9 grid gap-8 border-t border-[var(--gd-line)] pt-9 md:grid-cols-3">
+        <div className="mt-7 grid gap-8 border-t border-[var(--gd-line)] pt-7 md:grid-cols-3">
           {SMM_INTRO.paragraphs.map((p, i) => (
             <p key={i} className="smm-intro__item m-0 text-sm leading-relaxed text-[var(--gd-muted)]">
               {p}

@@ -11,7 +11,7 @@ const useIso = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 /* Minimal dark accordion — hairlines, blue numbers, plus/rotate toggle. */
 export function FAQSection({ items = CM_FAQS }: { items?: FaqItem[] }) {
   const root = useRef<HTMLElement | null>(null);
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
 
   useIso(() => {
     if (reduced()) return;

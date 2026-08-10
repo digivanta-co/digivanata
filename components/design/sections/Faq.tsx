@@ -10,7 +10,7 @@ const useIso = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 /* Minimal accordion — thin lines, gold numbers, plus toggle. */
 export function FAQSection({ items = GD_FAQS }: { items?: typeof GD_FAQS }) {
   const root = useRef<HTMLElement | null>(null);
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
 
   useIso(() => {
     if (reduced()) return;

@@ -27,7 +27,7 @@ export const ABOUT_PROCESS: AboutStep[] = [
   { step: "01", icon: "Search", title: "Research & Discovery", desc: "We analyze your business, industry, competitors, and audience to understand your goals and identify growth opportunities." },
   { step: "02", icon: "ClipboardList", title: "Strategy & Planning", desc: "Our team creates a customized roadmap focused on branding, web development, SEO, and digital marketing strategies." },
   { step: "03", icon: "Code2", title: "Design & Development", desc: "We build modern, responsive, and SEO optimized websites and digital experiences that align with your brand identity." },
-  { step: "04", icon: "Rocket", title: "Marketing & Optimization", desc: "From search engine optimization and social media marketing to performance campaigns, we optimize strategies to increase traffic, engagement, and conversions." },
+  { step: "04", icon: "Rocket", title: "Marketing & Optimization", desc: "From search engine optimization and social media marketing to performance campaigns,." },
   { step: "05", icon: "LineChart", title: "Growth & Support", desc: "We continuously monitor performance, improve strategies, and provide ongoing support to help your business achieve long term success." },
 ];
 

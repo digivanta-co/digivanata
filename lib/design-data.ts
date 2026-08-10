@@ -50,6 +50,7 @@ export const GD_WORK = {
       /* backdrop behind logo art that has its own transparency */
       bg: "#000000",
       contain: true,
+      ratio: "16 / 6.5",
     },
     {
       id: "ziva",
@@ -59,6 +60,17 @@ export const GD_WORK = {
       alt: "Ziva Beauty — gold floral icon & typography logo",
       bg: "#000000",
       contain: true,
+      ratio: "16 / 6.5",
+    },
+    {
+      id: "keratin",
+      type: "Product & Packaging",
+      name: "Keratin Mask",
+      src: "/work/keratin-mask.jpg",
+      alt: "Keratin Mask — luxury smoothing botox packaging design",
+      bg: "#B5A797",
+      contain: true,
+      ratio: "16 / 13",
     },
   ],
 };

@@ -107,7 +107,7 @@ export default function ServiceTabs() {
 
         {service.id === "seo" && (
           <p className="svc-tabs__trust">
-            Trusted <strong>SEO Company in Delhi</strong> — sustainable strategies,
+            Trusted SEO Company in Delhi — sustainable strategies,
             measurable growth.
           </p>
         )}

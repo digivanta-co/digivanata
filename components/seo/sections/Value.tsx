@@ -52,7 +52,7 @@ export function DidYouKnowIntro() {
               depending completely on paid advertising.
             </p>
             <p className="m-0 text-[1.02rem] leading-relaxed text-[var(--gd-muted)]">
-              Choosing the right <strong className="text-[var(--gd-ink)]">SEO Company in Delhi</strong> can help
+              Choosing the right SEO Company in Delhi can help
               businesses improve search visibility, generate organic traffic, and create long-term digital growth.
             </p>
             <p className="m-0 text-[1.02rem] leading-relaxed text-[var(--gd-muted)]">

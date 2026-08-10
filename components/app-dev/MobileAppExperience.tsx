@@ -178,7 +178,7 @@ const STEP_SCREENS = [
 export default function MobileAppExperience() {
   const root = useRef<HTMLDivElement | null>(null);
   const track = useRef<HTMLDivElement | null>(null);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useIso(() => {
     if (reduced()) return;

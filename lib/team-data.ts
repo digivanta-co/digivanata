@@ -27,7 +27,7 @@ export const TEAM_LEADERS = [
   },
   {
     name: "Sachin Gupta",
-    role: "Co Founder",
+    role: "Strategy & Busniess Grwoth",
     specialty: "Operations & Business Growth",
     desc: "Strategic mind behind execution and planning. He ensures every idea turns into measurable digital success.",
     photo: "/team/sachin.png",
@@ -48,7 +48,7 @@ export const TEAM_GROUPS = [
     members: [
       {
         name: "Rishku",
-        role: "Digital Marketing Executive",
+        role: "sr.Digital marketing executive",
         badge: "sr.marketing executive",
         photo: "/team/rishku.png",
         socials: [
@@ -59,7 +59,7 @@ export const TEAM_GROUPS = [
       },
       {
         name: "Suraj",
-        role: "Digital Marketing Executive",
+        role: "sr.Digital marketing executive",
         badge: "PPC & Lead Generation",
         photo: "/team/suraj.png",
         socials: [
@@ -77,7 +77,7 @@ export const TEAM_GROUPS = [
     members: [
       {
         name: "Lakshay",
-        role: "Video editor",
+        role: "Video editor & Graphic Designer",
         badge: "Brand Identity & Motion",
         photo: "/team/lakshay.png",
         socials: [

@@ -582,7 +582,7 @@ export function GdxWork() {
             className="absolute inset-0 overflow-hidden rounded-[14px] shadow-[0_30px_70px_rgba(12,36,61,0.3)] transition-all duration-400"
             style={{
               background: p.bg,
-              aspectRatio: p.contain ? "16 / 6.5" : "16 / 10",
+              aspectRatio: p.ratio || (p.contain ? "16 / 6.5" : "16 / 10"),
               opacity: hover === i ? 1 : 0,
               transform: hover === i ? "scale(1)" : "scale(0.92)",
             }}
@@ -591,7 +591,7 @@ export function GdxWork() {
           </div>
         ))}
         {/* spacer that gives the absolutely-positioned shots their box */}
-        <div style={{ aspectRatio: hover !== -1 && shown[hover]?.contain ? "16 / 6.5" : "16 / 10" }} />
+        <div style={{ aspectRatio: hover !== -1 && shown[hover]?.ratio ? shown[hover].ratio : (hover !== -1 && shown[hover]?.contain ? "16 / 6.5" : "16 / 10") }} />
       </div>
     </section>
   );
@@ -615,7 +615,7 @@ function WorkShot({
     );
   }
   return (
-    <div className="relative flex size-full items-center justify-center p-3.5 sm:p-4">
+    <div className={`relative flex size-full items-center justify-center ${p.contain ? "p-3.5 sm:p-4" : "p-0"}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={p.src}

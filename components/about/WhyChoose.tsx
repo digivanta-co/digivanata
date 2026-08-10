@@ -44,8 +44,8 @@ export default function WhyChoose() {
           <h2 className="mt-5 font-[family-name:var(--font-display),var(--font)] text-[clamp(2.2rem,5vw,3.4rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#0C243D]">
             Why brands <span style={gradText}>choose us</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-[640px] text-[1.05rem] leading-relaxed text-slate-500">
-            We don&apos;t just deliver services — we build measurable, long-term growth partnerships.
+          <p className="mx-auto mt-5 max-w-[740px] text-[1.05rem] leading-relaxed text-slate-500">
+            We don&apos;t just deliver services we build measurable, long term growth partnerships.
           </p>
         </motion.div>
 

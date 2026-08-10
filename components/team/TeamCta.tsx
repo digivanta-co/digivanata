@@ -24,7 +24,9 @@ export default function TeamCta() {
                   <circle cx="186" cy="78" r="5" fill="#b08d3f" />
                   <circle cx="22" cy="120" r="4" fill="#286FAB" />
                 </svg>
-                <span className="absolute left-1/2 top-1/2 grid size-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-2xl bg-white/10 text-white backdrop-blur-md">
+                {/* no backdrop-blur: it's a per-frame repaint on a
+                    scroll-visible element for no visual gain here */}
+                <span className="absolute left-1/2 top-1/2 grid size-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-2xl bg-white/15 text-white">
                   <Users size={34} strokeWidth={2} />
                 </span>
               </div>

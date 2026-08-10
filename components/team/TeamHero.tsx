@@ -75,7 +75,9 @@ export default function TeamHero() {
 
         {/* Floating Avatars (left) — Continuously rotates through team members */}
         <div aria-hidden className="absolute left-[3%] top-[34%] hidden xl:block z-10">
-          <div className="relative overflow-hidden rounded-full border border-[var(--gd-line)] bg-white/95 shadow-[0_20px_40px_rgba(12,36,61,0.12)] backdrop-blur-md min-w-[260px] h-20 flex items-center p-1.5">
+          {/* solid white instead of 95% + blur — the blur was invisible
+              behind an almost-opaque fill but still cost a repaint */}
+          <div className="relative overflow-hidden rounded-full border border-[var(--gd-line)] bg-white shadow-[0_20px_40px_rgba(12,36,61,0.12)] min-w-[260px] h-20 flex items-center p-1.5">
             <AnimatePresence mode="wait">
               <motion.div
                 key={name}

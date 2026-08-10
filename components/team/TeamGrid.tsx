@@ -14,15 +14,15 @@ export default function TeamGrid() {
     <section className="relative bg-gradient-to-b from-white via-[var(--gd-soft,#f6f7fb)] to-white py-5">
       <div className="container">
         {/* Section Header */}
-        <Reveal className="mx-auto mb-8 max-w-2xl text-center">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--gd-blue,#286FAB)]/30 bg-[rgba(40,111,171,0.08)] px-4 py-1.5 text-[0.75rem] font-bold uppercase tracking-[0.2em] text-[var(--gd-blue,#286FAB)]">
+        <Reveal className="mx-auto mb-3 max-w-2xl text-center">
+          <span className="mb-2 inline-flex items-center gap-2 rounded-full border border-[var(--gd-blue,#286FAB)]/30 bg-[rgba(40,111,171,0.08)] px-4 py-1.5 text-[0.75rem] font-bold uppercase tracking-[0.2em] text-[var(--gd-blue,#286FAB)]">
             <Sparkles size={14} className="text-[var(--gd-blue,#286FAB)]" />
             The Growth Crew
           </span>
           <h2 className="font-[family-name:var(--font-display),var(--font)] text-[clamp(2rem,4.5vw,3.2rem)] font-[800] uppercase tracking-[-0.03em] text-[var(--gd-ink,#0d1229)]">
             The Minds Behind <span className="gd-grad">Your Success</span>
           </h2>
-          <p className="mt-4 text-[0.98rem] leading-relaxed text-[var(--gd-muted,#5b6478)]">
+          <p className="mt-2 text-[0.98rem] leading-relaxed text-[var(--gd-muted,#5b6478)]">
             Specialists in search, creative branding, performance marketing, and software engineering.
           </p>
         </Reveal>
@@ -73,9 +73,6 @@ export default function TeamGrid() {
 
                         {/* Member Details */}
                         <div className="min-w-0 flex flex-1 flex-col justify-center px-4 py-5">
-                          <span className="inline-block rounded-md bg-[var(--gd-soft,#f6f7fb)] px-2 py-0.5 text-[0.66rem] font-bold uppercase tracking-wider text-[var(--gd-blue,#286FAB)]">
-                            {m.badge}
-                          </span>
                           <h4 className="mt-1 truncate text-[1rem] font-bold text-[var(--gd-ink,#0d1229)]">
                             {m.name}
                           </h4>
