@@ -19,8 +19,8 @@ export default function TeamGrid() {
             <Sparkles size={14} className="text-[var(--gd-blue,#286FAB)]" />
             The Growth Crew
           </span>
-          <h2 className="font-[family-name:var(--font-display),var(--font)] text-[clamp(2rem,4.5vw,3.2rem)] font-[800] uppercase tracking-[-0.03em] text-[var(--gd-ink,#0d1229)]">
-            The Minds Behind <span className="gd-grad">Your Success</span>
+          <h2 className="font-[family-name:var(--font-display),var(--font)] text-[clamp(2rem,4.5vw,3.2rem)] font-[800] uppercase leading-[1.02] tracking-[-0.03em] text-[var(--gd-ink,#0d1229)]">
+            The Minds Behind <span className="gd-grad inline-block">Your Success</span>
           </h2>
           <p className="mt-2 text-[0.98rem] leading-relaxed text-[var(--gd-muted,#5b6478)]">
             Specialists in search, creative branding, performance marketing, and software engineering.

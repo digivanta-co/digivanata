@@ -122,7 +122,12 @@ export default function RdHero() {
         .fromTo(".rd-hero__title", { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7 }, "-=0.5")
         .fromTo(".rd-hero__cta > *", { y: 22, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.1 }, "-=0.4")
         .fromTo(".rd-viz-scene", { autoAlpha: 0, scale: 0.92, transformOrigin: "50% 50%" }, { autoAlpha: 1, scale: 1, duration: 1, ease: "power3.out" }, "-=0.8")
-        .fromTo(".rd-core", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.7, ease: "back.out(2)" }, "-=0.7")
+        .fromTo(
+          ".rd-core",
+          { scale: 0, xPercent: -50, yPercent: -50, transformOrigin: "50% 50%" },
+          { scale: 1, xPercent: -50, yPercent: -50, duration: 0.7, ease: "back.out(2)", clearProps: "transform" },
+          "-=0.7"
+        )
         .fromTo(
           "[data-badge-fx]",
           { autoAlpha: 0, scale: 0.3 },
@@ -264,8 +269,17 @@ export default function RdHero() {
             {/* centre — glass Digivanta logo */}
             <div className="rd-core absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
               <div className="rd-core__glow pointer-events-none absolute -inset-7 rounded-full bg-[radial-gradient(circle,rgba(201,162,39,0.4),transparent_68%)] opacity-70" />
-              <div className="rd-core__disc relative grid size-[clamp(76px,20vw,104px)] place-items-center rounded-full border-2 border-[#C9A227]/70  shadow-[0_22px_50px_-14px_rgba(15,45,82,0.75),inset_0_1px_3px_rgba(255,255,255,0.18)]">
-               <Image src="/digivanta.png" alt="Digivanta" width={100} height={50}/>
+              <div className="rd-core__disc relative flex size-[clamp(76px,20vw,104px)] items-center justify-center rounded-full border-2 border-[#C9A227]/70 shadow-[0_22px_50px_-14px_rgba(15,45,82,0.75),inset_0_1px_3px_rgba(255,255,255,0.18)] p-2 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.95),rgba(240,244,248,0.9))]">
+                {/* width/height must match the file's real 3.64:1 ratio —
+                    a wrong ratio makes object-contain letterbox inside the
+                    declared box and shrink the mark off-centre */}
+                <Image
+                  src="/digivanta.png"
+                  alt="Digivanta"
+                  width={200}
+                  height={55}
+                  className="max-h-[62%] max-w-[78%] object-contain"
+                />
               </div>
             </div>
 

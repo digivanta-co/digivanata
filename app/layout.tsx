@@ -54,6 +54,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon-48.png",
   },
+  verification: {
+    google: "BEKpqMz2noFiZ4d6xkru247zRWa7tZX3fXKQ2B-g1lI",
+    other: {
+      "p:domain_verify": "dd08970c9e97ae0541e0ebe064fc817b",
+    },
+  },
   alternates: { canonical: "/" },
   openGraph: {
     title: "Digivanta | Digital Marketing Company in Delhi",
@@ -63,7 +69,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     siteName: "Digivanta",
     url: "/",
-    images: [{ url: "/digivanta.png", width: 1600, height: 318, alt: "Digivanta" }],
+    images: [{ url: "/digivanta.png", width: 1114, height: 306, alt: "Digivanta" }],
   },
   twitter: {
     card: "summary_large_image",

@@ -18,7 +18,7 @@ export const TEAM_LEADERS = [
     role: "Founder & CEO",
     specialty: "Digital Strategy & Vision",
     desc: "Visionary leader with a passion for digital growth and innovation. He leads Digivanta with strategy, creativity and purpose.",
-    photo: u("photo-1560250097-0b93528c311a", 900),
+    photo: '/team/yash.PNG',
     socials: [
       { type: "linkedin", href: "#" },
       { type: "instagram", href: "#" },
