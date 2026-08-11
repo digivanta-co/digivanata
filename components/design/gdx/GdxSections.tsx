@@ -151,7 +151,7 @@ export function GdxHero() {
           </p>
 
           <div className="gdx-hero__ctas mt-7 flex flex-wrap items-center gap-3 sm:gap-4">
-            <MagneticButton href="/contact" className="!bg-[#e4c766] !text-[#07111d]">
+            <MagneticButton href="/contact" className="!bg-[#e4c766] !text-white">
               {GD_HERO.primaryCta} <ArrowRight />
             </MagneticButton>
             <a
@@ -419,6 +419,7 @@ export function GdxWork() {
   const [hover, setHover] = useState(-1);
   const [filter, setFilter] = useState("All");
   const [failed, setFailed] = useState<Record<string, boolean>>({});
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
   const all = GD_WORK.projects;
   const types = Array.from(new Set(all.map((p) => p.type)));
@@ -485,6 +486,10 @@ export function GdxWork() {
     return () => ctx.revert();
   }, [filter]);
 
+  const toggleMobile = (id: string) => {
+    setMobileExpanded((curr) => (curr === id ? null : id));
+  };
+
   return (
     <section ref={root} className="relative overflow-hidden py-12 sm:py-16" style={{ background: "#fff" }}>
       <div className="container">
@@ -524,6 +529,7 @@ export function GdxWork() {
         >
           {shown.map((p, i) => {
             const dim = hover !== -1 && hover !== i;
+            const isExpanded = mobileExpanded === p.id;
             return (
               <div
                 key={p.id}
@@ -531,20 +537,37 @@ export function GdxWork() {
                 style={{ borderColor: "rgba(12,36,61,.14)" }}
                 onPointerEnter={() => setHover(i)}
               >
-                <div className="flex items-center gap-5 py-7 sm:gap-8 sm:py-9">
+                <div
+                  className="flex cursor-pointer items-center gap-4 py-6 sm:gap-8 sm:py-9 md:cursor-default"
+                  onClick={() => toggleMobile(p.id)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={isExpanded}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      toggleMobile(p.id);
+                    }
+                  }}
+                >
                   <span
                     className="shrink-0 text-[0.72rem] font-bold tracking-[0.16em] transition-colors duration-400"
-                    style={{ color: hover === i ? GOLD : "rgba(12,36,61,.3)" }}
+                    style={{ color: hover === i || isExpanded ? GOLD : "rgba(12,36,61,.3)" }}
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
 
-                  <h3
-                    className="m-0 flex-1 font-bold uppercase leading-none tracking-[-0.035em] text-[clamp(1.6rem,5.5vw,3.6rem)] transition-all duration-400 group-hover:translate-x-3"
-                    style={{ color: NAVY, opacity: dim ? 0.25 : 1 }}
-                  >
-                    {p.name}
-                  </h3>
+                  <div className="flex-1 min-w-0">
+                    <h3
+                      className="m-0 font-bold uppercase leading-none tracking-[-0.035em] text-[clamp(1.5rem,5.5vw,3.6rem)] transition-all duration-400 group-hover:translate-x-3"
+                      style={{ color: NAVY, opacity: dim ? 0.25 : 1 }}
+                    >
+                      {p.name}
+                    </h3>
+                    <span className="mt-1.5 block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[#5b6478] sm:hidden">
+                      {p.type}
+                    </span>
+                  </div>
 
                   <span
                     className="hidden shrink-0 rounded-full px-3 py-1.5 text-[0.72rem] font-semibold uppercase tracking-[0.12em] transition-opacity duration-400 sm:block"
@@ -552,15 +575,33 @@ export function GdxWork() {
                   >
                     {p.type}
                   </span>
-                  <ArrowRight />
+
+                  <div
+                    className={
+                      "shrink-0 transition-transform duration-300 md:transform-none " +
+                      (isExpanded ? "rotate-90 text-[#b08d3f]" : "text-[rgba(12,36,61,0.5)]")
+                    }
+                  >
+                    <ArrowRight />
+                  </div>
                 </div>
 
-                {/* touch devices get the shot inline - no hover to trigger on */}
+                {/* Mobile Accordion Content */}
                 <div
-                  className="relative mb-7 w-full overflow-hidden rounded-[14px] md:hidden"
-                  style={{ aspectRatio: "4 / 3", background: p.bg }}
+                  className={
+                    "grid overflow-hidden transition-[grid-template-rows,opacity,margin] duration-300 ease-in-out md:hidden " +
+                    (isExpanded ? "opacity-100 mb-6" : "opacity-0 mb-0")
+                  }
+                  style={{ gridTemplateRows: isExpanded ? "1fr" : "0fr" }}
                 >
-                  <WorkShot p={p} failed={!!failed[p.id]} onFail={() => setFailed((f) => ({ ...f, [p.id]: true }))} />
+                  <div className="min-h-0 overflow-hidden">
+                    <div
+                      className="relative w-full overflow-hidden rounded-[14px]"
+                      style={{ aspectRatio: p.ratio || (p.contain ? "16 / 9" : "4 / 3"), background: p.bg }}
+                    >
+                      <WorkShot p={p} failed={!!failed[p.id]} onFail={() => setFailed((f) => ({ ...f, [p.id]: true }))} />
+                    </div>
+                  </div>
                 </div>
               </div>
             );

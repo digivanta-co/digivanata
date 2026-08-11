@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap, reduced, ScrollTrigger } from "@/animations/gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { RD_JOURNEY } from "@/lib/redesign-data";
 
@@ -25,7 +24,7 @@ export default function RdJourney() {
   const root = useRef<HTMLElement | null>(null);
 
   useIso(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
+    if (reduced()) return;
     const ctx = gsap.context(() => {
       const path = root.current!.querySelector<SVGPathElement>("#rd-journey-path");
       if (!path) return;
@@ -33,19 +32,24 @@ export default function RdJourney() {
       gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
 
       const tl = gsap.timeline({
-        scrollTrigger: { trigger: root.current, start: "top 70%", end: "bottom 65%", scrub: 1 },
+        scrollTrigger: { trigger: root.current, start: "top 80%", end: "bottom 60%", scrub: 1 },
       });
       tl.to(path, { strokeDashoffset: 0, ease: "none" }, 0);
       tl.to(".rd-journey__dot", { motionPath: { path, align: path, alignOrigin: [0.5, 0.5] }, ease: "none" }, 0);
 
       gsap.utils.toArray<HTMLElement>(".rd-journey__node").forEach((n, i) => {
-        gsap.from(n, {
-          autoAlpha: 0,
-          scale: 0.6,
-          duration: 0.5,
-          ease: "back.out(1.6)",
-          scrollTrigger: { trigger: root.current, start: `top ${64 - i * 6}%` },
-        });
+        gsap.fromTo(
+          n,
+          { autoAlpha: 0, scale: 0.7, y: 15 },
+          {
+            autoAlpha: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.5,
+            ease: "back.out(1.5)",
+            scrollTrigger: { trigger: n, start: "top 92%", once: true },
+          }
+        );
       });
     }, root);
     return () => ctx.revert();
