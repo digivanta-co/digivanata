@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   title: "About Digivanta — The Story Behind Digivanta",
   description:
     "Founded in 2023 by cousins Yash Gupta and Sachin Gupta, Digivanta is a modern digital solutions agency helping startups, brands and businesses grow through web development, digital marketing, branding and SEO.",
+  alternates: { canonical: "https://www.digivanta.com/about" },
+  openGraph: {
+    title: "About Digivanta — The Story Behind Digivanta",
+    description: "Founded in 2023, Digivanta is a modern digital solutions agency helping startups, brands and businesses grow through web development, digital marketing, branding and SEO.",
+    url: "https://www.digivanta.com/about",
+  },
 };
 
 const FOCUS = [

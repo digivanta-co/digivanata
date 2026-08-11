@@ -117,8 +117,8 @@ export default function RdServices() {
   const rowsRef = useStagger<HTMLDivElement>({ y: 50, scale: 1, stagger: 0.08 });
 
   return (
-    <section id="services" className="relative bg-white py-8 sm:py-12">
-      <div className="container">
+    <section id="services" className="relative bg-white  py-8 sm:py-12">
+      <div className="container px-2">
         {/* Section header */}
         <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
@@ -138,7 +138,7 @@ export default function RdServices() {
               <div
                 key={s.id}
                 className={cn(
-                  "border-b border-[var(--rd-border)] transition-colors duration-300",
+                  "border-b border-[var(--rd-border)] transition-colors duration-300 px-2",
                   isOpen ? "bg-[var(--rd-gray)]" : "hover:bg-[var(--rd-gray)]/60"
                 )}
               >

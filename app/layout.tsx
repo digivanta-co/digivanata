@@ -36,7 +36,10 @@ export const metadata: Metadata = {
   /* Without metadataBase, Next resolves openGraph/twitter image paths
      relative and they break wherever a link is shared. */
   metadataBase: new URL(SITE_URL),
-  title: "Digivanta | Digital Marketing Company in Delhi — SEO, Ads & Online Growth",
+  title: {
+    default: "Digivanta | Digital Marketing Company in Delhi — SEO, Ads & Online Growth",
+    template: "%s | Digivanta",
+  },
   description:
     "Digivanta is a result-driven digital marketing company in Delhi offering SEO, Social Media Marketing, PPC, Performance Marketing, Website & App Development to grow your traffic, leads and sales.",
   keywords: [
@@ -50,9 +53,22 @@ export const metadata: Metadata = {
     "Website Development Services",
     "App Development Services",
     "Social Media Marketing Services",
+    "Best Digital Marketing Company in Delhi",
+    "PPC Agency Delhi",
+    "Graphic Designing Company in Delhi",
+    "Web Development Company in Delhi",
   ],
+  authors: [{ name: "Digivanta", url: SITE_URL }],
+  creator: "Digivanta",
+  publisher: "Digivanta",
+  category: "Digital Marketing",
   icons: {
     icon: "/favicon-48.png",
+  },
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
   },
   verification: {
     google: "BEKpqMz2noFiZ4d6xkru247zRWa7tZX3fXKQ2B-g1lI",
@@ -60,7 +76,9 @@ export const metadata: Metadata = {
       "p:domain_verify": "dd08970c9e97ae0541e0ebe064fc817b",
     },
   },
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     title: "Digivanta | Digital Marketing Company in Delhi",
     description:
@@ -68,8 +86,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "Digivanta",
-    url: "/",
-    images: [{ url: "/digivanta.png", width: 1114, height: 306, alt: "Digivanta" }],
+    url: SITE_URL,
+    images: [{ url: "/digivanta.png", width: 1114, height: 306, alt: "Digivanta — Digital Marketing Company in Delhi" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -78,7 +96,17 @@ export const metadata: Metadata = {
       "Result-driven SEO, social media, performance marketing and web solutions that grow your business online.",
     images: ["/digivanta.png"],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

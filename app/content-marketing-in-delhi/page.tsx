@@ -23,12 +23,14 @@ export const metadata: Metadata = {
     "Blog Writing Services in Delhi",
     "Article Writing Services in Delhi",
   ],
+  alternates: { canonical: "https://www.digivanta.com/content-marketing-in-delhi" },
   openGraph: {
     title: "Content Marketing Services in Delhi — Digivanta",
     description:
       "Content is the voice of your brand when you are not in the room. SEO-focused, user-driven content that ranks, reads and converts.",
     type: "website",
     locale: "en_IN",
+    url: "https://www.digivanta.com/content-marketing-in-delhi",
   },
 };
 

@@ -43,12 +43,14 @@ export const metadata: Metadata = {
     "AI Search Optimization",
     "Affordable SEO Services in Delhi",
   ],
+  alternates: { canonical: "https://www.digivanta.com/seo-services-in-delhi" },
   openGraph: {
     title: "Best SEO Company in Delhi | SEO Services — Digivanta",
     description:
       "Professional SEO Services in Delhi that improve visibility, strengthen brand authority, and help businesses appear where users are actively searching.",
     type: "website",
     locale: "en_IN",
+    url: "https://www.digivanta.com/seo-services-in-delhi",
   },
 };
 

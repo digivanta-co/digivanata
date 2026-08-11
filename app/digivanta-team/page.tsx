@@ -8,12 +8,14 @@ export const metadata: Metadata = {
   title: "Meet The Team | Digivanta — Digital Growth Partner",
   description:
     "Meet the passionate minds behind Digivanta — our leadership, graphic designers, digital marketing executives, and developers driving real digital growth.",
+  alternates: { canonical: "https://www.digivanta.com/digivanta-team" },
   openGraph: {
     title: "Meet The Team — Digivanta",
     description:
       "Passionate minds. Creative thinkers. Digital experts driving real growth. Meet the Digivanta team.",
     type: "website",
     locale: "en_IN",
+    url: "https://www.digivanta.com/digivanta-team",
   },
 };
 

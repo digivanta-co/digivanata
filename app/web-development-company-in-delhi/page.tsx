@@ -37,12 +37,14 @@ export const metadata: Metadata = {
     "SEO-Friendly Website Development",
     "Web Design and Development Company Delhi NCR",
   ],
+  alternates: { canonical: "https://www.digivanta.com/web-development-company-in-delhi" },
   openGraph: {
     title: "Best Web Development Company in Delhi — Digivanta",
     description:
       "Premium web development services in Delhi — fast, responsive, SEO-optimized websites built for business growth.",
     type: "website",
     locale: "en_IN",
+    url: "https://www.digivanta.com/web-development-company-in-delhi",
   },
 };
 

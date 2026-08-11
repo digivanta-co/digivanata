@@ -137,10 +137,10 @@ function SmmPanel() {
 }
 
 const PLATFORMS = [
-  { node: <Instagram width={16} height={16} />, name: "Instagram" },
-  { node: <Facebook width={16} height={16} />, name: "Facebook" },
-  { node: <LinkedIn width={16} height={16} />, name: "LinkedIn" },
-  { node: <YouTube width={16} height={16} />, name: "YouTube" },
+  { node: <Instagram width={16} height={16} />, name: "Instagram", href: "https://www.instagram.com/official.digivanta/" },
+  { node: <Facebook width={16} height={16} />, name: "Facebook", href: "https://www.facebook.com/digivanta" },
+  { node: <LinkedIn width={16} height={16} />, name: "LinkedIn", href: "https://www.linkedin.com/company/digivanta-ltd" },
+  { node: <YouTube width={16} height={16} />, name: "YouTube", href: "https://www.youtube.com/@Digivanta_co" },
 ];
 
 export default function HeroSection() {
@@ -210,13 +210,16 @@ export default function HeroSection() {
             {/* Social platform pills */}
             <div className="smm-hero__platforms mt-8 flex flex-wrap items-center gap-3">
               {PLATFORMS.map((p) => (
-                <span
+                <a
                   key={p.name}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-[var(--gd-line)] bg-white px-3.5 py-1.5 text-xs font-semibold text-[var(--gd-ink)] shadow-[0_4px_14px_rgba(13,18,41,0.04)] transition-colors hover:border-[var(--gd-blue)]"
                 >
                   <span className="text-[var(--gd-blue)]">{p.node}</span>
                   {p.name}
-                </span>
+                </a>
               ))}
             </div>
 

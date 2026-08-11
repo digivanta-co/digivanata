@@ -32,12 +32,14 @@ export const metadata: Metadata = {
     "Online Reputation Management Agency Delhi",
     "Affordable ORM Services in Delhi NCR",
   ],
+  alternates: { canonical: "https://www.digivanta.com/online-reputation-management-company-in-delhi" },
   openGraph: {
     title: "Online Reputation Management Company in Delhi — Digivanta",
     description:
       "Your reputation speaks before your business does — make sure it says the right thing. Strategic, result-driven ORM solutions that build, protect and strengthen your brand image.",
     type: "website",
     locale: "en_IN",
+    url: "https://www.digivanta.com/online-reputation-management-company-in-delhi",
   },
 };
 

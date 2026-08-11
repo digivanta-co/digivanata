@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -5,9 +6,15 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import FaqAccordion from "@/components/ui/faq-accordion";
 import { FAQS } from "@/lib/home-data";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "FAQ | Digivanta — Digital Marketing Company in Delhi",
   description: "Answers to common questions about SEO, ads, social media, and working with Digivanta.",
+  alternates: { canonical: "https://www.digivanta.com/faq" },
+  openGraph: {
+    title: "FAQ — Digivanta",
+    description: "Answers to common questions about SEO, ads, social media, and working with Digivanta.",
+    url: "https://www.digivanta.com/faq",
+  },
 };
 
 export default function FaqPage() {

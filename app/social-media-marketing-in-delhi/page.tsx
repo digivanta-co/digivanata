@@ -37,12 +37,14 @@ export const metadata: Metadata = {
     "Best Social Media Marketing Company in Delhi",
     "Content Creation and Brand Strategy",
   ],
+  alternates: { canonical: "https://www.digivanta.com/social-media-marketing-in-delhi" },
   openGraph: {
     title: "Social Media Marketing Company in Delhi — Digivanta",
     description:
       "Audience-first social media marketing that builds visibility, engagement, and a consistent brand identity across Instagram, Facebook, and LinkedIn.",
     type: "website",
     locale: "en_IN",
+    url: "https://www.digivanta.com/social-media-marketing-in-delhi",
   },
 };
 

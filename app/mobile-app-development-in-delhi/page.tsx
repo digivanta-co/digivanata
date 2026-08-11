@@ -36,12 +36,14 @@ export const metadata: Metadata = {
     "Best mobile app development company in Delhi",
     "Affordable app development Delhi",
   ],
+  alternates: { canonical: "https://www.digivanta.com/mobile-app-development-in-delhi" },
   openGraph: {
     title: "Mobile App Development Company in Delhi — Digivanta",
     description:
       "Scalable Android, iOS and cross-platform apps built around usability, retention and real business growth.",
     type: "website",
     locale: "en_IN",
+    url: "https://www.digivanta.com/mobile-app-development-in-delhi",
   },
 };
 

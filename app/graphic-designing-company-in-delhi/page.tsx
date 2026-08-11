@@ -29,12 +29,14 @@ export const metadata: Metadata = {
     "Brochure design company in Delhi",
     "Creative design agency Delhi NCR",
   ],
+  alternates: { canonical: "https://www.digivanta.com/graphic-designing-company-in-delhi" },
   openGraph: {
     title: "Graphic Designing Company in Delhi — Digivanta",
     description:
       "Your brand is judged before you say a word. Strategic, visually impactful design solutions — logos, branding, social creatives, print and web graphics.",
     type: "website",
     locale: "en_IN",
+    url: "https://www.digivanta.com/graphic-designing-company-in-delhi",
   },
 };
 

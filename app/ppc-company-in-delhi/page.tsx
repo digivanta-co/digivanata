@@ -34,12 +34,14 @@ export const metadata: Metadata = {
     "Google Advertising Services Delhi",
     "Lead Generation Company Delhi",
   ],
+  alternates: { canonical: "https://www.digivanta.com/ppc-company-in-delhi" },
   openGraph: {
     title: "Google Ads Company in Delhi — Digivanta",
     description:
       "Data-driven Google Ads campaigns focused on visibility, qualified leads and measurable growth — not just clicks.",
     type: "website",
     locale: "en_IN",
+    url: "https://www.digivanta.com/ppc-company-in-delhi",
   },
 };
 

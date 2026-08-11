@@ -179,14 +179,14 @@ export default function RdHero() {
   return (
     <section
       ref={root}
-      className="rd-hero rd-grid relative flex min-h-[92svh] items-center overflow-hidden pt-24 pb-10 sm:pt-28 sm:pb-14"
+      className="rd-hero rd-grid relative flex min-h-0 sm:min-h-[92svh] items-start sm:items-center overflow-hidden pt-2 pb-6 sm:pt-28 sm:pb-14"
     >
       <div ref={blobs} aria-hidden className="pointer-events-none absolute inset-0">
         <div className="rd-blob rd-blob--blue rd-blob--float left-[6%] top-[16%] size-[34vw] max-w-[520px] opacity-70" />
         <div className="rd-blob rd-blob--gold rd-blob--float bottom-[10%] left-[38%] size-[24vw] max-w-[360px]" style={{ animationDelay: "-7s" }} />
       </div>
 
-      <div className="rd-hero__parallax container relative z-10 grid gap-5 grid-cols-1 items-center lg:grid-cols-[1.15fr_0.85fr] pt-2 sm:pt-0">
+      <div className="rd-hero__parallax container relative z-10 grid gap-4 grid-cols-1 items-center lg:grid-cols-[1.15fr_0.85fr] pt-0">
         {/* copy */}
         <div className="text-center lg:text-left">
           <div aria-hidden className="rd-display rd-hero__words text-[var(--rd-ink)]">

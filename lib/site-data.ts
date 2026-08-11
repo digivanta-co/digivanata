@@ -4,7 +4,7 @@ import { FaqItem } from "@/components/ui/faq-accordion";
    sitemap and robots.txt. Override with NEXT_PUBLIC_SITE_URL per
    environment (preview deploys, staging) so those don't advertise the
    production domain. No trailing slash. */
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://digivanta.com").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.digivanta.com").replace(/\/$/, "");
 
 /* Every indexable route, with a rough crawl priority. Add new pages
    here and both the sitemap and any future nav pick them up. */
