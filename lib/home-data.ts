@@ -121,16 +121,16 @@ export const TOOLS = [
   { name: "WordPress", icon: "/wordpress-color-svgrepo-com.svg" },
   { name: "Shopify", icon: "/shopify-color-svgrepo-com.svg" },
   { name: "React", icon: "/react-svgrepo-com.svg" },
-  { name: "", icon: "/next.svg" },
+  { name: "Next.js", icon: "/next.svg" },
   { name: "JavaScript", icon: "/javascript.svg" },
-  { name: "Figma", icon: "/figma1.svg" },
+  { name: "Figma", icon: "/figma.svg" },
   { name: "Adobe Photoshop", icon: "/adobe.svg" },
   { name: "Meta", icon: "/meta.svg" },
   { name: "Notion", icon: "/notion.svg" },
   { name: "Google AdSense", icon: "/googleads.svg" },
   { name: "100+ AI Tools", icon: "/ai.svg" },
-  { name: " ", icon: "nextdotjs.svg" },
-  { name: "Angular ", icon: "Angularjs.svg" },
+  { name: "Next.js", icon: "/nextdotjs.svg" },
+  { name: "Angular", icon: "/angularjs.svg" },
 ];
 
 export const FAQS = [
