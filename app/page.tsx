@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { RdHeadingFx, ScrollProgress } from "@/components/redesign/primitives";
 import RdHero from "@/components/redesign/RdHero";
 import RdMarquee from "@/components/redesign/RdMarquee";
@@ -19,10 +20,24 @@ import {
   RD_BIGTYPE_1,
   RD_BIGTYPE_2,
 } from "@/lib/redesign-data";
+import { OrganizationJsonLd, WebPageJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
+import { SEO_PAGES } from "@/lib/seo-config";
+
+export const metadata: Metadata = {
+  title: { absolute: `${SEO_PAGES.home.title} | Digivanta` },
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
     <main className="rd">
+      <OrganizationJsonLd />
+      <WebSiteJsonLd />
+      <WebPageJsonLd
+        name={SEO_PAGES.home.title}
+        description={SEO_PAGES.home.description}
+        path="/"
+      />
       <ScrollProgress />
       <RdHeadingFx />
       <RdHero />

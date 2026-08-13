@@ -21,36 +21,25 @@ import {
   WEB_INDUSTRIES,
   WEB_FAQS,
 } from "@/lib/web-data";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { getPageMetadata } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title:
-    "Best Web Development Company in Delhi | Custom Website Development — Digivanta",
-  description:
-    "Digivanta is a leading Web Development Company in Delhi offering responsive website design, custom web applications, ecommerce platforms, SEO-friendly architecture, and high-performance digital solutions.",
-  keywords: [
-    "Best Web Development Company in Delhi",
-    "Web Development Services in Delhi",
-    "Website Development Company Delhi",
-    "Responsive Web Design Company Delhi",
-    "Custom Website Development Delhi",
-    "Ecommerce Website Development Delhi",
-    "SEO-Friendly Website Development",
-    "Web Design and Development Company Delhi NCR",
-  ],
-  alternates: { canonical: "https://www.digivanta.com/web-development-company-in-delhi" },
-  openGraph: {
-    title: "Best Web Development Company in Delhi — Digivanta",
-    description:
-      "Premium web development services in Delhi — fast, responsive, SEO-optimized websites built for business growth.",
-    type: "website",
-    locale: "en_IN",
-    url: "https://www.digivanta.com/web-development-company-in-delhi",
-  },
-};
+export const metadata: Metadata = getPageMetadata("web");
 
 export default function WebDevelopmentPage() {
   return (
     <main className="gd">
+      <ServiceJsonLd
+        name="Web Development"
+        description={`Digivanta is a leading Web Development Company in Delhi offering responsive website design, custom web applications, ecommerce platforms, SEO-friendly architecture, and high-performance digital solutions.`}
+        path="/web-development-company-in-delhi"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Web Development", path: "/web-development-company-in-delhi" },
+        ]}
+      />
       {/* 1. Hero */}
       <WebHeroSection />
 

@@ -12,10 +12,7 @@ import Image from "next/image";
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 const useIso = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-/* orbit geometry — ONE shared centre (220,220) in a 440 viewBox, i.e. the exact
-   middle of the 520×520 stage. All rings are concentric (same centre, increasing
-   radii); radii are kept small enough that a ring's badge (~27px half) never
-   reaches the stage edge, so the whole illustration stays inside 520×520. */
+
 const C = 220;
 const RINGS = {
   outer: { rx: 178, ry: 106 },
@@ -23,7 +20,7 @@ const RINGS = {
   inner: { rx: 80, ry: 48 },
 };
 
-/* platform badges — evenly placed, tied to a ring's speed/direction */
+
 type Badge = { icon: string; label: string; ring: keyof typeof RINGS; startDeg: number; period: number; dir: 1 | -1 };
 const BADGES: Badge[] = [
   { icon: "/googleads.svg", label: "Google Ads", ring: "outer", startDeg: -58, period: 28, dir: 1 },
@@ -33,7 +30,7 @@ const BADGES: Badge[] = [
   { icon: "/openai-chatgpt.svg", label: "ChatGPT", ring: "inner", startDeg: -90, period: 12, dir: 1 },
 ];
 
-/* glowing nodes drifting along the paths */
+
 const NODES = [
   { ring: "outer" as const, startDeg: 60, period: 34, dir: 1 as const, c: "#286FAB" },
   { ring: "mid" as const, startDeg: 150, period: 22, dir: -1 as const, c: "#C9A227" },
@@ -154,7 +151,7 @@ export default function RdHero() {
     return () => ctx.revert();
   }, []);
 
-  /* mouse parallax on the blobs */
+  
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const blobEl = blobs.current;
@@ -187,11 +184,11 @@ export default function RdHero() {
       </div>
 
       <div className="rd-hero__parallax container relative z-10 grid gap-4 grid-cols-1 items-center lg:grid-cols-[1.15fr_0.85fr] pt-0">
-        {/* copy */}
+      
         <div className="text-center lg:text-left">
           <div aria-hidden className="rd-display rd-hero__words text-[var(--rd-ink)]">
             {RD_HERO_WORDS.map((w, wi) => (
-              <span key={wi} className="relative block">
+              <h1 key={wi} className="relative block">
                 <span className="block overflow-hidden">
                   <span className="block">
                     {Array.from(w).map((ch, ci) => (
@@ -210,13 +207,13 @@ export default function RdHero() {
                     <path className="rd-hero__uline" d="M4 11 C 80 3, 210 4, 296 9" fill="none" stroke="#C9A227" strokeWidth="6" strokeLinecap="round" />
                   </svg>
                 )}
-              </span>
+              </h1>
             ))}
           </div>
 
-          <h1 className="rd-hero__title mt-3 sm:mt-7 max-w-xl mx-auto lg:mx-0 text-sm sm:text-lg lg:text-xl font-medium leading-relaxed text-[var(--rd-muted)]">
+          <span className="rd-hero__title mt-3 sm:mt-7 max-w-xl mx-auto lg:mx-0 text-sm sm:text-lg lg:text-xl font-medium leading-relaxed text-[var(--rd-muted)]">
             {RD_PAGE_TITLE}
-          </h1>
+          </span>
 
           <div className="rd-actions rd-hero__cta mt-6 sm:mt-9 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
             <RdMagnetic href="/contact">

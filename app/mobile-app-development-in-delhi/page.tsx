@@ -21,35 +21,25 @@ import { FAQSection } from "@/components/design/sections/Faq";
 import { CTASection } from "@/components/design/sections/Cta";
 import { CtaRibbon } from "@/components/design/primitives";
 import { APP_EXPERIENCE, APP_FAQS, APP_PROCESS } from "@/lib/app-data";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { getPageMetadata } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title:
-    "Mobile App Development Company in Delhi | Android, iOS & Cross-Platform — Digivanta",
-  description:
-    "Digivanta is a trusted mobile app development company in Delhi building scalable, user-friendly Android, iOS, Flutter and React Native apps for startups and enterprises.",
-  keywords: [
-    "Mobile app development company in Delhi",
-    "App developers in Delhi",
-    "Android app development company Delhi",
-    "iOS app development company Delhi",
-    "Custom mobile app development Delhi",
-    "Best mobile app development company in Delhi",
-    "Affordable app development Delhi",
-  ],
-  alternates: { canonical: "https://www.digivanta.com/mobile-app-development-in-delhi" },
-  openGraph: {
-    title: "Mobile App Development Company in Delhi — Digivanta",
-    description:
-      "Scalable Android, iOS and cross-platform apps built around usability, retention and real business growth.",
-    type: "website",
-    locale: "en_IN",
-    url: "https://www.digivanta.com/mobile-app-development-in-delhi",
-  },
-};
+export const metadata: Metadata = getPageMetadata("app");
 
 export default function MobileAppDevelopmentPage() {
   return (
     <main className="gd">
+      <ServiceJsonLd
+        name="Mobile App Development"
+        description={`Digivanta is a trusted mobile app development company in Delhi building scalable, user-friendly Android, iOS, Flutter and React Native apps for startups and enterprises.`}
+        path="/mobile-app-development-in-delhi"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Mobile App Development", path: "/mobile-app-development-in-delhi" },
+        ]}
+      />
       {/* 1. Hero */}
       <AppHeroSection />
 

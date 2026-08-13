@@ -5,22 +5,15 @@ import {
   ContactMain,
   ContactMap,
 } from "@/components/contact/ContactSections";
+import { WebPageJsonLd } from "@/components/seo/JsonLd";
+import { getPageMetadata, SEO_PAGES } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title: "Contact Digivanta for SEO, Google Ads & Web Development",
-  description:
-    "Contact Digivanta for expert SEO services, Google Ads management, social media marketing, website development, and complete digital marketing solutions to grow your business online.",
-  alternates: { canonical: "https://www.digivanta.com/contact" },
-  openGraph: {
-    title: "Contact Digivanta for SEO, Google Ads & Web Development",
-    description: "Contact Digivanta for expert SEO services, Google Ads management, social media marketing, website development, and complete digital marketing solutions.",
-    url: "https://www.digivanta.com/contact",
-  },
-};
+export const metadata: Metadata = getPageMetadata("contact");
 
 export default function ContactPage() {
   return (
     <main className="gd">
+      <WebPageJsonLd name={SEO_PAGES.contact.title} description={SEO_PAGES.contact.description} path={SEO_PAGES.contact.path} type="ContactPage" />
       <ContactBanner />
       <ContactMarquee dark />
       <ContactMain />

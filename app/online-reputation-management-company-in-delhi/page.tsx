@@ -16,36 +16,25 @@ import {
 import { FAQSection } from "@/components/design/sections/Faq";
 import { CTASection } from "@/components/design/sections/Cta";
 import { ORM_FAQS, ORM_FINAL_CTA } from "@/lib/orm-data";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { getPageMetadata } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title:
-    "Online Reputation Management Company in Delhi | ORM Services — Digivanta",
-  description:
-    "Digivanta is a trusted Online Reputation Management Company in Delhi offering brand reputation management, review management, social media reputation management, brand monitoring and search engine reputation management across Delhi NCR.",
-  keywords: [
-    "Online Reputation Management Company in Delhi",
-    "ORM Company in Delhi",
-    "Reputation Management Services in Delhi",
-    "Best ORM Company in Delhi",
-    "Brand Reputation Management Delhi",
-    "Review Management Services Delhi",
-    "Online Reputation Management Agency Delhi",
-    "Affordable ORM Services in Delhi NCR",
-  ],
-  alternates: { canonical: "https://www.digivanta.com/online-reputation-management-company-in-delhi" },
-  openGraph: {
-    title: "Online Reputation Management Company in Delhi — Digivanta",
-    description:
-      "Your reputation speaks before your business does — make sure it says the right thing. Strategic, result-driven ORM solutions that build, protect and strengthen your brand image.",
-    type: "website",
-    locale: "en_IN",
-    url: "https://www.digivanta.com/online-reputation-management-company-in-delhi",
-  },
-};
+export const metadata: Metadata = getPageMetadata("orm");
 
 export default function OrmCompanyPage() {
   return (
     <main className="gd">
+      <ServiceJsonLd
+        name="Online Reputation Management"
+        description={`Digivanta is a trusted Online Reputation Management Company in Delhi offering brand reputation management, review management, social media reputation management, brand monitoring and search engine reputation management across Delhi NCR.`}
+        path="/online-reputation-management-company-in-delhi"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Online Reputation Management", path: "/online-reputation-management-company-in-delhi" },
+        ]}
+      />
       {/* 1. Hero + reputation monitor */}
       <HeroSection />
 

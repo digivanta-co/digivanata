@@ -15,34 +15,25 @@ import {
 import { FAQSection } from "@/components/design/sections/Faq";
 import { CTASection } from "@/components/design/sections/Cta";
 import { CtaRibbon } from "@/components/design/primitives";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { getPageMetadata } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title: "Graphic Designing Company in Delhi | Logo, Branding & Creative Design — Digivanta",
-  description:
-    "Digivanta is a professional graphic designing company in Delhi offering logo design, brand identity, social media creatives, brochure and web graphics for startups and businesses across Delhi NCR.",
-  keywords: [
-    "Graphic designing company in Delhi",
-    "Graphic design agency in Delhi",
-    "Logo design services Delhi",
-    "Brand identity design Delhi",
-    "Social media creative design services",
-    "Brochure design company in Delhi",
-    "Creative design agency Delhi NCR",
-  ],
-  alternates: { canonical: "https://www.digivanta.com/graphic-designing-company-in-delhi" },
-  openGraph: {
-    title: "Graphic Designing Company in Delhi — Digivanta",
-    description:
-      "Your brand is judged before you say a word. Strategic, visually impactful design solutions — logos, branding, social creatives, print and web graphics.",
-    type: "website",
-    locale: "en_IN",
-    url: "https://www.digivanta.com/graphic-designing-company-in-delhi",
-  },
-};
+export const metadata: Metadata = getPageMetadata("design");
 
 export default function GraphicDesigningPage() {
   return (
     <main className="gd">
+      <ServiceJsonLd
+        name="Graphic Design & Branding"
+        description={`Digivanta is a professional graphic designing company in Delhi offering logo design, brand identity, social media creatives, brochure and web graphics for startups and businesses across Delhi NCR.`}
+        path="/graphic-designing-company-in-delhi"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Graphic Design & Branding", path: "/graphic-designing-company-in-delhi" },
+        ]}
+      />
       <GdxHero />
       <VelocityMarquee />
       <GdxCost />

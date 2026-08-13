@@ -22,35 +22,25 @@ import {
   SMM_FAQS,
   SMM_CTA,
 } from "@/lib/smm-data";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { getPageMetadata } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title:
-    "Social Media Marketing Company in Delhi | Instagram, Facebook & LinkedIn Marketing — Digivanta",
-  description:
-    "Digivanta is a results-driven Social Media Marketing Company in Delhi offering Instagram, Facebook, and LinkedIn marketing, content creation, and brand strategy to grow audience engagement and generate quality leads.",
-  keywords: [
-    "Social Media Marketing Company in Delhi",
-    "Social Media Marketing Agency in Delhi",
-    "Instagram Marketing Company in Delhi",
-    "Facebook Marketing Company in Delhi",
-    "LinkedIn Marketing Company in Delhi",
-    "Best Social Media Marketing Company in Delhi",
-    "Content Creation and Brand Strategy",
-  ],
-  alternates: { canonical: "https://www.digivanta.com/social-media-marketing-in-delhi" },
-  openGraph: {
-    title: "Social Media Marketing Company in Delhi — Digivanta",
-    description:
-      "Audience-first social media marketing that builds visibility, engagement, and a consistent brand identity across Instagram, Facebook, and LinkedIn.",
-    type: "website",
-    locale: "en_IN",
-    url: "https://www.digivanta.com/social-media-marketing-in-delhi",
-  },
-};
+export const metadata: Metadata = getPageMetadata("social");
 
 export default function SocialMediaMarketingPage() {
   return (
     <main className="gd">
+      <ServiceJsonLd
+        name="Social Media Marketing"
+        description={`Digivanta is a results-driven Social Media Marketing Company in Delhi offering Instagram, Facebook, and LinkedIn marketing, content creation, and brand strategy to grow audience engagement and generate quality leads.`}
+        path="/social-media-marketing-in-delhi"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Social Media Marketing", path: "/social-media-marketing-in-delhi" },
+        ]}
+      />
       {/* 1. Hero */}
       <HeroSection />
 

@@ -74,7 +74,6 @@ export function WhyChooseSection() {
   );
 }
 
-/* ---- Industries: centered chip cloud ---- */
 export function IndustriesSection() {
   const root = useRef<HTMLElement | null>(null);
 

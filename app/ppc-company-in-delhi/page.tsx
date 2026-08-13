@@ -20,34 +20,25 @@ import {
   PPC_FAQS,
   PPC_CTA,
 } from "@/lib/ppc-data";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { getPageMetadata } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title: "Google Ads Company in Delhi | PPC Management & Lead Generation — Digivanta",
-  description:
-    "Digivanta is a performance-focused Google Ads company in Delhi offering PPC management, search ads, remarketing, local lead generation and ecommerce advertising across Delhi NCR.",
-  keywords: [
-    "Google Ads Company in Delhi",
-    "PPC Company in Delhi",
-    "Google Ads Agency Delhi",
-    "PPC Services in Delhi",
-    "Search Engine Marketing Services Delhi",
-    "Google Advertising Services Delhi",
-    "Lead Generation Company Delhi",
-  ],
-  alternates: { canonical: "https://www.digivanta.com/ppc-company-in-delhi" },
-  openGraph: {
-    title: "Google Ads Company in Delhi — Digivanta",
-    description:
-      "Data-driven Google Ads campaigns focused on visibility, qualified leads and measurable growth — not just clicks.",
-    type: "website",
-    locale: "en_IN",
-    url: "https://www.digivanta.com/ppc-company-in-delhi",
-  },
-};
+export const metadata: Metadata = getPageMetadata("ppc");
 
 export default function PpcCompanyPage() {
   return (
     <main className="gd ppc-page">
+      <ServiceJsonLd
+        name="PPC & Google Ads Management"
+        description={`Digivanta is a performance-focused Google Ads company in Delhi offering PPC management, search ads, remarketing, local lead generation and ecommerce advertising across Delhi NCR.`}
+        path="/ppc-company-in-delhi"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "PPC & Google Ads Management", path: "/ppc-company-in-delhi" },
+        ]}
+      />
       <HeroSection />
       <IntroSection />
       <VelocityMarquee items={PPC_HERO.marquee} />

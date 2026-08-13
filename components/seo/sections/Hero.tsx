@@ -10,9 +10,7 @@ import { SEO_HERO } from "@/lib/seo-data";
 
 const useIso = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-/* Hand-built SERP mockup — replaces the old stock photo with a live-feeling
-   "rank #1" graphic: browser card, highlighted result, drawing sparkline,
-   floating stat chips. Pure CSS/SVG + a few cheap GSAP tweens. */
+
 function SerpPanel() {
   const root = useRef<HTMLDivElement | null>(null);
 

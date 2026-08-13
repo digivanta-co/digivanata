@@ -8,20 +8,25 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.digiva
 
 /* Every indexable route, with a rough crawl priority. Add new pages
    here and both the sitemap and any future nav pick them up. */
-export const ROUTES: { path: string; priority: number; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
-  { path: "/", priority: 1, changeFrequency: "weekly" },
-  { path: "/about", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/digivanta-team", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/faq", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/seo-services-in-delhi", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/ppc-company-in-delhi", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/social-media-marketing-in-delhi", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/content-marketing-in-delhi", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/graphic-designing-company-in-delhi", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/online-reputation-management-company-in-delhi", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/web-development-company-in-delhi", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/mobile-app-development-in-delhi", priority: 0.9, changeFrequency: "monthly" },
+export const ROUTES: {
+  path: string;
+  priority: number;
+  changeFrequency: "weekly" | "monthly" | "yearly";
+  lastModified: string;
+}[] = [
+  { path: "/", priority: 1, changeFrequency: "weekly", lastModified: "2026-08-13" },
+  { path: "/about", priority: 0.8, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/contact", priority: 0.8, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/digivanta-team", priority: 0.6, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/faq", priority: 0.6, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/seo-services-in-delhi", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/ppc-company-in-delhi", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/social-media-marketing-in-delhi", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/content-marketing-in-delhi", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/graphic-designing-company-in-delhi", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/online-reputation-management-company-in-delhi", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/web-development-company-in-delhi", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/mobile-app-development-in-delhi", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-08-13" },
 ];
 
 export const CONTACT = {

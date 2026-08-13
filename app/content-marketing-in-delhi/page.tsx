@@ -9,34 +9,25 @@ import { FAQSection } from "@/components/content/sections/Faq";
 import { CTASection } from "@/components/content/sections/Cta";
 import { CtaRibbon } from "@/components/content/primitives";
 import { CM_RIBBON } from "@/lib/content-data";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { getPageMetadata } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title: "Content Marketing Services in Delhi | SEO Content, Blog & Website Writing — Digivanta",
-  description:
-    "Digivanta offers strategic content marketing and content writing services in Delhi — SEO content, website copy, blogs and articles that improve search visibility, build trust and drive qualified leads across Delhi NCR.",
-  keywords: [
-    "Content Marketing Services in Delhi",
-    "Content Writing Services in Delhi",
-    "Content Marketing Company in Delhi",
-    "SEO Content Writing Services in Delhi",
-    "Website Content Writing Services in Delhi",
-    "Blog Writing Services in Delhi",
-    "Article Writing Services in Delhi",
-  ],
-  alternates: { canonical: "https://www.digivanta.com/content-marketing-in-delhi" },
-  openGraph: {
-    title: "Content Marketing Services in Delhi — Digivanta",
-    description:
-      "Content is the voice of your brand when you are not in the room. SEO-focused, user-driven content that ranks, reads and converts.",
-    type: "website",
-    locale: "en_IN",
-    url: "https://www.digivanta.com/content-marketing-in-delhi",
-  },
-};
+export const metadata: Metadata = getPageMetadata("content");
 
 export default function ContentMarketingPage() {
   return (
     <main className="cm">
+      <ServiceJsonLd
+        name="Content Marketing"
+        description={`Digivanta offers strategic content marketing and content writing services in Delhi — SEO content, website copy, blogs and articles that improve search visibility, build trust and drive qualified leads across Delhi NCR.`}
+        path="/content-marketing-in-delhi"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Content Marketing", path: "/content-marketing-in-delhi" },
+        ]}
+      />
       <HeroSection />
       <IntroSection />
       <VelocityMarquee />

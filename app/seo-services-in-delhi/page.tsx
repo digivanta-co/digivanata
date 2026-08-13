@@ -25,38 +25,25 @@ import { IndustriesSection } from "@/components/design/sections/Trust";
 import { FAQSection } from "@/components/design/sections/Faq";
 import { CTASection } from "@/components/design/sections/Cta";
 import { SEO_PROCESS_STEPS, SEO_INDUSTRIES, SEO_FAQS } from "@/lib/seo-data";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { getPageMetadata } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title:
-    "Best SEO Company in Delhi | SEO Services That Build Long-Term Online Visibility — Digivanta",
-  description:
-    "Digivanta is a trusted SEO Company in Delhi offering professional SEO Services including Technical SEO, Local SEO, AI Search Optimization, On-Page SEO, and Content Strategy for long-term organic growth.",
-  keywords: [
-    "Best SEO Company in Delhi",
-    "SEO Services in Delhi",
-    "SEO Agency in Delhi",
-    "Best SEO Agency in Delhi",
-    "SEO Company near me",
-    "SEO Services in Delhi NCR",
-    "Local SEO Services in Delhi",
-    "Technical SEO Services",
-    "AI Search Optimization",
-    "Affordable SEO Services in Delhi",
-  ],
-  alternates: { canonical: "https://www.digivanta.com/seo-services-in-delhi" },
-  openGraph: {
-    title: "Best SEO Company in Delhi | SEO Services — Digivanta",
-    description:
-      "Professional SEO Services in Delhi that improve visibility, strengthen brand authority, and help businesses appear where users are actively searching.",
-    type: "website",
-    locale: "en_IN",
-    url: "https://www.digivanta.com/seo-services-in-delhi",
-  },
-};
+export const metadata: Metadata = getPageMetadata("seo");
 
 export default function SeoServicesPage() {
   return (
     <main className="gd">
+      <ServiceJsonLd
+        name="SEO Services"
+        description={`Digivanta is a trusted SEO Company in Delhi offering professional SEO Services including Technical SEO, Local SEO, AI Search Optimization, On-Page SEO, and Content Strategy for long-term organic growth.`}
+        path="/seo-services-in-delhi"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "SEO Services", path: "/seo-services-in-delhi" },
+        ]}
+      />
       {/* 1. Hero */}
       <HeroSection />
 

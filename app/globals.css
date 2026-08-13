@@ -356,14 +356,13 @@ a.btn--primary:focus-visible {
 .topbar__left a:hover { color: #fff; }
 .topbar__left svg { width: 14px; height: 14px; color: var(--accent); }
 .topbar__sep { width: 1px; height: 13px; background: #2a3c5c; }
-.topbar__social { display: none; gap: 0.4rem; }
+.topbar__social { display: flex; align-items: center; gap: 0.4rem; }
 .topbar__social a {
   width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center;
   border-radius: 7px; color: #93a6c4; transition: all 0.2s;
 }
 .topbar__social a:hover { color: #fff; background: rgba(255,255,255,0.08); }
 .topbar__social svg { width: 14px; height: 14px; }
-@media (min-width: 768px) { .topbar__social { display: flex; } }
 
 /* ----------------------------------------------------------------
    Navbar  (floating glass menu · centered · sliding pill)

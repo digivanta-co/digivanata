@@ -6,18 +6,10 @@ import WorkingProcess from "@/components/about/WorkingProcess";
 import WhyChoose from "@/components/about/WhyChoose";
 import Reveal from "@/components/ui/Reveal";
 import { ArrowRight, Spark, TrendUp } from "@/components/ui/Icons";
+import { WebPageJsonLd } from "@/components/seo/JsonLd";
+import { getPageMetadata, SEO_PAGES } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title: "About Digivanta — The Story Behind Digivanta",
-  description:
-    "Founded in 2023 by cousins Yash Gupta and Sachin Gupta, Digivanta is a modern digital solutions agency helping startups, brands and businesses grow through web development, digital marketing, branding and SEO.",
-  alternates: { canonical: "https://www.digivanta.com/about" },
-  openGraph: {
-    title: "About Digivanta — The Story Behind Digivanta",
-    description: "Founded in 2023, Digivanta is a modern digital solutions agency helping startups, brands and businesses grow through web development, digital marketing, branding and SEO.",
-    url: "https://www.digivanta.com/about",
-  },
-};
+export const metadata: Metadata = getPageMetadata("about");
 
 const FOCUS = [
   "Understanding your business needs",
@@ -31,6 +23,7 @@ const FOCUS = [
 export default function AboutPage() {
   return (
     <main className="about dv-grain">
+      <WebPageJsonLd name={SEO_PAGES.about.title} description={SEO_PAGES.about.description} path={SEO_PAGES.about.path} type="AboutPage" />
       {/* ── Hero ── */}
       <section className="ab-hero py-5">
         <div className="ab-hero__bg" aria-hidden="true">

@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
-import TopBar from "@/components/layout/TopBar";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import FaqAccordion from "@/components/ui/faq-accordion";
 import { FAQS } from "@/lib/home-data";
+import { FaqJsonLd, WebPageJsonLd } from "@/components/seo/JsonLd";
+import { getPageMetadata, SEO_PAGES } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title: "FAQ | Digivanta — Digital Marketing Company in Delhi",
-  description: "Answers to common questions about SEO, ads, social media, and working with Digivanta.",
-  alternates: { canonical: "https://www.digivanta.com/faq" },
-  openGraph: {
-    title: "FAQ — Digivanta",
-    description: "Answers to common questions about SEO, ads, social media, and working with Digivanta.",
-    url: "https://www.digivanta.com/faq",
-  },
-};
+export const metadata: Metadata = getPageMetadata("faq");
 
 export default function FaqPage() {
   const items = FAQS.map((item) => ({
@@ -25,7 +14,8 @@ export default function FaqPage() {
 
   return (
     <>
-     
+      <WebPageJsonLd name={SEO_PAGES.faq.title} description={SEO_PAGES.faq.description} path={SEO_PAGES.faq.path} type="FAQPage" />
+      <FaqJsonLd items={items} />
       <main className="section section--soft dv-grain">
         <div className="container container--narrow">
           <div className="section-head section-head--center">
