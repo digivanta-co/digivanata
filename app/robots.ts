@@ -7,8 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        // Next's internals and API routes are never useful to a crawler
-        disallow: ["/_next/", "/api/"],
+        disallow: ["/api/"],
       },
       {
         userAgent: "GPTBot",
