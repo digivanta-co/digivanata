@@ -93,7 +93,7 @@ export default function RdWhyNeed() {
           ))}
         </ul>
 
-        <div className="mx-auto mt-10 max-w-4xl space-y-4 text-center">
+        <div className="rd-whyneed__closerWrap mx-auto mt-10 max-w-4xl space-y-4 text-center">
           <p className="rd-whyneed__closer text-sm sm:text-base leading-relaxed text-[var(--rd-muted)]">
             A professional Digital Marketing Agency in Delhi helps solve these challenges using proven online marketing strategies.
           </p>

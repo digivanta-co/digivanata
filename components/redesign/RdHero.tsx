@@ -186,7 +186,10 @@ export default function RdHero() {
       <div className="rd-hero__parallax container relative z-10 grid gap-4 grid-cols-1 items-center lg:grid-cols-[1.15fr_0.85fr] pt-0">
       
         <div className="text-center lg:text-left">
-          <h1 className="rd-display rd-hero__words text-[var(--rd-ink)]">
+          <h1
+            aria-label={RD_HERO_WORDS.join(" ")}
+            className="rd-display rd-hero__words text-[var(--rd-ink)]"
+          >
             {RD_HERO_WORDS.map((w, wi) => (
               <span key={wi} className="relative block">
                 <span className="block overflow-hidden">
@@ -207,6 +210,7 @@ export default function RdHero() {
                     <path className="rd-hero__uline" d="M4 11 C 80 3, 210 4, 296 9" fill="none" stroke="#C9A227" strokeWidth="6" strokeLinecap="round" />
                   </svg>
                 )}
+                {wi < RD_HERO_WORDS.length - 1 && <span className="sr-only">{" "}</span>}
               </span>
             ))}
           </h1>
@@ -275,7 +279,7 @@ export default function RdHero() {
                   alt="Digivanta"
                   width={200}
                   height={55}
-                  className="max-h-[62%] max-w-[78%] object-contain"
+                  className="rd-core__mark max-h-[62%] max-w-[78%] object-contain"
                 />
               </div>
             </div>

@@ -63,7 +63,10 @@ export default function RdBigType({
       }
     >
       <div className="container grid gap-5 items-center lg:grid-cols-[1.1fr_0.9fr]">
-        <h2 className="rd-display rd-mega leading-[0.9]">
+        <h2
+          aria-label={words.join(" ")}
+          className="rd-display rd-mega leading-[0.9]"
+        >
           {words.map((w, wi) => (
             <span key={wi} className="rd-big__line block overflow-hidden">
               <span className={"block " + (accent.includes(wi) ? "text-[var(--rd-blue)]" : "")}>
@@ -77,6 +80,7 @@ export default function RdBigType({
                   </span>
                 ))}
               </span>
+              {wi < words.length - 1 && <span className="sr-only">{" "}</span>}
             </span>
           ))}
         </h2>
