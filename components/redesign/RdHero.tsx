@@ -186,9 +186,9 @@ export default function RdHero() {
       <div className="rd-hero__parallax container relative z-10 grid gap-4 grid-cols-1 items-center lg:grid-cols-[1.15fr_0.85fr] pt-0">
       
         <div className="text-center lg:text-left">
-          <div aria-hidden className="rd-display rd-hero__words text-[var(--rd-ink)]">
+          <h1 className="rd-display rd-hero__words text-[var(--rd-ink)]">
             {RD_HERO_WORDS.map((w, wi) => (
-              <h1 key={wi} className="relative block">
+              <span key={wi} className="relative block">
                 <span className="block overflow-hidden">
                   <span className="block">
                     {Array.from(w).map((ch, ci) => (
@@ -207,13 +207,13 @@ export default function RdHero() {
                     <path className="rd-hero__uline" d="M4 11 C 80 3, 210 4, 296 9" fill="none" stroke="#C9A227" strokeWidth="6" strokeLinecap="round" />
                   </svg>
                 )}
-              </h1>
+              </span>
             ))}
-          </div>
+          </h1>
 
-          <span className="rd-hero__title mt-3 sm:mt-7 max-w-xl mx-auto lg:mx-0 text-sm sm:text-lg lg:text-xl font-medium leading-relaxed text-[var(--rd-muted)]">
+          <p className="rd-hero__title mt-3 sm:mt-7 max-w-xl mx-auto lg:mx-0 text-sm sm:text-lg lg:text-xl font-medium leading-relaxed text-[var(--rd-muted)]">
             {RD_PAGE_TITLE}
-          </span>
+          </p>
 
           <div className="rd-actions rd-hero__cta mt-6 sm:mt-9 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
             <RdMagnetic href="/contact">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -11,7 +12,6 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import BackToTop from "@/components/ui/BackToTop";
 import { SITE_URL } from "@/lib/site-data";
 import { OG_IMAGE, SEO_PAGES } from "@/lib/seo-config";
-
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -103,17 +103,31 @@ export default function RootLayout({
       style={fontVars}
     >
       <body className={cn("min-h-full flex flex-col font-sans", poppins.className)}>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XME587LEW4"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-XME587LEW4');
+          `}
+        </Script>
+
         <SmoothScroll />
-        
-          <CursorGlow />
-          <TopBar />
-          <Header />
+        <CursorGlow />
+        <TopBar />
+        <Header />
       
         {children}
   
-          <Footer />
-          <WhatsAppButton />
-          <BackToTop />
+        <Footer />
+        <WhatsAppButton />
+        <BackToTop />
       </body>
     </html>
   );

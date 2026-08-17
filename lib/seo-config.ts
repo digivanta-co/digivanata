@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const OG_IMAGE = {
-  url: "/og-digivanta.png",
+  url: "/digivanta.png",
   width: 1764,
   height: 909,
   alt: "Digivanta — digital growth through SEO, ads, social media, websites and apps",
