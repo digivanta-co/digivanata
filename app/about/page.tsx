@@ -6,7 +6,7 @@ import WorkingProcess from "@/components/about/WorkingProcess";
 import WhyChoose from "@/components/about/WhyChoose";
 import Reveal from "@/components/ui/Reveal";
 import { ArrowRight, Spark, TrendUp } from "@/components/ui/Icons";
-import { WebPageJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/seo/JsonLd";
 import { getPageMetadata, SEO_PAGES } from "@/lib/seo-config";
 
 export const metadata: Metadata = getPageMetadata("about");
@@ -24,6 +24,12 @@ export default function AboutPage() {
   return (
     <main className="about dv-grain">
       <WebPageJsonLd name={SEO_PAGES.about.title} description={SEO_PAGES.about.description} path={SEO_PAGES.about.path} type="AboutPage" />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "About Us", path: "/about" },
+        ]}
+      />
       {/* ── Hero ── */}
       <section className="ab-hero py-5">
         <div className="ab-hero__bg" aria-hidden="true">

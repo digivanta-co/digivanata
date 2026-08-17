@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import FaqAccordion from "@/components/ui/faq-accordion";
 import { FAQS } from "@/lib/home-data";
-import { FaqJsonLd, WebPageJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, WebPageJsonLd } from "@/components/seo/JsonLd";
 import { getPageMetadata, SEO_PAGES } from "@/lib/seo-config";
 
 export const metadata: Metadata = getPageMetadata("faq");
@@ -15,6 +15,12 @@ export default function FaqPage() {
   return (
     <>
       <WebPageJsonLd name={SEO_PAGES.faq.title} description={SEO_PAGES.faq.description} path={SEO_PAGES.faq.path} type="FAQPage" />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "FAQs", path: "/faq" },
+        ]}
+      />
       <FaqJsonLd items={items} />
       <main className="section section--soft dv-grain">
         <div className="container container--narrow">
@@ -27,7 +33,6 @@ export default function FaqPage() {
           <FaqAccordion items={items} title="" />
         </div>
       </main>
-    
     </>
   );
 }

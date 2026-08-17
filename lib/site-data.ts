@@ -19,6 +19,7 @@ export const ROUTES: {
   { path: "/contact", priority: 0.8, changeFrequency: "monthly", lastModified: "2026-08-13" },
   { path: "/digivanta-team", priority: 0.6, changeFrequency: "monthly", lastModified: "2026-08-13" },
   { path: "/faq", priority: 0.6, changeFrequency: "monthly", lastModified: "2026-08-13" },
+  { path: "/sitemap.html", priority: 0.5, changeFrequency: "monthly", lastModified: "2026-08-17" },
   { path: "/seo-services-in-delhi", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-08-13" },
   { path: "/ppc-company-in-delhi", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-08-13" },
   { path: "/social-media-marketing-in-delhi", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-08-13" },
@@ -227,5 +228,7 @@ export const FOOTER_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Team", href: "/digivanta-team" },
+  { label: "FAQs", href: "/faq" },
   { label: "Contact Us", href: "/contact" },
+  { label: "HTML Sitemap", href: "/sitemap.html" },
 ];

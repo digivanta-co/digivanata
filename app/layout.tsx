@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   description: SEO_PAGES.home.description,
   keywords: [...SEO_PAGES.home.keywords],
-  authors: [{ name: "Digivanta", url: SITE_URL }],
+  authors: [{ name: "Digivanta"}],
   creator: "Digivanta",
   publisher: "Digivanta",
   category: "Digital Marketing",

@@ -9,9 +9,9 @@ export const OG_IMAGE = {
 
 export const SEO_PAGES = {
   home: {
-    title: "Digital Marketing Company in Delhi",
+    title: "Best Digital Marketing Company in Delhi",
     description:
-      "Grow traffic, leads and sales with Digivanta, a digital marketing company in Delhi offering SEO, Google Ads, social media, web and app development.",
+      "Digivanta is a digital marketing agency in Delhi helping businesses grow with SEO, Google Ads, social media marketing, web development and more.",
     path: "/",
     keywords: ["digital marketing company in Delhi", "digital marketing agency Delhi", "digital marketing services Delhi"],
   },
@@ -28,9 +28,9 @@ export const SEO_PAGES = {
     path: "/contact",
   },
   team: {
-    title: "Meet Our Digital Marketing Team",
+    title: "Meet Our Digital Team | Marketers, Designers & Developers | Digivanta",
     description:
-      "Meet Digivanta's Delhi-based leadership, designers, digital marketers and developers working together to deliver measurable digital growth.",
+      "Meet Digivanta’s Delhi-based team of marketers, developers, graphic designers and video editors working together to build brands and drive digital growth.",
     path: "/digivanta-team",
   },
   faq: {
@@ -38,6 +38,12 @@ export const SEO_PAGES = {
     description:
       "Get clear answers about SEO timelines, Google Ads, social media marketing, lead generation and working with Digivanta in Delhi.",
     path: "/faq",
+  },
+  sitemap: {
+    title: "HTML Sitemap | Digivanta",
+    description:
+      "Browse the complete list of pages, digital marketing services, case studies and resources on Digivanta.",
+    path: "/sitemap.html",
   },
   seo: {
     title: "SEO Company in Delhi | Expert SEO Services",
