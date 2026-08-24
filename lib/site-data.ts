@@ -51,6 +51,7 @@ export const NAV = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/seo-services-in-delhi" },
   { label: "Team", href: "/digivanta-team" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
