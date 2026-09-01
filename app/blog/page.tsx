@@ -1,7 +1,10 @@
-import Link from 'next/link'
-import {defineQuery} from 'next-sanity'
-import {client} from '@/sanity/client'
-import {urlForImage} from '@/sanity/image'
+import { defineQuery } from "next-sanity";
+import { client } from "@/sanity/client";
+import Reveal from "@/components/ui/Reveal";
+import { Label } from "@/components/design/primitives";
+import FeaturedPost from "@/components/blog/FeaturedPost";
+import BlogCard from "@/components/blog/BlogCard";
+import { BLOG_INDEX } from "@/lib/blog-data";
 
 const POSTS_QUERY = defineQuery(
   `*[_type == "post" && defined(slug.current)] | order(publishedAt desc){
@@ -11,51 +14,77 @@ const POSTS_QUERY = defineQuery(
     publishedAt,
     excerpt,
     mainImage,
-    "authorName": author->name
+    "authorName": author->name,
+    "categories": categories[]->title
   }`
-)
+);
 
-const options = {next: {revalidate: 30}}
+const options = { next: { revalidate: 30 } };
 
 export const metadata = {
-  title: 'Blog | Digivanta',
-}
+  title: "Blog",
+  description: BLOG_INDEX.intro,
+};
 
 export default async function BlogIndexPage() {
-  const posts = await client.fetch(POSTS_QUERY, {}, options)
+  const posts = await client.fetch(POSTS_QUERY, {}, options);
+  const [featured, ...rest] = posts;
 
   return (
-    <main style={{maxWidth: 720, margin: '0 auto', padding: '3rem 1.25rem'}}>
-      <h1 style={{fontSize: '2rem', marginBottom: '2rem'}}>Blog</h1>
+    <main className="gd blog">
+      {/* ── Journal header ── */}
+      <section className="blog-head">
+        <div className="container">
+          <Reveal>
+            <Label>{BLOG_INDEX.kicker}</Label>
+          </Reveal>
+          <Reveal delay={1}>
+            <h1 className="blog-head__title gd-display">
+              <span className="gd-grad">{BLOG_INDEX.title}</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={2}>
+            <p className="blog-head__intro">{BLOG_INDEX.intro}</p>
+          </Reveal>
+        </div>
+      </section>
 
-      {posts.length === 0 ? (
-        <p>No posts yet. Add one in the Studio, then refresh.</p>
+      {!featured ? (
+        <section className="container blog-empty">
+          <h2 className="gd-display">{BLOG_INDEX.emptyTitle}</h2>
+          <p>{BLOG_INDEX.emptyBody}</p>
+        </section>
       ) : (
-        <ul style={{listStyle: 'none', padding: 0, display: 'grid', gap: '2rem'}}>
-          {posts.map((post) => (
-            <li key={post._id}>
-              <Link href={`/blog/${post.slug?.current}`} style={{textDecoration: 'none', color: 'inherit'}}>
-                {post.mainImage?.asset ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={urlForImage(post.mainImage).width(720).height(360).fit('crop').url()}
-                    alt={post.mainImage.alt || post.title || ''}
-                    style={{width: '100%', borderRadius: 8, marginBottom: '0.75rem'}}
-                  />
-                ) : null}
-                <h2 style={{fontSize: '1.35rem', margin: '0 0 0.35rem'}}>{post.title}</h2>
-                {post.publishedAt ? (
-                  <p style={{margin: '0 0 0.5rem', opacity: 0.6, fontSize: '0.85rem'}}>
-                    {new Date(post.publishedAt).toLocaleDateString()}
-                    {post.authorName ? ` · ${post.authorName}` : ''}
-                  </p>
-                ) : null}
-                {post.excerpt ? <p style={{margin: 0, opacity: 0.8}}>{post.excerpt}</p> : null}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <>
+          {/* ── Featured ── */}
+          <section className="container">
+            <Reveal className="blog-section-head">
+              <span className="blog-section-head__kicker">{BLOG_INDEX.featuredLabel}</span>
+              <span className="blog-rule" />
+            </Reveal>
+            <Reveal delay={1}>
+              <FeaturedPost post={featured} />
+            </Reveal>
+          </section>
+
+          {/* ── Grid of the rest ── */}
+          {rest.length > 0 && (
+            <section className="container blog-latest">
+              <Reveal className="blog-section-head">
+                <span className="blog-section-head__kicker">{BLOG_INDEX.latestLabel}</span>
+                <span className="blog-rule" />
+              </Reveal>
+              <div className="blog-grid">
+                {rest.map((post, i) => (
+                  <Reveal key={post._id} delay={(i % 3) + 1}>
+                    <BlogCard post={post} />
+                  </Reveal>
+                ))}
+              </div>
+            </section>
+          )}
+        </>
       )}
     </main>
-  )
+  );
 }

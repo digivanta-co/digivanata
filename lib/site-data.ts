@@ -229,6 +229,7 @@ export const FOOTER_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Team", href: "/digivanta-team" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQs", href: "/faq" },
   { label: "Contact Us", href: "/contact" },
   { label: "HTML Sitemap", href: "/sitemap.html" },
