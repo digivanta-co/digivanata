@@ -27,7 +27,7 @@ export const TEAM_LEADERS = [
   },
   {
     name: "Sachin Gupta",
-    role: "Strategy & Busniess Grwoth",
+    role: "Strategy & Busniess Growth",
     specialty: "Operations & Business Growth",
     desc: "Strategic mind behind execution and planning. He ensures every idea turns into measurable digital success.",
     photo: "/team/sachin.png",
