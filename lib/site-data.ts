@@ -33,7 +33,7 @@ export const ROUTES: {
 export const CONTACT = {
   phone: "+91 9999911195",
   phoneHref: "tel:+919999911195",
-  email: "info@digivanta.com",
+  email: "info@digivanta.co",
   emailHref: "mailto:info@digivanta.co",
   whatsapp: "https://wa.me/919999911195",
   location: "Delhi, India",
