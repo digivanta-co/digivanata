@@ -5,11 +5,22 @@
 
 export const BLOG_INDEX = {
   kicker: "The Digivanta Journal",
-  title: "Insights that move brands forward",
+  title: "Insights that keep you ahead of digital",
+  titleAccent: "ahead of digital",
   intro:
     "Playbooks, teardowns and field notes on SEO, paid media, content and web — written by the team actually running the campaigns.",
+  searchPlaceholder: "Search articles...",
+  searchLabel: "Search the journal",
+  allCategories: "All",
+  noResultsTitle: "No matching articles",
+  noResultsBody: "Try another search or browse all journal topics.",
+  clearFilters: "View all articles",
   featuredLabel: "Featured",
   latestLabel: "Latest articles",
+  articleLabel: "article",
+  defaultAuthor: "Digivanta Team",
+  readArticle: "Read article",
+  articlesLabel: "articles",
   emptyTitle: "The first story is on its way",
   emptyBody: "We're putting the finishing touches on our opening piece. Check back shortly.",
 } as const;
@@ -17,6 +28,13 @@ export const BLOG_INDEX = {
 export const BLOG_ARTICLE = {
   backLabel: "All articles",
   writtenBy: "Written by",
+  eyebrow: "Digivanta field notes",
+  contentsLabel: "In this article",
+  overviewLabel: "Article overview",
+  overviewText: "A practical, no-fluff guide built for teams that want clearer pages and stronger results.",
+  readLabel: "Reading time",
+  topicLabel: "Primary topic",
+  minutesLabel: "minutes",
   ctaKicker: "Let's talk",
   ctaText: "Ready to turn these ideas into real pipeline?",
   ctaButton: "Book a strategy call",
@@ -54,4 +72,10 @@ export function readingTime(body: unknown): number {
 /** First character of a title, for the image-less card placeholder. */
 export function titleInitial(title?: string | null): string {
   return (title || "D").trim().charAt(0).toUpperCase() || "D";
+}
+
+/** Build a stable article URL even if a CMS slug was pasted with `/` around it. */
+export function blogPostHref(slug?: string | null): string {
+  const cleanSlug = (slug || "").trim().replace(/^\/+|\/+$/g, "");
+  return cleanSlug ? `/blog/${cleanSlug}` : "/blog";
 }

@@ -5,7 +5,6 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import CursorGlow from "@/components/ui/cursor-glow";
 import SmoothScroll from "@/components/ui/smooth-scroll";
-import ContentProtection from "@/components/ui/ContentProtection";
 import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -13,6 +12,9 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import BackToTop from "@/components/ui/BackToTop";
 import { SITE_URL } from "@/lib/site-data";
 import { OG_IMAGE, SEO_PAGES } from "@/lib/seo-config";
+
+
+
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -121,7 +123,7 @@ export default function RootLayout({
 
         <SmoothScroll />
         <CursorGlow />
-        <ContentProtection />
+    
         <TopBar />
         <Header />
       

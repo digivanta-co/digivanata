@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { client } from "@/sanity/client";
 import { urlForImage } from "@/sanity/image";
-import { ArrowRight, Clock } from "@/components/ui/Icons";
+import { Clock } from "@/components/ui/Icons";
 import { CtaRibbon } from "@/components/design/primitives";
 import { portableComponents } from "@/components/blog/portable";
 import { formatDate, readingTime, titleInitial, BLOG_ARTICLE } from "@/lib/blog-data";
@@ -23,9 +23,36 @@ const POST_QUERY = defineQuery(
 
 const options = { next: { revalidate: 30 } };
 
+type PortableHeading = {
+  _type?: string;
+  style?: string;
+  children?: { text?: string }[];
+};
+
+function headingId(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
+function articleHeadings(body: unknown) {
+  if (!Array.isArray(body)) return [];
+  return (body as PortableHeading[])
+    .filter((block) => block?._type === "block" && block.style === "h2")
+    .map((block) => (block.children ?? []).map((child) => child.text ?? "").join(" ").trim())
+    .filter(Boolean)
+    .map((text) => ({ text, id: headingId(text) }));
+}
+
+async function fetchPost(slug: string) {
+  const cleanSlug = slug.replace(/^\/+|\/+$/g, "");
+  const post = await client.fetch(POST_QUERY, { slug: cleanSlug }, options);
+
+  // Support older CMS entries whose slug was saved with surrounding slashes.
+  return post ?? client.fetch(POST_QUERY, { slug: `/${cleanSlug}/` }, options);
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = await client.fetch(POST_QUERY, { slug }, options);
+  const post = await fetchPost(slug);
   if (!post) return {};
   const ogImage = post.mainImage?.asset
     ? urlForImage(post.mainImage).width(1200).height(630).fit("crop").url()
@@ -41,12 +68,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = await client.fetch(POST_QUERY, { slug }, options);
+  const post = await fetchPost(slug);
 
   if (!post) return notFound();
 
   const cats = (post.categories ?? []).filter(Boolean) as string[];
   const mins = readingTime(post.body);
+  const headings = articleHeadings(post.body);
   const cover = post.mainImage?.asset
     ? urlForImage(post.mainImage).width(1600).fit("max").auto("format").url()
     : null;
@@ -59,17 +87,16 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <article className="blog-article">
         {/* ── Article header ── */}
         <header className="blog-article__head">
-          <div className="container container--narrow">
+          <div className="container blog-article__hero">
+            <div className="blog-article__hero-copy">
             <Link href="/blog" className="blog-back ag-link">
               <span aria-hidden="true">←</span> {BLOG_ARTICLE.backLabel}
             </Link>
 
-            <div className="blog-article__tags">
-              {(cats.length ? cats : ["Article"]).map((c) => (
-                <span key={c} className="blog-tag">
-                  {c}
-                </span>
-              ))}
+            <div className="blog-article__eyebrow">
+              <span>{BLOG_ARTICLE.eyebrow}</span>
+              <span aria-hidden="true" />
+              <span>{formatDate(post.publishedAt)}</span>
             </div>
 
             <h1 className="blog-article__title gd-display">
@@ -97,6 +124,23 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 <Clock /> {mins} min read
               </span>
             </div>
+            </div>
+
+            <aside className="blog-article__visual" aria-label={BLOG_ARTICLE.overviewLabel}>
+              <span className="blog-article__visual-orbit" aria-hidden="true" />
+              <div className="blog-article__visual-top">
+                <span>{BLOG_ARTICLE.overviewLabel}</span>
+                <span>01</span>
+              </div>
+              <div className="blog-article__monogram" aria-hidden="true">
+                {titleInitial(post.title)}
+              </div>
+              <p>{BLOG_ARTICLE.overviewText}</p>
+              <div className="blog-article__visual-stats">
+                <span><strong>{mins}</strong>{BLOG_ARTICLE.minutesLabel}</span>
+                <span><strong>{cats[0] || "Strategy"}</strong>{BLOG_ARTICLE.topicLabel}</span>
+              </div>
+            </aside>
           </div>
         </header>
 
@@ -113,10 +157,23 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         )}
 
         {/* ── Body ── */}
-        <div className="container container--narrow blog-prose">
-          {Array.isArray(post.body) ? (
-            <PortableText value={post.body} components={portableComponents} />
-          ) : null}
+        <div className="container blog-article__body">
+          <aside className="blog-article__rail">
+            <div className="blog-article__toc">
+              <span className="blog-article__toc-label">{BLOG_ARTICLE.contentsLabel}</span>
+              {headings.slice(0, 8).map((heading, index) => (
+                <a href={`#${heading.id}`} key={heading.id}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  {heading.text}
+                </a>
+              ))}
+            </div>
+          </aside>
+          <div className="blog-prose">
+            {Array.isArray(post.body) ? (
+              <PortableText value={post.body} components={portableComponents} />
+            ) : null}
+          </div>
         </div>
       </article>
 
