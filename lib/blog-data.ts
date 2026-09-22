@@ -84,3 +84,8 @@ export function blogPostHref(slug?: string | null): string {
   const cleanSlug = (slug || "").trim().replace(/^\/+|\/+$/g, "");
   return cleanSlug ? `/blog/${cleanSlug}` : "/blog";
 }
+import type { Author, POSTS_QUERY_RESULT } from "@/sanity.types";
+
+export type BlogListPost = Omit<POSTS_QUERY_RESULT[number], "authorName"> & {
+  author: Pick<Author, "name" | "image"> | null;
+};

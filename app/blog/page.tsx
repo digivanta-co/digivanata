@@ -5,7 +5,7 @@ import { client } from "@/sanity/client";
 import Reveal from "@/components/ui/Reveal";
 import BlogCard from "@/components/blog/BlogCard";
 import FeaturedPost from "@/components/blog/FeaturedPost";
-import { BLOG_INDEX } from "@/lib/blog-data";
+import { BLOG_INDEX, type BlogListPost } from "@/lib/blog-data";
 
 const POSTS_QUERY = defineQuery(
   `*[_type == "post" && defined(slug.current)] | order(publishedAt desc){
@@ -15,7 +15,7 @@ const POSTS_QUERY = defineQuery(
     publishedAt,
     excerpt,
     mainImage,
-    "authorName": author->name,
+    "author": author->{name, image},
     "categories": categories[]->title
   }`
 );
@@ -35,7 +35,7 @@ export default async function BlogIndexPage({
   const filters = await searchParams;
   const query = (filters.q ?? "").trim();
   const activeCategory = (filters.category ?? "").trim();
-  const posts = await client.fetch(POSTS_QUERY, {}, options);
+  const posts = await client.fetch<BlogListPost[]>(POSTS_QUERY, {}, options);
   const categories = Array.from(
     new Set(posts.flatMap((post) => (post.categories ?? []).filter(Boolean) as string[])),
   ).sort((a, b) => a.localeCompare(b));
