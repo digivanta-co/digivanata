@@ -243,11 +243,6 @@
 .blog-byline__avatar--ph { display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 0.9rem; background: linear-gradient(140deg, var(--gd-navy), var(--gd-blue)); }
 .blog-article__date { display: inline-flex; align-items: center; gap: .45rem; }
 .blog-article__date svg { width: 15px; height: 15px; color: var(--gd-gold); }
-.blog-share { display: flex; gap: .55rem; }
-.blog-share a { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--gd-line); border-radius: 50%; color: var(--gd-muted); transition: color .25s, border-color .25s, transform .25s; }
-.blog-share a:hover { color: var(--gd-blue); border-color: var(--gd-blue); transform: translateY(-2px); }
-.blog-share svg { width: 16px; height: 16px; }
-
 .blog-article__cover {
   width: 100%; margin: clamp(2rem, 4vw, 3rem) 0 clamp(1.5rem, 3vw, 2.5rem); overflow: hidden; border-radius: 16px;
 }

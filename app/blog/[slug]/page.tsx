@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { client } from "@/sanity/client";
 import { urlForImage } from "@/sanity/image";
-import { Clock, Facebook, LinkedIn, Mail, Twitter } from "@/components/ui/Icons";
+import { Clock } from "@/components/ui/Icons";
 import { CtaRibbon } from "@/components/design/primitives";
 import { portableComponents } from "@/components/blog/portable";
 import TocHighlight from "@/components/blog/TocHighlight";
@@ -85,9 +85,6 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     ? urlForImage(post.author.image).width(160).height(160).fit("crop").url()
     : null;
   const articleUrl = `${SITE_URL}${blogPostHref(slug)}`;
-  const encodedUrl = encodeURIComponent(articleUrl);
-  const encodedTitle = encodeURIComponent(post.title || "");
-
   return (
     <main className="gd blog">
       <article className="blog-article">
@@ -141,12 +138,6 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                     <span>{post.author?.name || "Digivanta Team"}</span>
                   </span>
                   <span className="blog-article__date"><Clock />{formatDate(post.publishedAt)}</span>
-                </div>
-                <div className="blog-share" aria-label={BLOG_ARTICLE.shareLabel}>
-                  <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} Facebook`}><Facebook /></a>
-                  <a href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} X`}><Twitter /></a>
-                  <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} LinkedIn`}><LinkedIn /></a>
-                  <a href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`} aria-label={`${BLOG_ARTICLE.shareLabel} email`}><Mail /></a>
                 </div>
               </div>
             </header>
