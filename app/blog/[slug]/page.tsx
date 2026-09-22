@@ -6,6 +6,8 @@ import { urlForImage } from "@/sanity/image";
 import { Clock, Facebook, LinkedIn, Mail, Twitter } from "@/components/ui/Icons";
 import { CtaRibbon } from "@/components/design/primitives";
 import { portableComponents } from "@/components/blog/portable";
+import TocHighlight from "@/components/blog/TocHighlight";
+import AiSummary from "@/components/blog/AiSummary";
 import { blogPostHref, formatDate, readingTime, titleInitial, BLOG_ARTICLE } from "@/lib/blog-data";
 import { SITE_URL } from "@/lib/site-data";
 
@@ -89,98 +91,99 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   return (
     <main className="gd blog">
       <article className="blog-article">
-        {/* ── Article header ── */}
-        <header className="blog-article__head">
-          <div className="container blog-article__hero">
-            <div className="blog-article__hero-copy">
-            <nav className="blog-article__breadcrumbs" aria-label="Breadcrumb">
-              <Link href="/">{BLOG_ARTICLE.homeLabel}</Link><span>/</span>
-              <Link href="/blog">{BLOG_ARTICLE.blogLabel}</Link><span>/</span>
-              {cats[0] ? <><span>{cats[0]}</span><span>/</span></> : null}
-              <span aria-current="page">{post.title}</span>
-            </nav>
-
-            <div className="blog-article__eyebrow">
-              <span>{cats[0] || BLOG_ARTICLE.blogLabel}</span>
-              <span aria-hidden="true">•</span>
-              <span>{mins} min read</span>
-            </div>
-
-            <h1 className="blog-article__title">{post.title}</h1>
-
-            {post.excerpt ? <p className="blog-article__lead">{post.excerpt}</p> : null}
-
-            <div className="blog-article__meta">
-              <div className="blog-article__author-block">
-                <span className="blog-byline">
-                  {authorImg ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img className="blog-byline__avatar" src={authorImg} alt={post.author?.name || ""} />
-                  ) : (
-                    <span className="blog-byline__avatar blog-byline__avatar--ph" aria-hidden="true">
-                      {titleInitial(post.author?.name)}
-                    </span>
-                  )}
-                  <span>{post.author?.name || "Digivanta Team"}</span>
-                </span>
-                <span className="blog-article__date"><Clock />{formatDate(post.publishedAt)}</span>
-              </div>
-              <div className="blog-share" aria-label={BLOG_ARTICLE.shareLabel}>
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} Facebook`}><Facebook /></a>
-                <a href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} X`}><Twitter /></a>
-                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} LinkedIn`}><LinkedIn /></a>
-                <a href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`} aria-label={`${BLOG_ARTICLE.shareLabel} email`}><Mail /></a>
-              </div>
-            </div>
-            </div>
-
-          </div>
-        </header>
-
-        {/* ── Cover ── */}
-        {cover ? (
-          <figure className="blog-article__cover">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={cover} alt={post.mainImage?.alt || post.title || ""} />
-          </figure>
-        ) : (
-          <div className="container container--narrow">
-            <span className="blog-divider" />
-          </div>
-        )}
-
-        {/* ── Body ── */}
-        <div className="container blog-article__body">
-          <aside className="blog-article__rail">
-            <div className="blog-article__toc">
-              <span className="blog-article__toc-label">{BLOG_ARTICLE.contentsLabel}</span>
-              {headings.slice(0, 8).map((heading, index) => (
-                <a href={`#${heading.id}`} key={heading.id}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  {heading.text}
-                </a>
-              ))}
-            </div>
-          </aside>
-          <div className="blog-prose">
-            {Array.isArray(post.body) ? (
-              <PortableText value={post.body} components={portableComponents} />
-            ) : null}
-            <aside className="blog-author-card" aria-label={BLOG_ARTICLE.authorCardLabel}>
-              {authorImg ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img className="blog-author-card__avatar" src={authorImg} alt={post.author?.pr || ""} />
-              ) : (
-                <span className="blog-author-card__avatar blog-author-card__avatar--ph" aria-hidden="true">
-                  {titleInitial(post.author?.name)}
-                </span>
-              )}
-              <div>
-                <span className="blog-author-card__label">{BLOG_ARTICLE.writtenBy}</span>
-                <h2>{post.author?.name || BLOG_ARTICLE.defaultAuthor}</h2>
-                {post.author?.bio ? <p>{post.author.bio}</p> : null}
+        <div className="container blog-article__layout">
+          {headings.length ? (
+            <aside className="blog-article__rail">
+              <TocHighlight />
+              <div className="blog-article__toc">
+                <span className="blog-article__toc-label">{BLOG_ARTICLE.contentsLabel}</span>
+                {headings.slice(0, 8).map((heading, index) => (
+                  <a href={`#${heading.id}`} key={heading.id}>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    {heading.text}
+                  </a>
+                ))}
               </div>
             </aside>
+          ) : null}
+
+          <div className="blog-article__content">
+            {/* ── Article header ── */}
+            <header className="blog-article__head">
+              <nav className="blog-article__breadcrumbs" aria-label="Breadcrumb">
+                <Link href="/">{BLOG_ARTICLE.homeLabel}</Link><span>/</span>
+                <Link href="/blog">{BLOG_ARTICLE.blogLabel}</Link><span>/</span>
+                {cats[0] ? <><span>{cats[0]}</span><span>/</span></> : null}
+                <span aria-current="page">{post.title}</span>
+              </nav>
+
+              <div className="blog-article__eyebrow">
+                <span>{cats[0] || BLOG_ARTICLE.blogLabel}</span>
+                <span aria-hidden="true">•</span>
+                <span>{mins} min read</span>
+              </div>
+
+              <h1 className="blog-article__title">
+                <Link href={blogPostHref(slug)}>{post.title}</Link>
+              </h1>
+
+              <div className="blog-article__meta">
+                <div className="blog-article__author-block">
+                  <span className="blog-byline">
+                    {authorImg ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img className="blog-byline__avatar" src={authorImg} alt={post.author?.name || ""} />
+                    ) : (
+                      <span className="blog-byline__avatar blog-byline__avatar--ph" aria-hidden="true">
+                        {titleInitial(post.author?.name)}
+                      </span>
+                    )}
+                    <span>{post.author?.name || "Digivanta Team"}</span>
+                  </span>
+                  <span className="blog-article__date"><Clock />{formatDate(post.publishedAt)}</span>
+                </div>
+                <div className="blog-share" aria-label={BLOG_ARTICLE.shareLabel}>
+                  <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} Facebook`}><Facebook /></a>
+                  <a href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} X`}><Twitter /></a>
+                  <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} LinkedIn`}><LinkedIn /></a>
+                  <a href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`} aria-label={`${BLOG_ARTICLE.shareLabel} email`}><Mail /></a>
+                </div>
+              </div>
+            </header>
+
+            <AiSummary title={post.title || ""} url={articleUrl} summary={post.excerpt} />
+
+            {/* ── Cover ── */}
+            {cover ? (
+              <figure className="blog-article__cover">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={cover} alt={post.mainImage?.alt || post.title || ""} />
+              </figure>
+            ) : (
+              <span className="blog-divider" />
+            )}
+
+            {/* ── Body ── */}
+            <div className="blog-prose">
+              {Array.isArray(post.body) ? (
+                <PortableText value={post.body} components={portableComponents} />
+              ) : null}
+              <aside className="blog-author-card" aria-label={BLOG_ARTICLE.authorCardLabel}>
+                {authorImg ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="blog-author-card__avatar" src={authorImg} alt={post.author?.name || ""} />
+                ) : (
+                  <span className="blog-author-card__avatar blog-author-card__avatar--ph" aria-hidden="true">
+                    {titleInitial(post.author?.name)}
+                  </span>
+                )}
+                <div>
+                  <span className="blog-author-card__label">{BLOG_ARTICLE.writtenBy}</span>
+                  <h2>{post.author?.name || BLOG_ARTICLE.defaultAuthor}</h2>
+                  {post.author?.bio ? <p>{post.author.bio}</p> : null}
+                </div>
+              </aside>
+            </div>
           </div>
         </div>
       </article>

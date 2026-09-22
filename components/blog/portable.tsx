@@ -1,13 +1,10 @@
 import type { PortableTextComponents } from "@portabletext/react";
 import { urlForImage } from "@/sanity/image";
 
-/** Stable id from heading text so headings can be deep-linked. */
-function slugifyText(children: React.ReactNode): string | undefined {
-  const text = Array.isArray(children)
-    ? children.map((c) => (typeof c === "string" ? c : "")).join(" ")
-    : typeof children === "string"
-      ? children
-      : "";
+/** Stable id from a heading block's text — matches the page TOC slugs. */
+function headingId(value: unknown): string | undefined {
+  const children = (value as { children?: ReadonlyArray<{ text?: unknown }> } | undefined)?.children ?? [];
+  const text = children.map((c) => (typeof c.text === "string" ? c.text : "")).join("");
   const id = text
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
@@ -18,9 +15,9 @@ function slugifyText(children: React.ReactNode): string | undefined {
 export const portableComponents: PortableTextComponents = {
   block: {
     normal: ({ children }) => <p>{children}</p>,
-    h2: ({ children }) => <h2 id={slugifyText(children)}>{children}</h2>,
-    h3: ({ children }) => <h3 id={slugifyText(children)}>{children}</h3>,
-    h4: ({ children }) => <h4 id={slugifyText(children)}>{children}</h4>,
+    h2: ({ children, value }) => <h2 id={headingId(value)}>{children}</h2>,
+    h3: ({ children, value }) => <h3 id={headingId(value)}>{children}</h3>,
+    h4: ({ children, value }) => <h4 id={headingId(value)}>{children}</h4>,
     blockquote: ({ children }) => <blockquote>{children}</blockquote>,
   },
   list: {

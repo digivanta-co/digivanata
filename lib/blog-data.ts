@@ -35,6 +35,7 @@ export const BLOG_ARTICLE = {
   writtenBy: "Written by",
   eyebrow: "Digivanta field notes",
   contentsLabel: "In this article",
+  aiSummaryLabel: "Summarize this article with AI",
   overviewLabel: "Article overview",
   overviewText: "A practical, no-fluff guide built for teams that want clearer pages and stronger results.",
   readLabel: "Reading time",
