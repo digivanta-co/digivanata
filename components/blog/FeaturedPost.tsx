@@ -10,7 +10,7 @@ export default function FeaturedPost({ post }: { post: Post }) {
   const href = blogPostHref(post.slug?.current);
   const cats = (post.categories ?? []).filter(Boolean) as string[];
   const img = post.mainImage?.asset
-    ? urlForImage(post.mainImage).width(1200).height(900).fit("crop").auto("format").url()
+    ? urlForImage(post.mainImage).width(1200).height(675).fit("crop").auto("format").url()
     : null;
 
   return (
@@ -27,11 +27,7 @@ export default function FeaturedPost({ post }: { post: Post }) {
       </Link>
 
       <div className="blog-featured__body">
-        <div className="blog-featured__tags">
-          <span className="blog-featured__badge">
-            {BLOG_INDEX.featuredLabel}<i aria-hidden="true" />{cats[0] || BLOG_INDEX.articleLabel}
-          </span>
-        </div>
+        
 
         <h2 className="blog-featured__title gd-display">
           <Link href={href}>{post.title}</Link>

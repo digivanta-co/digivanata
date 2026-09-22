@@ -10,7 +10,7 @@ export default function BlogCard({ post }: { post: Post }) {
   const href = blogPostHref(post.slug?.current);
   const cats = (post.categories ?? []).filter(Boolean) as string[];
   const img = post.mainImage?.asset
-    ? urlForImage(post.mainImage).width(880).height(560).fit("crop").auto("format").url()
+    ? urlForImage(post.mainImage).width(880).height(495).fit("crop").auto("format").url()
     : null;
 
   return (

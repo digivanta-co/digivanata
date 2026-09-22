@@ -3,10 +3,11 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { client } from "@/sanity/client";
 import { urlForImage } from "@/sanity/image";
-import { Clock } from "@/components/ui/Icons";
+import { Clock, Facebook, LinkedIn, Mail, Twitter } from "@/components/ui/Icons";
 import { CtaRibbon } from "@/components/design/primitives";
 import { portableComponents } from "@/components/blog/portable";
-import { formatDate, readingTime, titleInitial, BLOG_ARTICLE } from "@/lib/blog-data";
+import { blogPostHref, formatDate, readingTime, titleInitial, BLOG_ARTICLE } from "@/lib/blog-data";
+import { SITE_URL } from "@/lib/site-data";
 
 const POST_QUERY = defineQuery(
   `*[_type == "post" && slug.current == $slug][0]{
@@ -16,7 +17,7 @@ const POST_QUERY = defineQuery(
     excerpt,
     mainImage,
     body,
-    "author": author->{name, image},
+    "author": author->{name, image, bio},
     "categories": categories[]->title
   }`
 );
@@ -76,11 +77,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const mins = readingTime(post.body);
   const headings = articleHeadings(post.body);
   const cover = post.mainImage?.asset
-    ? urlForImage(post.mainImage).width(1600).fit("max").auto("format").url()
+    ? urlForImage(post.mainImage.asset).width(1600).auto("format").url()
     : null;
   const authorImg = post.author?.image?.asset
-    ? urlForImage(post.author.image).width(96).height(96).fit("crop").url()
+    ? urlForImage(post.author.image).width(160).height(160).fit("crop").url()
     : null;
+  const articleUrl = `${SITE_URL}${blogPostHref(slug)}`;
+  const encodedUrl = encodeURIComponent(articleUrl);
+  const encodedTitle = encodeURIComponent(post.title || "");
 
   return (
     <main className="gd blog">
@@ -89,64 +93,53 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         <header className="blog-article__head">
           <div className="container blog-article__hero">
             <div className="blog-article__hero-copy">
-            <Link href="/blog" className="blog-back ag-link">
-              <span aria-hidden="true">←</span> {BLOG_ARTICLE.backLabel}
-            </Link>
+            <nav className="blog-article__breadcrumbs" aria-label="Breadcrumb">
+              <Link href="/">{BLOG_ARTICLE.homeLabel}</Link><span>/</span>
+              <Link href="/blog">{BLOG_ARTICLE.blogLabel}</Link><span>/</span>
+              {cats[0] ? <><span>{cats[0]}</span><span>/</span></> : null}
+              <span aria-current="page">{post.title}</span>
+            </nav>
 
             <div className="blog-article__eyebrow">
-              <span>{BLOG_ARTICLE.eyebrow}</span>
-              <span aria-hidden="true" />
-              <span>{formatDate(post.publishedAt)}</span>
+              <span>{cats[0] || BLOG_ARTICLE.blogLabel}</span>
+              <span aria-hidden="true">•</span>
+              <span>{mins} min read</span>
             </div>
 
-            <h1 className="blog-article__title gd-display">
-              <span className="gd-grad">{post.title}</span>
-            </h1>
+            <h1 className="blog-article__title">{post.title}</h1>
 
             {post.excerpt ? <p className="blog-article__lead">{post.excerpt}</p> : null}
 
             <div className="blog-article__meta">
-              {post.author?.name ? (
+              <div className="blog-article__author-block">
                 <span className="blog-byline">
                   {authorImg ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img className="blog-byline__avatar" src={authorImg} alt={post.author.name} />
+                    <img className="blog-byline__avatar" src={authorImg} alt={post.author?.name || ""} />
                   ) : (
                     <span className="blog-byline__avatar blog-byline__avatar--ph" aria-hidden="true">
-                      {titleInitial(post.author.name)}
+                      {titleInitial(post.author?.name)}
                     </span>
                   )}
-                  <span>{post.author.name}</span>
+                  <span>{post.author?.name || "Digivanta Team"}</span>
                 </span>
-              ) : null}
-              {post.publishedAt ? <span>{formatDate(post.publishedAt)}</span> : null}
-              <span className="blog-readtime">
-                <Clock /> {mins} min read
-              </span>
+                <span className="blog-article__date"><Clock />{formatDate(post.publishedAt)}</span>
+              </div>
+              <div className="blog-share" aria-label={BLOG_ARTICLE.shareLabel}>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} Facebook`}><Facebook /></a>
+                <a href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} X`}><Twitter /></a>
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`} target="_blank" rel="noreferrer" aria-label={`${BLOG_ARTICLE.shareLabel} LinkedIn`}><LinkedIn /></a>
+                <a href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`} aria-label={`${BLOG_ARTICLE.shareLabel} email`}><Mail /></a>
+              </div>
             </div>
             </div>
 
-            <aside className="blog-article__visual" aria-label={BLOG_ARTICLE.overviewLabel}>
-              <span className="blog-article__visual-orbit" aria-hidden="true" />
-              <div className="blog-article__visual-top">
-                <span>{BLOG_ARTICLE.overviewLabel}</span>
-                <span>01</span>
-              </div>
-              <div className="blog-article__monogram" aria-hidden="true">
-                {titleInitial(post.title)}
-              </div>
-              <p>{BLOG_ARTICLE.overviewText}</p>
-              <div className="blog-article__visual-stats">
-                <span><strong>{mins}</strong>{BLOG_ARTICLE.minutesLabel}</span>
-                <span><strong>{cats[0] || "Strategy"}</strong>{BLOG_ARTICLE.topicLabel}</span>
-              </div>
-            </aside>
           </div>
         </header>
 
         {/* ── Cover ── */}
         {cover ? (
-          <figure className="blog-article__cover container">
+          <figure className="blog-article__cover">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={cover} alt={post.mainImage?.alt || post.title || ""} />
           </figure>
@@ -173,6 +166,21 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             {Array.isArray(post.body) ? (
               <PortableText value={post.body} components={portableComponents} />
             ) : null}
+            <aside className="blog-author-card" aria-label={BLOG_ARTICLE.authorCardLabel}>
+              {authorImg ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img className="blog-author-card__avatar" src={authorImg} alt={post.author?.pr || ""} />
+              ) : (
+                <span className="blog-author-card__avatar blog-author-card__avatar--ph" aria-hidden="true">
+                  {titleInitial(post.author?.name)}
+                </span>
+              )}
+              <div>
+                <span className="blog-author-card__label">{BLOG_ARTICLE.writtenBy}</span>
+                <h2>{post.author?.name || BLOG_ARTICLE.defaultAuthor}</h2>
+                {post.author?.bio ? <p>{post.author.bio}</p> : null}
+              </div>
+            </aside>
           </div>
         </div>
       </article>

@@ -26,6 +26,11 @@ export const BLOG_INDEX = {
 } as const;
 
 export const BLOG_ARTICLE = {
+  homeLabel: "Home",
+  blogLabel: "Blog",
+  shareLabel: "Share on",
+  authorCardLabel: "About the author",
+  defaultAuthor: "Digivanta Team",
   backLabel: "All articles",
   writtenBy: "Written by",
   eyebrow: "Digivanta field notes",
