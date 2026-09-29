@@ -37,7 +37,7 @@ function AniLink({ href, children }: { href: string; children: React.ReactNode }
 
 export default function Footer() {
   return (
-    <footer className="site-footer relative overflow-hidden bg-[#0b0b0d] pt-20 text-white">
+    <footer className="site-footer relative overflow-hidden mt-3 bg-[#0b0b0d] pt-20 text-white">
       {/* glow */}
       <div aria-hidden className="pointer-events-none absolute -top-32 left-1/2 size-[560px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(40,111,171,0.18),transparent_70%)] blur-3xl" />
 
