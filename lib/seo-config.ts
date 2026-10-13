@@ -20,18 +20,21 @@ export const SEO_PAGES = {
     description:
       "Meet Digivanta, a Delhi digital agency founded in 2023 to help startups and businesses grow through SEO, paid media, branding and development.",
     path: "/about",
+    keywords: ["Digital Marketing Agency in Delhi", "Digital Marketing Company in Delhi", "Digivanta", "About Digivanta", "Digital Marketing Services in Delhi", "SEO Company in Delhi", "Website Development Company in Delhi", "Branding Agency in Delhi"],
   },
   contact: {
     title: "Contact Our Digital Marketing Team",
     description:
       "Contact Digivanta in Delhi for a consultation about SEO, Google Ads, social media marketing, website development or mobile app development.",
     path: "/contact",
+    keywords: ["Contact Digivanta", "Digital Marketing Agency in Delhi", "Contact Digital Marketing Company in Delhi", "SEO Company in Delhi", "Digital Marketing Services in Delhi", "Website Development Company in Delhi", "Google Ads Services in Delhi", "Social Media Marketing Agency in Delhi"],
   },
   team: {
     title: "Meet Our Digital Team | Marketers, Designers & Developers | Digivanta",
     description:
       "Meet Digivanta’s Delhi-based team of marketers, developers, graphic designers and video editors working together to build brands and drive digital growth.",
     path: "/digivanta-team",
+    keywords: ["Digivanta Team", "Digital Marketing Team in Delhi", "Digivanta Digital Marketing Team", "Digital Marketing Experts in Delhi", "SEO Specialists in Delhi", "Web Developers at Digivanta", "Graphic Designers at Digivanta", "Digital Marketing Professionals", "Digivanta Founder and CEO"],
   },
   faq: {
     title: "Digital Marketing FAQs",

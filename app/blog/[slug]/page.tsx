@@ -21,6 +21,7 @@ const POST_QUERY = defineQuery(
     excerpt,
     metaTitle,
     metaDescription,
+    metaKeywords,
     mainImage,
     body,
     "author": author->{name, image, bio},
@@ -70,6 +71,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: metaTitle,
     description: metaDescription,
+    keywords: post.metaKeywords?.length ? post.metaKeywords : undefined,
     alternates: { canonical },
     openGraph: {
       type: "article",

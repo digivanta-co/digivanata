@@ -65,7 +65,8 @@ export default function Footer() {
           <div className="font-[family-name:var(--font-display),var(--font)] text-[clamp(2.5rem,7vw,5rem)] font-bold uppercase leading-[0.9] tracking-tight text-white">
             <Image
               src="/whitelogo.png"
-              alt="Digivanta"
+              alt="Digivanta digital marketing agency logo in website footer"
+              title=" Digivanta Digital Marketing Agency Logo"
               width={400}
               height={120}
               className="h-auto w-[220px] sm:w-[300px]"

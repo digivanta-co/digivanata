@@ -8,8 +8,8 @@ const u = (id: string, w = 600) =>
 export type Social = { type: "linkedin" | "instagram" | "mail" | "github"; href: string };
 
 export const ABOUT_TEAM_IMAGE = {
-  src: "/team/team-member-1.png",
-  alt: "The Digivanta team driving digital growth",
+  src: "/team/Digivanta digital marketing team in Delhi.png",
+  alt: "Digivanta digital marketing team in Delhi",
 };
 
 export const TEAM_LEADERS = [

@@ -26,6 +26,7 @@ const options = { next: { revalidate: 30 } };
 export const metadata = {
   title: "Blog",
   description: BLOG_INDEX.intro,
+  keywords: ["Digital Marketing Blog", "SEO Blog", "Digital Marketing Trends", "SEO Tips and Updates", "Google Business Profile Tips", "Website Optimization", "Content Marketing Insights", "Paid Media Marketing", "Digital Marketing Company in Delhi", "Digivanta Blog"],
 };
 
 export default async function BlogIndexPage({

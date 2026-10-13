@@ -113,10 +113,11 @@ export default function Header() {
       
         <Link href="/" className="justify-self-start transition-transform duration-300 hover:-translate-y-0.5" onClick={closeAll}>
           <Image
-            src="/digivanta.png"
-            alt="Digivanta"
+            src="/digivanta-digital-marketing-agency-logo.png"
+            alt="Digivanta digital marketing agency logo"
             width={220}
             height={60}
+            title="Digivanta Digital Marketing Agency Logo"
             priority
             className={"w-auto transition-all duration-300 " + (scrolled ? "max-h-11" : "max-h-13")}
           />

@@ -23,6 +23,7 @@ export default function AboutTeamPhoto() {
               <Image
                 src={ABOUT_TEAM_IMAGE.src}
                 alt={ABOUT_TEAM_IMAGE.alt}
+                title=" Digivanta Digital Marketing Team"
                 width={1400}
                 height={480}
                 className="ab-team__img"
