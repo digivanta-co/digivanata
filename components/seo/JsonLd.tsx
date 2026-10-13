@@ -35,12 +35,14 @@ export function OrganizationJsonLd() {
         email: CONTACT.email,
         telephone: CONTACT.phoneHref.replace("tel:", ""),
         priceRange: "₹₹",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Delhi",
-          addressRegion: "Delhi",
-          addressCountry: "IN",
-        },
+address: {
+  "@type": "PostalAddress",
+  streetAddress: "4th floor, Plot no. 120, Block A, Sewak Park, Uttam Nagar",
+  addressLocality: "New Delhi",
+  addressRegion: "Delhi",
+  postalCode: "110059",
+  addressCountry: "IN",
+},
         areaServed: ["Delhi", "New Delhi", "Noida", "Gurugram", "Delhi NCR"].map((name) => ({
           "@type": "Place",
           name,
