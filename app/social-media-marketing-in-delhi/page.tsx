@@ -22,7 +22,7 @@ import {
   SMM_FAQS,
   SMM_CTA,
 } from "@/lib/smm-data";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { getPageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = getPageMetadata("social");
@@ -41,6 +41,7 @@ export default function SocialMediaMarketingPage() {
           { name: "Social Media Marketing", path: "/social-media-marketing-in-delhi" },
         ]}
       />
+      <FaqJsonLd items={SMM_FAQS} path="/social-media-marketing-in-delhi" />
       {/* 1. Hero */}
       <HeroSection />
 

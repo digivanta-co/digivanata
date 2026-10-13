@@ -9,7 +9,8 @@ import { FAQSection } from "@/components/content/sections/Faq";
 import { CTASection } from "@/components/content/sections/Cta";
 import { CtaRibbon } from "@/components/content/primitives";
 import { CM_RIBBON } from "@/lib/content-data";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { CM_FAQS } from "@/lib/content-data";
 import { getPageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = getPageMetadata("content");
@@ -28,6 +29,7 @@ export default function ContentMarketingPage() {
           { name: "Content Marketing", path: "/content-marketing-in-delhi" },
         ]}
       />
+      <FaqJsonLd items={CM_FAQS} path="/content-marketing-in-delhi" />
       <HeroSection />
       <IntroSection />
       <VelocityMarquee />

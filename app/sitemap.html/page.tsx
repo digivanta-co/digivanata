@@ -12,6 +12,7 @@ const MAIN_PAGES = [
   { name: "About Us", path: "/about", desc: "Learn about our mission, vision, and growth story." },
   { name: "Digivanta Team", path: "/digivanta-team", desc: "Meet our digital strategists, designers, and developers." },
   { name: "Frequently Asked Questions", path: "/faq", desc: "Answers to common questions about our services and process." },
+  { name: "Blog", path: "/blog", desc: "Digital marketing insights, SEO tips, and industry updates." },
   { name: "Contact Us", path: "/contact", desc: "Get in touch for a free digital marketing consultation." },
 ];
 

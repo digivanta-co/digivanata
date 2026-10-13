@@ -21,7 +21,7 @@ import { FAQSection } from "@/components/design/sections/Faq";
 import { CTASection } from "@/components/design/sections/Cta";
 import { CtaRibbon } from "@/components/design/primitives";
 import { APP_EXPERIENCE, APP_FAQS, APP_PROCESS } from "@/lib/app-data";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { getPageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = getPageMetadata("app");
@@ -40,6 +40,7 @@ export default function MobileAppDevelopmentPage() {
           { name: "Mobile App Development", path: "/mobile-app-development-in-delhi" },
         ]}
       />
+      <FaqJsonLd items={APP_FAQS} path="/mobile-app-development-in-delhi" />
       {/* 1. Hero */}
       <AppHeroSection />
 

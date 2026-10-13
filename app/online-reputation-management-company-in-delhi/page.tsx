@@ -16,7 +16,7 @@ import {
 import { FAQSection } from "@/components/design/sections/Faq";
 import { CTASection } from "@/components/design/sections/Cta";
 import { ORM_FAQS, ORM_FINAL_CTA } from "@/lib/orm-data";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { getPageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = getPageMetadata("orm");
@@ -35,6 +35,7 @@ export default function OrmCompanyPage() {
           { name: "Online Reputation Management", path: "/online-reputation-management-company-in-delhi" },
         ]}
       />
+      <FaqJsonLd items={ORM_FAQS} path="/online-reputation-management-company-in-delhi" />
       {/* 1. Hero + reputation monitor */}
       <HeroSection />
 

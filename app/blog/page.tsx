@@ -5,6 +5,7 @@ import { client } from "@/sanity/client";
 import Reveal from "@/components/ui/Reveal";
 import BlogCard from "@/components/blog/BlogCard";
 import FeaturedPost from "@/components/blog/FeaturedPost";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/seo/JsonLd";
 import { BLOG_INDEX, type BlogListPost } from "@/lib/blog-data";
 
 const POSTS_QUERY = defineQuery(
@@ -55,6 +56,13 @@ export default async function BlogIndexPage({
 
   return (
     <main className="gd blog blog-index">
+      <WebPageJsonLd name="Blog" description={BLOG_INDEX.intro} path="/blog" type="CollectionPage" />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+        ]}
+      />
       {/* ── Journal header ── */}
       <section className="blog-head">
         <div className="blog-head__rings" aria-hidden="true" />

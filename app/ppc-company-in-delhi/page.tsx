@@ -20,7 +20,7 @@ import {
   PPC_FAQS,
   PPC_CTA,
 } from "@/lib/ppc-data";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { getPageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = getPageMetadata("ppc");
@@ -39,6 +39,7 @@ export default function PpcCompanyPage() {
           { name: "PPC & Google Ads Management", path: "/ppc-company-in-delhi" },
         ]}
       />
+      <FaqJsonLd items={PPC_FAQS} path="/ppc-company-in-delhi" />
       <HeroSection />
       <IntroSection />
       <VelocityMarquee items={PPC_HERO.marquee} />

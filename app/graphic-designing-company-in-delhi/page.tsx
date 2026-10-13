@@ -15,7 +15,8 @@ import {
 import { FAQSection } from "@/components/design/sections/Faq";
 import { CTASection } from "@/components/design/sections/Cta";
 import { CtaRibbon } from "@/components/design/primitives";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { GD_FAQS } from "@/lib/design-data";
 import { getPageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = getPageMetadata("design");
@@ -34,6 +35,7 @@ export default function GraphicDesigningPage() {
           { name: "Graphic Design & Branding", path: "/graphic-designing-company-in-delhi" },
         ]}
       />
+      <FaqJsonLd items={GD_FAQS} path="/graphic-designing-company-in-delhi" />
       <GdxHero />
       <VelocityMarquee />
       <GdxCost />

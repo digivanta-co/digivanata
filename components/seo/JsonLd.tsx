@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { CONTACT, SITE_URL, SOCIAL } from "@/lib/site-data";
 
 const ORG_ID = `${SITE_URL}/#organization`;
@@ -87,7 +88,7 @@ export function WebPageJsonLd({
   name: string;
   description: string;
   path: string;
-  type?: "WebPage" | "AboutPage" | "ContactPage" | "FAQPage" | "ProfilePage";
+  type?: "WebPage" | "AboutPage" | "ContactPage" | "FAQPage" | "ProfilePage" | "CollectionPage";
 }) {
   return (
     <Ld
@@ -201,7 +202,18 @@ export function BreadcrumbJsonLd({ items }: { items: { name: string; path: strin
   );
 }
 
-export function FaqJsonLd({ items, path = "/faq" }: { items: { question: string; answer: string }[]; path?: string }) {
+export function FaqJsonLd({
+  items,
+  path = "/faq",
+}: {
+  items: { question: string; answer: ReactNode }[];
+  path?: string;
+}) {
+  // JSON-LD answers must be plain text; keep only string answers.
+  const entries = items
+    .map((item) => ({ question: item.question, answer: typeof item.answer === "string" ? item.answer : "" }))
+    .filter((item) => item.question && item.answer);
+  if (!entries.length) return null;
   return (
     <Ld
       data={{
@@ -209,10 +221,36 @@ export function FaqJsonLd({ items, path = "/faq" }: { items: { question: string;
         "@type": "FAQPage",
         "@id": `${SITE_URL}${path}#faq`,
         url: `${SITE_URL}${path}`,
-        mainEntity: items.map((item) => ({
+        mainEntity: entries.map((item) => ({
           "@type": "Question",
           name: item.question,
           acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      }}
+    />
+  );
+}
+
+export function PersonListJsonLd({
+  people,
+  path,
+}: {
+  people: { name: string; role?: string; image?: string }[];
+  path: string;
+}) {
+  const valid = people.filter((p) => p.name);
+  if (!valid.length) return null;
+  return (
+    <Ld
+      data={{
+        "@context": "https://schema.org",
+        "@graph": valid.map((p, i) => ({
+          "@type": "Person",
+          "@id": `${SITE_URL}${path}#person-${i + 1}`,
+          name: p.name,
+          ...(p.role ? { jobTitle: p.role } : {}),
+          ...(p.image ? { image: p.image.startsWith("http") ? p.image : `${SITE_URL}${p.image}` } : {}),
+          worksFor: { "@type": "Organization", name: "Digivanta", url: SITE_URL },
         })),
       }}
     />

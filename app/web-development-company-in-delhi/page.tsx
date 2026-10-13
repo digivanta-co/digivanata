@@ -21,7 +21,7 @@ import {
   WEB_INDUSTRIES,
   WEB_FAQS,
 } from "@/lib/web-data";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { getPageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = getPageMetadata("web");
@@ -40,6 +40,7 @@ export default function WebDevelopmentPage() {
           { name: "Web Development", path: "/web-development-company-in-delhi" },
         ]}
       />
+      <FaqJsonLd items={WEB_FAQS} path="/web-development-company-in-delhi" />
       {/* 1. Hero */}
       <WebHeroSection />
 
