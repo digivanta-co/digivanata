@@ -266,9 +266,10 @@ export type AllSanitySchemaTypes =
 
 // Source: ../digivanta/app/blog/[slug]/page.tsx
 // Variable: POST_QUERY
-// Query: *[_type == "post" && slug.current == $slug][0]{    _id,    title,    publishedAt,    excerpt,    metaTitle,    metaDescription,    mainImage,    body,    "author": author->{name, image, bio},    "categories": categories[]->title  }
+// Query: *[_type == "post" && slug.current == $slug][0]{    _id,    _updatedAt,    title,    publishedAt,    excerpt,    metaTitle,    metaDescription,    mainImage,    body,    "author": author->{name, image, bio},    "categories": categories[]->title  }
 export type POST_QUERY_RESULT = {
   _id: string;
+  _updatedAt: string;
   title: string | null;
   publishedAt: string | null;
   excerpt: string | null;
@@ -332,7 +333,7 @@ export type POSTS_QUERY_RESULT = Array<{
 // Query TypeMap
 declare global {
   interface SanityQueries {
-    '*[_type == "post" && slug.current == $slug][0]{\n    _id,\n    title,\n    publishedAt,\n    excerpt,\n    metaTitle,\n    metaDescription,\n    mainImage,\n    body,\n    "author": author->{name, image, bio},\n    "categories": categories[]->title\n  }': POST_QUERY_RESULT;
+    '*[_type == "post" && slug.current == $slug][0]{\n    _id,\n    _updatedAt,\n    title,\n    publishedAt,\n    excerpt,\n    metaTitle,\n    metaDescription,\n    mainImage,\n    body,\n    "author": author->{name, image, bio},\n    "categories": categories[]->title\n  }': POST_QUERY_RESULT;
     '*[_type == "post" && defined(slug.current)] | order(publishedAt desc){\n    _id,\n    title,\n    slug,\n    publishedAt,\n    excerpt,\n    mainImage,\n    "author": author->{name, image},\n    "categories": categories[]->title\n  }': POSTS_QUERY_RESULT;
   }
 }

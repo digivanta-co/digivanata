@@ -139,6 +139,51 @@ export function ServiceJsonLd({ name, description, path }: { name: string; descr
   );
 }
 
+export function ArticleJsonLd({
+  title,
+  description,
+  path,
+  image,
+  publishedAt,
+  modifiedAt,
+  authorName,
+}: {
+  title: string;
+  description?: string;
+  path: string;
+  image?: string;
+  publishedAt?: string;
+  modifiedAt?: string;
+  authorName?: string;
+}) {
+  return (
+    <Ld
+      data={{
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": `${SITE_URL}${path}#article`,
+        headline: title,
+        ...(description ? { description } : {}),
+        url: `${SITE_URL}${path}`,
+        mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}${path}#webpage` },
+        ...(image ? { image } : {}),
+        ...(publishedAt ? { datePublished: publishedAt } : {}),
+        dateModified: modifiedAt || publishedAt,
+        author: authorName
+          ? { "@type": "Person", name: authorName }
+          : { "@type": "Organization", name: "Digivanta" },
+        publisher: {
+          "@type": "Organization",
+          name: "Digivanta",
+          logo: { "@type": "ImageObject", url: `${SITE_URL}/D%20full.png` },
+        },
+        isPartOf: { "@id": SITE_ID },
+        inLanguage: "en-IN",
+      }}
+    />
+  );
+}
+
 export function BreadcrumbJsonLd({ items }: { items: { name: string; path: string }[] }) {
   return (
     <Ld

@@ -5,6 +5,7 @@ import { client } from "@/sanity/client";
 import { urlForImage } from "@/sanity/image";
 import { Clock } from "@/components/ui/Icons";
 import { CtaRibbon } from "@/components/design/primitives";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { portableComponents } from "@/components/blog/portable";
 import TocHighlight from "@/components/blog/TocHighlight";
 import AiSummary from "@/components/blog/AiSummary";
@@ -14,6 +15,7 @@ import { SITE_URL } from "@/lib/site-data";
 const POST_QUERY = defineQuery(
   `*[_type == "post" && slug.current == $slug][0]{
     _id,
+    _updatedAt,
     title,
     publishedAt,
     excerpt,
@@ -64,12 +66,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     : undefined;
   const metaTitle = post.metaTitle || post.title || undefined;
   const metaDescription = post.metaDescription || post.excerpt || undefined;
+  const canonical = blogPostHref(slug);
   return {
     title: metaTitle,
     description: metaDescription,
-    openGraph: ogImage
-      ? { title: metaTitle, description: metaDescription, images: [ogImage] }
-      : undefined,
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      title: metaTitle,
+      description: metaDescription,
+      url: canonical,
+      publishedTime: post.publishedAt || undefined,
+      authors: post.author?.name ? [post.author.name] : undefined,
+      images: ogImage ? [ogImage] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metaTitle,
+      description: metaDescription,
+      images: ogImage ? [ogImage] : undefined,
+    },
   };
 }
 
@@ -88,9 +104,26 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const authorImg = post.author?.image?.asset
     ? urlForImage(post.author.image).width(160).height(160).fit("crop").url()
     : null;
-  const articleUrl = `${SITE_URL}${blogPostHref(slug)}`;
+  const articlePath = blogPostHref(slug);
+  const articleUrl = `${SITE_URL}${articlePath}`;
   return (
     <main className="gd blog">
+      <ArticleJsonLd
+        title={post.title || ""}
+        description={post.excerpt || undefined}
+        path={articlePath}
+        image={cover || undefined}
+        publishedAt={post.publishedAt || undefined}
+        modifiedAt={post._updatedAt || undefined}
+        authorName={post.author?.name || undefined}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: BLOG_ARTICLE.homeLabel, path: "/" },
+          { name: BLOG_ARTICLE.blogLabel, path: "/blog" },
+          { name: post.title || "Article", path: articlePath },
+        ]}
+      />
       <article className="blog-article">
         <div className="container blog-article__layout">
           {headings.length ? (
