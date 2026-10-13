@@ -108,6 +108,8 @@ export type Post = {
   publishedAt?: string;
   excerpt?: string;
   body?: BlockContent;
+  metaTitle?: string;
+  metaDescription?: string;
 };
 
 export type SanityImageCrop = {
@@ -264,12 +266,14 @@ export type AllSanitySchemaTypes =
 
 // Source: ../digivanta/app/blog/[slug]/page.tsx
 // Variable: POST_QUERY
-// Query: *[_type == "post" && slug.current == $slug][0]{    _id,    title,    publishedAt,    excerpt,    mainImage,    body,    "author": author->{name, image},    "categories": categories[]->title  }
+// Query: *[_type == "post" && slug.current == $slug][0]{    _id,    title,    publishedAt,    excerpt,    metaTitle,    metaDescription,    mainImage,    body,    "author": author->{name, image, bio},    "categories": categories[]->title  }
 export type POST_QUERY_RESULT = {
   _id: string;
   title: string | null;
   publishedAt: string | null;
   excerpt: string | null;
+  metaTitle: string | null;
+  metaDescription: string | null;
   mainImage: {
     asset?: SanityImageAssetReference;
     media?: unknown;
@@ -289,13 +293,14 @@ export type POST_QUERY_RESULT = {
       alt?: string;
       _type: "image";
     } | null;
+    bio: string | null;
   } | null;
   categories: Array<string | null> | null;
 } | null;
 
 // Source: ../digivanta/app/blog/page.tsx
 // Variable: POSTS_QUERY
-// Query: *[_type == "post" && defined(slug.current)] | order(publishedAt desc){    _id,    title,    slug,    publishedAt,    excerpt,    mainImage,    "authorName": author->name,    "categories": categories[]->title  }
+// Query: *[_type == "post" && defined(slug.current)] | order(publishedAt desc){    _id,    title,    slug,    publishedAt,    excerpt,    mainImage,    "author": author->{name, image},    "categories": categories[]->title  }
 export type POSTS_QUERY_RESULT = Array<{
   _id: string;
   title: string | null;
@@ -310,15 +315,28 @@ export type POSTS_QUERY_RESULT = Array<{
     alt?: string;
     _type: "image";
   } | null;
-  authorName: string | null;
+  author: {
+    name: string | null;
+    image: {
+      asset?: SanityImageAssetReference;
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      alt?: string;
+      _type: "image";
+    } | null;
+  } | null;
   categories: Array<string | null> | null;
 }>;
 
 // Query TypeMap
-import "@sanity/client";
-declare module "@sanity/client" {
+declare global {
   interface SanityQueries {
-    '*[_type == "post" && slug.current == $slug][0]{\n    _id,\n    title,\n    publishedAt,\n    excerpt,\n    mainImage,\n    body,\n    "author": author->{name, image},\n    "categories": categories[]->title\n  }': POST_QUERY_RESULT;
-    '*[_type == "post" && defined(slug.current)] | order(publishedAt desc){\n    _id,\n    title,\n    slug,\n    publishedAt,\n    excerpt,\n    mainImage,\n    "authorName": author->name,\n    "categories": categories[]->title\n  }': POSTS_QUERY_RESULT;
+    '*[_type == "post" && slug.current == $slug][0]{\n    _id,\n    title,\n    publishedAt,\n    excerpt,\n    metaTitle,\n    metaDescription,\n    mainImage,\n    body,\n    "author": author->{name, image, bio},\n    "categories": categories[]->title\n  }': POST_QUERY_RESULT;
+    '*[_type == "post" && defined(slug.current)] | order(publishedAt desc){\n    _id,\n    title,\n    slug,\n    publishedAt,\n    excerpt,\n    mainImage,\n    "author": author->{name, image},\n    "categories": categories[]->title\n  }': POSTS_QUERY_RESULT;
   }
+}
+// Lets @sanity/client releases that predate the global registry read it too
+declare module "@sanity/client" {
+  interface SanityQueries extends globalThis.SanityQueries {}
 }

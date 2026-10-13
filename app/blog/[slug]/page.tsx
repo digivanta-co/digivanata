@@ -17,6 +17,8 @@ const POST_QUERY = defineQuery(
     title,
     publishedAt,
     excerpt,
+    metaTitle,
+    metaDescription,
     mainImage,
     body,
     "author": author->{name, image, bio},
@@ -60,11 +62,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const ogImage = post.mainImage?.asset
     ? urlForImage(post.mainImage).width(1200).height(630).fit("crop").url()
     : undefined;
+  const metaTitle = post.metaTitle || post.title || undefined;
+  const metaDescription = post.metaDescription || post.excerpt || undefined;
   return {
-    title: post.title || undefined,
-    description: post.excerpt || undefined,
+    title: metaTitle,
+    description: metaDescription,
     openGraph: ogImage
-      ? { title: post.title || undefined, description: post.excerpt || undefined, images: [ogImage] }
+      ? { title: metaTitle, description: metaDescription, images: [ogImage] }
       : undefined,
   };
 }

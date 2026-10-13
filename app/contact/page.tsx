@@ -12,7 +12,7 @@ export const metadata: Metadata = getPageMetadata("contact");
 
 export default function ContactPage() {
   return (
-    <main className="gd">
+    <main className="gd">X``
       <WebPageJsonLd name={SEO_PAGES.contact.title} description={SEO_PAGES.contact.description} path={SEO_PAGES.contact.path} type="ContactPage" />
       <BreadcrumbJsonLd
         items={[

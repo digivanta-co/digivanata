@@ -41,9 +41,11 @@ export const CONTACT = {
 
 export const SOCIAL = [
   { label: "Instagram", href: "https://www.instagram.com/official.digivanta/" },
-  { label: "Facebook", href: "#" },
+  { label: "Facebook", href: "https://www.facebook.com/people/Digivanta/61583299868155/" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/digivanta-ltd" },
   { label: "YouTube", href: "https://www.youtube.com/@Digivanta_co" },
+  { label: "Twitter", href: "https://x.com/digivanta_co" },
+  { label: "Pinterest", href: "https://in.pinterest.com/digivantaofficiall/" },
 ];
 
 export const NAV = [
