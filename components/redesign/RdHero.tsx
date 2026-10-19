@@ -275,7 +275,7 @@ export default function RdHero() {
                     a wrong ratio makes object-contain letterbox inside the
                     declared box and shrink the mark off-centre */}
                 <Image
-                  src="/digivanta.png"
+                  src="/digivanta-digital-marketing-agency-logo.png"
                   alt="Digivanta"
                   width={200}
                   height={55}
