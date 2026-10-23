@@ -11,6 +11,7 @@ import TocHighlight from "@/components/blog/TocHighlight";
 import AiSummary from "@/components/blog/AiSummary";
 import { blogPostHref, formatDate, readingTime, titleInitial, BLOG_ARTICLE } from "@/lib/blog-data";
 import { SITE_URL } from "@/lib/site-data";
+import { OG_IMAGE } from "@/lib/seo-config";
 
 const POST_QUERY = defineQuery(
   `*[_type == "post" && slug.current == $slug][0]{
@@ -64,7 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) return {};
   const ogImage = post.mainImage?.asset
     ? urlForImage(post.mainImage).width(1200).height(630).fit("crop").url()
-    : undefined;
+    : `${SITE_URL}${OG_IMAGE.url}`;
   const metaTitle = post.metaTitle || post.title || undefined;
   const metaDescription = post.metaDescription || post.excerpt || undefined;
   const canonical = blogPostHref(slug);
